@@ -1163,7 +1163,7 @@ function eventSelected() {
 
         "This is <span style='color:red;'>{VA}</span> calling from BDI.<br><br>"+
 
-        "We have you registered to join our virtual lunch & learn "+ $event_full_title +" tomorrow, "+ $event_long_date + "from 12-1:15PM. If your schedule has changed and you can no longer attend, please let us know by responding to Steve's email.<br><br>"+
+        "We have you registered to join our virtual lunch & learn "+ $event_full_title +" tomorrow, "+ $event_long_date + " from 12-1:15PM. If your schedule has changed and you can no longer attend, please let us know by responding to Steve's email.<br><br>"+
 
         "Thank you! Bye!<br><br>",
 
