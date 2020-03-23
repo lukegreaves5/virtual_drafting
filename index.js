@@ -12,8 +12,8 @@ Tools & libraries used: HTML, CSS, SCSS, JavaScript, jQuery, Airtable's API, Und
 const $airtableEvents = "https://api.airtable.com/v0/appdISq2lodl6vyot/Events/",
 $k = "api_key=keyxV8TiVBBweSkZ5",
 $airtableEventsSorted = "https://api.airtable.com/v0/appdISq2lodl6vyot/Events?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine&sort%5B0%5D%5Bfield%5D=Event%20Date",
-$airtableEmails = "https://api.airtable.com/v0/appdISq2lodl6vyot/Messages & Templates?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine",
-$aritableTodayEmails = "https://api.airtable.com/v0/appdISq2lodl6vyot/Emails?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine"
+$airtableEmails = "https://api.airtable.com/v0/appdISq2lodl6vyot/Messages & Templates?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine - Virtual",
+$airtableTodayEmails = "https://api.airtable.com/v0/appdISq2lodl6vyot/Emails?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine"
 // ------
 
 // -- GLOBAL VARIABLES -- 
@@ -70,7 +70,7 @@ $("#todays-drafts-button").click(function(){
 // -- GET request from Airtable for all email campaigns to be drafted today, filtered for campaigns that have already been drafted or sent.
 // -- This request returns undrafted sequences for today from Airtable
 let $todaysEmails = $.ajax({
-  url: $aritableTodayEmails,
+  url: $airtableTodayEmails,
   type: 'GET',
   success: function(data) {
   let $unsentEmails = [];
@@ -636,7 +636,7 @@ function eventSelected() {
         // PR MESSAGE 1.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Join Our Lunch Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Join Our Virtual Lunch Panel?</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
@@ -655,7 +655,7 @@ function eventSelected() {
         // PR MESSAGE 1.2
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.2</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Lunch Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Virtual Lunch Panel?</p><br><br>" +
         
         "Hey again {{FIRST_NAME}},<br><br>" +
 
@@ -680,7 +680,7 @@ function eventSelected() {
         // RR MESSAGE 1.3
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Lunch Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Virtual Lunch Panel?</p><br><br>" +
 
         "Hope your day is going well, {{FIRST_NAME}}. Just wanted to bring this invite to the top of your inbox.<br><br>" +
 
@@ -699,7 +699,7 @@ function eventSelected() {
         // PR MESSAGE 1.4
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.4</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Lunch Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Virtual Lunch Panel?</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
@@ -723,62 +723,66 @@ function eventSelected() {
         // RR MESSAGE 1.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Join Us For Lunch?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Join Our Virtual Networking Lunch!</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "Due to the recent developments with the Coronavirus and our concern for the health and safety of our attendees, we are transitioning our live event, " + $event_full_title + ", from an in-person thought leadership lunch to a virtual event hosted over Zoom.<br><br>" +
+        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm with a group of local "+ $event_audience + " from the " + $event_city +" area. In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss the event topics.<br><br>" +
+
+        "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
+
+        "Our original panel of speakers will still discuss "+ $event_snippet +". All attendees will be encouraged to actively engage in the discussion through video chat, simulating the interactive and intimate nature of our original face-to-face event scheduled for the same day.<br><br>" +
+
+        "We will be sending all attendees a $30 Grubhub code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes.<br><br>" +
+
+        "You can find our panelists and the specific topics we’ll be discussing on our event website, linked here."+ $event_website +"<br><br>" +
+
+        " Are you interested in RSVPing, {{FIRST_NAME}}? Just respond here and we’ll take care of the rest!<br><br>"+
         
-        "Our original panel of speakers will still discuss " + $event_snippet +". All attendees will be encouraged to actively engage in the discussion through video chat, simulating the interactive and intimate nature of our original in-person event.<br><br>" +
-        
-        "To preserve the networking value of the lunch, attendees will be able to join small group discussions in breakout room sessions and meet other "+ $event_audience + " leaders local to the "+ $event_city +" area.<br><br>" + 
-        
-        "And while we will no longer be hosting the event at " + $event_venue + ", we will be sending all attendees a $30 Grubhub code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes.<br><br>" +
-        
-        "The virtual event will run on " + $event_long_date + " from 12 pm to 1:15 pm. Full event details are available here at our event website. " + $event_website + "<br><br>" +
-        
-        "{{FIRST_NAME}}, would you like to join us?<br><br>"+ 
-        "Best regards,<br><br>"+
-        "Steve Etzler",
+        " Cheers,<br>",
 
         // RR MESSAGE 1.2
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.2</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Us For Lunch?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> re: Coronavirus Update: "+ $event_short_title +" changed to a virtual event</p><br><br>" +
         
         "Hello {{FIRST_NAME}},<br><br>" +
 
-        "Circling back on my invite below—I know it's pretty far in advance to think about lunch plans on "+$event_month_number + "/" + $event_day_number + ", but I'd love to save you a seat if your calendar's open.<br><br>" +
+        "Our pivot to virtual events has allowed us to continue providing our attendees with an exceptional learning and networking experience during the COVID-19 crisis. In the past week, we’ve successfully run a number of virtual lunch and learn events with engaging content panels and small video breakout room discussions among our attendees. Feedback has been overwhelmingly positive.<br><br>" +
 
-        "We’ll have panelists from " + sort_array_add_and($event_panelists_companies) + " sharing their insights around " + contentSnippetAlternate() + ".<br><br>" +
+        $event_full_title +" will revolve around a discussion of "+ $event_content_2 +". Our expert panel will feature "+ $event_panelists_full_formatted +".<br><br>" +
 
-        "Can I send you the agenda for " + $event_short_title + "?<br><br>" +
+        "You can view the current list of participants you can expect to meet and network with here ("+ $event_promo_reg_list +").<br><br>" +
         
-        "Enjoy the rest of your day,<br><br>" +
+        "While we would have loved to meet you at our face-to-face event, we hope you can join us for our virtual event.<br><br>" +
+
+        "May we count you in?<br><br>" +
         
         "Steve",
 
         // RR MESSAGE 1.3
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Us For Lunch?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> re: Coronavirus Update: "+ $event_short_title +" changed to a virtual event</p><br><br>" +
 
-        "Hey again {{FIRST_NAME}},<br><br>" +
+        "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I know I’ve already reached out, but since I haven’t heard back from you, I wanted to follow up as this event will be a great opportunity for you to expand your professional network.<br><br>" + 
+        "I hope this email finds you well. We still have registration space for our virtual networking event, "+ $event_full_title +", scheduled for "+ $event_long_date +" and would love to have you attend.<br><br>" + 
 
-        "We’ll be hosting a fantastic meal for" + " " + $event_target + " " + $event_audience + " " + "from" + " the " + $event_city + " area at" + " " + $event_venue + "—where, if you decide to join us, you’ll not only get to enjoy a fine dining experience, but be able to take advantage of peer-to-peer learning with our other guests.<br><br>" +
+        "We’ll be sending a $30 Grubhub code to all registered attendees so everyone can enjoy our panel discussion and Q & A over lunch.<br><br>" +
 
-        "Would you like me to reserve a seat for you?<br><br>" +
+        "With Coronavirus increasingly disrupting workplaces, events, and broader social interactions, we’re hoping our virtual events can provide an effective means of allowing professionals to continue expanding their local network and sharing insights as a leader within their industry.<br><br>" +
 
-        "Best,<br><br>" +
+        "Would you like to join us?<br><br>"+
+
+        "Stay healthy,<br><br>" +
         
         "Steve",
 
         // RR MESSAGE 2.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 2.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Your Invitation to " + $event_short_title + "</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> {{FIRST_NAME}}, Your Invitation to " + $event_short_title + ".</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
@@ -865,6 +869,27 @@ function eventSelected() {
 
         "Have a great day and hope to see you there,",
 
+        // RR MESSAGE - RESCHEDULE 1.1
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment - Reschedule 1.1</p>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> re: Coronavirus Update: "+ $event_short_title +" changed to a virtual event</p><br><br>" +
+
+        "Hey {{FIRST_NAME}},<br><br>" +
+
+        "Due to the recent developments with the Coronavirus and our concern for the health and safety of our attendees, we are transitioning our live event, "+$event_short_title+", from an in-person thought leadership lunch to a virtual event hosted over Zoom.<br><br>" +
+
+        "Our original panel of speakers will still discuss "+$event_snippet+". All attendees will be encouraged to actively engage in the discussion through video chat, simulating the interactive and intimate nature of our original in-person event.<br><br>" +
+
+        "To preserve the networking value of the lunch, attendees will be able to join small group discussions in breakout room sessions and meet other marketing leaders local to the "+ $event_city +" area.<br><br>" +
+
+        "And while we will no longer be hosting the event at "+ $event_venue +", we will be sending all attendees a $30 Grubhub code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes..<br><br>" +
+
+        "The virtual event will run tomorrow, " + $event_long_date +" from 12 pm to 1:15 pm. Full event details are available here at our event website " + $event_website + ").<br><br>" +
+
+        "{{FIRST_NAME}}, would you like to join us?<br><br>"+
+
+        "Best regards,",
+
       ];
 
       const $rc_drafts = 
@@ -876,9 +901,9 @@ function eventSelected() {
 
         "Hi FIRST NAME,<br><br>" +
 
-        "Sorry we missed you at yesterday's " + $event_short_title + " lunch!<br><br>" +
+        "Sorry we missed you at yesterday's " + $event_short_title + " virtual meeting!<br><br>" +
 
-        "Special thanks to " + $event_client + " for making the event possible, and to the following panelists for leading an exceptional discussion:<br>" +
+        "Special thanks to "+ $event_client +"for making the event possible, and the following panelists for leading an exceptional discussion::<br>" +
         
         createPanelistList_full() +
 
@@ -899,9 +924,9 @@ function eventSelected() {
         
         "Hi FIRST NAME,<br><br>" +
 
-        "Thank you so much for participating in yesterday's " + $event_short_title + " lunch!<br><br>" +
+        "Thank you so much for attending the " + $event_short_title + " virtual meeting last " + $event_long_date +"!<br><br>" +
 
-        "Special thanks to " + $event_client + " for making the event possible, and to panelists " + sort_array_add_and($event_panelists_first_name) + " for leading an exceptional discussion.<br><br>" +
+        "We appreciate your flexibility with our switch to a virtual setting and your enthusiastic participation. Special thanks to " + $event_client + " for making the event possible, and to our moderator, "+ $event_moderator_full_name +", and to our panelists, "+ $event_panelists_first_name +"for leading an exceptional discussio.<br><br>" +
 
         "We’d love to hear your thoughts on your experience. Would you mind answering " + eventSurvey($event_survey) +
 
@@ -913,64 +938,72 @@ function eventSelected() {
 
         "<b>The Teams at BDI & " + $event_client + "</b>",
 
-        // ONE WEEK REMINDER (CONFIRMED)
+        // RSVP YES - CONFIRMED
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - One Week Reminder (Confirmed)</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> See you next " + $event_weekday + "!</p><br><br>" +
-
-        "Hi FIRST NAME,<br><br>" +
-
-        "We hope you’re excited about next week’s <b>" + $event_short_title + "</b> lunch!<br><br>" +
-
-        "With our panel of experts we’ve prepared a dynamic and informative list of topics for our discussion. You’ll be able to listen and share your thoughts with our impressive list of registrants below while everyone enjoys a fantastic lunch.<br><br>" +
-
-        "Information on the specific topics and panelists can be found at our event website." + $event_website + "<br><br>" + 
-
-        "<b>This email serves as a reminder and an invite for you to bring along a colleague who may also find this event to be of value.</b> To see who is registered to attend so far, check out the live registration list here. " + $event_promo_reg_list + "<br><br>" +
-
-        "We look forward to seeing you from 12 to 2 pm at " + $event_venue + " in " + $event_city + " next " + $event_long_date + ".<br><br>" +
-
-        `Best regards,<br>
-        Steve Etzler, CEO<br>
-        <b>Business Development Institute</b><br><br>` +
-
-        `<b><u>REGISTRATION LIST</u></b><br><br>
-        {{REGISTRATION LIST HERE}}`,
-
-        // ONE WEEK REMINDER (TENTATIVE)
-
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - One Week Reminder (Tentative)</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> See you next " + $event_weekday + "?</p><br><br>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - RSVP YES - Confirmed</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> <i>RE: Thread</i></p><br><br>" +
 
         "Hi FIRST NAME,<br><br>" +
 
-        "Haven’t heard back from you, so I wanted to follow up and see if you are still interested in next week’s <b>" + $event_short_title + "</b> lunch?<br><br>" +
+        "Thank you for your response! Delighted to have you join!<br><br>" +
+
+        "To join the meeting, please click here: "+ highlight_This("INSERT ZOOM LINK from VA Team View") +"<br><br>" +
+
+        "Please download the Zoom software in order to participate in the video-based breakout room networking sessions before and after the panel. Download here: https://zoom.us/download<br><br>"+
+
+        "Please be prepared to have your video and microphone on.<br><br>" + 
+
+        `Here is the agenda for the session:<br>
+        <ul>
+        <li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
+        <li>12:05PM Video Networking in Breakout Rooms</li>
+        <li>12:15PM Panel Discussion</li>
+        <li>12:40PM Audience Q&A</li>
+        <li>12:55PM Breakout Networking Sessions</li>
+        </ul><br>`+
+
+        "We will provide you with the Grubhub code on the day of the event—stay tuned for that!.<br><br>" +
+
+        "Look forward to your participation!<br><br>" +
+
+        `Steve`,
+
+        // RSVP YES - TENTATIVE
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - RSVP YES - Tentative/Interested</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> <i>RE: Thread</i></p><br><br>" +
+
+        "Hi FIRST NAME,<br><br>" +
+
+        "Thanks for your response & interest in our event!<br><br>" +
         
-        "With our panel of experts we’ve prepared a dynamic and informative list of topics for our discussion. You’ll be able to listen and share your thoughts with our impressive list of registrants below while everyone enjoys a fantastic lunch.<br><br>" +
+        "We will put you down as a tentative registrant for now, and will send you a calendar invite as a placeholder. To learn more about the discussion topics and our panel, check out the event website: " + $event_website +"<br><br>" +
                         
-        "Information on the specific topics and panelists can be found at our event website. " +  $event_website + "<br><br>" + 
+        "You can also view who we have confirmed so far on this link." + $event_promo_reg_list +"<br><br>" + 
 
-        "May we count you in?<br><br>" +
+        `Here is the agenda for the session:<br>
+        <ul>
+        <li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
+        <li>12:05PM Video Networking in Breakout Rooms</li>
+        <li>12:15PM Panel Discussion</li>
+        <li>12:40PM Audience Q&A</li>
+        <li>12:55PM Breakout Networking Sessions</li>
+        </ul><br>`+
 
-        "<b>If you’d like to bring a colleague, or if you can no longer make it, let me know.</b> Otherwise, we hope to see you from 12 to 2 pm " + $event_venue + " in " + $event_city + " next " + $event_long_date + ".<br><br>" +
+        "Look forward to your participation!<br><br>" +
 
-        `Best regards,<br>
-        Steve Etzler, CEO<br>
-        <b>Business Development Institute</b><br><br>` +
-
-        `<b><u>REGISTRATION LIST</u></b><br>
-        {{REGISTRATION LIST HERE}}`,
+        `Steve`,
 
         // FINAL CONFIRMATIONS / PER MY VOICEMAIL
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - One Week Reminder (Tentative)</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Please Confirm: Tomorrow's Lunch at " + $event_venue + "</p><br><br>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - Final Confirmation </p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Please Confirm: Tomorrow's "+ $event_short_title +" Virtual Meeting</p><br><br>" +
 
         "Hi FIRSTNAME,<br><br>" +
 
-        "VALUE " + $event_short_title + " lunch, video-based virtual meeting, taking place from 12 to 1:15PM on Zoom.<br><br>" + 
+         highlight_This("VALUE") + " " + $event_short_title + " lunch, video-based virtual meeting, taking place from 12 to 1:15PM on Zoom.<br><br>" + 
 
-        "To join the meeting, <span style='color:red;'>click here.</span>"+ $event_virtual_link +"<br><br>"+
+        "To join the meeting, <span style='color:red;'>click here. </span>"+ $event_virtual_link +"<br><br>"+
 
         "Please download the Zoom software in order to participate in the video-based breakout room networking sessions before and after the panel. Download here: https://zoom.us/download.<br><br>" +
 
@@ -979,11 +1012,13 @@ function eventSelected() {
         "<span style='color:red;'>Please reply back to confirm your participation</span> so we can send you a Grubhub code for lunch!<br><br>"+
 
         `Here is the agenda for the session:<br>
-        12:00PM Attendees Enter Virtual Event & Welcome Remarks<br>
-        12:05PM Video Networking in Breakout Rooms<br>
-        12:15PM Panel Discussion<br>
-        12:40PM Audience Q&A<br>
-        12:55PM Breakout Networking Sessions<br><br>
+        <ul>
+        <li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
+        <li>12:05PM Video Networking in Breakout Rooms</li>
+        <li>12:15PM Panel Discussion</li>
+        <li>12:40PM Audience Q&A</li>
+        <li>12:55PM Breakout Networking Sessions</li>
+        </ul><br>
 
         Thank you and we look forward to seeing you tomorrow!<br><br>
 
@@ -1013,13 +1048,13 @@ function eventSelected() {
         // SCHEDULING PANEL PREP CALL
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Scheduling Panel Prep Call</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Panel Prep Call</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Schedule Panel Practice Run | "+ $event_short_title +"</p><br><br>" +
 
         "Hello all,<br><br>" +
 
-        "We’re excited for your panel participation at " + $event_short_title + ", taking place on "+ $event_long_date +" from 12 – 2pm at "+ $event_venue +" in "+ $event_city+". (website here) " + $event_website + "</a><br><br>" +
+        "We’re excited for your panel participation at " + $event_short_title + "virtual meeting, taking place on "+ $event_long_date +" from 11:45AM – 1:15PM at on our video-based platform Zoom.<br><br>" +
 
-        "We would like to schedule a <b>30 minute panel prep call</b>. Please respond with your availability for {{ INSERT TIMES }}.<br><br>"+
+        "We would like to schedule a 30 minute panel practice run on "+ highlight_This("DAY, DATE") +" between "+ highlight_This("TIME") +".<br><br>"+
 
         "As soon as I hear back from everyone, I’ll respond with a calendar invite for the time that works best across the board.<br><br>"+
 
@@ -1029,11 +1064,11 @@ function eventSelected() {
          // PANEL PREP CALL AGENDA
 
          "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Prep Call Agenda</p>" +
-         "<p class='messagesubject'><i class='fa fa-envelope'></i> Panel Prep Call | " + $event_short_title+ " Lunch </p><br><br>" +
+         "<p class='messagesubject'><i class='fa fa-envelope'></i>" + $event_short_title + " Virtual Meeting | Panel Practice Run</p><br><br>" +
  
         "Hello all,<br><br>"+
 
-        "Looking forward to our panel prep call on " + $event_long_date +" {{ SCHEDULED TIME + TIME ZONE }}. To join the call, please dial into our conference line {{ 347-474-9866 / 347-486-5020 (SPL) / 347-774-0639 (Mel) }}.<br><br>" +
+        "Looking forward to our panel practice run on "+ highlight_This("DAY, DATE at TIME")+". To join the video meeting, please click here: "+ highlight_This("AM ZOOM")+".<br><br>" +
 
         "Kindly see the agenda and event details below.<br><br>" +
 
@@ -1048,66 +1083,75 @@ function eventSelected() {
         "<i>Moderator</i>:<br>" +
         "<ul><li>"+$event_moderator_full_formatted+"</li></ul><br>"+
 
-        "<b>EVENT LOGISTICS</b><ul>"+
+        "<b>EVENT DETAILS</b><ul>"+
         "<li>Program: "+ $event_full_title +"</li>"+
         "<li>Date: " + $event_long_date +"</li>"+
-        "<li>Time: 12:00PM - 2:00PM</li>"+
-        "<li>Event Website: " + "<a href='" + $event_website + "'>LINK</a></li></ul><br>" +
-
-        "<b>ARRIVAL</b><ul>"+
-        "<li>Please be at "+ $event_venue +" at 11:45AM</li>"+
-        "<li>Address: " + $event_venue_address + "</li>"+
-        parkingInstructions_panel_prep_call_agenda($event_parking) +
-        "<li>Attire: Business Casual</li></ul><br>"+
-
-        "<b>CONTENT TAKEAWAY FOR SOCIAL MEDIA</b>"+
-        "<p>BDI to ask each panelist for a key takeaway to be shared on social media post-event</p><br>" +
+        "<li>Time: Video-based virtual meeting from 12pm - 1:15pm </li>"+
+        "<li>Location: " + "<a href='" + $event_virtual_link + "'>LINK</a></li>" +
+        "<li>Event Website: " + "<a href='" + $event_website + "'>LINK</a></li>" +
+        "<li>Registration List: " + "<a href='" + $event_promo_reg_list + "'>LINK</a></li></ul><br>" +
 
         "<b>AGENDA</b>"+
-        panelPrepCallAgenda($event_format) +
+        "<li>11:45AM Panelists & Moderator join </li>"+
+        "<li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>"+
+        "<li>12:05PM Video Networking in Breakout Rooms </li>"+
+        "<li>12:15PM Panel Discussion</li>" +
+        "<li>12:40PM Audience Q&A<br>" +
+        "<li>12:55PM Breakout Networking Sessions</li></ul><br><br>" +
 
-        "<b>PANEL DISCUSSION/CONTENT</b>" +
-        
-        "<ul><li>Event Website: "+"<a href='" + $event_website + "'>LINK</a></li>" +
-        "<li>Registration List: "+"<a href='" + $event_promo_reg_list + "'>LINK</a></li></ul>",
+        "<b>LOGIN DETAILS</b>" +
+        "<p>Please download the Zoom software in order to participate in the video-based breakout room networking sessions before and after the panel. Download here: https://zoom.us/download.<br>"+
+        "<p>Please be prepared to have your video and microphone on.</p><br>"+
 
-        // REMINDER / BRING A COLLEAGUE (CONFIRMED)
+        "<b>LUNCH</b><br>" +
+        "<p>We will provide a $30 code for Grubhub so you may enjoy lunch on the morning of the event - stay tuned for that!</p><br>"+
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Reminder / Bring a Colleague (Confirmed)</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Reminder & Bring a Colleague</p><br><br>" +
+        "<b>PANEL DISCUSSION QUESTIONS</b><br>" +
+        "<p>"+ highlight_This("Insert bullet points from website OR panel questions provided by moderator") + "</p><br><br>",
+
+        // ONE WEEK REMNINDER
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> One Week Reminder (Confirmed)</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> See you (on your webcam) next "+ $event_weekday +"!</p><br><br>" +
 
         "Hi NAME,<br><br>"+
 
-        "Thanks for registering for the "+ "<a href='" + $event_website + "'>" + $event_short_title + "</a> on "+ $event_date_month_and_number +"! As a refresher, this private lunch event will take place from 12pm to 2pm at "+ $event_venue + " in "+ $event_city +".<br><br>"+
+        "We hope you’re excited about next week’s "+ $event_full_title +" virtual lunch & learn!<br><br>"+
 
-        "<b>This email serves as a reminder and an invite for you to bring along a colleague who may also find this event to be of value</b>. To see who is registered to attend so far, check out the live registration list <a href='" + $event_promo_reg_list + "'> here</a>.<br><br>"+
+        "With our panel of experts, we’ve prepared a dynamic and informative list of topics for our discussion. You’ll be able to listen and share your thoughts with our impressive list of registrants below and participate in video-based networking breakout sessions.<br><br>"+
 
-        "The two-hour lunch event format features open room networking, followed by a panel discussion over a 3-course lunch. Please see the event website here " + $event_website +  "which includes our panel speakers, discussion topics, and additional logistics.<br><br>"+
+        "Here is the link to join the meeting: "+ $event_virtual_link +"<br><br>"+
 
-        "If you would like to bring a colleague, please send along their name and email so I may properly register them. We have just 6 remaining seats, so kindly let me know at your earliest convenience if a colleague would like to reserve one of the remaining spots!<br><br>"+
+        "Please download the Zoom software in order to participate in the breakout room networking sessions before and after the panel: https://zoom.us/download<br><br>"+
 
-        "Thanks, {{ FIRST NAME }}, look forward to your participation on "+ $event_long_date +" - have a great day.<br><br>"+
+        "Please be prepared to have your video and microphone on.<br><br>"+
 
-        "Steve Etzler<br>" +
-        "<b>Business Development Institute</b>",
+        "<b>This email serves as a reminder and an invite for you to share with a colleague who may also find this event valuable.</b><br><br>"+
 
-        // REMINDER / BRING A COLLEAGUE (TENTATIVE)
+        "Thanks, we look forward to seeing you online from 12 to 1:15 pm on "+ $event_long_date +".<br><br>"+
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Reminder / Bring a Colleague (Tentative)</p>" +
-         "<p class='messagesubject'><i class='fa fa-envelope'></i> Reminder & Bring a Colleague</p><br><br>" +
+        "Best regards,<br>" +
+        "<b>Steve Etzler</b>"+
+        "<b>Business Development Institute</b><br><br>"+
+        
+        "REGISTRATION LIST<br>"+
+        "{{{COPY AND PASTE REG LIST HERE}}}",
+
+        // RSVP NO - Virtual
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> RSVP NO - Response</p>" +
+         "<p class='messagesubject'><i class='fa fa-envelope'></i>  We’ve Gone Virtual!</p><br><br>" +
 
          "Hi NAME,<br><br>" +
 
-         "We have you registered as tentative attendee for the <a href='" + $event_website + "'>" + $event_short_title + "</a> event on "+ $event_date_month_and_number  +"! As a refresher, this private lunch event will take place from 12pm to 2pm at "+ $event_venue + " in "+ $event_city +".<br><br>"+
+         "You let me know a while back that you wouldn’t be able to join us at "+ $event_venue +" in " + $event_city +" for "+ $event_full_title + " on "+ $event_long_date +". At this time, due to current Coronavirus concerns, we’ve decided to take the entire event virtual!<br><br>"+
  
-         "<b>This email serves as a reminder and an invite for you to bring along a colleague who may also find this event to be of value</b>. To see who is registered to attend so far, check out the live registration list here." + $event_promo_reg_list + "<br><br>"+
+         "Instead of going from 12 – 2pm at the restaurant, we’ll go from 12 – 1:15pm online—the agenda will still include an interactive panel discussion, breakout session networking with your local peers, and we’ll be sending Grubhub codes to all the attendees—so lunch is still on us!<br><br>"+
  
-         "The two-hour lunch event format features open room networking, followed by a panel discussion over a 3-course lunch. Please see the event website here " + $event_website + " which includes our panel speakers, discussion topics, and additional logistics.<br><br>"+
+         "Please check out the event website "+ $event_website +" and let me know if you’re able to join us—we’d love to have you, and I’m happy to save you a spot.<br><br>"+
  
-         "If you’d like to bring a colleague, or if you can no longer make it, please let me know. We have just 6 remaining seats, so kindly let me know at your earliest convenience if a colleague would like to reserve one of the remaining spots!<br><br>"+
- 
-         "Thanks, {{ FIRST NAME }}, we certainly hope to have your participation on "+ $event_long_date +" - have a great day.<br><br>"+
- 
+         "Hope you’re staying healthy,<br><br>"+
+  
          "Steve Etzler<br>" +
          "<b>Business Development Institute</b>",
 
@@ -1162,7 +1206,7 @@ function eventSelected() {
 
         "Please click here "+ $event_promo_reg_list +" to check out the current registration list of who you can expect to virtually meet via video. You can also see our panelists and read the general discussion topics on the event website, <br><br>"+
 
-        "To make the most out of tomorrow's event, please see attached for BDI's Sales Prep Guide.",
+        "To make the most out of tomorrow's event, please see attached for BDI's Sales Prep Guide. " + "https://drive.google.com/file/d/19qAgkHzBP-NxZ2EBiDEy82s6H3kdZtOA/view?usp=sharing",
 
         // CLIENT PANEL RECRUITMENT
 
@@ -1294,7 +1338,9 @@ function eventSelected() {
             return $drafts.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
           }
         } else if ($selectedMessageType == "Registrant Recruitment") {
-          if ($selectedMessageName == "1.1"){
+          if ($selectedMessageName == "Reschedule 1.1") {
+            return $drafts.html($rr_drafts[8]);
+          } if ($selectedMessageName == "1.1"){
             return $drafts.html($rr_drafts[0]);
           } else if ($selectedMessageName == "1.2") {
             return $drafts.html($rr_drafts[1]);
@@ -1330,9 +1376,9 @@ function eventSelected() {
               return $drafts.html($rc_drafts[0]);
             } else if ($selectedMessageName == "Thank You for Attending") {
               return $drafts.html($rc_drafts[1]);
-            } if ($selectedMessageName == "One Week Reminder (Confirmed)") {
+            } if ($selectedMessageName == "RSVP YES - Confirmed") {
               return $drafts.html($rc_drafts[2]);
-            } else if ($selectedMessageName == "One Week Reminder (Tentative)") {
+            } else if ($selectedMessageName == "RSVP YES - Tentative") {
               return $drafts.html($rc_drafts[3]);
             } if ($selectedMessageName == "Final Confirmation") {
               return $drafts.html($rc_drafts[4]);
@@ -1342,9 +1388,9 @@ function eventSelected() {
               return $drafts.html($rc_drafts[6]);
             } if ($selectedMessageName == "Panel Prep Call Agenda") {
               return $drafts.html($rc_drafts[7]);
-            } if ($selectedMessageName == "Reminder / Bring a Colleague (Confirmed)") {
+            } if ($selectedMessageName == "One Week Reminder") {
               return $drafts.html($rc_drafts[8]);
-            } if ($selectedMessageName == "Reminder / Bring a Colleague (Tentative)") {
+            } if ($selectedMessageName == "Invite for RSVP NO Responses") {
               return $drafts.html($rc_drafts[9]);
             } if ($selectedMessageName == "Confirmation Calls Script") {
               return $drafts.html($rc_drafts[10]);
@@ -1390,15 +1436,17 @@ function eventSelected() {
               return predraftedHTML.html($rc_drafts[0]);
             } else if ($selectedMessageName == "Thank You for Attending") {
               return predraftedHTML.html($rc_drafts[1]);
-            } if ($selectedMessageName == "One Week Reminder (Confirmed)") {
+            } if ($selectedMessageName == "RSVP YES - Confirmed") {
               return predraftedHTML.html($rc_drafts[2]);
-            } else if ($selectedMessageName == "One Week Reminder (Tentative)") {
+            } else if ($selectedMessageName == "RSVP YES - Tentative") {
               return predraftedHTML.html($rc_drafts[3]);
             } if ($selectedMessageName == "Final Confirmation") {
               return predraftedHTML.html($rc_drafts[4]);
             } if ($selectedMessageName == "See You Today") {
                return predraftedHTML.html($rc_drafts[5]);
-            }
+            } if ($selectedMessageName == "One Week Reminder") {
+              return predraftedHTML.html($rc_drafts[8]);
+           }
       } else return predraftedHTML.html("This message does not exist.");
       };
       generateCustomMessage();
