@@ -998,7 +998,7 @@ function eventSelected() {
 
          "Hi NAME,<br><br>" +
 
-         "We look forward to seeing you today at {{TIME}} at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
+         "We look forward to seeing you today at "+ highlight_This("TIME") +" at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
 
          "To join, please click here: " + $event_virtual_link +"<br><br>"+
          
