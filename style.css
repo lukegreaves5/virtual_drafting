@@ -20,7 +20,7 @@ body {
   -o-border-radius: 20px; }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #dcffd3;
+  background-color: #d3f3ff;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -28,7 +28,7 @@ body {
   -o-border-radius: 20px; }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #dcffd3; }
+  background: #d3f3ff; }
 
 select, option, a {
   cursor: pointer; }
@@ -139,14 +139,14 @@ select, option, a {
 #todays-drafts-button {
   background: #fff;
   height: 90%;
-  color: #529b56;
+  color: #6ac7c2;
   border-top-left-radius: 20px; }
 
 #custom-drafts-button {
   border-top-right-radius: 20px;
   color: #fff;
   height: 90%;
-  background: #529b56; }
+  background: #6ac7c2; }
 
 #draft-selection {
   position: relative;
@@ -250,7 +250,7 @@ select, option, a {
   #draft-container h2 {
     text-align: center;
     letter-spacing: 2px;
-    color: #36753a; }
+    color: #367572; }
 
 h1 {
   width: 100%;
@@ -267,7 +267,7 @@ h1 {
   justify-content: center;
   vertical-align: center;
   text-align: center;
-  color: #36753a;
+  color: #367572;
   font-size: 26px;
   letter-spacing: 2px;
   align-self: center;
@@ -312,7 +312,7 @@ h1 {
   width: 80%;
   padding: 3%;
   margin-top: 3%;
-  background: #529b56;
+  background: #6ac7c2;
   color: #fff;
   border: none;
   font-size: 20px;
@@ -368,7 +368,7 @@ input[type=checkbox] {
     height: 12vh;
     width: 12vh;
     font-size: 75px;
-    color: #529b56;
+    color: #6ac7c2;
     cursor: pointer; }
     #drafted-container #back-button:hover {
       transform: scale(1.05);
@@ -414,7 +414,7 @@ input[type=checkbox] {
   position: relative;
   margin: 0 auto;
   z-index: 10;
-  border: 2px solid #dcffd3;
+  border: 2px solid #d3f3ff;
   outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -457,13 +457,13 @@ ul {
       padding: 1.5%;
       cursor: pointer;
       margin: 0;
-      color: #36753a;
+      color: #367572;
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px; }
     ul .inner :hover {
       box-shadow: 2px 2px 10px rgba(10, 10, 10, 0.116); }
       ul .inner :hover i {
-        color: #36753a; }
+        color: #367572; }
     ul .inner i {
       font-size: 18px;
       color: #d3e5ff; }
@@ -474,7 +474,7 @@ ul {
       display: block;
       font-size: 28px;
       padding: 2%;
-      color: #36753a;
+      color: #367572;
       text-decoration: none;
       outline: none;
       border-bottom: solid 2px rgba(0, 0, 0, 0.027); }
@@ -490,7 +490,7 @@ ul {
         ul li a.toggle p.name span.first {
           display: flex;
           width: 85%;
-          color: #36753a;
+          color: #367572;
           font-size: 26px; }
         ul li a.toggle p.name span.second {
           display: flex;
@@ -530,10 +530,10 @@ hr {
 
 .messagetypename, .messagesubject {
   width: max-content;
-  color: #529b56;
+  color: #6ac7c2;
   padding: 1%;
   font-size: 15px;
-  background: #dcffd3;
+  background: #d3f3ff;
   border-radius: 40px;
   -webkit-border-radius: 40px;
   -moz-border-radius: 40px;

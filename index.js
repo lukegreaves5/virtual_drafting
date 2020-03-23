@@ -49,21 +49,21 @@ messagesloading = $("#todays-drafts").append(loader,loader,loader,loader);
 $("#custom-drafts-button").click(function(){
   $predraftContainer.css("display", "none");
   $draftContainer.css("display", "flex");
-  $(this).css("color", "#529b56");
+  $(this).css("color", "#6ac7c2");
   $(this).css("background", "#fff");
-  $("#todays-drafts-button").css("background", "#529b56");
+  $("#todays-drafts-button").css("background", "#6ac7c2");
   $("#todays-drafts-button").css("color", "#fff");
   $("#predrafted-preview").empty();
   $("#predrafted-preview").css("background", "transparent");
-  $("#predrafted-preview").append("<div id='logo-container'><div id='logo'></div><div>Content Engine</div></div>");
+  $("#predrafted-preview").append("<div id='logo-container'><div id='logo'></div><div><b>Virtual Events</b></div></div>");
 });
 
 $("#todays-drafts-button").click(function(){
   $predraftContainer.css("display", "flex");
   $draftContainer.css("display", "none");
-  $(this).css("color", "#529b56");
+  $(this).css("color", "#6ac7c2");
   $(this).css("background", "#fff");
-  $("#custom-drafts-button").css("background", "#529b56");
+  $("#custom-drafts-button").css("background", "#6ac7c2");
   $("#custom-drafts-button").css("color", "#fff");
 });
 
