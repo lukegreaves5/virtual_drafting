@@ -903,7 +903,7 @@ function eventSelected() {
 
         "Sorry we missed you at yesterday's " + $event_short_title + " virtual meeting!<br><br>" +
 
-        "Special thanks to "+ $event_client +"for making the event possible, and the following panelists for leading an exceptional discussion::<br>" +
+        "Special thanks to "+ $event_client +" for making the event possible, and the following panelists for leading an exceptional discussion::<br>" +
         
         createPanelistList_full() +
 
