@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Content Engine - BDI</title>
+    <link rel="icon" href="./assets/images/bdifavicon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="//code.tidio.co/znd9c4hvxvj6usdenf6ijarup8shmzlg.js" async></script>
+</head>
+<body>
+
+<div id="main-container">
+    <div id="frontpage-container">
+
+        <div id="draft-selection">
+            
+            <div id="button-container">
+                <h2 id="todays-drafts-button">Today's Drafts</h2>
+                <h2 id="custom-drafts-button">Create a Draft</h2>
+            </div>
+
+            <!-- PRE DRAFTS -->
+            <div id="predraft-container">
+                <div id="todays-drafts">
+                    
+                </div>
+            </div>
+            <!---->
+
+            <!-- CREATE A DRAFT -->
+            <div id="draft-container" style="display: none;">
+                    <h2>Draft a Message</h2>
+                <div id="event-search">
+                    <select id="event-select" class="custom-select" >
+                         <option class="hide" selected="selected" placeholder="Event">Event</option>
+                    </select>
+                </div>
+            
+                <div id="message-type-search">
+                    <select id="message-type" class="custom-select">
+                        <option class="hide" selected="selected">Message Type</option>
+                        <option value="Panel Recruitment">Panel Recruitment</option>
+                        <option value="Registrant Recruitment">Registrant Recruitment</option>
+                        <option value="Registrant Communication">Registrant Communication</option>
+                        <option value="Client Communication">Client Communication</option>
+                        <option value="Sales Communication">Sales Communication</option>
+                    </select>
+                </div>
+            
+                <div id="message-name-search">
+                    <select id="message-name" class="custom-select">
+                        <option class="hide" selected="selected">Outreach #</option>
+                    </select>
+                </div>
+    
+                <div class="button-container">
+                    <button id="draft-button">Create Draft</button>
+                </div>
+    
+            </div>
+            <!---->
+
+        </div>
+
+        <div id="predrafted-preview">
+            <div id="predraftHTML"></div>
+            <div id="logo-container">
+                <div id="logo"></div>
+                <div><b>Virtual Events</b></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="drafted-container">
+        <i id="back-button" class="fa fa-arrow-circle-left"></i>
+            <div id="drafts-outline">
+                <div id="drafts"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <svg id="backgroundDesign" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" preserveAspectRatio="xMidYMax slice" stroke-linejoin="round" stroke-miterlimit="1.41421" clip-rule="evenodd" viewBox="0 0 1920 1200">
+        <path class="vibrate-slow-1" fill="url(#_Linear1)" d="M1933-19s-273.175 481.215-543.607 443.874c-270.431-37.341-491.08-251.918-677.168-175.592-161.697 66.321-325.778 320.713-29.035 557.338 376.292 300.059 1119.66 396.359 1119.66 396.359l-1642.31 14.014V-1.247L1933-18.998z"/>
+        <path fill="url(#_Linear2)" d="M1690 0s-42.182 372.782-341 336c-298.818-36.782-466.852-265.409-693-161-226.148 104.409-350.389 405.447-147 722s193 303 193 303H0V0h1690z"/>
+        <defs>
+          <linearGradient id="_Linear1" x2="1" gradientTransform="matrix(1772.46 0 0 1235.99 160.542 598.996)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#dcffd3"/>
+            <stop offset="1" stop-color="#63bb68"/>
+          </linearGradient>
+          <linearGradient id="_Linear2" x2="1" gradientTransform="matrix(1690 0 0 1200.08 0 600.042)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#63bb68"/>
+            <stop offset="1" stop-color="rgb(36, 87, 59)"/>
+          </linearGradient>
+        </defs>
+    </svg>
+</div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script> <!-- Underscore -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script> <!-- D3 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- jQuery min -->
+        <script type="text/babel" src="./index.js"></script>
+</body>
+</html>
