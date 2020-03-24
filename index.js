@@ -154,10 +154,10 @@ function todaysEmails_unsent(data) {
     $("#todays-drafts").append("<div class='all-messages-drafted'>All messages drafted for today.</div>");
     $draftContainer.css("display", "flex");
     $predraftContainer.css("display", "none");
-    $("#todays-drafts-button").css("background", "#1e225c");
+    $("#todays-drafts-button").css("background", "#66cada");
     $("#todays-drafts-button").css("color", "#fff");
     $("#custom-drafts-button").css("background", "#fff");
-    $("#custom-drafts-button").css("color", "#1e225c");
+    $("#custom-drafts-button").css("color", "#66cada");
 
   } else {
       $("#todays-drafts").empty();
@@ -385,7 +385,8 @@ function eventSelected() {
       $event_panelists_full_formatted = objectCheck(['Formatted_speakers_details_api']),
       $event_moderator_full_formatted = objectCheck(['Formatted_moderator_details_api']),
       $event_panelists_title_and_company = objectCheck(['Formatted_speakers_title_company_api']),
-      $event_virtual_link = objectCheck(['Zoom Link']);
+      $event_virtual_link = objectCheck(['Zoom Link']),
+      $event_days_away = objectCheck(['Days Away'])
       ;
 
       function objectCheck(propCheck) {
@@ -630,6 +631,21 @@ function eventSelected() {
         } else return "<span style='background:yellow'>MISSING COMPANIES</span>";
       };
 
+      function getTodaysDate() {
+        var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        Date.prototype.getDayName = function() {
+          return days[ this.getDay() ];
+        };
+        let today = new Date();
+        var todayName = today.getDayName();
+        return todayName;
+      }
+
+      function days_plural() {
+        if ($event_days_away == 1) {
+          return "day";
+        } else return "days"
+      }
 
       const $pr_drafts = 
       [
@@ -727,7 +743,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm with a group of local "+ $event_audience + " from the " + $event_city +" area. In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss the event topics.<br><br>" +
+        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm with a group of local "+ $event_audience + " from the " + $event_city + highlight_This("/Region") + " area. In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss the event topics.<br><br>" +
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
 
@@ -748,13 +764,13 @@ function eventSelected() {
         
         "Hello {{FIRST_NAME}},<br><br>" +
 
-        "Our pivot to virtual events has allowed us to continue providing our attendees with an exceptional learning and networking experience during the COVID-19 crisis. In the past week, we’ve successfully run a number of virtual lunch and learn events with engaging content panels and small video breakout room discussions among our attendees. Feedback has been overwhelmingly positive.<br><br>" +
+        "Our pivot to virtual events has allowed us to continue providing our attendees with an exceptional learning and networking experience during the COVID-19 crisis. In the past weeks, we’ve successfully run quite a few virtual lunch and learn events with engaging content panels and small video breakout room discussions among our attendees. Feedback has been overwhelmingly positive.<br><br>" +
 
-        $event_full_title +" will revolve around a discussion of "+ $event_content_2 +". Our expert panel will feature "+ $event_panelists_full_formatted +".<br><br>" +
+        $event_full_title +" will revolve around a discussion of "+ contentSnippetAlternate() +". Our expert panel will feature "+ $event_panelists_full_formatted +".<br><br>" +
 
         "You can view the current list of participants you can expect to meet and network with here ("+ $event_promo_reg_list +").<br><br>" +
         
-        "While we would have loved to meet you at our face-to-face event, we hope you can join us for our virtual event.<br><br>" +
+        "While we would have loved to meet you at one of our face-to-face events, we hope you can join us for our virtual event.<br><br>" +
 
         "May we count you in?<br><br>" +
         
@@ -769,9 +785,9 @@ function eventSelected() {
 
         "I hope this email finds you well. We still have registration space for our virtual networking event, "+ $event_full_title +", scheduled for "+ $event_long_date +" and would love to have you attend.<br><br>" + 
 
-        "We’ll be sending a $30 Grubhub code to all registered attendees so everyone can enjoy our panel discussion and Q & A over lunch.<br><br>" +
+        "We’ll be sending a $30 Grubhub code to all registered attendees so everyone can enjoy our panel discussion and Q&A over lunch.<br><br>" +
 
-        "With Coronavirus increasingly disrupting workplaces, events, and broader social interactions, we’re hoping our virtual events can provide an effective means of allowing professionals to continue expanding their local network and sharing insights as a leader within their industry.<br><br>" +
+        "With Coronavirus increasingly disrupting workplaces, events, and broader social interactions, we’re hoping our virtual events can provide an effective means of allowing professionals to continue expanding their local network and sharing insights as leaders within their industries.<br><br>" +
 
         "Would you like to join us?<br><br>"+
 
@@ -781,55 +797,61 @@ function eventSelected() {
 
         // RR MESSAGE 2.1
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 2.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> {{FIRST_NAME}}, Your Invitation to " + $event_short_title + ".</p><br><br>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.3</p>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> {{FIRST_NAME}}, Your Invitation to "+ $event_short_title +"</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "You’re invited to participate in our exclusive thought leadership lunch at" + " " + $event_venue + " in " + $event_city + " on " + $event_long_date + " from 12 to 2pm.<br><br>" +
+        "I’d like to invite you to attend our virtual event on "+ $event_long_date +".<br><br>" + 
 
-        "We’ll be serving a three-course meal—at no cost to you—while our panel of experts leads an interactive conversation about " + $event_snippet + ".<br><br>" +
+        "We’ll be hosting "+ $event_short_title +" over Zoom from 12 to 1:15pm and would love to have you join us.<br><br>" +
 
-        "You can find our panelists and the specific topics we’ll be discussing at our event website here. " + $event_website + "<br><br>" +
+        "You'd be networking with an invite-only group of other "+ $event_audience +" from "+ $event_city + highlight_This("/Region") + ", all engaged in thought-provoking discussions about "+ $event_snippet +"<br><br>" +
 
-        "Are you interested in RSVPing? Just respond here and we’ll take care of the rest!<br><br>" +
+        "We’ll be sharing a $30 Groupon code with all registered attendees so everyone can enjoy lunch together, even if it’s only over webcams!<br><br>"+
 
-        "Cheers,",
+        "May I confirm your interest and follow up with additional details?<br><br>" +
+
+        "Have a wonderful " + getTodaysDate() +",<br><br>",
 
         // RR MESSAGE 2.2
 
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 2.2</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Your Invitation to " + $event_short_title + ".</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> re:{{FIRST_NAME}}, Your Invitation to "+ $event_short_title +".</p><br><br>" +
 
-        "Lunch at " + $event_venue + " is shaping up to be an exciting event with an engaging group of " + $event_audience + ".<br><br>" +
+        "Hi {{FIRST_NAME}},<br><br>" +
+        
+        "Circling back on my invite below—I know with everything going on in the world it’s hard to think about lunch plans on "+ $event_month_number +"/"+ $event_day_number +", but I'd love to to have you join us if your calendar's open.<br><br>" +
 
-        "Check out who’s signed up so far here. " + $event_promo_reg_list + "<br><br>" +
+        "We’ll have panelists from "+ sort_array_add_and(isThisAnArray($event_panelists_companies)) +" sharing their insights around "+ contentSnippetAlternate() +".<br><br>" +
 
-        "Our interactive conversation on " + contentSnippetAlternate() + " promises to be a lively and informative discussion—and we’d love to have you there!<br><br>" +
+        "If you’d like more information on our discussion topics, you can find it here ("+ $event_website +") on our event website.<br><br>" +
 
-        "Seats are limited, so please RSVP as soon as possible to ensure we can save you a spot!<br><br>" +
+        "Can I send you the agenda for "+ $event_short_title +"?<br><br>" +
 
-        "Have a great day,<br><br>" +
+        "Cheers,<br><br>" +
         
         "Steve",
 
         // RR MESSAGE 2.3
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 2.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Your Invitation to " + $event_short_title + "</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> re:{{FIRST_NAME}}, Your Invitation to "+ $event_short_title +".</p><br><br>" +
 
-        "Hey {{FIRST_NAME}},<br><br>" +
+        "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I know I’ve been persistent, but I really think " + $event_short_title + " on " + $event_long_date + " will offer a lot of value to you.<br><br>" +
+        "I know I’ve already reached out, but since I haven’t heard back from you, I wanted to follow up as this will be a great opportunity for you to expand your professional network.<br><br>" +
         
-        "With our panelist-led discussion about " + $event_snippet + ", you should find a lot of information relevant to your role at {{COMPANY}}.<br><br>" +
+        $event_full_title +" is shaping up to be an exciting event with an engaging group of "+ $event_audience +".<br><br>" +
         
-        "Speakers from " + sort_array_add_and(isThisAnArray($event_panelists_companies)) + " will be sharing their insights into how your company can " + $event_benefit + ".<br><br>" +
+        "While you might not be able to meet other attendees face-to-face, you will still be able to meet over video chat, engage in small group discussions in video breakout rooms, and take full advantage of peer-to-peer learning with our other guests.<br><br>" +
         
-        "Can I reserve a seat for you at this event?<br><br>" +
+        "You can see who’s signed up so far here ("+ $event_promo_reg_list +").<br><br>" +
         
-        "We hope to see you there, but if you are unable to attend, please let me know—we are back in " + $event_city + " often and I’d be happy to keep you in mind for a future event.<br><br>" +
+        "Would you like me to reserve a spot for you?<br><br>" +
+
+        "Best,<br><br>" +
         
         "Steve",
 
@@ -838,11 +860,11 @@ function eventSelected() {
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 3.1</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> You’re about to miss out!</p><br><br>" +
 
-        "Hello {{FIRST_NAME}},<br><br>" +
+        "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I’m sure you have a busy schedule, but I wanted to let you know that we still have a few seats remaining for our " + $event_short_title + " lunch on " + $event_long_date + " in " + $event_city + ".<br><br>" +
+        "I’m sure you have a busy schedule, but I wanted to let you know that we still have a few seats remaining for our "+ $event_full_title +" lunch on "+ $event_long_date +" in "+ $event_city +".<br><br>" +
 
-        "If you’d like to join us, I’d be happy to save one of those spots for you. We’ll be having a fantastic three-course meal at " + $event_venue + " while our panel leads an engaging and informative discussion. You can find more information about the panel and the specific topics at our event website. " + $event_website + "<br><br>" +
+        "If you’d like to join us, I’d be happy to save one of those spots for you. We’ll be having a fantastic three-course meal at "+ $event_venue +" while our panel leads an engaging and informative discussion. You can find more information about the panel and the specific topics at our event website. "+ $event_website +"<br><br>" +
 
         "We would also be happy to have any interested colleagues join you as your guests.<br><br>" +
 
@@ -857,7 +879,7 @@ function eventSelected() {
 
         "Hey {{FIRST_NAME}},<br><br>" +
 
-        $event_full_title + " is just around the corner!<br><br>" +
+        $event_full_title + " is only "+ $event_days_away + " " + days_plural() + " away!<br><br>" +
 
         "Space for the event is limited, but we would still love to have you join us on " + $event_long_date + " at " + $event_venue + " in " + $event_city + ".<br><br>" +
 
