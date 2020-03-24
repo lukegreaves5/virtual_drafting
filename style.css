@@ -139,14 +139,14 @@ select, option, a {
 #todays-drafts-button {
   background: #fff;
   height: 90%;
-  color: #6ac7c2;
+  color: #66cada;
   border-top-left-radius: 20px; }
 
 #custom-drafts-button {
   border-top-right-radius: 20px;
   color: #fff;
   height: 90%;
-  background: #6ac7c2; }
+  background: #66cada; }
 
 #draft-selection {
   position: relative;
@@ -312,7 +312,7 @@ h1 {
   width: 80%;
   padding: 3%;
   margin-top: 3%;
-  background: #6ac7c2;
+  background: #66cada;
   color: #fff;
   border: none;
   font-size: 20px;
@@ -368,7 +368,7 @@ input[type=checkbox] {
     height: 12vh;
     width: 12vh;
     font-size: 75px;
-    color: #6ac7c2;
+    color: #66cada;
     cursor: pointer; }
     #drafted-container #back-button:hover {
       transform: scale(1.05);
@@ -530,7 +530,7 @@ hr {
 
 .messagetypename, .messagesubject {
   width: max-content;
-  color: #6ac7c2;
+  color: #66cada;
   padding: 1%;
   font-size: 15px;
   background: #d3f3ff;

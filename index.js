@@ -51,7 +51,7 @@ $("#custom-drafts-button").click(function(){
   $draftContainer.css("display", "flex");
   $(this).css("color", "#6ac7c2");
   $(this).css("background", "#fff");
-  $("#todays-drafts-button").css("background", "#6ac7c2");
+  $("#todays-drafts-button").css("background", "#66cada");
   $("#todays-drafts-button").css("color", "#fff");
   $("#predrafted-preview").empty();
   $("#predrafted-preview").css("background", "transparent");
@@ -63,7 +63,7 @@ $("#todays-drafts-button").click(function(){
   $draftContainer.css("display", "none");
   $(this).css("color", "#6ac7c2");
   $(this).css("background", "#fff");
-  $("#custom-drafts-button").css("background", "#6ac7c2");
+  $("#custom-drafts-button").css("background", "#66cada");
   $("#custom-drafts-button").css("color", "#fff");
 });
 
