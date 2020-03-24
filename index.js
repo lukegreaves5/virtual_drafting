@@ -760,7 +760,7 @@ function eventSelected() {
         // RR MESSAGE 1.2
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.2</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> re: Coronavirus Update: "+ $event_short_title +" changed to a virtual event</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> re: {{FIRST_NAME}}, Join Our Virtual Networking Lunch!</p><br><br>" +
         
         "Hello {{FIRST_NAME}},<br><br>" +
 
@@ -779,7 +779,7 @@ function eventSelected() {
         // RR MESSAGE 1.3
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> re: Coronavirus Update: "+ $event_short_title +" changed to a virtual event</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> re: {{FIRST_NAME}}, Join Our Virtual Networking Lunch!</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
