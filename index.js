@@ -377,7 +377,7 @@ function eventSelected() {
       $event_venue = objectCheck(['venue_api']),
       $event_parking = objectCheck(['parking_api']),
       $event_website = objectCheck(['website_api']),
-      $event_survey = objectCheck(['Survey']),
+      $event_survey = "https://airtable.com/shrvy749ZtQCE9gJ6", //objectCheck(['Survey']),
       $event_panelists_first_name = objectCheck(['speakers_first_name_api']),
       $event_panelists_last_name = objectCheck(['speakers_last_name_api']),
       $event_panelists_titles = objectCheck(['speakers_title_api']),
@@ -956,9 +956,7 @@ function eventSelected() {
 
         "We appreciate your flexibility with our switch to a virtual setting and your enthusiastic participation. Special thanks to " + $event_client + " for making the event possible, and to our moderator, "+ $event_moderator_full_name +", and to our panelists, "+ $event_panelists_first_name +"for leading an exceptional discussio.<br><br>" +
 
-        "We’d love to hear your thoughts on your experience. Would you mind answering " + eventSurvey($event_survey) +
-
-        "Visit the event website " + $event_website + " to view photos from this event.<br><br>" +
+        "We’d love to hear your thoughts on your experience. Would you mind answering this short survey? " + $event_survey + "<br><br>" +
 
         "If you’re interested in continuing your conversation with " + $event_client + ", please contact <span style='background-color:yellow;text-transform:uppercase;'>CONTACT @ EMAIL.</span><br><br>" +
 
