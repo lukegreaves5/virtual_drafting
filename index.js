@@ -647,6 +647,10 @@ function eventSelected() {
         } else return "days"
       }
 
+      function ifCanada() {
+        ($event_city == "Toronto" || $event_city == "Vancouver" || $event_city == "Calgary") ? "Uber Eats" : "Grubhub";
+      }
+
       const $pr_drafts = 
       [
         // PR MESSAGE 1.1
@@ -660,7 +664,7 @@ function eventSelected() {
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
 
-        "Our virtual event, " + $event_full_title + ", will gather " + $event_audience_and_size + " from the " + $event_city + "area for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing {{Grubhub/Uber Eats}} with all attendees, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
+        "Our virtual event, " + $event_full_title + ", will gather " + $event_audience_and_size + " from the " + $event_city + "area for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing " + ifCanada() +", so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
 
         "We expect " +  $event_audience_and_size + " to participate from major local organizations. Everyone will benefit from peer-to-peer learning, networking, and get to enjoy a fine dining experience.<br><br>" +
 
@@ -723,7 +727,7 @@ function eventSelected() {
         
         "The event should be a great opportunity for you to demonstrate your domain expertise as a " + $event_audience + " leader, and to share your knowledge.<br><br>" +
                 
-        "We’ll be providing {{Grubhub/Uber Eats}} codes to cover the ‘lunch’ portion of the ‘lunch and learn’, and we expect to have a strong attendance of " + $event_audience + " local to " + $event_city + "online.<br><br>" +
+        "We’ll be providing "+ ifCanada() +" codes to cover the ‘lunch’ portion of the ‘lunch and learn’, and we expect to have a strong attendance of " + $event_audience + " local to " + $event_city + "online.<br><br>" +
 
 
         "Are you interested in speaking on the virtual panel on " + $event_long_date + "?<br><br>" +
@@ -743,13 +747,13 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm with a group of local "+ $event_audience + " from the " + $event_city + highlight_This("/Region") + " area. In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss the event topics.<br><br>" +
+        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm with a group of local "+ $event_audience + " from the " + $event_city + " area. In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss the event topics.<br><br>" +
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
 
         "Our original panel of speakers will still discuss "+ $event_snippet +". All attendees will be encouraged to actively engage in the discussion through video chat, simulating the interactive and intimate nature of our original face-to-face event scheduled for the same day.<br><br>" +
 
-        "We will be sending all attendees a $30 Grubhub code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes.<br><br>" +
+        "We will be sending all attendees a $30 " + ifCanada() +"code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes.<br><br>" +
 
         "You can find our panelists and the specific topics we’ll be discussing on our event website, linked here."+ $event_website +"<br><br>" +
 
@@ -785,7 +789,7 @@ function eventSelected() {
 
         "I hope this email finds you well. We still have registration space for our virtual networking event, "+ $event_full_title +", scheduled for "+ $event_long_date +" and would love to have you attend.<br><br>" + 
 
-        "We’ll be sending a $30 Grubhub code to all registered attendees so everyone can enjoy our panel discussion and Q&A over lunch.<br><br>" +
+        "We’ll be sending a $30 "+ ifCanada() +" code to all registered attendees so everyone can enjoy our panel discussion and Q&A over lunch.<br><br>" +
 
         "With Coronavirus increasingly disrupting workplaces, events, and broader social interactions, we’re hoping our virtual events can provide an effective means of allowing professionals to continue expanding their local network and sharing insights as leaders within their industries.<br><br>" +
 
@@ -806,9 +810,9 @@ function eventSelected() {
 
         "We’ll be hosting "+ $event_short_title +" over Zoom from 12 to 1:15pm and would love to have you join us.<br><br>" +
 
-        "You'd be networking with an invite-only group of other "+ $event_audience +" from "+ $event_city + highlight_This("/Region") + ", all engaged in thought-provoking discussions about "+ $event_snippet +"<br><br>" +
+        "You'd be networking with an invite-only group of other "+ $event_audience +" from "+ $event_city +", all engaged in thought-provoking discussions about "+ $event_snippet +".<br><br>" +
 
-        "We’ll be sharing a $30 Groupon code with all registered attendees so everyone can enjoy lunch together, even if it’s only over webcams!<br><br>"+
+        "We’ll be sharing a $30 "+ ifCanada() +" code with all registered attendees so everyone can enjoy lunch together, even if it’s only over webcams!<br><br>"+
 
         "May I confirm your interest and follow up with additional details?<br><br>" +
 
@@ -904,7 +908,7 @@ function eventSelected() {
 
         "To preserve the networking value of the lunch, attendees will be able to join small group discussions in breakout room sessions and meet other marketing leaders local to the "+ $event_city +" area.<br><br>" +
 
-        "And while we will no longer be hosting the event at "+ $event_venue +", we will be sending all attendees a $30 Grubhub code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes..<br><br>" +
+        "And while we will no longer be hosting the event at "+ $event_venue +", we will be sending all attendees a $30 "+ ifCanada() +" code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes..<br><br>" +
 
         "The virtual event will run tomorrow, " + $event_long_date +" from 12 pm to 1:15 pm. Full event details are available here at our event website " + $event_website + ").<br><br>" +
 
@@ -984,7 +988,7 @@ function eventSelected() {
         <li>12:55PM Breakout Networking Sessions</li>
         </ul><br>`+
 
-        "We will provide you with the Grubhub code on the day of the event—stay tuned for that!.<br><br>" +
+        "We will provide you with the "+ ifCanada() +"code on the day of the event—stay tuned for that!.<br><br>" +
 
         "Look forward to your participation!<br><br>" +
 
@@ -1031,7 +1035,7 @@ function eventSelected() {
 
         "Please be prepared to have your <b>video and microphone on</b>.<br><br>"+
 
-        "<span style='color:red;'>Please reply back to confirm your participation</span> so we can send you a Grubhub code for lunch!<br><br>"+
+        "<span style='color:red;'>Please reply back to confirm your participation</span> so we can send you a "+ ifCanada() +" code for lunch!<br><br>"+
 
         `Here is the agenda for the session:<br>
         <ul>
@@ -1063,7 +1067,7 @@ function eventSelected() {
 
          "Please be prepared to have your video and microphone on.<br><br>" +
 
-         "Here is your Grubhub eGift card "+ highlight_This("NUMBER")+ " and your " + highlight_This("PIN PINNUMBER") + " so you may enjoy lunch!<br><br>"+
+         "Here is your "+ ifCanada() +" eGift card "+ highlight_This("NUMBER")+ " and your " + highlight_This("PIN PINNUMBER") + " so you may enjoy lunch!<br><br>"+
          
          `Thank you,<br>`,
 
@@ -1126,7 +1130,7 @@ function eventSelected() {
         "<p>Please be prepared to have your video and microphone on.</p><br>"+
 
         "<b>LUNCH</b><br>" +
-        "<p>We will provide a $30 code for Grubhub so you may enjoy lunch on the morning of the event - stay tuned for that!</p><br>"+
+        "<p>We will provide a $30 code for "+ ifCanada() +" so you may enjoy lunch on the morning of the event - stay tuned for that!</p><br>"+
 
         "<b>PANEL DISCUSSION QUESTIONS</b><br>" +
         "<p>"+ highlight_This("Insert bullet points from website OR panel questions provided by moderator") + "</p><br><br>",
@@ -1168,7 +1172,7 @@ function eventSelected() {
 
          "You let me know a while back that you wouldn’t be able to join us at "+ $event_venue +" in " + $event_city +" for "+ $event_full_title + " on "+ $event_long_date +". At this time, due to current Coronavirus concerns, we’ve decided to take the entire event virtual!<br><br>"+
  
-         "Instead of going from 12 – 2pm at the restaurant, we’ll go from 12 – 1:15pm online—the agenda will still include an interactive panel discussion, breakout session networking with your local peers, and we’ll be sending Grubhub codes to all the attendees—so lunch is still on us!<br><br>"+
+         "Instead of going from 12 – 2pm at the restaurant, we’ll go from 12 – 1:15pm online—the agenda will still include an interactive panel discussion, breakout session networking with your local peers, and we’ll be sending "+ ifCanada() +" codes to all the attendees—so lunch is still on us!<br><br>"+
  
          "Please check out the event website "+ $event_website +" and let me know if you’re able to join us—we’d love to have you, and I’m happy to save you a spot.<br><br>"+
  
@@ -1277,7 +1281,7 @@ function eventSelected() {
         
         "To preserve the networking value of the lunch, attendees will be able to join small group discussions in breakout room sessions and meet other "+ $event_audience + " leaders local to the "+ $event_city +" area.<br><br>" + 
         
-        "And while we will no longer be hosting the event at " + $event_venue + ", we will be sending all attendees a $30 Grubhub code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes.<br><br>" +
+        "And while we will no longer be hosting the event at " + $event_venue + ", we will be sending all attendees a $30 "+ ifCanada() +" code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes.<br><br>" +
         
         "The virtual event will run on " + $event_long_date + " from 12 pm to 1:15 pm. Full event details are available here at our event website. " + $event_website + "<br><br>" +
         
