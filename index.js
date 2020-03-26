@@ -648,8 +648,10 @@ function eventSelected() {
       }
 
       function ifCanada() {
-        ($event_city == "Toronto" || $event_city == "Vancouver" || $event_city == "Calgary") ? "Uber Eats" : "Grubhub";
-      }
+        if ($event_city == "Toronto" || $event_city == "Vancouver" || $event_city == "Calgary") {
+          return "Uber Eats";
+        } else return "Grubhub";
+      };
 
       const $pr_drafts = 
       [
@@ -753,7 +755,7 @@ function eventSelected() {
 
         "Our original panel of speakers will still discuss "+ $event_snippet +". All attendees will be encouraged to actively engage in the discussion through video chat, simulating the interactive and intimate nature of our original face-to-face event scheduled for the same day.<br><br>" +
 
-        "We will be sending all attendees a $30 " + ifCanada() +"code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes.<br><br>" +
+        "We will be sending all attendees a $30 " + ifCanada() +" code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes.<br><br>" +
 
         "You can find our panelists and the specific topics we’ll be discussing on our event website, linked here."+ $event_website +"<br><br>" +
 
@@ -988,7 +990,7 @@ function eventSelected() {
         <li>12:55PM Breakout Networking Sessions</li>
         </ul><br>`+
 
-        "We will provide you with the "+ ifCanada() +"code on the day of the event—stay tuned for that!.<br><br>" +
+        "We will provide you with the "+ ifCanada() +" code on the day of the event—stay tuned for that!.<br><br>" +
 
         "Look forward to your participation!<br><br>" +
 
