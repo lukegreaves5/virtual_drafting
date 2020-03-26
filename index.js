@@ -668,8 +668,6 @@ function eventSelected() {
 
         "Our virtual event, " + $event_full_title + ", will gather " + $event_audience_and_size + " from the " + $event_city + "area for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing " + ifCanada() +", so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
 
-        "We expect " +  $event_audience_and_size + " to participate from major local organizations. Everyone will benefit from peer-to-peer learning, networking, and get to enjoy a fine dining experience.<br><br>" +
-
         "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:15 PM the day of.<br><br>" +
 
         "May I confirm your interest and follow up with additional details?",
