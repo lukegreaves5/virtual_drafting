@@ -1202,7 +1202,10 @@ function eventSelected() {
 
         "Hello all,<br><br>" +
 
-        "See below for additional details.<br><br>" +
+        "We are excited for our virtual "+ $event_short_title +" event, taking place tomorrow, "+ $event_long_date +". Here is the event website.<br><br>" +
+        "Reminder to sign on at 11:30AM for a quick practice run with the sales team.<br>br>"+
+        `See below for additional details.
+        Thanks,<br><br>` +
 
         ifOnSiteRepisAccountManager($event_account_manager) + "<br><br>" +
 
@@ -1228,7 +1231,7 @@ function eventSelected() {
         <li>12:55PM Breakout Networking Sessions </li>
         <li>01:15PM Event formally ends </li></ul><br><br>`,+
 
-        "Please click here "+ $event_promo_reg_list +" to check out the current registration list of who you can expect to virtually meet via video. You can also see our panelists and read the general discussion topics on the event website, <br><br>"+
+        "Please click here "+ $event_promo_reg_list +" to check out the current registration list of who you can expect to virtually meet via video. You can also see our panelists and read the general discussion topics on the event website, " + $event_website + "<br><br>"+
 
         "To make the most out of tomorrow's event, please see attached for BDI's Sales Prep Guide. " + "https://drive.google.com/file/d/19qAgkHzBP-NxZ2EBiDEy82s6H3kdZtOA/view?usp=sharing",
 
