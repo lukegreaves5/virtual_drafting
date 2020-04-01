@@ -653,6 +653,15 @@ function eventSelected() {
         } else return "Grubhub";
       };
 
+      /*
+      function date_prefix_calculator() {
+        let today = new Date().getFullYear() + "-" + new Date().getMonth() + "-" + new Date().getMonth()
+        if ($event_date_full_numeric == (new Date().getDate() + 1) ) {
+          return "tomorrow"
+        } else return " numeric " + $event_date_full_numeric + " today= " + new Date().getFullYear()
+      }
+      */
+
       const $pr_drafts = 
       [
         // PR MESSAGE 1.1
@@ -666,7 +675,7 @@ function eventSelected() {
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
 
-        "Our virtual event, " + $event_full_title + ", will gather " + $event_audience_and_size + " from the " + $event_city + "area for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing " + ifCanada() +", so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
+        "Our virtual event, " + $event_full_title + ", will gather " + $event_audience_and_size + " from the " + $event_city + " area for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing " + ifCanada() +" eGift cards, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
 
         "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:15 PM the day of.<br><br>" +
 
@@ -725,10 +734,9 @@ function eventSelected() {
 
         "I know I’ve been persistent, but I think you would be a valuable addition to our panel discussion.<br><br>" +
         
-        "The event should be a great opportunity for you to demonstrate your domain expertise as a " + $event_audience + " leader, and to share your knowledge.<br><br>" +
+        "The event should be a great opportunity for you to demonstrate your domain expertise as a <b>" + $event_audience + " leader</b>, and to share your knowledge.<br><br>" +
                 
-        "We’ll be providing "+ ifCanada() +" codes to cover the ‘lunch’ portion of the ‘lunch and learn’, and we expect to have a strong attendance of " + $event_audience + " local to " + $event_city + "online.<br><br>" +
-
+        "We’ll be providing "+ ifCanada() +" codes to cover the ‘lunch’ portion of the ‘lunch and learn’, and we expect to have a strong attendance of <b>" + $event_audience + "</b> local to " + $event_city + " online.<br><br>" +
 
         "Are you interested in speaking on the virtual panel on " + $event_long_date + "?<br><br>" +
         
@@ -862,38 +870,40 @@ function eventSelected() {
         // RR MESSAGE 3.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 3.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> You’re about to miss out!</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Open Spots for Our Virtual Lunch & Learn!</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I’m sure you have a busy schedule, but I wanted to let you know that we still have a few seats remaining for our "+ $event_full_title +" lunch on "+ $event_long_date +" in "+ $event_city +".<br><br>" +
+        "I’m sure you have a busy schedule, but I wanted to let you know that we still have a few spots remaining for our exclusive virtual lunch and learn, "+ $event_short_title +", on "+ $event_long_date +". The event will run from 12:00 pm to 1:15 pm.<br><br>" +
 
-        "If you’d like to join us, I’d be happy to save one of those spots for you. We’ll be having a fantastic three-course meal at "+ $event_venue +" while our panel leads an engaging and informative discussion. You can find more information about the panel and the specific topics at our event website. "+ $event_website +"<br><br>" +
+        "If you’d like to join us, I’d be happy to save one of those spots for you. All attendees will receive a complimentary $30 Grubhub code, so they can enjoy having their favorite lunch delivered while our panel leads an engaging and informative discussion.<br><br>" +
 
-        "We would also be happy to have any interested colleagues join you as your guests.<br><br>" +
+        "You can find more information about the panel and the specific topics at our event website. "+ $event_website +"<br><br>" +
 
-        "May we count you in for lunch?<br><br>" +
+        "We would also be happy to have any interested colleagues join you as your guests.<br><br>"+
+
+        "May we count you in for lunch, {{FIRST_NAME}}?<br><br>" +
 
         "Best regards,",
 
         // RR MESSAGE 4.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 4.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Only a Few Seats Remain</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Final Invite to Our Virtual Thought Leadership Event</p><br><br>" +
 
         "Hey {{FIRST_NAME}},<br><br>" +
 
-        $event_full_title + " is only "+ $event_days_away + " " + days_plural() + " away!<br><br>" +
+        $event_full_title + " is just around the corner!<br><br>" +
 
-        "Space for the event is limited, but we would still love to have you join us on " + $event_long_date + " at " + $event_venue + " in " + $event_city + ".<br><br>" +
+        "Spots for the virtual event are limited so we can preserve the intimate nature of the event and the high networking value for attendees, but we would still love to have you join us {{NEXT/THIS/TOMORROW}} "+ $event_long_date +" from 12:00 – 1:15pm.<br><br>" +
 
         "Check out who’s signed up so far here. " + $event_promo_reg_list + "<br><br>" +
 
-        "If you can’t make it, we do many events nationwide and would be happy to send relevant invites your way.<br><br>" +
+        "If you can’t make it, we do many virtual events and would be happy to send relevant invites your way.<br><br>" +
 
-        "Would you like me to RSVP you for the event?<br><br>" +
+        "Would you like me to RSVP you?<br><br>" +
 
-        "Have a great day and hope to see you there,",
+        "Have a great "+ getTodaysDate() +" and hope to see you online next " + $event_weekday + ",",
 
         // RR MESSAGE - RESCHEDULE 1.1
 
@@ -1059,13 +1069,13 @@ function eventSelected() {
 
          "We look forward to seeing you today at "+ highlight_This("TIME") +" at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
 
+         "<span style='color:red;'><b>Here is your " + ifCanada() + " eGift card NUMBER and your PIN PINNUMBER so you may enjoy lunch, courtesy of "+ $event_client +"! </b></span><br><br>"+
+
          "To join, please click here: " + $event_virtual_link +"<br><br>"+
          
-         "The objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants BEFORE and AFTER the panel in breakout rooms. If you haven’t already, please download the Zoom software in order to participate in the breakout room sessions. Download here: https://zoom.us/download <br><br>" +
+         "The objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants BEFORE and AFTER the panel in breakout rooms. If you haven’t already, please download the Zoom software in order to participate in the breakout room sessions. Download here: https://zoom.us/download<br><br>" +
 
          "Please be prepared to have your video and microphone on.<br><br>" +
-
-         "Here is your "+ ifCanada() +" eGift card "+ highlight_This("NUMBER")+ " and your " + highlight_This("PIN PINNUMBER") + " so you may enjoy lunch!<br><br>"+
          
          `Thank you,<br>`,
 
@@ -1202,8 +1212,8 @@ function eventSelected() {
 
         "Hello all,<br><br>" +
 
-        "We are excited for our virtual "+ $event_short_title +" event, taking place tomorrow, "+ $event_long_date +". Here is the event website.<br><br>" +
-        "Reminder to sign on at 11:30AM for a quick practice run with the sales team.<br>br>"+
+        "We are excited for our virtual "+ $event_short_title +" event, taking place tomorrow, "+ $event_long_date +".<br><br>" +
+        "Reminder to sign on at 11:30AM TIME ZONE for a quick practice run with the sales team.<br>br>"+
         `See below for additional details.
         Thanks,<br><br>` +
 
@@ -1244,13 +1254,15 @@ function eventSelected() {
 
         "Based on your career experience and your role at {{COMPANY}}, I thought you might be a good fit to be a panel speaker for a lunch event I am organizing on " + $event_date_month_and_number + "<br><br>" +
 
-        "The lunch is called " + $event_full_title + ", and will go from 12 to 2pm in a private room at " + $event_venue + " in " + $event_city + ". We will start with informal networking, followed by an interactive panel and open room discussion.<br><br>" +
+        "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>" +
 
-        "We expect to gather a group of " + $event_audience + ". Everyone will benefit from peer-to-peer learning, networking, and get to enjoy a fine dining experience.<br><br>" +
+        "Our virtual event, "+ $event_full_title +", will gather "+ $event_audience_and_size +" from the "+ $event_city +" area for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing "+ ifCanada() +" eGift cards with all attendees, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
 
-        "The panel discussion will be conversational, with no presentations, recordings, or press. We ask a total time commitment of three hours from our panelists: 30 minutes for a prep call prior to the event, and attendance from 11:30 AM – 2 PM the day of.<br><br>" +
+        "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:15 PM the day of.<br><br>" +
 
-        "At a high level, we are looking to explore the below discussion points, though these conversations tend to flow in the direction of attendee interests and the passions of our panel:<br>" +
+        "You can see the full virtual event details here at our event website. "+ $event_website +"<br><br>"+
+
+        "At a high level, we are looking to explore these discussion points:<br>" +
 
         `<ul>
         <li>DISUCSSION TOPIC 1</li>
@@ -1258,11 +1270,9 @@ function eventSelected() {
         <li>DISUCSSION TOPIC 3</li>
         </ul>` +
 
-        "For further details, please check out our event website here: " + $event_website + "<br><br>" +
-
         "May I confirm your interest and follow up with additional details?<br><br>" +
-        
-        "Cheers,<br>",
+
+        "Stay healthy,<br><br>",
 
         // CLIENT REGISTRANT RECRUITMENT
 
@@ -1271,22 +1281,18 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Join Us For Lunch?</p><br><br>" +
-
-        "Hi {{FIRST_NAME}},<br><br>" +
-
-        "Due to the recent developments with the Coronavirus and our concern for the health and safety of our attendees, we are transitioning our live event, " + $event_full_title + ", from an in-person thought leadership lunch to a virtual event hosted over Zoom.<br><br>" +
+        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm with a group of local "+ $event_audience +" from the "+ $event_city +" area. In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss the event topics.<br><br>" +
         
-        "Our original panel of speakers will still discuss " + $event_snippet +". All attendees will be encouraged to actively engage in the discussion through video chat, simulating the interactive and intimate nature of our original in-person event.<br><br>" +
+        "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>" +
         
-        "To preserve the networking value of the lunch, attendees will be able to join small group discussions in breakout room sessions and meet other "+ $event_audience + " leaders local to the "+ $event_city +" area.<br><br>" + 
+        "Our panel of speakers will discuss "+ $event_snippet +". All attendees will be encouraged to actively engage in the discussion through video chat, simulating the interactive and intimate nature of our original face-to-face event scheduled for the same day.<br><br>" + 
         
-        "And while we will no longer be hosting the event at " + $event_venue + ", we will be sending all attendees a $30 "+ ifCanada() +" code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes.<br><br>" +
+        "We will be sending a $30 food delivery code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes.<br><br>" +
         
-        "The virtual event will run on " + $event_long_date + " from 12 pm to 1:15 pm. Full event details are available here at our event website. " + $event_website + "<br><br>" +
+        "You can find our panelists and the specific topics we’ll be discussing on our event website, linked here. "+ $event_website +"<br><br>" +
         
-        "{{FIRST_NAME}}, would you like to join us?<br><br>"+ 
+        "Are you interested in RSVPing? Just respond here (<a href='mailto:steven.etzler@bdionline.com?subject=RSVP for the "+ $event_month_number +"/"+ $event_day_number + " " + $event_short_title + " " +" Virtual Lunch Event'>steven.etzler@bdionline.com</a>) and we’ll take care of the rest!<br><br>"+
+        
         "Best regards,<br><br>"+
         "Steve Etzler",
     
