@@ -1287,7 +1287,7 @@ function eventSelected() {
         
         "Our panel of speakers will discuss "+ $event_snippet +". All attendees will be encouraged to actively engage in the discussion through video chat, simulating the interactive and intimate nature of our original face-to-face event scheduled for the same day.<br><br>" + 
         
-        "We will be sending a $30 food delivery code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes.<br><br>" +
+        "We will be sending a $30 food delivery code so everyone can still enjoy the discussion and networking over a lunch of their choice while supporting local restaurants.<br><br>" +
         
         "You can find our panelists and the specific topics we’ll be discussing on our event website, linked here. "+ $event_website +"<br><br>" +
         
