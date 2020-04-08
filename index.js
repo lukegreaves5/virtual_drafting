@@ -387,8 +387,7 @@ function eventSelected() {
       $event_panelists_title_and_company = objectCheck(['Formatted_speakers_title_company_api']),
       $event_virtual_link = objectCheck(['Zoom Link']),
       $event_days_away = objectCheck(['Days Away']),
-      $event_target_copy = objectCheck(['Target'])
-      ;
+      $event_target_copy = objectCheck(['Target']);
 
       function objectCheck(propCheck) {
         if($event.hasOwnProperty(propCheck)) {
