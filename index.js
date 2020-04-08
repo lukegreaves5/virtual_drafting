@@ -931,7 +931,7 @@ function eventSelected() {
 
         "Would you like me to RSVP you?<br><br>" +
 
-        "Have a great "+ getTodaysDate() +" and hope to see you online next " + $event_weekday + ",",
+        "Have a great day and hope to see you online next " + $event_weekday + ",",
 
         // RR MESSAGE - RESCHEDULE 1.1
 
