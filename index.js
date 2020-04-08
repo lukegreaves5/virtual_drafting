@@ -996,9 +996,9 @@ function eventSelected() {
         <li>12:55PM Breakout Networking Sessions</li>
         </ul><br>`+
 
-        "We will provide you with the "+ ifCanada() +" code on the day of the event—stay tuned for that!.<br><br>" +
+        "We will provide you with the "+ ifCanada() +" code on the day of the event—stay tuned for that. Or please let us know if you’d prefer to have your meal donated to Meals 4 Heroes.<br><br>" +
 
-        "Look forward to your participation!<br><br>" +
+        "Please make sure to whitelist our email address to ensure the code isn't sent to spam. Look forward to your participation!<br><br>" +
 
         `Steve`,
 
@@ -1035,7 +1035,7 @@ function eventSelected() {
 
         "Hi FIRSTNAME,<br><br>" +
 
-         highlight_This("VALUE") + " " + $event_short_title + " lunch, video-based virtual meeting, taking place from 12 to 1:15PM on Zoom.<br><br>" + 
+         highlight_This("VALUE") + " " + $event_short_title + " video-based virtual meeting, taking place from 12 to 1:15PM on Zoom.<br><br>" + 
 
         "To join the meeting, <span style='color:red;'>click here. </span>"+ $event_virtual_link +"<br><br>"+
 
@@ -1043,7 +1043,7 @@ function eventSelected() {
 
         "Please be prepared to have your <b>video and microphone on</b>.<br><br>"+
 
-        "<span style='color:red;'>Please reply back to confirm your participation</span> so we can send you a "+ ifCanada() +" code for lunch!<br><br>"+
+        "<span style='color:red;'>Please reply back to confirm your participation</span> so we can send you a "+ ifCanada() +" code for lunch! Or please let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>"+
 
         `Here is the agenda for the session:<br>
         <ul>
@@ -1069,7 +1069,9 @@ function eventSelected() {
 
          "We look forward to seeing you today at "+ highlight_This("TIME") +" at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
 
-         "<span style='color:red;'><b>Here is your " + ifCanada() + " eGift card NUMBER and your PIN PINNUMBER so you may enjoy lunch, courtesy of "+ $event_client +"! </b></span><br><br>"+
+         "<span style='color:red;'><b>Here is your " + ifCanada() + " eGift card NUMBER and your PIN PINNUMBER so you may enjoy lunch, courtesy of <span style='color:red;'"+ $event_client +"</span>! </b></span><br><br>"+
+
+         "Please let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
 
          "To join, please click here: " + $event_virtual_link +"<br><br>"+
          
