@@ -698,7 +698,7 @@ function eventSelected() {
         // PR MESSAGE 1.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Join Our Virtual Lunch Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Join Our Virtual "+ target_subject($event_target_copy) +" Panel?</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
@@ -706,16 +706,16 @@ function eventSelected() {
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
 
-        "Our virtual event, " + $event_full_title + ", will gather " + $event_audience_and_size + " from the " + $event_city + " area for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing " + ifCanada() +" eGift cards, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
+        "Our virtual event, " + $event_full_title + ", will gather " + $event_audience_and_size + " from the " + $event_city + " area for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing " + ifCanada() +" codes, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
 
-        "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:15 PM the day of.<br><br>" +
+        "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:15 PM "+ $event_timezone +" the day of.<br><br>" +
 
         "May I confirm your interest and follow up with additional details?",
 
         // PR MESSAGE 1.2
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.2</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Virtual Lunch Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Virtual "+ target_subject($event_target_copy) +" Panel?</p><br><br>" +
         
         "Hey again {{FIRST_NAME}},<br><br>" +
 
@@ -740,7 +740,7 @@ function eventSelected() {
         // RR MESSAGE 1.3
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Virtual Lunch Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Virtual "+ target_subject($event_target_copy) +" Panel?</p><br><br>" +
 
         "Hope your day is going well, {{FIRST_NAME}}. Just wanted to bring this invite to the top of your inbox.<br><br>" +
 
@@ -759,7 +759,7 @@ function eventSelected() {
         // PR MESSAGE 1.4
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.4</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Virtual Lunch Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Virtual "+ target_subject($event_target_copy) +" Panel?</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
