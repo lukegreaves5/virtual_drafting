@@ -387,7 +387,8 @@ function eventSelected() {
       $event_panelists_title_and_company = objectCheck(['Formatted_speakers_title_company_api']),
       $event_virtual_link = objectCheck(['Zoom Link']),
       $event_days_away = objectCheck(['Days Away']),
-      $event_target_copy = objectCheck(['Target']);
+      $event_target_copy = objectCheck(['Target']),
+      $event_timezone = objectCheck(['Timezone']);
 
       function objectCheck(propCheck) {
         if($event.hasOwnProperty(propCheck)) {
@@ -785,7 +786,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm "+ highlight_This("TIME ZONE") +" with a group of"+ target_local($event_target_copy) + $event_audience + " from " + target_1_1_area($event_target_copy) + ". In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss "+ $event_snippet +".<br><br>" +
+        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm "+ $event +" with a group of"+ target_local($event_target_copy) + $event_audience + " from " + target_1_1_area($event_target_copy) + ". In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss "+ $event_snippet +".<br><br>" +
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
 
@@ -844,7 +845,7 @@ function eventSelected() {
 
         "I’d like to invite you to attend our virtual event on "+ $event_long_date +".<br><br>" + 
 
-        "We’ll be hosting "+ $event_short_title +" over Zoom from 12 to 1:15pm " + highlight_This("TIME ZONE") + " and would love to have you join us.<br><br>" +
+        "We’ll be hosting "+ $event_short_title +" over Zoom from 12 to 1:15pm " + $event_timezone + " and would love to have you join us.<br><br>" +
 
         "You'd be networking with an invite-only group of other "+ $event_audience +" from "+ target_2_1_area($event_target_copy) +", all engaged in thought-provoking discussions about "+ $event_snippet +".<br><br>" +
 
@@ -923,7 +924,7 @@ function eventSelected() {
 
         $event_full_title + " is just around the corner!<br><br>" +
 
-        "Spots for our virtual event are limited so we can preserve the intimate nature of the event and the high networking value for attendees, but we would still love to have you join us {{NEXT/THIS/TOMORROW}} "+ $event_long_date +" from 12:00 – 1:15pm."+ highlight_This("TIME ZONE") +"<br><br>" +
+        "Spots for our virtual event are limited so we can preserve the intimate nature of the event and the high networking value for attendees, but we would still love to have you join us {{NEXT/THIS/TOMORROW}} "+ $event_long_date +" from 12:00 – 1:15pm."+ $event_timezone +"<br><br>" +
 
         "Check out who’s signed up so far here. " + $event_promo_reg_list + "<br><br>" +
 
@@ -1243,7 +1244,7 @@ function eventSelected() {
         "Hello all,<br><br>" +
 
         "We are excited for our virtual "+ $event_short_title +" event, taking place tomorrow, "+ $event_long_date +".<br><br>" +
-        "Reminder to sign on at 11:30AM TIME ZONE for a quick practice run with the sales team.<br>br>"+
+        "Reminder to sign on at 11:30AM "+ $event_timezone +" for a quick practice run with the sales team.<br>br>"+
         `See below for additional details.
         Thanks,<br><br>` +
 
