@@ -388,6 +388,8 @@ function eventSelected() {
       $event_virtual_link = objectCheck(['Zoom Link']),
       $event_days_away = objectCheck(['Days Away']),
       $event_target_copy = objectCheck(['Target']),
+      $event_target_region = objectCheck(['Region']),
+      $event_target_vertical = objectCheck(['Vertical']),
       $event_timezone = objectCheck(['Timezone']);
 
       function objectCheck(propCheck) {
@@ -676,8 +678,10 @@ function eventSelected() {
       }
 
       function target_1_1_area(target) {
-        if (target == "City" || target == "Region") {
-          return target + " area";
+        if (target == "City") {
+          return "the " + $event_city + " area";
+        } else if (target == "Region") {
+          return "the " + $event_target_region + " region";
         } else return "across the nation"
       }
 
@@ -688,9 +692,21 @@ function eventSelected() {
       }
 
       function target_2_1_area(target) {
-        if (target == "City" || target == "Region") {
-          return target + " area.";
+        if (target == "City") {
+          return "the " + $event_city + " area";
+        } else if (target == "Region") {
+          return "the " + $event_target_region + " region";
         } else return "across the country"
+      }
+
+      function target_panel_4_1(target) {
+        if (target == "City") {
+          "local to " + $event_city + " online."
+        } else if (target == "Region") {
+          "local to the " + $event_target_region + " region online."
+        } else if (target == "Vertical") {
+          return "online";
+        }
       }
 
       const $pr_drafts = 
@@ -702,11 +718,11 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "Based on your career experience and your role at {{COMPANY}}, I thought you might be a good fit to be a panel speaker for a virtual lunch event I am organizing on " + $event_long_date + ".<br><br>" +
+        "Based on your career experience and your role at {{COMPANY}}, I thought you might be a good fit to be a panel speaker for a virtual "+ target_lunch_or_brunch($event_target_copy) +" event I am organizing on " + $event_long_date + ".<br><br>" +
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
 
-        "Our virtual event, " + $event_full_title + ", will gather " + $event_audience_and_size + " from the " + $event_city + " area for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing " + ifCanada() +" codes, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
+        "Our virtual event, " + $event_full_title + ", will gather " + $event_audience_and_size + " from " + target_1_1_area($event_target_copy) + " for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing " + ifCanada() +" codes, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
 
         "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:15 PM "+ $event_timezone +" the day of.<br><br>" +
 
@@ -767,7 +783,7 @@ function eventSelected() {
         
         "The event should be a great opportunity for you to demonstrate your domain expertise as a <b>" + $event_audience + " leader</b>, and to share your knowledge.<br><br>" +
                 
-        "We’ll be providing "+ ifCanada() +" codes to cover the ‘lunch’ portion of the ‘lunch and learn’, and we expect to have a strong attendance of <b>" + $event_audience + "</b> local to " + $event_city + " online.<br><br>" +
+        "We’ll be providing "+ ifCanada() +" codes to cover the ‘lunch’ portion of the ‘lunch and learn’, and we expect to have a strong attendance of <b>" + $event_audience + "</b> local to " + target_panel_4_1($event_target_copy) +".<br><br>" +
 
         "Are you interested in speaking on the virtual panel on " + $event_long_date + "?<br><br>" +
         
@@ -786,7 +802,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm "+ $event +" with a group of"+ target_local($event_target_copy) + $event_audience + " from " + target_1_1_area($event_target_copy) + ". In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss "+ $event_snippet +".<br><br>" +
+        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm "+ $event_timezone +" with a group of"+ target_local($event_target_copy) + $event_audience + " from " + target_1_1_area($event_target_copy) + ". In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss "+ $event_snippet +".<br><br>" +
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
 
@@ -801,11 +817,11 @@ function eventSelected() {
         // RR MESSAGE 1.2
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.2</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> re: {{FIRST_NAME}}, Join Our Virtual Networking Lunch "+ target_subject($event_target_copy) +"!</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> re: {{FIRST_NAME}}, Join Our Virtual Networking "+ target_subject($event_target_copy) +"!</p><br><br>" +
         
         "Hello {{FIRST_NAME}},<br><br>" +
 
-        "Our pivot to virtual events has allowed us to continue providing our attendees with an exceptional learning and networking experience during the COVID-19 crisis. In the past weeks, we’ve successfully run quite a few virtual "+ target_lunch_or_brunch($event_target_copy) +"and learn events with engaging content panels and small video breakout room discussions among our attendees. Feedback has been overwhelmingly positive.<br><br>" +
+        "Our pivot to virtual events has allowed us to continue providing our attendees with an exceptional learning and networking experience during the COVID-19 crisis. In the past weeks, we’ve successfully run quite a few virtual "+ target_lunch_or_brunch($event_target_copy) +" and learn events with engaging content panels and small video breakout room discussions among our attendees. Feedback has been overwhelmingly positive.<br><br>" +
 
         $event_full_title +" will revolve around a discussion of "+ contentSnippetAlternate() +". Our expert panel will feature "+ $event_panelists_full_formatted +".<br><br>" +
 
@@ -820,7 +836,7 @@ function eventSelected() {
         // RR MESSAGE 1.3
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> re: {{FIRST_NAME}}, Join Our Virtual Networking Lunch "+ target_subject($event_target_copy) +"!</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> re: {{FIRST_NAME}}, Join Our Virtual Networking "+ target_subject($event_target_copy) +"!</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
@@ -1169,7 +1185,7 @@ function eventSelected() {
         "<p>Please be prepared to have your video and microphone on.</p><br>"+
 
         "<b>LUNCH</b><br>" +
-        "<p>We will provide a $30 code for "+ ifCanada() +" so you may enjoy lunch on the morning of the event - stay tuned for that!</p><br>"+
+        "<p>We will provide a $30 code for "+ ifCanada() +" so you may enjoy lunch on the morning of the event - stay tuned for that! Or let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.</p><br>"+
 
         "<b>PANEL DISCUSSION QUESTIONS</b><br>" +
         "<p>"+ highlight_This("Insert bullet points from website OR panel questions provided by moderator") + "</p><br><br>",
@@ -1270,7 +1286,7 @@ function eventSelected() {
         <li>12:15PM Panel Discussion </li>
         <li>12:40PM Audience Q&A </li>
         <li>12:55PM Breakout Networking Sessions </li>
-        <li>01:15PM Event formally ends </li></ul><br><br>`,+
+        <li>01:15PM Event formally ends </li></ul><br><br>`+
 
         "Please click here "+ $event_promo_reg_list +" to check out the current registration list of who you can expect to virtually meet via video. You can also see our panelists and read the general discussion topics on the event website, " + $event_website + "<br><br>"+
 
@@ -1279,7 +1295,7 @@ function eventSelected() {
         // CLIENT PANEL RECRUITMENT
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Client Recruitment - Client Panel Communication</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i>Panel Invite:" + $event_short_title + " Lunch in " + $event_city +"</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i>{{FIRST_NAME}}, Join Our Virtual "+ target_subject($event_target_copy) +" Panel?</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
@@ -1287,7 +1303,7 @@ function eventSelected() {
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>" +
 
-        "Our virtual event, "+ $event_full_title +", will gather "+ $event_audience_and_size +" from the "+ $event_city +" area for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing "+ ifCanada() +" eGift cards with all attendees, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
+        "Our virtual event, "+ $event_full_title +", will gather "+ $event_audience_and_size +" from "+ target_2_1_area($event_target_copy) + " for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing "+ ifCanada() +" eGift cards with all attendees, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices. Or let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
 
         "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:15 PM the day of.<br><br>" +
 
@@ -1312,13 +1328,13 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm with a group of local "+ $event_audience +" from the "+ $event_city +" area. In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss the event topics.<br><br>" +
+        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm with a group of local "+ $event_audience +" from "+ target_2_1_area($event_target_copy) +". In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss the event topics.<br><br>" +
         
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>" +
         
         "Our panel of speakers will discuss "+ $event_snippet +". All attendees will be encouraged to actively engage in the discussion through video chat, simulating the interactive and intimate nature of our original face-to-face event scheduled for the same day.<br><br>" + 
         
-        "We will be sending a $30 food delivery code so everyone can still enjoy the discussion and networking over a lunch of their choice while supporting local restaurants.<br><br>" +
+        "We will be sending a $30 food delivery code so everyone can still enjoy the discussion and networking over a lunch of their choice while supporting local restaurants. Or let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
         
         "You can find our panelists and the specific topics we’ll be discussing on our event website, linked here. "+ $event_website +"<br><br>" +
         
