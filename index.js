@@ -1011,11 +1011,11 @@ function eventSelected() {
 
         createPanelistList_full() +
 
-        "We'd love to hear your thoughts on your experience. Would you mind answering " + eventSurvey($event_survey) + "<br><br>" +
+        "We'd love to hear your thoughts on your experience. Would you mind answering " + eventSurvey($event_survey) +
 
         "If you’re interested in continuing your conversation with " + $event_client + ", please contact <span style='background-color:yellow;text-transform:uppercase;'>CONTACT @ EMAIL.</span><br><br>" +
 
-        "Want to hear more about " + $event_short_title + " and check out some great webinar selections?" + highlight_This("Click here to learn more") + "<br><br>" +
+        "Want to hear more about " + $event_short_title + " and check out some great webinar selections? " + highlight_This("Click here to learn more") + "<br><br>" +
 
         "Thank you. We hope to see you at a future event!<br><br>" +
 
