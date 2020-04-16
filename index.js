@@ -541,7 +541,7 @@ function eventSelected() {
       } else return $event_snippet;
      }
 
-      function eventSurvey(survey){
+      function eventSurvey(survey) {
         if ( survey !== undefined){
           return "this one-minute survey? <span style='background:yellow'>MISSING SURVEY</span><br><br>";
         } else return "this one-minute survey? " + $event_survey + "<br><br>";
@@ -984,7 +984,7 @@ function eventSelected() {
 
         "Sorry we missed you at yesterday's " + $event_short_title + " virtual meeting!<br><br>" +
 
-        "Special thanks to "+ $event_client +" for making the event possible, and the following panelists for leading an exceptional discussion::<br>" +
+        "Special thanks to "+ $event_client +" for making the event possible, and the following panelists for leading an exceptional discussion:<br>" +
         
         createPanelistList_full() +
 
@@ -1007,11 +1007,15 @@ function eventSelected() {
 
         "Thank you so much for attending the " + $event_short_title + " virtual meeting last " + $event_long_date +"!<br><br>" +
 
-        "We appreciate your flexibility with our switch to a virtual setting and your enthusiastic participation. Special thanks to " + $event_client + " for making the event possible, and to our moderator, "+ $event_moderator_full_name +", and to our panelists, "+ $event_panelists_first_name +"for leading an exceptional discussio.<br><br>" +
+        "Special thanks to " + $event_client + " for making the event possible, and the following panelists for leading an exceptional discussion:<br>"+
 
-        "We’d love to hear your thoughts on your experience. Would you mind answering this short survey? " + $event_survey + "<br><br>" +
+        createPanelistList_full() +
+
+        "We'd love to hear your thoughts on your experience. Would you mind answering " + eventSurvey($event_survey) + "<br><br>" +
 
         "If you’re interested in continuing your conversation with " + $event_client + ", please contact <span style='background-color:yellow;text-transform:uppercase;'>CONTACT @ EMAIL.</span><br><br>" +
+
+        "Want to hear more about " + $event_short_title + " and check out some great webinar selections?" + highlight_This("Click here to learn more") + "<br><br>" +
 
         "Thank you. We hope to see you at a future event!<br><br>" +
 
