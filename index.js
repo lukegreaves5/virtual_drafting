@@ -1262,39 +1262,42 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i>  Event Prep for Virtual "+ $event_short_title + " | "+$event_city+"</p><br><br>" +
 
         "Hello all,<br><br>" +
+        "We are excited for our virtual "+ $event_short_title +" event, taking place tomorrow, "+ $event_long_date +". See below for additional details.<br><br>" +
+        "Thanks,<br><br>" +
 
-        "We are excited for our virtual "+ $event_short_title +" event, taking place tomorrow, "+ $event_long_date +".<br><br>" +
-        "Reminder to sign on at 11:30AM "+ $event_timezone +" for a quick practice run with the sales team.<br>br>"+
-        `See below for additional details.
-        Thanks,<br><br>` +
+        isBlank($event_account_manager) + "<br>" +
 
-        ifOnSiteRepisAccountManager($event_account_manager) + "<br><br>" +
+        "<b>EVENT DETAILS</b>" +
+        `<ul>
+        <li>Program: `+ $event_full_title +`</li>
+        <li>Date: `+ $event_long_date +`</li>
+        <li>Time: Video-based virtual meeting from 12pm - 1:15pm`+ $event_timezone +`</li>
+        <li>Location: `+ $event_virtual_link +`</li>
+        <li>Website: `+ $event_website +`</li>
+        <li>Registration List: `+ $event_promo_reg_list +`</li>
+        <li>Sales Prep Guide - <i>see attached</i></li>
+        </ul><br>`+
 
-        isBlank($event_account_manager) + "<br><br><br>" +
+        "<b>PANELISTS</b>" +
+        createPanelistList_full() + "<br>" +
 
-        `<b>LOGIN DETAILS</b>
-        <span style="color:red">Please join at this LINK.</span> ` + $event_virtual_link + "<br><br>"+
+        "<b>MODERATOR</b>" +
+        "<ul><li>"+$event_moderator_full_formatted+"</li></ul><br>"+
 
-        "You will need to download the Zoom software in order to participate in the breakout rooms. Download here: https://zoom.us/download <br><br>"+
-
-        "Be ready to go with your camera and microphone on, and dress in business casual, as we would for a face-to-face event.<br><br>"+
-
-        "<b>AGENDA</b><br><br>"+
-        "See our panelists and read the general discussion topics on our event website, linked <a href='" + $event_website + "'>here</a>.<br><br>" +
-
-        "<b>AGENDA</b>" +
-        `<ul><li>11:30AM Practice Run for Sales Team </li>
-        <li>11:45AM Panelists Join Virtual Event </li>
-        <li>12:00PM Attendees Enter Virtual Event & Welcome Remarks </li>
-        <li>12:05PM Video Networking in Breakout Rooms </li>
-        <li>12:15PM Panel Discussion </li>
-        <li>12:40PM Audience Q&A </li>
-        <li>12:55PM Breakout Networking Sessions </li>
-        <li>01:15PM Event formally ends </li></ul><br><br>`+
-
-        "Please click here "+ $event_promo_reg_list +" to check out the current registration list of who you can expect to virtually meet via video. You can also see our panelists and read the general discussion topics on the event website, " + $event_website + "<br><br>"+
-
-        "To make the most out of tomorrow's event, please see attached for BDI's Sales Prep Guide. " + "https://drive.google.com/file/d/19qAgkHzBP-NxZ2EBiDEy82s6H3kdZtOA/view?usp=sharing",
+        "<b>VIRTUAL EVENT FLOW</b>" +
+        `<ul>
+        <li>Sales reps will act as breakout room moderator</li>
+        <li>We can work on giving each sales rep their own breakout room</li>
+        <li>We can receive breakout room assignments to group them with a specific sales rep</li>
+        <li style="list-style: none;"><b>12:00PM Attendees Enter Virtual Event & Welcome Remarks</b></li>
+        <li style="list-style: none;"><b>12:05PM Video Networking in Breakout Rooms</b></li>
+        <li>Breakout 1: Sales reps asking each person to introduce themselves and share what they are looking to get out of the event</li>
+        <li style="list-style: none;"><b>12:15PM Panel Discussion</b></li>
+        <li style="list-style: none;"><b>12:40PM Audience Q&A</b></li>
+        <li style="list-style: none;"><b>12:55PM Breakout Networking Sessions</b></li>
+        <li>Breakout 2: Sales reps can ask open ended questions to get the conversation flowing</li>
+        <li style="list-style: none;"><b>01:15PM Event Ends</b></li>
+        </ul><br><br>`,
 
         // CLIENT PANEL RECRUITMENT
 
