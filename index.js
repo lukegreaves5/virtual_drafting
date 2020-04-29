@@ -802,7 +802,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm "+ $event_timezone +" with a group of"+ target_local($event_target_copy) + $event_audience + " from " + target_1_1_area($event_target_copy) + ". In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss "+ $event_snippet +".<br><br>" +
+        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm "+ $event_timezone +" with a group of "+ target_local($event_target_copy) + $event_audience + " from " + target_1_1_area($event_target_copy) + ". In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss "+ $event_snippet +".<br><br>" +
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
 
@@ -869,7 +869,7 @@ function eventSelected() {
 
         "May I confirm your interest and follow up with additional details?<br><br>" +
 
-        "Have a wonderful " + getTodaysDate() +",<br><br>",
+        "Have a wonderful day" + /*getTodaysDate() gets the day of thr week*/ +",<br><br>",
 
         // RR MESSAGE 2.2
 
@@ -879,7 +879,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
         
-        "Circling back on my invite below—I know with everything going on in the world it’s hard to think about plans on "+ $event_month_number +"/"+ $event_day_number +", but I'd love to to have you join us if your calendar's open.<br><br>" +
+        "Circling back on my invite below—I know with everything going on in the world it’s hard to think about plans on "+ $event_month_number +"/"+ $event_day_number +", but I'd love to have you join us if your calendar's open.<br><br>" +
 
         "We’ll have panelists from "+ sort_array_add_and(isThisAnArray($event_panelists_companies)) +" sharing their insights around "+ contentSnippetAlternate() +".<br><br>" +
 
@@ -919,7 +919,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I’m sure you have a busy schedule, but I wanted to let you know that we still have a few spots remaining for our exclusive virtual "+ target_lunch_or_brunch($event_target_copy) +" and learn, "+ $event_short_title +", on "+ $event_long_date +". The event will run from 12:00 pm to 1:15 pm.<br><br>" +
+        "I’m sure you have a busy schedule, but I wanted to let you know that we still have a few spots remaining for our exclusive virtual "+ target_lunch_or_brunch($event_target_copy) +" and learn, "+ $event_short_title +", on "+ $event_long_date +". The event will run from 12:00 pm to 1:15 pm. "+ $event_timezone +"<br><br>" +
 
         "If you’d like to join us, I’d be happy to save one of those spots for you. All attendees will receive a complimentary $30 "+ ifCanada() +" code, so they can enjoy having their favorite meal delivered while our panel leads an engaging and informative discussion. Alternatively, attendees have the option of having their meal donated to Meals 4 Heroes, to support healthcare workers and restaurants affected by the coronavirus pandemic.<br><br>" +
 
