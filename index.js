@@ -724,7 +724,7 @@ function eventSelected() {
 
         "Our virtual event, " + $event_full_title + ", will gather " + $event_audience_and_size + " from " + target_1_1_area($event_target_copy) + " for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing " + ifCanada() +" codes, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
 
-        "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:15 PM "+ $event_timezone +" the day of.<br><br>" +
+        "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:30 PM "+ $event_timezone +" the day of.<br><br>" +
 
         "May I confirm your interest and follow up with additional details?",
 
@@ -802,7 +802,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm "+ $event_timezone +" with a group of "+ target_local($event_target_copy) + $event_audience + " from " + target_1_1_area($event_target_copy) + ". In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss "+ $event_snippet +".<br><br>" +
+        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:30pm "+ $event_timezone +" with a group of "+ target_local($event_target_copy) + $event_audience + " from " + target_1_1_area($event_target_copy) + ". In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss "+ $event_snippet +".<br><br>" +
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
 
@@ -861,7 +861,7 @@ function eventSelected() {
 
         "I’d like to invite you to attend our virtual event on "+ $event_long_date +".<br><br>" + 
 
-        "We’ll be hosting "+ $event_short_title +" over Zoom from 12 to 1:15pm " + $event_timezone + " and would love to have you join us.<br><br>" +
+        "We’ll be hosting "+ $event_short_title +" over Zoom from 12 to 1:30pm " + $event_timezone + " and would love to have you join us.<br><br>" +
 
         "You'd be networking with an invite-only group of other "+ $event_audience +" from "+ target_2_1_area($event_target_copy) +", all engaged in thought-provoking discussions about "+ $event_snippet +".<br><br>" +
 
@@ -919,7 +919,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I’m sure you have a busy schedule, but I wanted to let you know that we still have a few spots remaining for our exclusive virtual "+ target_lunch_or_brunch($event_target_copy) +" and learn, "+ $event_short_title +", on "+ $event_long_date +". The event will run from 12:00 pm to 1:15 pm. "+ $event_timezone +"<br><br>" +
+        "I’m sure you have a busy schedule, but I wanted to let you know that we still have a few spots remaining for our exclusive virtual "+ target_lunch_or_brunch($event_target_copy) +" and learn, "+ $event_short_title +", on "+ $event_long_date +". The event will run from 12:00 pm to 1:30 pm. "+ $event_timezone +"<br><br>" +
 
         "If you’d like to join us, I’d be happy to save one of those spots for you. All attendees will receive a complimentary $30 "+ ifCanada() +" code, so they can enjoy having their favorite meal delivered while our panel leads an engaging and informative discussion. Alternatively, attendees have the option of having their meal donated to Meals 4 Heroes, to support healthcare workers and restaurants affected by the coronavirus pandemic.<br><br>" +
 
@@ -940,7 +940,7 @@ function eventSelected() {
 
         $event_full_title + " is just around the corner!<br><br>" +
 
-        "Spots for our virtual event are limited so we can preserve the intimate nature of the event and the high networking value for attendees, but we would still love to have you join us {{NEXT/THIS/TOMORROW}} "+ $event_long_date +" from 12:00 – 1:15pm."+ $event_timezone +"<br><br>" +
+        "Spots for our virtual event are limited so we can preserve the intimate nature of the event and the high networking value for attendees, but we would still love to have you join us {{NEXT/THIS/TOMORROW}} "+ $event_long_date +" from 12:00 – 1:30pm."+ $event_timezone +"<br><br>" +
 
         "Check out who’s signed up so far here. " + $event_promo_reg_list + "<br><br>" +
 
@@ -965,7 +965,7 @@ function eventSelected() {
 
         "And while we will no longer be hosting the event at "+ $event_venue +", we will be sending all attendees a $30 "+ ifCanada() +" code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes..<br><br>" +
 
-        "The virtual event will run tomorrow, " + $event_long_date +" from 12 pm to 1:15 pm. Full event details are available here at our event website " + $event_website + ").<br><br>" +
+        "The virtual event will run tomorrow, " + $event_long_date +" from 12 pm to 1:30 pm. Full event details are available here at our event website " + $event_website + ").<br><br>" +
 
         "{{FIRST_NAME}}, would you like to join us?<br><br>"+
 
@@ -1084,7 +1084,7 @@ function eventSelected() {
 
         "Hi FIRSTNAME,<br><br>" +
 
-         highlight_This("VALUE") + " " + $event_short_title + " video-based virtual meeting, taking place from 12 to 1:15PM on Zoom.<br><br>" + 
+         highlight_This("VALUE") + " " + $event_short_title + " video-based virtual meeting, taking place from 12 to 1:30PM on Zoom.<br><br>" + 
 
         "To join the meeting, <span style='color:red;'>click here. </span>"+ $event_virtual_link +"<br><br>"+
 
@@ -1099,8 +1099,8 @@ function eventSelected() {
         <li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
         <li>12:05PM Video Networking in Breakout Rooms</li>
         <li>12:15PM Panel Discussion</li>
-        <li>12:40PM Audience Q&A</li>
-        <li>12:55PM Breakout Networking Sessions</li>
+        <li>12:55PM Audience Q&A</li>
+        <li>1:10PM Breakout Networking Sessions</li>
         </ul><br>
 
         Thank you and we look forward to seeing you tomorrow!<br><br>
@@ -1137,7 +1137,7 @@ function eventSelected() {
 
         "Hello all,<br><br>" +
 
-        "We’re excited for your panel participation at " + $event_short_title + "virtual meeting, taking place on "+ $event_long_date +" from 11:45AM – 1:15PM at on our video-based platform Zoom.<br><br>" +
+        "We’re excited for your panel participation at " + $event_short_title + "virtual meeting, taking place on "+ $event_long_date +" from 11:45AM – 1:30PM at on our video-based platform Zoom.<br><br>" +
 
         "We would like to schedule a 30 minute panel practice run on "+ highlight_This("DAY, DATE") +" between "+ highlight_This("TIME") +".<br><br>"+
 
@@ -1146,10 +1146,10 @@ function eventSelected() {
         "Thank you!<br>"+
         isBlank($event_account_manager),
 
-         // PANEL PREP CALL AGENDA
+        // PANEL PREP CALL AGENDA
 
-         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Prep Call Agenda</p>" +
-         "<p class='messagesubject'><i class='fa fa-envelope'></i>" + $event_short_title + " Virtual Meeting | Panel Practice Run</p><br><br>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Prep Call Agenda</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i>" + $event_short_title + " Panel Prep</p><br><br>" +
  
         "Hello all,<br><br>"+
 
@@ -1171,7 +1171,7 @@ function eventSelected() {
         "<b>EVENT DETAILS</b><ul>"+
         "<li>Program: "+ $event_full_title +"</li>"+
         "<li>Date: " + $event_long_date +"</li>"+
-        "<li>Time: Video-based virtual meeting from 12pm - 1:15pm </li>"+
+        "<li>Time: Video-based virtual meeting from 12pm - 30pm </li>"+
         "<li>Location: " + "<a href='" + $event_virtual_link + "'>LINK</a></li>" +
         "<li>Event Website: " + "<a href='" + $event_website + "'>LINK</a></li>" +
         "<li>Registration List: " + "<a href='" + $event_promo_reg_list + "'>LINK</a></li></ul><br>" +
@@ -1181,8 +1181,8 @@ function eventSelected() {
         "<li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>"+
         "<li>12:05PM Video Networking in Breakout Rooms </li>"+
         "<li>12:15PM Panel Discussion</li>" +
-        "<li>12:40PM Audience Q&A<br>" +
-        "<li>12:55PM Breakout Networking Sessions</li></ul><br><br>" +
+        "<li>12:55PM Audience Q&A<br>" +
+        "<li>1:10PM Breakout Networking Sessions</li></ul><br><br>" +
 
         "<b>LOGIN DETAILS</b>" +
         "<p>Please download the Zoom software in order to participate in the video-based breakout room networking sessions before and after the panel. Download here: https://zoom.us/download.<br>"+
@@ -1213,7 +1213,7 @@ function eventSelected() {
 
         "<b>This email serves as a reminder and an invite for you to share with a colleague who may also find this event valuable.</b><br><br>"+
 
-        "Thanks, we look forward to seeing you online from 12 to 1:15 pm on "+ $event_long_date +".<br><br>"+
+        "Thanks, we look forward to seeing you online from 12 to 1:30 pm on "+ $event_long_date +".<br><br>"+
 
         "Best regards,<br>" +
         "<b>Steve Etzler</b>"+
@@ -1231,7 +1231,7 @@ function eventSelected() {
 
          "You let me know a while back that you wouldn’t be able to join us at "+ $event_venue +" in " + $event_city +" for "+ $event_full_title + " on "+ $event_long_date +". At this time, due to current Coronavirus concerns, we’ve decided to take the entire event virtual!<br><br>"+
  
-         "Instead of going from 12 – 2pm at the restaurant, we’ll go from 12 – 1:15pm online—the agenda will still include an interactive panel discussion, breakout session networking with your local peers, and we’ll be sending "+ ifCanada() +" codes to all the attendees—so lunch is still on us!<br><br>"+
+         "Instead of going from 12 – 2pm at the restaurant, we’ll go from 12 – 1:30pm online—the agenda will still include an interactive panel discussion, breakout session networking with your local peers, and we’ll be sending "+ ifCanada() +" codes to all the attendees—so lunch is still on us!<br><br>"+
  
          "Please check out the event website "+ $event_website +" and let me know if you’re able to join us—we’d love to have you, and I’m happy to save you a spot.<br><br>"+
  
@@ -1248,7 +1248,7 @@ function eventSelected() {
 
         "This is <span style='color:red;'>{VA}</span> calling from BDI.<br><br>"+
 
-        "We have you registered to join our virtual lunch & learn "+ $event_full_title +" tomorrow, "+ $event_long_date + " from 12-1:15PM. If your schedule has changed and you can no longer attend, please let us know by responding to Steve's email.<br><br>"+
+        "We have you registered to join our virtual lunch & learn "+ $event_full_title +" tomorrow, "+ $event_long_date + " from 12-1:30PM. If your schedule has changed and you can no longer attend, please let us know by responding to Steve's email.<br><br>"+
 
         "Thank you! Bye!<br><br>",
 
@@ -1259,7 +1259,7 @@ function eventSelected() {
         // EVENT PREP DETAILS
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Event Prep Details - Client Communication</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i>  Event Prep for Virtual "+ $event_short_title + " | "+$event_city+"</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i>  Event Prep for Virtual "+ $event_short_title + " | "+$event_target_copy+"</p><br><br>" +
 
         "Hello all,<br><br>" +
         "We are excited for our virtual "+ $event_short_title +" event, taking place tomorrow, "+ $event_long_date +". See below for additional details.<br><br>" +
@@ -1271,7 +1271,7 @@ function eventSelected() {
         `<ul>
         <li>Program: `+ $event_full_title +`</li>
         <li>Date: `+ $event_long_date +`</li>
-        <li>Time: Video-based virtual meeting from 12pm - 1:15pm`+ $event_timezone +`</li>
+        <li>Time: Video-based virtual meeting from 12pm -30pm`+ $event_timezone +`</li>
         <li>Location: `+ $event_virtual_link +`</li>
         <li>Website: `+ $event_website +`</li>
         <li>Registration List: `+ $event_promo_reg_list +`</li>
@@ -1293,10 +1293,10 @@ function eventSelected() {
         <li style="list-style: none;"><b>12:05PM Video Networking in Breakout Rooms</b></li>
         <li>Breakout 1: Sales reps asking each person to introduce themselves and share what they are looking to get out of the event</li>
         <li style="list-style: none;"><b>12:15PM Panel Discussion</b></li>
-        <li style="list-style: none;"><b>12:40PM Audience Q&A</b></li>
-        <li style="list-style: none;"><b>12:55PM Breakout Networking Sessions</b></li>
+        <li style="list-style: none;"><b>12:55PM Audience Q&A</b></li>
+        <li style="list-style: none;"><b>1:10PM Breakout Networking Sessions</b></li>
         <li>Breakout 2: Sales reps can ask open ended questions to get the conversation flowing</li>
-        <li style="list-style: none;"><b>01:15PM Event Ends</b></li>
+        <li style="list-style: none;"><b>01:30PM Event Ends</b></li>
         </ul><br><br>`,
 
         // CLIENT PANEL RECRUITMENT
@@ -1312,7 +1312,7 @@ function eventSelected() {
 
         "Our virtual event, "+ $event_full_title +", will gather "+ $event_audience_and_size +" from "+ target_2_1_area($event_target_copy) + " for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing "+ ifCanada() +" eGift cards with all attendees, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices. Or let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
 
-        "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:15 PM the day of.<br><br>" +
+        "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:30 PM "+ $event_timezone +" the day of.<br><br>" +
 
         "You can see the full virtual event details here at our event website. "+ $event_website +"<br><br>"+
 
@@ -1335,7 +1335,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:15pm with a group of local "+ $event_audience +" from "+ target_2_1_area($event_target_copy) +". In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss the event topics.<br><br>" +
+        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:30pm "+ $event_timezone +" with a group of local "+ $event_audience +" from "+ target_2_1_area($event_target_copy) +". In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss the event topics.<br><br>" +
         
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>" +
         
