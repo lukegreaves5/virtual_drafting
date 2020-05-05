@@ -819,7 +819,7 @@ function eventSelected() {
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.2</p>" +
         "<p class='messagesubject'><i class='fa fa-reply'></i> re: {{FIRST_NAME}}, Join Our Virtual Networking "+ target_subject($event_target_copy) +"!</p><br><br>" +
         
-        "Hello {{FIRST_NAME}},<br><br>" +
+        "Hey {{FIRST_NAME}},<br><br>" +
 
         "Our pivot to virtual events has allowed us to continue providing our attendees with an exceptional learning and networking experience during the COVID-19 crisis. In the past weeks, we’ve successfully run quite a few virtual "+ target_lunch_or_brunch($event_target_copy) +" and learn events with engaging content panels and small video breakout room discussions among our attendees. Feedback has been overwhelmingly positive.<br><br>" +
 
