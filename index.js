@@ -919,7 +919,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I’m sure you have a busy schedule, but I wanted to let you know that we still have a few spots remaining for our exclusive virtual "+ target_lunch_or_brunch($event_target_copy) +" and learn, "+ $event_short_title +", on "+ $event_long_date +". The event will run from 12:00 pm to 1:30 pm. "+ $event_timezone +"<br><br>" +
+        "I’m sure you have a busy schedule, but I wanted to let you know that we still have a few spots remaining for our exclusive virtual "+ target_lunch_or_brunch($event_target_copy) +" and learn, "+ $event_short_title +", on "+ $event_long_date +". The event will run from 12:00 pm to 1:30 pm "+ $event_timezone +".<br><br>" +
 
         "If you’d like to join us, I’d be happy to save one of those spots for you. All attendees will receive a complimentary $30 "+ ifCanada() +" code, so they can enjoy having their favorite meal delivered while our panel leads an engaging and informative discussion. Alternatively, attendees have the option of having their meal donated to Meals 4 Heroes, to support healthcare workers and restaurants affected by the coronavirus pandemic.<br><br>" +
 
@@ -940,7 +940,7 @@ function eventSelected() {
 
         $event_full_title + " is just around the corner!<br><br>" +
 
-        "Spots for our virtual event are limited so we can preserve the intimate nature of the event and the high networking value for attendees, but we would still love to have you join us {{NEXT/THIS/TOMORROW}} "+ $event_long_date +" from 12:00 – 1:30pm."+ $event_timezone +"<br><br>" +
+        "Spots for our virtual event are limited so we can preserve the intimate nature of the event and the high networking value for attendees, but we would still love to have you join us {{NEXT/THIS/TOMORROW}} "+ $event_long_date +" from 12:00 – 1:30pm"+ $event_timezone +".<br><br>" +
 
         "Check out who’s signed up so far here. " + $event_promo_reg_list + "<br><br>" +
 
@@ -1038,12 +1038,14 @@ function eventSelected() {
 
         `Here is the agenda for the session:<br>
         <ul>
-        <li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
-        <li>12:05PM Video Networking in Breakout Rooms</li>
-        <li>12:15PM Panel Discussion</li>
-        <li>12:40PM Audience Q&A</li>
-        <li>12:55PM Breakout Networking Sessions</li>
-        </ul><br>`+
+        <li style="list-style: none;"><b>12:00PM Attendees Enter Virtual Event & Welcome Remarks</b></li>
+        <li style="list-style: none;"><b>12:05PM Video Networking in Breakout Rooms</b></li>
+        <li style="list-style: none;"><b>12:15PM Panel Discussion</b></li>
+        <li style="list-style: none;"><b>12:55PM Audience Q&A</b></li>
+        <li style="list-style: none;"><b>1:10PM Breakout Networking Sessions</b></li>
+        <li style="list-style: none;"><b>01:30PM Event Ends</b></li>
+        </ul><br>`
+        +
 
         "We will provide you with the "+ ifCanada() +" code on the day of the event—stay tuned for that. Or please let us know if you’d prefer to have your meal donated to Meals 4 Heroes.<br><br>" +
 
@@ -1065,13 +1067,13 @@ function eventSelected() {
         "You can also view who we have confirmed so far on this link." + $event_promo_reg_list +"<br><br>" + 
 
         `Here is the agenda for the session:<br>
-        <ul>
-        <li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
-        <li>12:05PM Video Networking in Breakout Rooms</li>
-        <li>12:15PM Panel Discussion</li>
-        <li>12:40PM Audience Q&A</li>
-        <li>12:55PM Breakout Networking Sessions</li>
-        </ul><br>`+
+        <li style="list-style: none;"><b>12:00PM Attendees Enter Virtual Event & Welcome Remarks</b></li>
+        <li style="list-style: none;"><b>12:05PM Video Networking in Breakout Rooms</b></li>
+        <li style="list-style: none;"><b>12:15PM Panel Discussion</b></li>
+        <li style="list-style: none;"><b>12:55PM Audience Q&A</b></li>
+        <li style="list-style: none;"><b>1:10PM Breakout Networking Sessions</b></li>
+        <li style="list-style: none;"><b>01:30PM Event Ends</b></li>`
+        +
 
         "Look forward to your participation!<br><br>" +
 
@@ -1306,7 +1308,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "Based on your career experience and your role at {{COMPANY}}, I thought you might be a good fit to be a panel speaker for a lunch event I am organizing on " + $event_date_month_and_number + "<br><br>" +
+        "Based on your career experience and your role at {{COMPANY}}, I thought you might be a good fit to be a panel speaker for a lunch event I am organizing on " + $event_date_month_and_number + ".<br><br>" +
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>" +
 
