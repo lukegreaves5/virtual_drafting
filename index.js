@@ -1171,7 +1171,7 @@ function eventSelected() {
         "<b>EVENT DETAILS</b><ul>"+
         "<li>Program: "+ $event_full_title +"</li>"+
         "<li>Date: " + $event_long_date +"</li>"+
-        "<li>Time: Video-based virtual meeting from 12pm - 30pm </li>"+
+        "<li>Time: Video-based virtual meeting from 12pm - 1:30pm </li>"+
         "<li>Location: " + "<a href='" + $event_virtual_link + "'>LINK</a></li>" +
         "<li>Event Website: " + "<a href='" + $event_website + "'>LINK</a></li>" +
         "<li>Registration List: " + "<a href='" + $event_promo_reg_list + "'>LINK</a></li></ul><br>" +
