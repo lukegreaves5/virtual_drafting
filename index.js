@@ -842,7 +842,7 @@ function eventSelected() {
 
         "I hope this email finds you well. We still have registration space for our virtual networking event, "+ $event_full_title +", scheduled for "+ $event_long_date +" and would love to have you attend.<br><br>" + 
 
-        "We’ll be sending a $30 "+ ifCanada() +" code to all registered attendees so everyone can enjoy our panel discussion and Q&A over "+ target_lunch_or_brunch($event_target_copy) +". Or, if you don’t want us to send you a code, we can donate $30 to Meals 4 Heroes for you.<br><br>" +
+        "We’ll be sending a $30 "+ ifCanada() +" code to all registered attendees so everyone can enjoy our panel discussion and Q&A over "+ target_lunch_or_brunch($event_target_copy) +". Or, if you don’t want us to send you a code, we can donate to Meals 4 Heroes for you.<br><br>" +
 
         "With Coronavirus continuing to disrupt workplaces, events, and broader social interactions, we’re hoping our virtual events can provide an effective means of allowing professionals to continue expanding their "+ target_local($event_target_copy) +" network and sharing insights as leaders within their industries.<br><br>" +
 
