@@ -653,7 +653,7 @@ function eventSelected() {
       function ifCanada() {
         if ($event_city == "Toronto" || $event_city == "Vancouver" || $event_city == "Calgary" || $event_city == "Canada") {
           return "$25 Uber Eats";
-        } else if (event_target_copy == "Toronto" || event_target_copy == "Vancouver" || event_target_copy == "Calgary" || event_target_copy == "Canada") {
+        } else if ($event_target_copy == "Toronto" || $event_target_copy == "Vancouver" || $event_target_copy == "Calgary" || $event_target_copy == "Canada") {
           return "Uber Eats";
         } else return "$30 Grubhub";
       };
