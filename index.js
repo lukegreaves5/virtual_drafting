@@ -651,9 +651,11 @@ function eventSelected() {
       }
 
       function ifCanada() {
-        if ($event_city == "Toronto" || $event_city == "Vancouver" || $event_city == "Calgary") {
+        if ($event_city == "Toronto" || $event_city == "Vancouver" || $event_city == "Calgary" || $event_city == "Canada") {
+          return "$25 Uber Eats";
+        } else if (event_target_copy == "Toronto" || event_target_copy == "Vancouver" || event_target_copy == "Calgary" || event_target_copy == "Canada") {
           return "Uber Eats";
-        } else return "Grubhub";
+        } else return "$30 Grubhub";
       };
 
       /*
@@ -806,7 +808,7 @@ function eventSelected() {
 
         "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
 
-        "We will be sending all attendees a $30 " + ifCanada() +" code so everyone can still enjoy the discussion and networking over a meal of their choice, from the comfort of their offices/homes. Alternatively, attendees can choose to donate their lunch to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
+        "We will be sending all attendees a " + ifCanada() +" code so everyone can still enjoy the discussion and networking over a meal of their choice, from the comfort of their offices/homes. Alternatively, attendees can choose to donate their lunch to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
 
         "You can find our list of panelists and the specific topics we’ll be discussing on our event website, linked here."+ $event_website +"<br><br>" +
 
@@ -842,7 +844,7 @@ function eventSelected() {
 
         "I hope this email finds you well. We still have registration space for our virtual networking event, "+ $event_full_title +", scheduled for "+ $event_long_date +" and would love to have you attend.<br><br>" + 
 
-        "We’ll be sending a $30 "+ ifCanada() +" code to all registered attendees so everyone can enjoy our panel discussion and Q&A over "+ target_lunch_or_brunch($event_target_copy) +". Or, if you don’t want us to send you a code, we can donate to Meals 4 Heroes for you.<br><br>" +
+        "We’ll be sending a "+ ifCanada() +" code to all registered attendees so everyone can enjoy our panel discussion and Q&A over "+ target_lunch_or_brunch($event_target_copy) +". Or, if you don’t want us to send you a code, we can donate to Meals 4 Heroes for you.<br><br>" +
 
         "With Coronavirus continuing to disrupt workplaces, events, and broader social interactions, we’re hoping our virtual events can provide an effective means of allowing professionals to continue expanding their "+ target_local($event_target_copy) +" network and sharing insights as leaders within their industries.<br><br>" +
 
@@ -865,7 +867,7 @@ function eventSelected() {
 
         "You'd be networking with an invite-only group of other "+ $event_audience +" from "+ target_2_1_area($event_target_copy) +", all engaged in thought-provoking discussions about "+ $event_snippet +".<br><br>" +
 
-        "We’ll be sharing a $30 "+ ifCanada() +" code with all registered attendees so everyone can enjoy "+ target_lunch_or_brunch($event_target_copy) +" together, even if it’s only over webcams! Or, if you prefer, we can donate your meal to Meals 4 Heroes to help support healthcare workers and restaurants impacted by the coronavirus crisis.<br><br>"+
+        "We’ll be sharing a "+ ifCanada() +" code with all registered attendees so everyone can enjoy "+ target_lunch_or_brunch($event_target_copy) +" together, even if it’s only over webcams! Or, if you prefer, we can donate your meal to Meals 4 Heroes to help support healthcare workers and restaurants impacted by the coronavirus crisis.<br><br>"+
 
         "May I confirm your interest and follow up with additional details?<br><br>" +
 
@@ -921,7 +923,7 @@ function eventSelected() {
 
         "I’m sure you have a busy schedule, but I wanted to let you know that we still have a few spots remaining for our exclusive virtual "+ target_lunch_or_brunch($event_target_copy) +" and learn, "+ $event_short_title +", on "+ $event_long_date +". The event will run from 12:00 pm to 1:30 pm "+ $event_timezone +".<br><br>" +
 
-        "If you’d like to join us, I’d be happy to save one of those spots for you. All attendees will receive a complimentary $30 "+ ifCanada() +" code, so they can enjoy having their favorite meal delivered while our panel leads an engaging and informative discussion. Alternatively, attendees have the option of having their meal donated to Meals 4 Heroes, to support healthcare workers and restaurants affected by the coronavirus pandemic.<br><br>" +
+        "If you’d like to join us, I’d be happy to save one of those spots for you. All attendees will receive a complimentary "+ ifCanada() +" code, so they can enjoy having their favorite meal delivered while our panel leads an engaging and informative discussion. Alternatively, attendees have the option of having their meal donated to Meals 4 Heroes, to support healthcare workers and restaurants affected by the coronavirus pandemic.<br><br>" +
 
         "You can find more information about the panel and the specific topics at our event website. "+ $event_website +"<br><br>" +
 
@@ -963,7 +965,7 @@ function eventSelected() {
 
         "To preserve the networking value of the lunch, attendees will be able to join small group discussions in breakout room sessions and meet other marketing leaders local to the "+ $event_city +" area.<br><br>" +
 
-        "And while we will no longer be hosting the event at "+ $event_venue +", we will be sending all attendees a $30 "+ ifCanada() +" code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes..<br><br>" +
+        "And while we will no longer be hosting the event at "+ $event_venue +", we will be sending all attendees a "+ ifCanada() +" code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes..<br><br>" +
 
         "The virtual event will run tomorrow, " + $event_long_date +" from 12 pm to 1:30 pm. Full event details are available here at our event website " + $event_website + ").<br><br>" +
 
@@ -1191,7 +1193,7 @@ function eventSelected() {
         "<p>Please be prepared to have your video and microphone on.</p><br>"+
 
         "<b>LUNCH</b><br>" +
-        "<p>We will provide a $30 code for "+ ifCanada() +" so you may enjoy lunch on the morning of the event - stay tuned for that! Or let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.</p><br>"+
+        "<p>We will provide a "+ ifCanada() +" code so you may enjoy lunch on the morning of the event - stay tuned for that! Or let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.</p><br>"+
 
         "<b>PANEL DISCUSSION QUESTIONS</b><br>" +
         "<p>"+ highlight_This("Insert bullet points from website OR panel questions provided by moderator") + "</p><br><br>",
@@ -1343,7 +1345,7 @@ function eventSelected() {
         
         "Our panel of speakers will discuss "+ $event_snippet +". All attendees will be encouraged to actively engage in the discussion through video chat, simulating the interactive and intimate nature of our original face-to-face event scheduled for the same day.<br><br>" + 
         
-        "We will be sending a $30 food delivery code so everyone can still enjoy the discussion and networking over a lunch of their choice while supporting local restaurants. Or let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
+        "We will be sending a " + ifCanada() + " code so everyone can still enjoy the discussion and networking over a lunch of their choice while supporting local restaurants. Or let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
         
         "You can find our panelists and the specific topics we’ll be discussing on our event website, linked here. "+ $event_website +"<br><br>" +
         
