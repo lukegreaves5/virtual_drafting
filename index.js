@@ -901,7 +901,7 @@ function eventSelected() {
 
         "Join the conversation?<br><br>"+
 
-        "Have a great rest of your day" + /*getTodaysDate() gets the day of thr week*/ + ",<br><br>",
+        "Have a great rest of your day,<br><br>", /*getTodaysDate() gets the day of thr week*/ 
 
         // RR MESSAGE 2.2
 
