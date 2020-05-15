@@ -734,6 +734,12 @@ function eventSelected() {
         } else return highlight_This("{{ This Week's / Next Week's / Tomorrow's }}") + " " + $event_long_date
       }
 
+      function contentSnippetThree() {
+        if ($event_content_3.includes("yellow") == true) {
+          return $event_content_3
+        } else return $event_snippet
+      }
+
       const $pr_drafts = 
       [
         // PR MESSAGE 1.1
@@ -857,7 +863,7 @@ function eventSelected() {
 
         "We’re pleased to say our format facilitates peer-to-peer learning virtually—you won’t miss anything but a handshake.<br><br>" +
 
-        $event_full_title + " will revolve around peer-to-peer networking and an interactive discussion about " + $event_content_2 + ". Our panel of speakers includes the following leaders:<br><br>" +
+        $event_full_title + " will revolve around peer-to-peer networking and an interactive discussion about " + $event_content_2 + ". Our panel of speakers includes the following leaders:<br>" +
 
         createPanelistList_full() + 
         
@@ -874,11 +880,11 @@ function eventSelected() {
 
         "I know it’s still a bit early to think about " + target_lunch_or_brunch($event_target_copy) + " plans on " + $event_long_date + ", but how about joining us for some Grubhub and virtual networking at " + $event_full_title + "?<br><br>" + 
 
-        "We’ll be hosting a group of your peers on Zoom for a great discussion between our panelists about " + $event_content_3 ? $event_content_3 : $event_snippet + ".<br><br>" +
+        "We’ll be hosting a group of your peers on Zoom for a great discussion between our panelists about " + contentSnippetThree() + ".<br><br>" +
 
         "You’ll receive a Grubhub code so you can " + target_lunch_or_brunch($event_target_copy) + " while you learn, or you can choose to donate it to Meals 4 Heroes—we’ve already contributed over $5k from these virtual events, courtesy of kind-hearted attendees across North America.<br><br>" +
 
-        "We’re happy to have the opportunity to connect leaders in a time where peer-to-peer learning is more valuable than ever, and yet less available.<br><br>"+
+        "We’re happy to have the opportunity to connect leaders in a time where peer-to-peer learning is more valuable than ever, and yet less available.<br><br>" +
 
         "Join us?<br><br>"+
 
@@ -949,7 +955,7 @@ function eventSelected() {
 
         "I know that your calendar probably fills up quickly, but we still have a couple open spots for " + $event_short_title + " on " + $event_long_date + ". The event will run from 12 to 1:30pm " + $event_timezone + ".<br><br>" +
 
-        "Happy to save one of those spots for you. As an attendee, you’ll receive a " + ifCanada() + " code, so you can order up your favorite delivery while our panel leads an engaging discussion about " + $event_content_3 ? $event_content_3 : $event_snippet + ". If you prefer, we’re happy to donate your meal to Meals 4 Heroes instead, to support healthcare workers and restaurants affected by the coronavirus pandemic.<br><br>" +
+        "Happy to save one of those spots for you. As an attendee, you’ll receive a " + ifCanada() + " code, so you can order up your favorite delivery while our panel leads an engaging discussion about " + contentSnippetThree() + ". If you prefer, we’re happy to donate your meal to Meals 4 Heroes instead, to support healthcare workers and restaurants affected by the coronavirus pandemic.<br><br>" +
 
         "You can find details on our panel and specific discussion topics at our event website " + $event_website + ".<br><br>" +
 
