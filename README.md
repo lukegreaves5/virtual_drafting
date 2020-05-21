@@ -1,6 +1,6 @@
 <h1> Content Engine </h1>
 
-<p>A small web application for automating BDI's email campaign drafting, registrant, panel, sales, and client communications. This documentation assumes the reader has only a basic understanding of HTML and no development experience.</p>
+<p>A small web application for automating BDI's email campaign drafting, registrant, panel, sales, and client communications. <b><b>This documentation assumes the reader has only a basic understanding of HTML and no development experience.</p>
 
 <div>
 <h2 style="width:100%;text-align:center"> Before you start </h2>
