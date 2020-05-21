@@ -1082,7 +1082,7 @@ function eventSelected() {
 
         `We will provide you with the food delivery code on the day of the event—stay tuned for that. Or please let us know if you’d prefer to have your meal donated to <b>Meals 4 Heroes</b>. Please make sure to whitelist our email address to ensure the code isn't sent to spam<br><br>` +
 
-        `Finally, look out for a <b>calendar invite</br> from us.<br>
+        `Finally, look out for a <b>calendar invite</b> from us.<br>
         Look forward to your participation!`
 
         `Steve`,
