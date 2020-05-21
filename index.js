@@ -393,7 +393,8 @@ function eventSelected() {
       $event_target_vertical = objectCheck(['Vertical']),
       $event_timezone = objectCheck(['Timezone']),
       $event_theme = objectCheck(['Content Theme']),
-      $event_goal = objectCheck(['Content Goal']);
+      $event_goal = objectCheck(['Content Goal']),
+      $event_zoom_link = objectCheck(['Zoom Link']);
 
       function objectCheck(propCheck) {
         if($event.hasOwnProperty(propCheck)) {
@@ -829,11 +830,11 @@ function eventSelected() {
         // RR MESSAGE 1.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Interested in Thought Leadership on "+ $event_theme +"!</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Interested in Thought Leadership on "+ $event_theme +"?</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I’m organizing a virtual thought-leadership event for a group of " + $event_audience + " from the " + target_2_1_area($event_target_copy) + ", and I'd like to invite you to join us.<br><br>" +
+        "I’m organizing a virtual thought-leadership event for a group of " + $event_audience + " from " + target_2_1_area($event_target_copy) + ", and I'd like to invite you to join us.<br><br>" +
 
         "The agenda includes video networking in small breakout rooms and a moderated panel discussion about " + $event_snippet + ". Our expert panelists are featured—along with a list of discussion topics—on the event site below.<br>"+
 
@@ -842,7 +843,7 @@ function eventSelected() {
         <li>${ $event_full_title }</li><br>
         <li>Date: ${ $event_long_date }</li><br>
         <li>Time: 12 to 1:30pm ${ $event_timezone }</li><br>
-        <li>Details: ${ $event_website } </li><br>
+        <li>Details: event website ${ $event_website } </li><br>
         </ul>
         `+
 
@@ -867,14 +868,14 @@ function eventSelected() {
 
         createPanelistList_full() + 
         
-        "Next time, we hope to do this at a restaurant over a 3 course meal, but for " + $event_long_date + ", may we count you in?<br><br>" +
+        "Next time, we hope to do this at a restaurant over a 3-course meal, but for " + $event_long_date + ", may we count you in?<br><br>" +
         
         "Best,<br>Steve",
 
         // RR MESSAGE 1.3
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> {{FIRST_NAME}}, How Can You " + $event_goal + "? </p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> How Can You " + $event_goal + "? </p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
@@ -895,7 +896,7 @@ function eventSelected() {
         // RR MESSAGE 2.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> {FIRST_NAME}}, " + target_lunch_or_brunch($event_target_copy) + " is on us!</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> {{FIRST_NAME}}, " + target_lunch_or_brunch($event_target_copy) + " is on us!</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
@@ -913,7 +914,7 @@ function eventSelected() {
 
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 2.2</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Check out who’s attending—" + $event_short_title + ".</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> Check out who’s attending—" + $event_short_title + "</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
         
@@ -934,7 +935,7 @@ function eventSelected() {
         // RR MESSAGE 2.3
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 2.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Hear what our expert panel has to say about " + $event_theme + ".</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> Hear what our expert panel has to say about " + $event_theme + "</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
@@ -974,7 +975,7 @@ function eventSelected() {
 
         $event_full_title + " is just around the corner!<br><br>" +
 
-        "Last call to join us " + thisWeek_nextWeek_Tomorrow_inCopy() + " from 12 – 1:30pm " + $event_timezone + ".<br><br>" +
+        "Last call to join us " + thisWeek_nextWeek_Tomorrow_inCopy() + " " + $event_long_date + " from 12 – 1:30pm " + $event_timezone + ".<br><br>" +
 
         "Check out who you’d be networking with here." + $event_promo_reg_list + "<br><br>" +
 
@@ -1064,11 +1065,9 @@ function eventSelected() {
 
         "Thank you for your response! Delighted to have you join!<br><br>" +
 
-        "To join the meeting, please click here: "+ highlight_This("INSERT ZOOM LINK from VA Team View") +"<br><br>" +
+        "To join the meeting, please click here: "+ $event_zoom_link +"<br><br>" +
 
-        "Please download the Zoom software in order to participate in the video-based breakout room networking sessions before and after the panel. Download here: https://zoom.us/download<br><br>"+
-
-        "Please be prepared to have your video and microphone on.<br><br>" + 
+        "Please download the Zoom software in order to participate in the video-based breakout room networking sessions before and after the panel. Download here: https://zoom.us/download. Please be prepared to have your video and microphone on.<br><br>" + 
 
         `Here is the agenda for the session:<br>
         <ul>
@@ -1081,9 +1080,10 @@ function eventSelected() {
         </ul><br>`
         +
 
-        "We will provide you with the "+ ifCanada() +" code on the day of the event—stay tuned for that. Or please let us know if you’d prefer to have your meal donated to Meals 4 Heroes.<br><br>" +
+        `We will provide you with the food delivery code on the day of the event—stay tuned for that. Or please let us know if you’d prefer to have your meal donated to <b>Meals 4 Heroes</b>. Please make sure to whitelist our email address to ensure the code isn't sent to spam<br><br>` +
 
-        "Please make sure to whitelist our email address to ensure the code isn't sent to spam. Look forward to your participation!<br><br>" +
+        `Finally, look out for a <b>calendar invite</br> from us.<br>
+        Look forward to your participation!`
 
         `Steve`,
 
