@@ -1394,7 +1394,7 @@ function eventSelected() {
       ];
 
       const $sc_drafts = 
-      
+
       [
         // CLIENT REGISTRANT RECRUITMENT
 
@@ -1426,7 +1426,7 @@ function eventSelected() {
         
         `Interested in joining us, {{FIRST_NAME}}? To RSVP please email <a href="mailto:RSVP for the ` + $event_theme + ' ' + target_lunch_or_brunch($event_target_copy) + ' event on ' + $event_month_number + '/' + $event_day_number + `">steven.etzler@bdionline.com</a>.<br><br>` +
 
-        "Best<br><br>",
+        "Best",
 
       ]
 
