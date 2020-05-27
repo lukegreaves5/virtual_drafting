@@ -1342,106 +1342,91 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "Based on your career experience and your role at {{COMPANY}}, I thought you might be a good fit to be a panel speaker for a lunch event I am organizing on " + $event_date_month_and_number + ".<br><br>" +
+        "I thought tou'd make a great <i>panelist</i> for a virtual " + target_lunch_or_brunch($event_target_copy) + "-and-learn event we are organizing on " + $event_long_date +" from 12 to 1:30pm " + $event_timezone + ".<br><br>" +
 
-        "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>" +
+        $event_full_title + " will gather " + $event_audience_and_size + " " + target_2_1_area($event_target_copy) + " for video-networking in small breakout rooms before and after an interactive panel discussion. It’ll be conversational, with no formal presentations or press.<br><br>" +
 
-        "Our virtual event, "+ $event_full_title +", will gather "+ $event_audience_and_size +" from "+ target_2_1_area($event_target_copy) + " for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing "+ ifCanada() +" eGift cards with all attendees, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices. Or let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
-
-        "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:30 PM "+ $event_timezone +" the day of.<br><br>" +
-
-        "You can see the full virtual event details here at our event website. "+ $event_website +"<br><br>"+
-
-        "At a high level, we are looking to explore these discussion points:<br>" +
+        "At a high level, we are looking to explore the discussion points below, though these conversations tend to flow in the direction of attendees’ interests and the passions of our panel—we can dive into your expertise and preference in greater detail on our panel practice run:.<br>" +
 
         `<ul>
         <li>DISUCSSION TOPIC 1</li>
         <li>DISUCSSION TOPIC 2</li>
         <li>DISUCSSION TOPIC 3</li>
+        <li>DISUCSSION TOPIC 3</li>
         </ul>` +
 
-        "May I confirm your interest and follow up with additional details?<br><br>" +
+        "We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45am to 1:30pm " + $event_timezone + " the day of.<br><br>" +
 
-        "Stay healthy,<br><br>",
+        "Would you be open to speaking on our virtual panel, FIRST NAME?<br><br>",
 
         // CLIENT REGISTRANT RECRUITMENT
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Client Recruitment - Client Registrant Communication</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i>Join Us For Lunch? </p><br><br>" +
 
-        "Hi {{FIRST_NAME}},<br><br>" +
+        "Hello {{FIRST_NAME}},<br><br>" +
 
-        "You’re invited to participate in our exclusive virtual thought leadership event, "+ $event_full_title +", on "+ $event_long_date +" from 12 to 1:30pm "+ $event_timezone +" with a group of local "+ $event_audience +" from "+ target_2_1_area($event_target_copy) +". In addition to listening to our panel of industry experts, you will be able to meet your fellow attendees in video breakout room sessions to further expand your network and discuss the event topics.<br><br>" +
+        "Would you be interested in participating in our virtual, thought-leadership event?<br><br>" +
         
-        "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>" +
+        $event_full_title + " will revolve around peer-to-peer networking for a group of " + $event_audience + " from " + target_2_1_area($event_target_copy) + ".<br><br>" +
         
-        "Our panel of speakers will discuss "+ $event_snippet +". All attendees will be encouraged to actively engage in the discussion through video chat, simulating the interactive and intimate nature of our original face-to-face event scheduled for the same day.<br><br>" + 
+        "Here are the details:<br>" + 
+
+        `<ul>
+        <li>` + $event_full_title + `</li>
+        <li>Date: ` + $event_long_date + `</li>
+        <li>Time: 12 to 1:30pm `+ $event_timezone + `</li>
+        <li>Details: Event Site ` + $event_website + `</li>
+        </ul>` +
         
-        "We will be sending a " + ifCanada() + " code so everyone can still enjoy the discussion and networking over a lunch of their choice while supporting local restaurants. Or let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
+        "The agenda includes video networking in small breakout rooms and a moderated panel discussion about " + $event_snippet + "<br><br>" +
         
-        "You can find our panelists and the specific topics we’ll be discussing on our event website, linked here. "+ $event_website +"<br><br>" +
+        "Our panel includes the folllowing leaders:<br>" +
+
+        createPanelistList_full() +
         
-        "Are you interested in RSVPing? Just respond here (<a href='mailto:steven.etzler@bdionline.com?subject=RSVP for the "+ $event_month_number +"/"+ $event_day_number + " " + $event_short_title + " " +" Virtual Lunch Event'>steven.etzler@bdionline.com</a>) and we’ll take care of the rest!<br><br>"+
+        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending " + ifCanada() + " codes so each attendee can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>"+
         
-        "Best regards,<br><br>"+
-        "Steve Etzler",
+        `Interested in joining us, {{FIRST_NAME}}? To RSVP please email <a href="mailto:RSVP for the ` + $event_theme + ' ' + target_lunch_or_brunch($event_target_copy) + ' event on ' + $event_month_number + '/' + $event_day_number + `">steven.etzler@bdionline.com</a>.<br><br>` +
+
+        "Best<br><br>",
     
       ];
 
       const $sc_drafts = 
+      
       [
-        // BDI COMES TO 1.1
+        // CLIENT REGISTRANT RECRUITMENT
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> BDI Comes To - Sales Communication</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i>  BDI Comes To 1.1 | BDI Comes To "+$event_city+"</p><br><br>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Client Recruitment - Client Registrant Communication</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i>Join Us For Lunch? </p><br><br>" +
 
-        "Hi {{FIRST_NAME}},<br><br>" +
+        "Hello {{FIRST_NAME}},<br><br>" +
 
-        "I will be in " + $event_city + " on " + $event_month + " " + $event_day_number + addDateSuffix($event_day_number) + " to run an event (event website " + highlight_This($event_website) + " " + highlight_This($event_promo_reg_list) + ") on the . I noticed you’re based in the area, so I thought it would be worthwhile to see if you’d like to meet while I am in town.<br><br>" +
+        "Would you be interested in participating in our virtual, thought-leadership event?<br><br>" +
         
-        "BDI is an account-based event marketing agency focused on generating revenue for our clients through our prospect roadshows, called Accelerate.<br><br>" +
+        $event_full_title + " will revolve around peer-to-peer networking for a group of " + $event_audience + " from " + target_2_1_area($event_target_copy) + ".<br><br>" +
         
-        "We partner with B2B tech companies as an extension of their marketing team to develop a turnkey Accelerate program that positions our clients as thought leaders in their space, while attracting qualified buyers from their target accounts to attend.<br><br>" +
+        "Here are the details:<br>" + 
+
+        `<ul>
+        <li>` + $event_full_title + `</li>
+        <li>Date: ` + $event_long_date + `</li>
+        <li>Time: 12 to 1:30pm `+ $event_timezone + `</li>
+        <li>Details: Event Site ` + $event_website + `</li>
+        </ul>` +
         
-        "Also sharing our case study with Equinix here " + highlight_This("https://www.bdionline.com/event/060917abm/") + ", which reviews the $1.5M ROI from our Accelerate event program with them.<br><br>" +
+        "The agenda includes video networking in small breakout rooms and a moderated panel discussion about " + $event_snippet + "<br><br>" +
         
-        "I’d be happy to meet over coffee or come into your office, if you’d like to chat further. Do you have availability on " + $event_month + " " + ($event_day_number - 1) + addDateSuffix(($event_day_number - 1)) + " to meet?<br><br>" +
+        "Our panel includes the folllowing leaders:<br>" +
+
+        createPanelistList_full() +
         
-        "Thanks,<br><br>",
-
-        // BDI COMES TO 1.2
-
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> BDI Comes To - Sales Communication</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i>  BDI Comes To 1.2 | RE: BDI Comes To "+$event_city+"</p><br><br>" +
-
-        "Hi {{FIRST_NAME}},<br><br>" +
-
-        "Kindly following up on my note below.<br><br>" +
+        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending " + ifCanada() + " codes so each attendee can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>"+
         
-        "To expand on what I’ve shared, our Accelerate events are thought-leadership driven prospect roadshows.<br><br>" +
-        
-        "Here is a short video " + highlight_This("https://www.bdionline.com/portfolio/acceleratevid/") + " to show you what an Accelerate event looks like. " + highlight_This("{{COMPANY}}") + " would be the sponsor. We are the organizers. The attendees would be from " +  highlight_This("{{COMPANY}}") + "'s top targets.<br><br>" +
-        
-        "Would you be open to meeting while I am in town on " + $event_month + " " + ($event_day_number - 1) + addDateSuffix(($event_day_number - 1)) + "?<br><br>" +
-        
-        "Thanks, and look forward to hearing from you!<br><br>" +
-        $event_onSite,
+        `Interested in joining us, {{FIRST_NAME}}? To RSVP please email <a href="mailto:RSVP for the ` + $event_theme + ' ' + target_lunch_or_brunch($event_target_copy) + ' event on ' + $event_month_number + '/' + $event_day_number + `">steven.etzler@bdionline.com</a>.<br><br>` +
 
-        // BDI COMES TO 1.3
-
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> BDI Comes To - Sales Communication</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i>  BDI Comes To 1.3 | Meet next " + $weekday_before + "</p><br><br>" +
-
-        "Hi {{FIRST_NAME}},<br><br>" +
-
-        "Would you like to meet next " + $weekday_before + ", " + $event_month + " " + ($event_day_number - 1) + addDateSuffix(($event_day_number - 1)) + " while I am in " + $event_city + "?<br><br>" +
-
-        "I think there is a good fit for BDI to produce Accelerate events for " +  highlight_This("{{COMPANY}}") + " that attract buyers from your target accounts.<br><br>" +
-
-        "Happy to arrange a phone call for a different day, if you’re interested in connecting but not available next " + $weekday_before + ". Please let me know.<br><br>" +
-
-        "Best regards,<br><br>" +
-        $event_onSite,
+        "Best<br><br>",
 
       ]
 
@@ -1491,7 +1476,7 @@ function eventSelected() {
             return $drafts.html($cc_drafts[2]);
           }
         } else if ($selectedMessageType == "Sales Communication") {
-          if ($selectedMessageName == "BDI Comes To"){
+          if ($selectedMessageName == "Sales Communication"){
             return $drafts.html($sc_drafts[0] + doubleSpaceAndLine + $sc_drafts[1] + doubleSpaceAndLine + $sc_drafts[2] + "<br><br>");
           }
         } else if ($selectedMessageType == "Registrant Communication") {
