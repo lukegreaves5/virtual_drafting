@@ -746,30 +746,30 @@ function eventSelected() {
         // PR MESSAGE 1.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Join Our Virtual "+ target_subject($event_target_copy) +" Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Are You a " + $event_theme + " Thought Leader?+ </p><br><br>" + //target_subject($event_target_copy)
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "Based on your career experience and your role at {{COMPANY}}, I thought you might be a good fit to be a panel speaker for a virtual "+ target_lunch_or_brunch($event_target_copy) +" event I am organizing on " + $event_long_date + ".<br><br>" +
+        "Based on your career experience and your role at {{COMPANY}}, I thought you might be a good fit to be a <b>panelist</b> for a virtual "+ target_lunch_or_brunch($event_target_copy) +" event I am organizing on " + $event_long_date + ".<br><br>" +
 
-        "While we traditionally host our events in-person at award-winning restaurants around the country, we have transitioned to virtual events out of concern for the health and safety of our attendees and to do our part in flattening the curve during the current COVID-19 crisis.<br><br>"+
+        $event_full_title + " will gather " + $event_audience_and_size + " from " + target_1_1_area($event_target_copy) + " for video-networking in small breakout rooms before and after an interactive panel discussion. It’ll be conversational, with no formal presentations or press.<br><br>"+
 
-        "Our virtual event, " + $event_full_title + ", will gather " + $event_audience_and_size + " from " + target_1_1_area($event_target_copy) + " for video-networking in small breakout rooms before and after our interactive panel discussion. We’ll be sharing " + ifCanada() +" codes, so everyone can still enjoy lunch while they participate from the comfort and safety of their homes/offices.<br><br>" +
+        "We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45am – 1:30pm " + $event_timezone + " the day of.<br><br>"+
 
-        "The panel discussion will be conversational, with no formal presentations or press. We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45 AM – 1:30 PM "+ $event_timezone +" the day of.<br><br>" +
+        "May I confirm your interest and follow up with additional details?<br><br>" +
 
-        "May I confirm your interest and follow up with additional details?",
+        "Cheers",
 
         // PR MESSAGE 1.2
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.2</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Virtual "+ target_subject($event_target_copy) +" Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> {{FIRST_NAME}}, Our Panel Needs Your Expertise</p><br><br>" +
         
         "Hey again {{FIRST_NAME}},<br><br>" +
 
         "Just wanted to circle back on my panel invitation below and expand on the topics we’ll cover.<br><br>" +
 
-        "At a high level, we are looking to explore the discussion points below, though these conversations tend to flow in the direction of attendees’ interests and the passions of our panel—we can dive into your expertise and preference in greater detail on our panel practice run:<br><br>" +
+        "At a high level, we are looking to explore the discussion points below, though these conversations tend to flow in the direction of attendees’ interests and the passions of our panel—we can dive into your expertise and preference in greater detail on our panel practice run: <br><br>" +
         
         `<ul>
         <li>DISUCSSION TOPIC 1</li><br>
@@ -788,13 +788,15 @@ function eventSelected() {
         // RR MESSAGE 1.3
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Virtual "+ target_subject($event_target_copy) +" Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> Share What You Know at " + $event_short_title + "</p><br><br>" +
 
         "Hope your day is going well, {{FIRST_NAME}}. Just wanted to bring this invite to the top of your inbox.<br><br>" +
 
-        "We would really love to have your contribution to our " + $event_short_title + " lunch if you’re available and the content appeals to you.<br><br>" +
+        "We would love to have you participate in " + $event_short_title + " if you’re available and the content appeals to you.<br><br>" +
 
-        "We’ve had overwhelmingly positive feedback on our pivot to virtual events and past panelists have found their participation to be an excellent networking opportunity and a great chance to discuss topics of interest with other subject matter experts and industry professionals.<br><br>" +
+        "We traditionally host these events at award-winning restaurants, so to keep the ‘"+ target_lunch_or_brunch($event_target_copy) + " and learn’ structure, we’re sending " + ifCanada() + " codes so each participant can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>" +
+
+        "We’ve received overwhelmingly positive feedback on our pivot from live to virtual events, and panelists are finding their participation to be an excellent networking opportunity as well as a chance to discuss topics of interest with other subject matter experts and industry professionals they might not otherwise rub shoulders with.<br><br>" +
 
         "You can see the full virtual event details here at our " + $event_website + "<br><br>" +
 
@@ -807,19 +809,17 @@ function eventSelected() {
         // PR MESSAGE 1.4
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.4</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Re:{{FIRST_NAME}}, Join Our Virtual "+ target_subject($event_target_copy) +" Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> This will have your LinkedIn Circles Talking!</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I know I’ve been persistent, but I think you would be a valuable addition to our panel discussion.<br><br>" +
+        "I know I’ve been persistent, but it’s because I think you’d be such a valuable addition to our panel discussion.<br><br>" +
         
-        "The event should be a great opportunity for you to demonstrate your domain expertise as a <b>" + $event_audience + " leader</b>, and to share your knowledge.<br><br>" +
+        "The event should be a great opportunity for you to demonstrate your expertise as a " + $event_audience + " leader, and to share your experience with industry peers.<br><br>" +
                 
-        "We’ll be providing "+ ifCanada() +" codes to cover the ‘lunch’ portion of the ‘lunch and learn’, and we expect to have a strong attendance of <b>" + $event_audience + "</b> local to " + target_panel_4_1($event_target_copy) +".<br><br>" +
+        "We’ll be providing "+ ifCanada() +" codes to cover the ‘" + target_lunch_or_brunch($event_target_copy) + "’ portion of the ‘" + target_lunch_or_brunch($event_target_copy) + " and learn’, and we expect to have a strong attendance of " + $event_audience + " local to " + target_panel_4_1($event_target_copy) +".<br><br>" +
 
         "Are you interested in speaking on the virtual panel on " + $event_long_date + "?<br><br>" +
-        
-        "Hope you have a great day,<br><br>" +
 
         "Steven Etzler",
 
@@ -1342,7 +1342,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I thought tou'd make a great <i>panelist</i> for a virtual " + target_lunch_or_brunch($event_target_copy) + "-and-learn event we are organizing on " + $event_long_date +" from 12 to 1:30pm " + $event_timezone + ".<br><br>" +
+        "I thought you'd make a great <i>panelist</i> for a virtual " + target_lunch_or_brunch($event_target_copy) + "-and-learn event we are organizing on " + $event_long_date +" from 12 to 1:30pm " + $event_timezone + ".<br><br>" +
 
         $event_full_title + " will gather " + $event_audience_and_size + " " + target_2_1_area($event_target_copy) + " for video-networking in small breakout rooms before and after an interactive panel discussion. It’ll be conversational, with no formal presentations or press.<br><br>" +
 
