@@ -746,7 +746,7 @@ function eventSelected() {
         // PR MESSAGE 1.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Are You a " + $event_theme + " Thought Leader?+ </p><br><br>" + //target_subject($event_target_copy)
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Are You a " + $event_theme + " Thought Leader? </p><br><br>" + //target_subject($event_target_copy)
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
@@ -782,7 +782,7 @@ function eventSelected() {
 
         "Would you like to contribute to our panel discussion?<br><br>" +
 
-        "Cheers,<br>" +
+        "Best,<br>" +
         "Steve Etzler",
 
         // RR MESSAGE 1.3
@@ -798,7 +798,7 @@ function eventSelected() {
 
         "We’ve received overwhelmingly positive feedback on our pivot from live to virtual events, and panelists are finding their participation to be an excellent networking opportunity as well as a chance to discuss topics of interest with other subject matter experts and industry professionals they might not otherwise rub shoulders with.<br><br>" +
 
-        "You can see the full virtual event details here at our " + $event_website + "<br><br>" +
+        "You can see the full virtual event details here at our event website " + $event_website + "<br><br>" +
 
         "Happy to jump on a 5-minute call to further explain our objectives and to share more about the panel experience.<br><br>" +
 
@@ -820,6 +820,8 @@ function eventSelected() {
         "We’ll be providing "+ ifCanada() +" codes to cover the ‘" + target_lunch_or_brunch($event_target_copy) + "’ portion of the ‘" + target_lunch_or_brunch($event_target_copy) + " and learn’, and we expect to have a strong attendance of " + $event_audience + " local to " + target_panel_4_1($event_target_copy) +".<br><br>" +
 
         "Are you interested in speaking on the virtual panel on " + $event_long_date + "?<br><br>" +
+
+        "Thanks,<br><br>" +
 
         "Steven Etzler",
 
@@ -1381,7 +1383,7 @@ function eventSelected() {
         
         "The agenda includes video networking in small breakout rooms and a moderated panel discussion about " + $event_snippet + "<br><br>" +
         
-        "Our panel includes the folllowing leaders:<br>" +
+        "Our panel includes the following leaders:<br>" +
 
         createPanelistList_full() +
         
@@ -1418,7 +1420,7 @@ function eventSelected() {
         
         "The agenda includes video networking in small breakout rooms and a moderated panel discussion about " + $event_snippet + "<br><br>" +
         
-        "Our panel includes the folllowing leaders:<br>" +
+        "Our panel includes the following leaders:<br>" +
 
         createPanelistList_full() +
         
