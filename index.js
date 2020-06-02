@@ -1171,11 +1171,11 @@ function eventSelected() {
         // SCHEDULING PANEL PREP CALL
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Scheduling Panel Prep Call</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Schedule Panel Practice Run | "+ $event_short_title +"</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Scheduling Panel Prep | "+ $event_short_title +"</p><br><br>" +
 
         "Hello all,<br><br>" +
 
-        "We’re excited for your panel participation at " + $event_short_title + "virtual meeting, taking place on "+ $event_long_date +" from 11:45AM – 1:30PM at on our video-based platform Zoom.<br><br>" +
+        "We’re excited for your panel participation at " + $event_short_title + " virtual meeting, taking place on " + $event_long_date + " from 11:45AM – 1:30PM " + $event_timezone + " on our video-based platform Zoom.<br><br>" +
 
         "We would like to schedule a 30 minute panel practice run on "+ highlight_This("DAY, DATE") +" between "+ highlight_This("TIME") +".<br><br>"+
 
