@@ -888,11 +888,12 @@ function eventSelected() {
         "You’ll receive a Grubhub code so you can " + target_lunch_or_brunch($event_target_copy) + " while you learn, or you can choose to donate it to Meals 4 Heroes—we’ve already contributed over $5k from these virtual events, courtesy of kind-hearted attendees across North America.<br><br>" +
 
         "We’re happy to have the opportunity to connect leaders in a time where peer-to-peer learning is more valuable than ever, and yet less available.<br><br>" +
+        
+        "If the event doesn’t appeal to you, but you know someone in your organization who might be interested, please feel free to forward the invite.<br><br>" +
 
         "Join us?<br><br>" +
 
-        "Stay healthy,<br>" +
-
+        "Best,<br>" +
         "Steve",
 
         // RR MESSAGE 2.1
