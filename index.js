@@ -1066,27 +1066,21 @@ function eventSelected() {
 
         "Hi FIRST NAME,<br><br>" +
 
-        "Thank you for your response! Delighted to have you join!<br><br>" +
+        "Thank you for your response! Delighted to have you join!<br>" +
 
-        "To join the meeting, please click here: "+ $event_zoom_link +"<br><br>" +
+        "Here is the meeting link: "+ $event_zoom_link +"<br><br>" +
 
-        "Please download the Zoom software in order to participate in the video-based breakout room networking sessions before and after the panel. Download here: https://zoom.us/download. Please be prepared to have your video and microphone on.<br><br>" + 
-
-        `Here is the agenda for the session:<br>
+        `The agenda for the session is simple:<br>
         <ul>
         <li style="list-style: none;"><b>12:00PM Attendees Enter Virtual Event & Welcome Remarks</b></li>
         <li style="list-style: none;"><b>12:05PM Video Networking in Breakout Rooms</b></li>
         <li style="list-style: none;"><b>12:15PM Panel Discussion</b></li>
         <li style="list-style: none;"><b>12:55PM Audience Q&A</b></li>
         <li style="list-style: none;"><b>1:10PM Breakout Networking Sessions</b></li>
-        <li style="list-style: none;"><b>01:30PM Event Ends</b></li>
         </ul><br>`
         +
 
-        `We will provide you with the food delivery code on the day of the event—stay tuned for that. Or please let us know if you’d prefer to have your meal donated to <b>Meals 4 Heroes</b>. Please make sure to whitelist our email address to ensure the code isn't sent to spam<br><br>` +
-
-        "Finally, look out for a <b>calendar invite</b> from us.<br>" +
-        "Look forward to your participation!<br><br>" +
+        `We will provide you with the food delivery code on the day of the event—stay tuned for that. Or please let us know if you’d prefer to have your meal donated to <b>Meals 4 Heroes</b>. <br><br>Please make sure to whitelist our email address to ensure the code isn't sent to spam<br><br>` +
 
         "Steve",
 
@@ -1125,13 +1119,11 @@ function eventSelected() {
 
          highlight_This("VALUE") + " " + $event_short_title + " video-based virtual meeting, taking place from 12 to 1:30PM on Zoom.<br><br>" + 
 
-        "To join the meeting, <span style='color:red;'>click here. </span>"+ $event_virtual_link +"<br><br>"+
-
-        "Please download the Zoom software in order to participate in the video-based breakout room networking sessions before and after the panel. Download here: https://zoom.us/download.<br><br>" +
+        "To join the meeting, click here. "+ $event_virtual_link +"<br><br>"+
 
         "Please be prepared to have your <b>video and microphone on</b>.<br><br>"+
 
-        "<span style='color:red;'>Please reply back to confirm your participation</span> so we can send you a "+ ifCanada() +" code for lunch! Or please let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>"+
+        "Please reply back to confirm your participation so we can send you a "+ ifCanada() +" code for lunch! Or please let us know if you’d prefer to have your meal donated to <b>Meals 4 Heroes</b> to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>"+
 
         `Here is the agenda for the session:<br>
         <ul>
@@ -1145,8 +1137,8 @@ function eventSelected() {
         Thank you and we look forward to seeing you tomorrow!<br><br>
 
         Best regards,<br>
-        Steve Etzler, CEO<br>
-        <b>Business Development Institute</b>`,
+        Steve Etzler<br>
+        Business Development Institute`,
 
          // SEE YOU TODAY
 
@@ -1159,15 +1151,15 @@ function eventSelected() {
 
          "<span style='color:red;'><b>Here is your " + ifCanada() + " eGift card NUMBER and your PIN PINNUMBER so you may enjoy lunch, courtesy of <span style='color:red;'>"+ $event_client +"</span>! </b></span><br><br>"+
 
-         "Please let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
+         "Please let us know if you’d prefer to have your meal donated to <b>Meals 4 Heroes</b> to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
 
-         "To join, please click here: " + $event_virtual_link +"<br><br>"+
+         "To join the meeting, please click here: " + $event_virtual_link +"<br><br>"+
          
-         "The objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants BEFORE and AFTER the panel in breakout rooms. If you haven’t already, please download the Zoom software in order to participate in the breakout room sessions. Download here: https://zoom.us/download<br><br>" +
+         "The objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants BEFORE and AFTER the panel in breakout rooms.<br><br>" +
 
-         "Please be prepared to have your video and microphone on.<br><br>" +
-         
-         `Thank you,<br>`,
+         "See you soon,<br>" +
+         "<b>Steve Etzler</b><br>" +
+         "<b>Business Development Institute</b><br>",
 
         // SCHEDULING PANEL PREP CALL
 
@@ -1190,7 +1182,7 @@ function eventSelected() {
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Prep Call Agenda</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i>" + $event_short_title + " Panel Prep</p><br><br>" +
  
-        "Hello all,<br><br>"+
+        "Hi all,<br><br>"+
 
         "Looking forward to our panel practice run on "+ highlight_This("DAY, DATE at TIME")+". To join the video meeting, please click here: "+ highlight_This("AM ZOOM")+".<br><br>" +
 
@@ -1223,10 +1215,6 @@ function eventSelected() {
         "<li>12:55PM Audience Q&A<br>" +
         "<li>1:10PM Breakout Networking Sessions</li></ul><br><br>" +
 
-        "<b>LOGIN DETAILS</b>" +
-        "<p>Please download the Zoom software in order to participate in the video-based breakout room networking sessions before and after the panel. Download here: https://zoom.us/download.<br>"+
-        "<p>Please be prepared to have your video and microphone on.</p><br>"+
-
         "<b>LUNCH</b><br>" +
         "<p>We will provide a "+ ifCanada() +" code so you may enjoy lunch on the morning of the event - stay tuned for that! Or let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.</p><br>"+
 
@@ -1246,13 +1234,11 @@ function eventSelected() {
 
         "Here is the link to join the meeting: "+ $event_virtual_link +"<br><br>"+
 
-        "Please download the Zoom software in order to participate in the breakout room networking sessions before and after the panel: https://zoom.us/download<br><br>"+
-
         "Please be prepared to have your video and microphone on.<br><br>"+
 
-        "<b>This email serves as a reminder and an invite for you to share with a colleague who may also find this event valuable.</b><br><br>"+
+        "This email serves as a reminder and an invite for you to share with a colleague who may also find this event valuable.<br><br>"+
 
-        "Thanks, we look forward to seeing you online from 12 to 1:30 pm on "+ $event_long_date +".<br><br>"+
+        "To ensure you're able to receive your $30 food delivery code, please make sure to whitelist our email address so the message doesn't end up in your spam folder!<br><br>" +
 
         "Best regards,<br>" +
         "<b>Steve Etzler</b>"+
@@ -1287,7 +1273,11 @@ function eventSelected() {
 
         "This is <span style='color:red;'>{VA}</span> calling from BDI.<br><br>"+
 
-        "We have you registered to join our virtual lunch & learn "+ $event_full_title +" tomorrow, "+ $event_long_date + " from 12-1:30PM. If your schedule has changed and you can no longer attend, please let us know by responding to Steve's email.<br><br>"+
+        "We have you registered to join us at "+ $event_full_title +" tomorrow, "+ $event_long_date + " from 12-1:30PM " + $event_timezone + ".<br><br>" +
+
+        "Please be prepared to participate via video on your computer or mobile device. We'll be providing a code for food delivery!<br><br>" +
+
+        "If your schedule has changed and you can no longer attend, please let us know by responding to Steve's email.<br><br>" +
 
         "Thank you! Bye!<br><br>",
 
