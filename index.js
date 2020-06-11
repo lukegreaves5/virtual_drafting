@@ -750,11 +750,11 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "Based on your career experience and your role at {{COMPANY}}, I thought you might be a good fit to be a <b>panelist</b> for a virtual "+ target_lunch_or_brunch($event_target_copy) +" event I am organizing on " + $event_long_date + ".<br><br>" +
+        "Based on your career experience and your role at {{COMPANY}}, I thought you might be a good fit to be a <b><u>panelist</u></b> for a virtual "+ target_lunch_or_brunch($event_target_copy) +" event I am organizing on " + $event_long_date + ".<br><br>" +
 
         $event_full_title + " will gather " + $event_audience_and_size + " from " + target_1_1_area($event_target_copy) + " for video-networking in small breakout rooms before and after an interactive panel discussion. It’ll be conversational, with no formal presentations or press.<br><br>"+
 
-        "We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45am – 1:30pm " + $event_timezone + " the day of.<br><br>"+
+        "We ask a total time commitment of two hours and 15min from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45am – 1:30pm " + $event_timezone + " the day of.<br><br>"+
 
         "May I confirm your interest and follow up with additional details?<br><br>" +
 
