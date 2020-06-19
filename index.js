@@ -4,7 +4,7 @@ BDI's Content Engine - A front end web application for automating email marketin
 
 Author: Luke Greaves
 Github: @lukegreaves5
-Tools & libraries used: HTML, CSS, SCSS, JavaScript, jQuery, Airtable's API, Underscore.js
+Tools & libraries used: HTML, CSS, SCSS, JavaScript, jQuery, Airtable API, Underscore.js
 
 ------------------ */
 
@@ -1009,6 +1009,14 @@ function eventSelected() {
 
         "Best regards,",
 
+        // LinkedIn Campaigns - Start
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> LinkedIn Campaigns</p>" +
+
+        "Hi NAME,<br><br>" +
+
+        "I’d like to invite you to our virtual lunch & learn event, " + $event_short_title + " on " + $event_month_number + "/" + $event_day_number + " from 12-1:130PM " + $event_timezone + ". Details at website " + $event_website + ". We'll be sending a " + ifCanada() + " code for lunch! May I count you in? If so, please send me your email address.<br><br>",
+
       ];
 
       const $rc_drafts = 
@@ -1140,7 +1148,7 @@ function eventSelected() {
         Steve Etzler<br>
         Business Development Institute`,
 
-         // SEE YOU TODAY
+        // SEE YOU TODAY
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - See you today</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> See you today at our virtual event!</p><br><br>" +
@@ -1160,6 +1168,52 @@ function eventSelected() {
          "See you soon,<br>" +
          "<b>Steve Etzler</b><br>" +
          "<b>Business Development Institute</b><br>",
+
+        // ONBOARDING PANELIST - CONFIRMED
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Onboarding Panelist - Confirmed</p>" +
+
+         "Hi NAME,<br><br>" +
+
+         "Great news – delighted to have you join us!<br><br>" +
+
+         "The only thing I need from you is a headshot so we can add you to the event website " + $event_website +". Happy to grab the one you have on LinkedIn if that’s okay.<br><br>" +
+ 
+         "My colleague " + highlight_This('AM NAME') + " (CCed above) will circle back in a few weeks to lock in a 30-minute video call to prepare for the panel. I’ll introduce you to your moderator and fellow panelists then.<br><br>" +
+         
+         "Please note that the virtual meeting will be recorded and by participating in this event you are agreeing to have this recording used. Do let us know if this is an issue for you. If not, kindly fill out this brief consent form: https://airtable.com/shrPkHIkLUE0ytL1r<br><br>" +
+   
+         "Lastly, please expect a calendar invite shortly.<br><br>" +
+        
+         "Thank you again, and looking forward to your panel participation!<br><br>" +
+        
+         "Best,<br>" +
+         
+         "Steve",
+
+        // ONBOARDING PANELIST - TENTATIVE
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Onboarding Panelist - Tentative</p>" +
+
+        "Hi NAME,<br><br>" +
+
+        "Thanks for your quick reply and interest! I’d be delighted to have you join us.<br><br>" +
+        
+        "For more context about the program's objectives, content, discussion topics and sponsor, you can check out the event website: " + $event_website + "<br><br>" +
+        
+        "The virtual panel will be a simple interactive discussion. As a panelist, you’ll simply be featured on the website. Please note that the virtual meeting will be recorded and by participating in this event you are agreeing to have this recording used. Do let us know if this is an issue for you.<br><br>" +
+        
+        "So far, we have received interest from the following speakers:<br>" +
+        
+        createPanelistList_full() +
+        
+        "The only ‘preparation’ needed is one 30-minute planning call (about 1 week before the event) to share more details on event logistics, and to allow the panelists to speak about their areas of interest so we can all collaborate on the topics being discussed.<br><br>" +
+        
+        "May we count you in?<br><br>" +
+        
+        "Thank you, looking forward to hearing from you!<br><br>" +
+        
+        "Steve",
 
         // SCHEDULING PANEL PREP CALL
 
@@ -1383,6 +1437,32 @@ function eventSelected() {
         `Interested in joining us, {{FIRST_NAME}}? To RSVP please email <a href="mailto:RSVP for the ` + $event_theme + ' ' + target_lunch_or_brunch($event_target_copy) + ' event on ' + $event_month_number + '/' + $event_day_number + `">steven.etzler@bdionline.com</a>.<br><br>` +
 
         "Best<br><br>",
+
+        // FINAL ATTENDEE LIST FOR CLIENT
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Final Attendee List For Client - Client Registrant Communication</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Final Attendees & Recording | " + $event_short_title + " | " + $event_month_number + "/" + $event_day_number + "</p><br><br>" +
+
+        "Hi all,<br><br>" +
+
+        "Hope you enjoyed today’s event!<br><br>" +
+        
+        "<b>FINAL ATTENDEES</b><br>" +
+        "Please <u>see here</u> for the final attendee list.<br>" +
+        "I am also attaching this as a CSV.<br><br>" +
+        
+        "<b>OTHER LISTS</b><br>" +
+        "Here is a <u>link</u> to the data points for: RSVP No, Cancellations, No Shows, and Invite List. I am also attaching this as a CSV.<br><br>" + 
+
+        "<b>RECORDING</b><br>" +
+        "Here is the <u>link to the recording</u> for INTERNAL USE ONLY. If you want to use the recordings for external purposes, please contact us regarding the panelist consent approvals that are required.<br><br>" + 
+        
+        "<b>POST EVENT COMMUNICATION</b><br>" +
+        "Please let us know if we should include any links/collateral in the post event communication emails (thank you for attending & sorry we missed you). We will share the post event survey results with you once we have them.<br><br>" +
+
+        "Thanks – have a great day!<br><br>" +
+
+        $event_account_manager,
     
       ];
 
@@ -1457,6 +1537,10 @@ function eventSelected() {
             return $drafts.html($rr_drafts[6]);
           } else if ($selectedMessageName == "4.1") {
             return $drafts.html($rr_drafts[7]);
+          } else if ($selectedMessageName == "Reschedule 1.1") {
+            return $drafts.html($rr_drafts[8]);
+          } else if ($selectedMessageName == "LinkedIn Campaigns") {
+            return $drafts.html($rr_drafts[9]);
           } else if ($selectedMessageName == "Full Sequence") {
             return $drafts.html($rr_drafts[0] + doubleSpaceAndLine + $rr_drafts[1] + doubleSpaceAndLine + $rr_drafts[2] + doubleSpaceAndLine + $rr_drafts[3] + doubleSpaceAndLine + $rr_drafts[4] + doubleSpaceAndLine + $rr_drafts[5] + doubleSpaceAndLine + $rr_drafts[6] + doubleSpaceAndLine + $rr_drafts[7] + "<br><br>");
           }
@@ -1467,6 +1551,8 @@ function eventSelected() {
             return $drafts.html($cc_drafts[1]);
           } if ($selectedMessageName == "Client Registrant Recruitment"){
             return $drafts.html($cc_drafts[2]);
+          } if ($selectedMessageName == "Final Attendee List for Client"){
+            return $drafts.html($cc_drafts[3]);
           }
         } else if ($selectedMessageType == "Sales Communication") {
           if ($selectedMessageName == "Sales Communication"){
@@ -1485,16 +1571,20 @@ function eventSelected() {
               return $drafts.html($rc_drafts[4]);
             } if ($selectedMessageName == "See You Today") {
               return $drafts.html($rc_drafts[5]);
-            } if ($selectedMessageName == "Scheduling Panel Prep Call") {
+            } if ($selectedMessageName == "Onboarding Panelist - Confirmed") {
               return $drafts.html($rc_drafts[6]);
-            } if ($selectedMessageName == "Panel Prep Call Agenda") {
+            } if ($selectedMessageName == "Onboarding Panelist - Tentative") {
               return $drafts.html($rc_drafts[7]);
-            } if ($selectedMessageName == "One Week Reminder") {
+            } if ($selectedMessageName == "Scheduling Panel Prep Call") {
               return $drafts.html($rc_drafts[8]);
-            } if ($selectedMessageName == "Invite for RSVP NO Responses") {
+            } if ($selectedMessageName == "Panel Prep Call Agenda") {
               return $drafts.html($rc_drafts[9]);
-            } if ($selectedMessageName == "Confirmation Calls Script") {
+            } if ($selectedMessageName == "One Week Reminder") {
               return $drafts.html($rc_drafts[10]);
+            } if ($selectedMessageName == "Invite for RSVP NO Responses") {
+              return $drafts.html($rc_drafts[11]);
+            } if ($selectedMessageName == "Confirmation Calls Script") {
+              return $drafts.html($rc_drafts[12]);
             }
           } else return $drafts.html("This message does not exist.");
       };
