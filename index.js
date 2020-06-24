@@ -368,6 +368,7 @@ function eventSelected() {
       $event_content_2 = objectCheck(['Content Snippet 2']),
       $event_content_3 = objectCheck(['Content Snippet 3']),
       $event_promo_reg_list = objectCheck(['PromoRegList']),
+      $event_client_rsvp_list = objectCheck(['Client RSVP List']),
       $event_moderator_full_name = objectCheck(['moderator_api']),
       $event_moderator_company = objectCheck(['Moderator Company']),
       $event_venue_address = objectCheck(['(Map) Venue Address']),
@@ -654,12 +655,14 @@ function eventSelected() {
         } else return "days"
       }
 
-      function ifCanada() {
+      function ifCanada(money) {
         if ($event_city == "Toronto" || $event_city == "Vancouver" || $event_city == "Calgary" || $event_city == "Canada") {
-          return "$25 Uber Eats";
-        } else if ($event_target_copy == "Toronto" || $event_target_copy == "Vancouver" || $event_target_copy == "Calgary" || $event_target_copy == "Canada") {
-          return "Uber Eats";
-        } else return "$30 Grubhub";
+          if (money === 'money') {
+            return "$25 Uber Eats";
+          } else return "Uber Eats";
+        } else if (money === 'money' && ($event_city !== "Toronto" || $event_city !== "Vancouver" || $event_city !== "Calgary" || $event_city !== "Canada")) {
+            return "$30 Grubhub";
+          } else return "Grubhub";
       };
 
       /*
@@ -785,7 +788,7 @@ function eventSelected() {
         "Best,<br>" +
         "Steve Etzler",
 
-        // RR MESSAGE 1.3
+        // PR MESSAGE 1.3
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.3</p>" +
         "<p class='messagesubject'><i class='fa fa-reply'></i> Share What You Know at " + $event_short_title + "</p><br><br>" +
@@ -794,7 +797,7 @@ function eventSelected() {
 
         "We would love to have you participate in " + $event_short_title + " if you’re available and the content appeals to you.<br><br>" +
 
-        "We traditionally host these events at award-winning restaurants, so to keep the ‘"+ target_lunch_or_brunch($event_target_copy) + " and learn’ structure, we’re sending " + ifCanada() + " codes so each participant can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>" +
+        "We traditionally host these events at award-winning restaurants, so to keep the ‘"+ target_lunch_or_brunch($event_target_copy) + " and learn’ structure, we’re sending " + ifCanada('no') + " codes so each participant can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>" +
 
         "We’ve received overwhelmingly positive feedback on our pivot from live to virtual events, and panelists are finding their participation to be an excellent networking opportunity as well as a chance to discuss topics of interest with other subject matter experts and industry professionals they might not otherwise rub shoulders with.<br><br>" +
 
@@ -817,7 +820,7 @@ function eventSelected() {
         
         "The event should be a great opportunity for you to demonstrate your expertise as a " + $event_audience + " leader, and to share your experience with industry peers.<br><br>" +
                 
-        "We’ll be providing "+ ifCanada() +" codes to cover the ‘" + target_lunch_or_brunch($event_target_copy) + "’ portion of the ‘" + target_lunch_or_brunch($event_target_copy) + " and learn’, and we expect to have a strong attendance of " + $event_audience + " local to " + target_panel_4_1($event_target_copy) +".<br><br>" +
+        "We’ll be providing "+ ifCanada('money') +" codes to cover the ‘" + target_lunch_or_brunch($event_target_copy) + "’ portion of the ‘" + target_lunch_or_brunch($event_target_copy) + " and learn’, and we expect to have a strong attendance of " + $event_audience + " local to " + target_panel_4_1($event_target_copy) +".<br><br>" +
 
         "Are you interested in speaking on the virtual panel on " + $event_long_date + "?<br><br>" +
 
@@ -849,7 +852,7 @@ function eventSelected() {
         </ul>
         `+
 
-        "We traditionally host these events at award-winning restaurants, so to keep our '" + target_lunch_or_brunch($event_target_copy) + " and learn’ structure, we’re sending $30 Grubhub codes so each attendee can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>" +
+        "We traditionally host these events at award-winning restaurants, so to keep our '" + target_lunch_or_brunch($event_target_copy) + " and learn’ structure, we’re sending " + ifCanada('money') + " codes so each attendee can enjoy a nice meal, with the option to donate it to the Food Bank for New York City if you prefer.<br><br>" +
 
         "Interested in joining us, {{FIRST_NAME}}? Happy to answer any questions, or to save you a spot.<br><br>"+
         
@@ -876,24 +879,22 @@ function eventSelected() {
 
         // RR MESSAGE 1.3
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> How Can You " + $event_goal + "? </p><br><br>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.3</p>" +
+        "<p class='messagesubject'><i class='fa fa-reply'></i> re: How Can You " + $event_goal + "?</p><br><br>" +
 
-        "Hi {{FIRST_NAME}},<br><br>" +
-
-        "I know it’s still a bit early to think about " + target_lunch_or_brunch($event_target_copy) + " plans on " + $event_long_date + ", but how about joining us for some Grubhub and virtual networking at " + $event_full_title + "?<br><br>" + 
+        "I know it’s still a bit early to think about " + target_lunch_or_brunch($event_target_copy) + " plans on " + $event_long_date + ", but how about joining us for some " +  ifCanada('no') + " and virtual networking at " + $event_full_title + "?<br><br>" +
 
         "We’ll be hosting a group of your peers on Zoom for a great discussion between our panelists about " + contentSnippetThree() + ".<br><br>" +
 
-        "You’ll receive a Grubhub code so you can " + target_lunch_or_brunch($event_target_copy) + " while you learn, or you can choose to donate it to Meals 4 Heroes—we’ve already contributed over $5k from these virtual events, courtesy of kind-hearted attendees across North America.<br><br>" +
+        "You’ll receive a " +  ifCanada('no') + " code so you can " + target_lunch_or_brunch($event_target_copy) + " while you learn, or you can choose to donate it to the the Food Bank for New York City.<br><br>" +
 
         "We’re happy to have the opportunity to connect leaders in a time where peer-to-peer learning is more valuable than ever, and yet less available.<br><br>" +
-        
+
         "If the event doesn’t appeal to you, but you know someone in your organization who might be interested, please feel free to forward the invite.<br><br>" +
 
         "Join us?<br><br>" +
 
-        "Best,<br>" +
+        "Best,<br>"+
         "Steve",
 
         // RR MESSAGE 2.1
@@ -907,7 +908,7 @@ function eventSelected() {
 
         "At " + $event_full_title + ", you’d network with an invite-only group of other " + $event_audience + " from " + target_2_1_area($event_target_copy) + ", and engage in thought-provoking discussions about " + $event_snippet + ". See details on our site " + $event_website + ".<br><br>" +
 
-        "For this '"+ target_lunch_or_brunch($event_target_copy) + " and learn', we’ll be sharing a " + ifCanada() + " code, or we can donate the meal to a healthcare worker in your name. The best part of these gatherings isn’t the spring rolls anyway—it’s the community of professionals we bring together.<br><br>" +
+        "For this '"+ target_lunch_or_brunch($event_target_copy) + " and learn', we’ll be sharing a " + ifCanada('money') + " code, or we can donate the meal to the Food Bank for New York City in your name. The best part of these gatherings isn’t the spring rolls anyway—it’s the community of professionals we bring together.<br><br>" +
 
         "Join the conversation?<br><br>"+
 
@@ -959,7 +960,7 @@ function eventSelected() {
 
         "I know that your calendar probably fills up quickly, but we still have a couple open spots for " + $event_short_title + " on " + $event_long_date + ". The event will run from 12 to 1:30pm " + $event_timezone + ".<br><br>" +
 
-        "Happy to save one of those spots for you. As an attendee, you’ll receive a " + ifCanada() + " code, so you can order up your favorite delivery while our panel leads an engaging discussion about " + contentSnippetThree() + ". If you prefer, we’re happy to donate your meal to Meals 4 Heroes instead, to support healthcare workers and restaurants affected by the coronavirus pandemic.<br><br>" +
+        "Happy to save one of those spots for you. As an attendee, you’ll receive a " + ifCanada('money') + " code, so you can order up your favorite delivery while our panel leads an engaging discussion about " + contentSnippetThree() + ". If you prefer, we’re happy to donate your meal to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need.<br><br>" +
 
         "You can find details on our panel and specific discussion topics at our event website " + $event_website + ".<br><br>" +
 
@@ -1001,7 +1002,7 @@ function eventSelected() {
 
         "To preserve the networking value of the lunch, attendees will be able to join small group discussions in breakout room sessions and meet other marketing leaders local to the "+ $event_city +" area.<br><br>" +
 
-        "And while we will no longer be hosting the event at "+ $event_venue +", we will be sending all attendees a "+ ifCanada() +" code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes..<br><br>" +
+        "And while we will no longer be hosting the event at "+ $event_venue +", we will be sending all attendees a "+ ifCanada('money') +" code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes..<br><br>" +
 
         "The virtual event will run tomorrow, " + $event_long_date +" from 12 pm to 1:30 pm. Full event details are available here at our event website " + $event_website + ").<br><br>" +
 
@@ -1088,7 +1089,9 @@ function eventSelected() {
         </ul><br>`
         +
 
-        `We will provide you with the food delivery code on the day of the event—stay tuned for that. Or please let us know if you’d prefer to have your meal donated to <b>Meals 4 Heroes</b>. <br><br>Please make sure to whitelist our email address to ensure the code isn't sent to spam<br><br>` +
+        `We will provide you with the food delivery code on the day of the event—stay tuned for that. Or please let us know if you’d prefer to have your meal donated to Food Bank for New York City instead.<br><br>` +
+
+        "Please make sure to whitelist our email address to ensure the code isn't sent to spam. Looking forward to your participation!<br><br>" +
 
         "Steve",
 
@@ -1121,17 +1124,17 @@ function eventSelected() {
         // FINAL CONFIRMATIONS / PER MY VOICEMAIL
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - Final Confirmation </p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Please Confirm: Tomorrow's "+ $event_short_title +" Virtual Meeting</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Please Confirm: Tomorrow's " + $event_short_title + " Virtual Meeting</p><br><br>" +
 
         "Hi FIRSTNAME,<br><br>" +
 
-         highlight_This("VALUE") + " " + $event_short_title + " video-based virtual meeting, taking place from 12 to 1:30PM on Zoom.<br><br>" + 
+         highlight_This("(Following up on a voicemail we just left for you. I want to confirm your participation at tomorrow's // I want to confirm your participation at tomorrow's)") + " " + $event_short_title + " video-based virtual meeting, taking place from 12 to 1:30PM on Zoom.<br><br>" + 
 
         "To join the meeting, click here. "+ $event_virtual_link +"<br><br>"+
 
         "Please be prepared to have your <b>video and microphone on</b>.<br><br>"+
 
-        "Please reply back to confirm your participation so we can send you a "+ ifCanada() +" code for lunch! Or please let us know if you’d prefer to have your meal donated to <b>Meals 4 Heroes</b> to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>"+
+        "Please reply back to confirm your participation so we can send you a " + ifCanada('no-money') + " code for lunch! Or please let us know if you’d prefer to have your meal donated to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need.<br><br>"+
 
         `Here is the agenda for the session:<br>
         <ul>
@@ -1148,7 +1151,7 @@ function eventSelected() {
         Steve Etzler<br>
         Business Development Institute`,
 
-        // SEE YOU TODAY
+        // SEE YOU TODAY (Grubhub/Uber Eats)
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - See you today</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> See you today at our virtual event!</p><br><br>" +
@@ -1157,9 +1160,9 @@ function eventSelected() {
 
          "We look forward to seeing you today at "+ highlight_This("TIME") +" at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
 
-         "<span style='color:red;'><b>Here is your " + ifCanada() + " eGift card NUMBER and your PIN PINNUMBER so you may enjoy lunch, courtesy of <span style='color:red;'>"+ $event_client +"</span>! </b></span><br><br>"+
+         "<span style='color:red;'><b>Here is your " + ifCanada(false) + " eGift card NUMBER and your PIN PINNUMBER so you may enjoy lunch, courtesy of <span style='color:red;'>"+ $event_client +"</span>! </b></span><br><br>"+
 
-         "Please let us know if you’d prefer to have your meal donated to <b>Meals 4 Heroes</b> to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.<br><br>" +
+         "Please let us know if you’d prefer to have your meal donated to <b>Food Bank for New York City</b> instead, to provide food security and other essential services for low-income New Yorkers/communities in need.<br><br>" +
 
          "To join the meeting, please click here: " + $event_virtual_link +"<br><br>"+
          
@@ -1181,7 +1184,7 @@ function eventSelected() {
  
          "My colleague " + highlight_This('AM NAME') + " (CCed above) will circle back in a few weeks to lock in a 30-minute video call to prepare for the panel. I’ll introduce you to your moderator and fellow panelists then.<br><br>" +
          
-         "Please note that the virtual meeting will be recorded and by participating in this event you are agreeing to have this recording used. Do let us know if this is an issue for you. If not, kindly fill out this brief consent form: https://airtable.com/shrPkHIkLUE0ytL1r<br><br>" +
+         "Please note that the virtual meeting will be recorded and by participating in this event, you are agreeing to have this recording used. Do let us know if this is an issue for you. If not, kindly fill out this brief consent form: [" + highlight_This("LINK from RSVP Base") + "]<br><br>" +
    
          "Lastly, please expect a calendar invite shortly.<br><br>" +
         
@@ -1234,7 +1237,7 @@ function eventSelected() {
         // PANEL PREP CALL AGENDA
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Prep Call Agenda</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i>" + $event_short_title + " Panel Prep</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i>" + $event_short_title + " | Panel Prep</p><br><br>" +
  
         "Hi all,<br><br>"+
 
@@ -1259,7 +1262,8 @@ function eventSelected() {
         "<li>Time: Video-based virtual meeting from 12pm - 1:30pm </li>"+
         "<li>Location: " + "<a href='" + $event_virtual_link + "'>LINK</a></li>" +
         "<li>Event Website: " + "<a href='" + $event_website + "'>LINK</a></li>" +
-        "<li>Registration List: " + "<a href='" + $event_promo_reg_list + "'>LINK</a></li></ul><br>" +
+        "<li>Registration List: " + "<a href='" + $event_promo_reg_list + "'>LINK</a></li>" +
+        "<li>Consent Form: " + highlight_This("(thank you if you already filled it out): LINK") + "</li></ul><br>" +
 
         "<b>AGENDA</b>"+
         "<li>11:45AM Panelists & Moderator join </li>"+
@@ -1270,7 +1274,7 @@ function eventSelected() {
         "<li>1:10PM Breakout Networking Sessions</li></ul><br><br>" +
 
         "<b>LUNCH</b><br>" +
-        "<p>We will provide a "+ ifCanada() +" code so you may enjoy lunch on the morning of the event - stay tuned for that! Or let us know if you’d prefer to have your meal donated to Meals 4 Heroes to support restaurants and healthcare workers in New York City impacted by the COVID-19 crisis.</p><br>"+
+        "<p>We will provide a "+ ifCanada('money') +" code so you may enjoy lunch on the morning of the event - stay tuned for that! Or let us know if you’d prefer to have your meal donated to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need.</p><br>"+
 
         "<b>PANEL DISCUSSION QUESTIONS</b><br>" +
         "<p>"+ highlight_This("Insert bullet points from website OR panel questions provided by moderator") + "</p><br><br>",
@@ -1278,7 +1282,7 @@ function eventSelected() {
         // ONE WEEK REMNINDER
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> One Week Reminder (Confirmed)</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> See you (on your webcam) next "+ $event_weekday +"!</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> See you (on your webcam) next " + $event_weekday + "!</p><br><br>" +
 
         "Hi NAME,<br><br>"+
 
@@ -1292,14 +1296,16 @@ function eventSelected() {
 
         "This email serves as a reminder and an invite for you to share with a colleague who may also find this event valuable.<br><br>"+
 
-        "To ensure you're able to receive your $30 food delivery code, please make sure to whitelist our email address so the message doesn't end up in your spam folder!<br><br>" +
+        "To ensure you're able to receive your " + ifCanada('money') + " code, please make sure to whitelist our email address so the message doesn't end up in your spam folder!<br><br>" +
+
+        "Thanks, we look forward to seeing you online from 12 to 1:30 pm on " +  $event_long_date + ".<br><br>" + 
 
         "Best regards,<br>" +
         "<b>Steve Etzler</b>"+
         "<b>Business Development Institute</b><br><br>"+
         
         "REGISTRATION LIST<br>"+
-        "{{{COPY AND PASTE REG LIST HERE}}}",
+        highlight_This("{{{COPY AND PASTE REG LIST HERE}}}"),
 
         // RSVP NO - Virtual
 
@@ -1310,7 +1316,7 @@ function eventSelected() {
 
          "You let me know a while back that you wouldn’t be able to join us at "+ $event_venue +" in " + $event_city +" for "+ $event_full_title + " on "+ $event_long_date +". At this time, due to current Coronavirus concerns, we’ve decided to take the entire event virtual!<br><br>"+
  
-         "Instead of going from 12 – 2pm at the restaurant, we’ll go from 12 – 1:30pm online—the agenda will still include an interactive panel discussion, breakout session networking with your local peers, and we’ll be sending "+ ifCanada() +" codes to all the attendees—so lunch is still on us!<br><br>"+
+         "Instead of going from 12 – 2pm at the restaurant, we’ll go from 12 – 1:30pm online—the agenda will still include an interactive panel discussion, breakout session networking with your local peers, and we’ll be sending "+ ifCanada('money') +" codes to all the attendees—so lunch is still on us!<br><br>"+
  
          "Please check out the event website "+ $event_website +" and let me know if you’re able to join us—we’d love to have you, and I’m happy to save you a spot.<br><br>"+
  
@@ -1335,6 +1341,25 @@ function eventSelected() {
 
         "Thank you! Bye!<br><br>",
 
+        // SEE YOU TODAY (Meal Donation)
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - See you today</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> See you today at our virtual event!</p><br><br>" +
+
+         "Hi NAME,<br><br>" +
+
+         "We look forward to seeing you today at "+ highlight_This("TIME") +" at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
+
+         "Thank you for choosing to donate your meal to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need. You will receive an email confirming for your donation shortly. <br><br>"+
+
+         "To join the meeting, please click here: " + $event_virtual_link +"<br><br>"+
+         
+         "The objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants BEFORE and AFTER the panel in breakout rooms.<br><br>" +
+
+         "See you soon,<br>" +
+         "<b>Steve Etzler</b><br>" +
+         "<b>Business Development Institute</b><br>",
+
       ];
 
       const $cc_drafts = 
@@ -1345,7 +1370,9 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i>  Event Prep for Virtual "+ $event_short_title + " | "+$event_target_copy+"</p><br><br>" +
 
         "Hello all,<br><br>" +
+
         "We are excited for our virtual "+ $event_short_title +" event, taking place tomorrow, "+ $event_long_date +". See below for additional details.<br><br>" +
+
         "Thanks,<br><br>" +
 
         isBlank($event_account_manager) + "<br>" +
@@ -1432,7 +1459,7 @@ function eventSelected() {
 
         createPanelistList_full() +
         
-        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending " + ifCanada() + " codes so each attendee can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>"+
+        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending " + ifCanada('money') + " codes so each attendee can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>"+
         
         `Interested in joining us, {{FIRST_NAME}}? To RSVP please email <a href="mailto:RSVP for the ` + $event_theme + ' ' + target_lunch_or_brunch($event_target_copy) + ' event on ' + $event_month_number + '/' + $event_day_number + `">steven.etzler@bdionline.com</a>.<br><br>` +
 
@@ -1448,15 +1475,15 @@ function eventSelected() {
         "Hope you enjoyed today’s event!<br><br>" +
         
         "<b>FINAL ATTENDEES</b><br>" +
-        "Please <u>see here</u> for the final attendee list.<br>" +
+        "Please <u>see here</u> " + highlight_This($event_promo_reg_list) + " for the final attendee list.<br>" +
         "I am also attaching this as a CSV.<br><br>" +
-        
+     
         "<b>OTHER LISTS</b><br>" +
-        "Here is a <u>link</u> to the data points for: RSVP No, Cancellations, No Shows, and Invite List. I am also attaching this as a CSV.<br><br>" + 
+        "Here is a <u>link</u> " + highlight_This($event_client_rsvp_list) + " to the data points for: RSVP No, Cancellations, No Shows, and Invite List. I am also attaching this as a CSV.<br><br>" + 
 
         "<b>RECORDING</b><br>" +
-        "Here is the <u>link to the recording</u> for INTERNAL USE ONLY. If you want to use the recordings for external purposes, please contact us regarding the panelist consent approvals that are required.<br><br>" + 
-        
+        "Here is the <u>" + highlight_This("link to the recording") + "</u> for INTERNAL USE ONLY. If you want to use the recordings for external purposes, please contact us regarding the panelist consent approvals that are required.<br><br>" + 
+      
         "<b>POST EVENT COMMUNICATION</b><br>" +
         "Please let us know if we should include any links/collateral in the post event communication emails (thank you for attending & sorry we missed you). We will share the post event survey results with you once we have them.<br><br>" +
 
@@ -1495,7 +1522,7 @@ function eventSelected() {
 
         createPanelistList_full() +
         
-        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending " + ifCanada() + " codes so each attendee can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>"+
+        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending " + ifCanada('money') + " codes so each attendee can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>"+
         
         `Interested in joining us, {{FIRST_NAME}}? To RSVP please email <a href="mailto:RSVP for the ` + $event_theme + ' ' + target_lunch_or_brunch($event_target_copy) + ' event on ' + $event_month_number + '/' + $event_day_number + `">steven.etzler@bdionline.com</a>.<br><br>` +
 
@@ -1569,7 +1596,7 @@ function eventSelected() {
               return $drafts.html($rc_drafts[3]);
             } if ($selectedMessageName == "Final Confirmation") {
               return $drafts.html($rc_drafts[4]);
-            } if ($selectedMessageName == "See You Today") {
+            } if ($selectedMessageName == "See You Today (Grubhub/Uber Eats)") {
               return $drafts.html($rc_drafts[5]);
             } if ($selectedMessageName == "Onboarding Panelist - Confirmed") {
               return $drafts.html($rc_drafts[6]);
@@ -1585,6 +1612,8 @@ function eventSelected() {
               return $drafts.html($rc_drafts[11]);
             } if ($selectedMessageName == "Confirmation Calls Script") {
               return $drafts.html($rc_drafts[12]);
+            } if ($selectedMessageName == "See You Today (Meal Donation)") {
+              return $drafts.html($rc_drafts[13]);
             }
           } else return $drafts.html("This message does not exist.");
       };
