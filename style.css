@@ -455,6 +455,19 @@ h1 {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  -webkit-transition: ease-in-out 200ms;
+  transition: ease-in-out 200ms;
+  -webkit-transition-delay: 1000ms;
+          transition-delay: 1000ms;
+  border-radius: 0;
+}
+
+#logo:hover {
+  -webkit-transform: scale(1.1) rotate(360deg);
+          transform: scale(1.1) rotate(360deg);
+  -webkit-transition: ease-in-out 200ms;
+  transition: ease-in-out 200ms;
+  width: 200px;
 }
 
 #event-search, #message-type-search, #message-name-search {
@@ -1022,5 +1035,9 @@ span#view {
   position: absolute;
   bottom: 5px;
   right: 5px;
+}
+
+.predrafted-message {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

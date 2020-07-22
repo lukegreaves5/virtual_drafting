@@ -353,7 +353,17 @@ h1 {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    transition: ease-in-out 200ms;
+    transition-delay: 1000ms;
+    border-radius: 0;
 }
+
+#logo:hover {
+    transform: scale(1.1) rotate(360deg);
+    transition: ease-in-out 200ms;
+    width: 200px;
+}
+
 
 #event-search, #message-type-search, #message-name-search {
     display: flex;
@@ -799,4 +809,8 @@ span#view {
     position: absolute;
     bottom: 5px;
     right: 5px;
+}
+
+.predrafted-message {
+    cursor: pointer;
 }
