@@ -1,10 +1,10 @@
-$primary: #66cada;
-$secondary: #d3f3ff;
-$input: #66cada;
-$third: #66cada;
-$button: #66cada;
+$primary: #3b5998;
+$secondary: #dfe3ee;
+$input: #c72c41;
+$third: #8b9dc3;
+$button: #c72c41;
 $shadow: 2px 2px 30px rgba(0, 0, 0, 0.267);
-$fontColor: #367572;
+$fontColor: #3b5998;
 
 body {
     font-family: 'Gotham';
@@ -18,8 +18,13 @@ body {
     overflow-x: hidden;
 }
 
+select{
+    color: $third;
+    opacity: 1;
+}
+
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
   }
   
   ::-webkit-scrollbar-track {
@@ -323,6 +328,16 @@ h1 {
     -o-border-radius: 50%;
 }
 
+.logo-title {
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.342);
+    width: max-content;
+    margin: auto;
+    margin-top: 5px;
+    padding: 8px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.212);
+}
+
 #logo {
     display: flex;
     position: relative;
@@ -579,7 +594,7 @@ ul {
                 
                     i {
                         font-size: 32px;
-                        color: #1e225c;
+                        color: #dddddd;
                     }
                 }
             }
@@ -776,4 +791,12 @@ hr {
 span#view {
     font-size: 20px;
     color: #f1f6ff;
+}
+
+.last-updated {
+    color: $third;
+    text-align: right;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }

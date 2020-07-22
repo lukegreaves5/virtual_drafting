@@ -49,21 +49,21 @@ messagesloading = $("#todays-drafts").append(loader,loader,loader,loader);
 $("#custom-drafts-button").click(function(){
   $predraftContainer.css("display", "none");
   $draftContainer.css("display", "flex");
-  $(this).css("color", "#6ac7c2");
+  $(this).css("color", "#3b5998");
   $(this).css("background", "#fff");
-  $("#todays-drafts-button").css("background", "#66cada");
+  $("#todays-drafts-button").css("background", "#3b5998");
   $("#todays-drafts-button").css("color", "#fff");
   $("#predrafted-preview").empty();
   $("#predrafted-preview").css("background", "transparent");
-  $("#predrafted-preview").append("<div id='logo-container'><div id='logo'></div><div><b>Virtual Events</b></div></div>");
+  $("#predrafted-preview").append("<div id='logo-container'><div id='logo'></div><div class='logo-title'><b>Virtual Events</b></div></div>");
 });
 
 $("#todays-drafts-button").click(function(){
   $predraftContainer.css("display", "flex");
   $draftContainer.css("display", "none");
-  $(this).css("color", "#6ac7c2");
+  $(this).css("color", "#3b5998");
   $(this).css("background", "#fff");
-  $("#custom-drafts-button").css("background", "#66cada");
+  $("#custom-drafts-button").css("background", "#3b5998");
   $("#custom-drafts-button").css("color", "#fff");
 });
 
@@ -1301,8 +1301,8 @@ function eventSelected() {
         "Thanks, we look forward to seeing you online from 12 to 1:30 pm on " +  $event_long_date + ".<br><br>" + 
 
         "Best regards,<br>" +
-        "<b>Steve Etzler</b>"+
-        "<b>Business Development Institute</b><br><br>"+
+        "<b>Steve Etzler</b><br>"+
+        "<b>Business Development Institute</br><br>"+
         
         "REGISTRATION LIST<br>"+
         highlight_This("{{{COPY AND PASTE REG LIST HERE}}}"),
@@ -1665,7 +1665,7 @@ function eventSelected() {
             } if ($selectedMessageName == "See You Today") {
                return predraftedHTML.html($rc_drafts[5]);
             } if ($selectedMessageName == "One Week Reminder") {
-              return predraftedHTML.html($rc_drafts[8]);
+              return predraftedHTML.html($rc_drafts[10]);
            }
       } else return predraftedHTML.html("This message does not exist.");
       };
