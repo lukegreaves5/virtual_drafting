@@ -154,10 +154,10 @@ function todaysEmails_unsent(data) {
     $("#todays-drafts").append("<div class='all-messages-drafted'>All messages drafted for today.</div>");
     $draftContainer.css("display", "flex");
     $predraftContainer.css("display", "none");
-    $("#todays-drafts-button").css("background", "#66cada");
+    $("#todays-drafts-button").css("background", "#3b5998");
     $("#todays-drafts-button").css("color", "#fff");
     $("#custom-drafts-button").css("background", "#fff");
-    $("#custom-drafts-button").css("color", "#66cada");
+    $("#custom-drafts-button").css("color", "#3b5998");
 
   } else {
       $("#todays-drafts").empty();
