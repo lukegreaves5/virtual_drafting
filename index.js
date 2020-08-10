@@ -1367,7 +1367,7 @@ function eventSelected() {
         // EVENT PREP DETAILS
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Event Prep Details - Client Communication</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i>  Event Prep for Virtual "+ $event_short_title + " | "+$event_target_copy+"</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i>  Event Prep for Virtual "+ $event_short_title +"</p><br><br>" +
 
         "Hello all,<br><br>" +
 
@@ -1381,7 +1381,7 @@ function eventSelected() {
         `<ul>
         <li>Program: `+ $event_full_title +`</li>
         <li>Date: `+ $event_long_date +`</li>
-        <li>Time: Video-based virtual meeting from 12pm -30pm`+ $event_timezone +`</li>
+        <li>Time: Video-based virtual meeting from 12pm -30pm `+ $event_timezone +`</li>
         <li>Location: `+ $event_virtual_link +`</li>
         <li>Website: `+ $event_website +`</li>
         <li>Registration List: `+ $event_promo_reg_list +`</li>
