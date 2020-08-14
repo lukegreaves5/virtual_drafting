@@ -801,7 +801,7 @@ function eventSelected() {
 
         "We’ve received overwhelmingly positive feedback on our pivot from live to virtual events, and panelists are finding their participation to be an excellent networking opportunity as well as a chance to discuss topics of interest with other subject matter experts and industry professionals they might not otherwise rub shoulders with.<br><br>" +
 
-        "You can see the full virtual event details here at our event website " + $event_website + "<br><br>" +
+        "You can see the full virtual event details here at our event website " + highlight_This($event_website) + "<br><br>" +
 
         "Happy to jump on a 5-minute call to further explain our objectives and to share more about the panel experience.<br><br>" +
 
@@ -848,7 +848,7 @@ function eventSelected() {
         <li>${ $event_full_title }</li><br>
         <li>Date: ${ $event_long_date }</li><br>
         <li>Time: 12 to 1:30pm ${ $event_timezone }</li><br>
-        <li>Details: event website ${ $event_website } </li><br>
+        <li>Details: event website ${ highlight_This($event_website) } </li><br>
         </ul>
         `+
 
@@ -962,7 +962,7 @@ function eventSelected() {
 
         "Happy to save one of those spots for you. As an attendee, you’ll receive a " + ifCanada('money') + " code, so you can order up your favorite delivery while our panel leads an engaging discussion about " + contentSnippetThree() + ". If you prefer, we’re happy to donate your meal to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need.<br><br>" +
 
-        "You can find details on our panel and specific discussion topics at our event website " + $event_website + ".<br><br>" +
+        "You can find details on our panel and specific discussion topics at our event website " + highlight_This($event_website) + ".<br><br>" +
 
         "I would also be happy to include an interested colleague as your guest.<br><br>"+
 
@@ -983,7 +983,7 @@ function eventSelected() {
 
         "Check out who you’d be networking with here." + $event_promo_reg_list + "<br><br>" +
 
-        "Event details on the site here." + $event_website + "<br><br>" +
+        "Event details on the site here." + highlight_This($event_website) + "<br><br>" +
 
         "If you can’t make it, we host many virtual events across the country on this and other topics—I’d be happy to send relevant invites your way.<br><br>" +
 
@@ -1004,7 +1004,7 @@ function eventSelected() {
 
         "And while we will no longer be hosting the event at "+ $event_venue +", we will be sending all attendees a "+ ifCanada('money') +" code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes..<br><br>" +
 
-        "The virtual event will run tomorrow, " + $event_long_date +" from 12 pm to 1:30 pm. Full event details are available here at our event website " + $event_website + ").<br><br>" +
+        "The virtual event will run tomorrow, " + $event_long_date +" from 12 pm to 1:30 pm. Full event details are available here at our event website " + highlight_This($event_website) + ").<br><br>" +
 
         "{{FIRST_NAME}}, would you like to join us?<br><br>"+
 
@@ -1104,7 +1104,7 @@ function eventSelected() {
 
         "Thanks for your response & interest in our event!<br><br>" +
         
-        "We will put you down as a tentative registrant for now, and will send you a calendar invite as a placeholder. To learn more about the discussion topics and our panel, check out the event website: " + $event_website +"<br><br>" +
+        "We will put you down as a tentative registrant for now, and will send you a calendar invite as a placeholder. To learn more about the discussion topics and our panel, check out the event website: " + highlight_This($event_website) +"<br><br>" +
                         
         "You can also view who we have confirmed so far on this link." + $event_promo_reg_list +"<br><br>" + 
 
@@ -1180,7 +1180,7 @@ function eventSelected() {
 
          "Great news – delighted to have you join us!<br><br>" +
 
-         "The only thing I need from you is a headshot so we can add you to the event website " + $event_website +". Happy to grab the one you have on LinkedIn if that’s okay.<br><br>" +
+         "The only thing I need from you is a headshot so we can add you to the event website " + highlight_This($event_website) +". Happy to grab the one you have on LinkedIn if that’s okay.<br><br>" +
  
          "My colleague " + highlight_This('AM NAME') + " (CCed above) will circle back in a few weeks to lock in a 30-minute video call to prepare for the panel. I’ll introduce you to your moderator and fellow panelists then.<br><br>" +
          
@@ -1202,7 +1202,7 @@ function eventSelected() {
 
         "Thanks for your quick reply and interest! I’d be delighted to have you join us.<br><br>" +
         
-        "For more context about the program's objectives, content, discussion topics and sponsor, you can check out the event website: " + $event_website + "<br><br>" +
+        "For more context about the program's objectives, content, discussion topics and sponsor, you can check out the event website: " + highlight_This($event_website) + "<br><br>" +
         
         "The virtual panel will be a simple interactive discussion. As a panelist, you’ll simply be featured on the website. Please note that the virtual meeting will be recorded and by participating in this event you are agreeing to have this recording used. Do let us know if this is an issue for you.<br><br>" +
         
@@ -1261,7 +1261,7 @@ function eventSelected() {
         "<li>Date: " + $event_long_date +"</li>"+
         "<li>Time: Video-based virtual meeting from 12pm - 1:30pm </li>"+
         "<li>Location: " + "<a href='" + $event_virtual_link + "'>LINK</a></li>" +
-        "<li>Event Website: " + "<a href='" + $event_website + "'>LINK</a></li>" +
+        "<li>Event Website: " + "<a href='" + highlight_This($event_website) + "'>LINK</a></li>" +
         "<li>Registration List: " + "<a href='" + $event_promo_reg_list + "'>LINK</a></li>" +
         "<li>Consent Form: " + highlight_This("(thank you if you already filled it out): LINK") + "</li></ul><br>" +
 
@@ -1318,7 +1318,7 @@ function eventSelected() {
  
          "Instead of going from 12 – 2pm at the restaurant, we’ll go from 12 – 1:30pm online—the agenda will still include an interactive panel discussion, breakout session networking with your local peers, and we’ll be sending "+ ifCanada('money') +" codes to all the attendees—so lunch is still on us!<br><br>"+
  
-         "Please check out the event website "+ $event_website +" and let me know if you’re able to join us—we’d love to have you, and I’m happy to save you a spot.<br><br>"+
+         "Please check out the event website "+ highlight_This($event_website) +" and let me know if you’re able to join us—we’d love to have you, and I’m happy to save you a spot.<br><br>"+
  
          "Hope you’re staying healthy,<br><br>"+
   
