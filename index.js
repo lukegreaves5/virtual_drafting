@@ -1412,31 +1412,38 @@ function eventSelected() {
         // CLIENT PANEL RECRUITMENT
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Client Recruitment - Client Panel Communication</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i>{{FIRST_NAME}}, Join Our Virtual "+ target_subject($event_target_copy) +" Panel?</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Join Our Virtual "+ target_subject($event_target_copy) +" Panel?</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I thought you'd make a great <i>panelist</i> for a virtual " + target_lunch_or_brunch($event_target_copy) + "-and-learn event we are organizing on " + $event_long_date +" from 12 to 1:30pm " + $event_timezone + ".<br><br>" +
+        "I thought you'd make a great <i>panelist</i> for a virtual " + target_lunch_or_brunch($event_target_copy) + "-and-learn event we are organizing on " + $event_long_date + " from 12 to 1:30pm " + $event_timezone + ". Here is our event website " + highlight_This($event_website) + " for your reference.<br><br>" +
 
-        $event_full_title + " will gather " + $event_audience_and_size + " " + target_2_1_area($event_target_copy) + " for video-networking in small breakout rooms before and after an interactive panel discussion. It’ll be conversational, with no formal presentations or press.<br><br>" +
+        $event_full_title + " will gather " + $event_audience + " for video-networking in small breakout rooms before and after an interactive panel discussion. It’ll be conversational, with no formal presentations or press.<br><br>" +
 
-        "At a high level, we are looking to explore the discussion points below, though these conversations tend to flow in the direction of attendees’ interests and the passions of our panel—we can dive into your expertise and preference in greater detail on our panel practice run:.<br>" +
+        "Our peer-to-peer program will revolve around " + $event_snippet + " .At a high level, we are looking to explore the discussion points below, though these conversations tend to flow in the direction of attendees’ interests and the passions of our panel—we can dive into your expertise and preference in greater detail on our panel practice run:.<br>" +
 
         `<ul>
         <li>DISUCSSION TOPIC 1</li>
         <li>DISUCSSION TOPIC 2</li>
         <li>DISUCSSION TOPIC 3</li>
-        <li>DISUCSSION TOPIC 3</li>
+        <li>DISUCSSION TOPIC 4</li>
         </ul>` +
 
         "We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45am to 1:30pm " + $event_timezone + " the day of.<br><br>" +
 
-        "Would you be open to speaking on our virtual panel, FIRST NAME?<br><br>",
+        "We are also providing a " + ifCanada("money") + " code for all participants.<br><br>" +
+
+        "Would you be open to speaking on our virtual panel, FIRST NAME?<br><br>" + 
+
+        "Thanks<br><br>" +
+
+        "Steve",
+
 
         // CLIENT REGISTRANT RECRUITMENT
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Client Recruitment - Client Registrant Communication</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i>Join Us For Lunch? </p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Join Us For Lunch? </p><br><br>" +
 
         "Hello {{FIRST_NAME}},<br><br>" +
 
@@ -1499,7 +1506,7 @@ function eventSelected() {
         // CLIENT REGISTRANT RECRUITMENT
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Client Recruitment - Client Registrant Communication</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i>Join Us For Lunch? </p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Join Us For Lunch? </p><br><br>" +
 
         "Hello {{FIRST_NAME}},<br><br>" +
 
