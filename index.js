@@ -364,6 +364,7 @@ function eventSelected() {
       $weekday_before = weekday_before($event_weekday),
       $event_month = getMonth($event_date_month_and_number),
       $event_month_number = objectCheck(['Month #']),
+      $event_panel_snippet = objectCheck(['Panel Snippet']),
       $event_snippet = objectCheck(['Content Snippet']),
       $event_content_2 = objectCheck(['Content Snippet 2']),
       $event_content_3 = objectCheck(['Content Snippet 3']),
@@ -376,6 +377,7 @@ function eventSelected() {
       $event_target = objectCheck(['Target #']),
       $event_benefit = objectCheck(['Benefit']), //$event.Benefit,
       $event_audience_and_size = objectCheck(['Target #']) + " " + objectCheck(['Audience']),
+      $event_audience_and_size_or_so = objectCheck(['Target #']) + " or so " + objectCheck(['Audience']),
       $event_venue = objectCheck(['venue_api']),
       $event_parking = objectCheck(['parking_api']),
       $event_website = objectCheck(['website_api']),
@@ -744,89 +746,139 @@ function eventSelected() {
         } else return $event_snippet
       }
 
+      function insertPersonalizationTemplate(template) {
+        if (template === 1) {
+          return (
+            "I came across your LinkedIn looking for " + highlight_This("SUBJECT") + " experts. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("FIELD (i.e. MARKETING, IT, SECURITY, HR, etc.)") + " space for a lot longer—it’s quite impressive."
+          )
+        } else if (template === 2) {
+          return (
+            "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)") + " and I saw " + highlight_This("RECOMMEDER_NAME’s recommendation—he/she mentioned you RECOMMENDATION_INDIRECT_QUOTE.")
+          )
+        } else if (template === 3) {
+          return (
+            "I came across your LinkedIn profile looking for " + highlight_This("SUBJECT") + " experts, and loved seeing your journey from " + highlight_This("PRIOR_ROLE to CURRENT_ROLE") + "—I’m sure that " + highlight_This("PRIOR_ROLE") + " background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "."
+          )
+        } else if (template === 4) {
+          return (
+            "You’ve got " + highlight_This("# endorsements") + " for " + highlight_This("SKILL_TYPE") + " and " + highlight_This("# for SKILL_TYPE2") + " skills on LinkedIn—definitely caught my attention."
+          )
+        } else if (template === 5) {
+          return (
+            "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)") + ", and I saw you mention you " + highlight_This("ABOUT_QUOTE") + " in your about section."
+          )
+        } else if (template === 6) {
+          return (
+            "I came across you on LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity),") + "and I saw you’ve got a certification/certifications in " + highlight_This("CERTIFICATION and CERTIFICATION_2") + "—definitely caught my attention."
+          )
+        } else if (template === 7) {
+          return (
+            "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + "—I thought his/her/their recent article/video/post on topic was a great one."
+          )
+        }
+      }
+
+      function emailFooter() {
+        return (
+          `<small style='color:lightgray;'>
+          Business Development Institute<br>
+          40 Exchange Place, Suite 1402, New York NY 10005<br><br>
+          <i>If you are not interested in further communications from us, please let us know by simply responding to this email.</i>
+          </small>`
+        )
+      }
+      let personalizationListOptions = document.querySelectorAll(".personalization-list li");
+
+      console.log(personalizationListOptions);
+      personalizationListOptions.forEach(option => {
+        option.addEventListener("click", function() {
+          document.querySelector(".open-personalization1") ? document.querySelector(".open-personalization1").remove() : null;
+          document.querySelector(".open-personalization2") ? document.querySelector(".open-personalization2").remove() : null;
+          document.querySelector(".personalization1").innerHTML = insertPersonalizationTemplate(option.value);
+          document.querySelector(".personalization2").innerHTML = insertPersonalizationTemplate(option.value);
+        })
+      })
+
       const $pr_drafts = 
       [
         // PR MESSAGE 1.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Are You a " + $event_theme + " Thought Leader? </p><br><br>" + //target_subject($event_target_copy)
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" + //target_subject($event_target_copy)
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "Based on your career experience and your role at {{COMPANY}}, I thought you might be a good fit to be a <b><u>panelist</u></b> for a virtual "+ target_lunch_or_brunch($event_target_copy) +" event I am organizing on " + $event_long_date + ".<br><br>" +
+        "<p class='open-personalization1'> <span class='personalization'> Open personalization strategies <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>"+
+        "<span class='personalization1'></span><br><br>" +
 
-        $event_full_title + " will gather " + $event_audience_and_size + " from " + target_1_1_area($event_target_copy) + " for video-networking in small breakout rooms before and after an interactive panel discussion. It’ll be conversational, with no formal presentations or press.<br><br>"+
+        "Based on your profile, I thought you’d make an exceptional panelist for a virtual thought-leadership event I’m organizing on " + $event_long_date + " from 12 to 1:30pm " + $event_timezone + ".<br><br>" +
 
-        "We ask a total time commitment of two hours and 15min from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45am – 1:30pm " + $event_timezone + " the day of.<br><br>"+
+        $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>"+
 
-        "May I confirm your interest and follow up with additional details?<br><br>" +
+        "As a panelist, you’ll have the chance to share your insights and learn from your fellow attendees, network with your peers, and enjoy lunch on us with a " + ifCanada("money") + ".<br><br>"+
 
-        "Cheers",
+        "If you agree you’d be a good fit, may I send you more info on the discussion topics?<br><br>" +
+
+        "Have a great " + highlight_This("Send Day") + "<br><br>" +
+
+        highlight_This("SIGNATURE") + "<br><br>" +
+
+        emailFooter(),
 
         // PR MESSAGE 1.2
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.2</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> {{FIRST_NAME}}, Our Panel Needs Your Expertise</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" +
         
-        "Hey again {{FIRST_NAME}},<br><br>" +
+        "Hi {{FIRST_NAME}},<br><br>" +
 
-        "Just wanted to circle back on my panel invitation below and expand on the topics we’ll cover.<br><br>" +
+        "I just wanted to follow up and share the event website for " + $event_short_title + ", linked here." + $event_website + "<br><br>" +
 
-        "At a high level, we are looking to explore the discussion points below, though these conversations tend to flow in the direction of attendees’ interests and the passions of our panel—we can dive into your expertise and preference in greater detail on our panel practice run: <br><br>" +
-        
-        `<ul>
-        <li>DISUCSSION TOPIC 1</li><br>
-        <li>DISUCSSION TOPIC 2</li><br>
-        <li>DISUCSSION TOPIC 3</li><br>
-        <li>DISUCSSION TOPIC 4</li><br>
-        </ul>` +
+        "On it, you can find all of the proposed discussion topics, but we’d also love to hear your input on the content to provide the highest value for the " + $event_audience + " who will be participating in the event.<br><br>" +
 
-        "If these topics are of interest to you, but you are not interested in participating as a speaker, we would still love to have you join as an attendee.<br><br>" +
+        "Are you interested in speaking on these topics? Would you like to propose any additional points for discussion?<br><br>" +
 
-        "Would you like to contribute to our panel discussion?<br><br>" +
+        "Hope you’re having a great week.<br><br>" +
 
-        "Best,<br>" +
-        "Steve Etzler",
+        "Cheers,<br>" +
+        highlight_This("SIGNATURE"),
 
         // PR MESSAGE 1.3
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> Share What You Know at " + $event_short_title + "</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" +
 
-        "Hope your day is going well, {{FIRST_NAME}}. Just wanted to bring this invite to the top of your inbox.<br><br>" +
+        "Reaching back out to see if you’ve had a chance to check out our event site and the discussion topics?<br><br>" +
 
-        "We would love to have you participate in " + $event_short_title + " if you’re available and the content appeals to you.<br><br>" +
+        "<p class='open-personalization2'> Open personalization strategies <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>" +
+        $event_audience + " <span class='personalization2'></span><br><br>" +
 
-        "We traditionally host these events at award-winning restaurants, so to keep the ‘"+ target_lunch_or_brunch($event_target_copy) + " and learn’ structure, we’re sending " + ifCanada('no') + " codes so each participant can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>" +
+        "Our panelists tell us that these events are not only a great opportunity to demonstrate their expertise and build their personal brand, but also to learn from their fellow attendees.<br><br>" +
 
-        "We’ve received overwhelmingly positive feedback on our pivot from live to virtual events, and panelists are finding their participation to be an excellent networking opportunity as well as a chance to discuss topics of interest with other subject matter experts and industry professionals they might not otherwise rub shoulders with.<br><br>" +
+        "Also, if you’re interested in the event, but not in speaking, you’re more than welcome to join us as an attendee.<br><br>" +
 
-        "You can see the full virtual event details here at our event website " + highlight_This($event_website) + "<br><br>" +
+        "Let me know!<br><br>" +
 
-        "Happy to jump on a 5-minute call to further explain our objectives and to share more about the panel experience.<br><br>" +
+        "Happy " + highlight_This("Send Day") + ".<br><br>" +
 
-        "May we count you in?<br><br>" +
-
-        "Steve",
+        highlight_This("SIGNATURE"),
 
         // PR MESSAGE 1.4
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.4</p>" +
-        "<p class='messagesubject'><i class='fa fa-reply'></i> This will have your LinkedIn Circles Talking!</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" +
 
-        "Hi {{FIRST_NAME}},<br><br>" +
+        "{{FIRST_NAME}}, just want to say one more time—I think you’d make an awesome panelist.<br><br>" +
 
-        "I know I’ve been persistent, but it’s because I think you’d be such a valuable addition to our panel discussion.<br><br>" +
+        "Our discussion of " + $event_theme + " promises to be valuable to all, but the conversation would definitely benefit from your experience.<br><br>" +
         
-        "The event should be a great opportunity for you to demonstrate your expertise as a " + $event_audience + " leader, and to share your experience with industry peers.<br><br>" +
+        "Hope you’re willing to share and also interested in the opportunity to network with other " + $event_audience + ".<br><br>" +
                 
-        "We’ll be providing "+ ifCanada('money') +" codes to cover the ‘" + target_lunch_or_brunch($event_target_copy) + "’ portion of the ‘" + target_lunch_or_brunch($event_target_copy) + " and learn’, and we expect to have a strong attendance of " + $event_audience + " local to " + target_panel_4_1($event_target_copy) +".<br><br>" +
+        "And don’t forget, lunch is on us!<br><br>" +
 
-        "Are you interested in speaking on the virtual panel on " + $event_long_date + "?<br><br>" +
+        "Can I count you in for " + $event_long_date + "?<br><br>" +
 
-        "Thanks,<br><br>" +
-
-        "Steven Etzler",
+        highlight_This("SIGNATURE"),
 
       ];
 
@@ -1537,10 +1589,143 @@ function eventSelected() {
 
       ]
 
+      const $pa_pr_drafts = 
+
+      [
+        // PAST ATTENDEE PANEL RECRUITMENT
+
+        // 1.1
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Past Attendee Panel Recruitment - 1.1</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, join us again? </p><br><br>" +
+
+        "Hey {{FIRST_NAME}},<br><br>" +
+
+        "Glad you were able to join us at " + highlight_This("{{PAST EVENT}}") + " in " + highlight_This("{{PAST EVENT MONTH}}, {{PAST EVENT YEAR}}") + ". I hope you enjoyed the event as much as we did!<br><br>" +
+        
+        "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " leaders join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" +
+
+        "Lunch is on us in the form of a " + ifCanada("money") + " code, or attendees also have the option of donating their meal to the Food Bank for New York City.<br><br>" +
+
+        "You can find further details on the proposed discussion topics on our event website. " + $event_website + "<br><br>" +
+
+        "May I confirm your interest and follow up with additional details?<br><br>" +
+
+        `Cheers,<br>
+        Steve Etzler`,
+
+        // 1.2
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Past Attendee Panel Recruitment - 1.2</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, join us again? </p><br><br>" +
+
+        "Hey again {{FIRST_NAME}},<br><br>" +
+
+        "Just wanted to circle back on my panel invitation below and expand on the topics we’ll cover.<br><br>" +
+        
+        "At a high level, we are looking to explore the discussion points below, though these conversations tend to flow in the direction of attendees’ interests and the passions of our panel—we can dive into your expertise and preference in greater detail on our panel practice run: <br>" +
+
+        `<ul>
+        <li>DISUCSSION TOPIC 1</li>
+        <li>DISUCSSION TOPIC 2</li>
+        <li>DISUCSSION TOPIC 3</li>
+        <li>DISUCSSION TOPIC 4</li>
+        </ul>` +
+
+        "If these topics are of interest to you, but you are not interested in participating as a speaker, we would still love to have you join again as an attendee.<br><br>" +
+
+        "Would you like to contribute to our panel discussion?<br><br>" +
+
+        `Best,<br>
+        Steve`,
+
+        // 1.3
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Past Attendee Panel Recruitment - 1.3</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, join us again? </p><br><br>" +
+
+        "Hope your day is going well, {{FIRST_NAME}}. Just wanted to bring this invite to the top of your inbox.<br><br>" +
+
+        "The event should be a great opportunity for you to demonstrate your expertise as a " + $event_audience + " leader, and to share your experience with industry peers.<br><br>" +
+        
+        "Happy to jump on a 5-minute call to further explain our objectives and to share more about the panel experience.<br><br>" +
+
+        "May we count you in?<br><br>" +
+
+        `Best,<br>
+        Steve`,
+
+      ]
+
+      const $oi_pr_drafts = 
+
+      [
+        // OPT-IN PANEL RECRUITMENT
+
+        // 1.1
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Opt-In Panel Recruitment - 1.1</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, your invite as promised ✉️ </p><br><br>" +
+
+        "Hey {{FIRST_NAME}},<br><br>" +
+
+        "Reaching out because you were interested in our thought leadership event, " + highlight_This("{{PAST_EVENT}}") + ", in " + highlight_This("{{PAST EVENT MONTH}}, {{PAST EVENT YEAR}}") + ".<br><br>" +
+        
+        "As " + highlight_This("TITLE") + " at " + highlight_This("COMPANY")  + " , I thought you’d make a great addition to the panel for our upcoming virtual event, " + $event_full_title + ", on " + $event_long_date + " from 11:45am – 1:30pm " + $event_timezone + ". This time, our conversation will revolve around " + highlight_This("PANEL SNIPPET 1") + ".<br><br>" +
+        
+        "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" + 
+        
+        "Lunch is on us in the form of a " + ifCanada("money") + " , or attendees also have the option of donating their meal to the Food Bank for New York City.<br><br>" +
+        
+        "You can find further details on the proposed discussion topics on our event website." + $event_website + "<br><br>" +
+        
+        `May I confirm your interest and follow up with additional details?<br><br>` +
+
+        "Best<br>" +
+        "Steve Etzler",
+
+        // 1.2
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Opt-In Panel Recruitment - 1.2</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, your invite as promised ✉️ </p><br><br>" +
+
+        "Hey {{FIRST_NAME}},<br><br>" +
+
+        "Reaching back out to see if you’ve had a chance to check out our event site and the discussion topics?.<br><br>" +
+        
+        "Our panelists tell us that these events are not only a great opportunity to demonstrate their expertise and build their personal brand, but also to learn from their fellow attendees.<br><br>" +
+        
+        "Also, if you’re interested in the event, but not in speaking, you’re more than welcome to join us as an attendee.<br><br>" + 
+        
+        `Let me know!<br><br>` +
+
+        "Happy " + highlight_This("{{send day - " + getTodaysDate() + "}}") + "<br>" +
+        "Steve",
+
+        // 1.3
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Opt-In Panel Recruitment - 1.3</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, your invite as promised ✉️ </p><br><br>" +
+
+        "{{FIRST_NAME}}, just want to say one more time—I think you’d make an awesome panelist.<br><br>" +
+
+        "Our discussion of " + $event_theme + " promises to be valuable to all, but the conversation would definitely benefit from your experience.<br><br>" +
+        
+        "Hope you’re willing to share and also interested in the opportunity to network with other " + $event_audience + " leaders.<br><br>" +
+        
+        "And don’t forget, lunch is on us!<br><br>" + 
+        
+        "Can I count you in for " + $event_long_date + "?<br><br>" +
+
+        "Steve",
+
+      ]
+
       const doubleSpaceAndLine = "<br><br><br>" + "<hr>" + "<br><br><br>";
   
       function generateCustomMessage() {
         if ($selectedMessageType == "Panel Recruitment") {
+          document.querySelector(".personalization-container").style.display = "block";
           if ($selectedMessageName == "1.1"){
             return $drafts.html($pr_drafts[0]);
           } else if ($selectedMessageName == "1.2") {
@@ -1590,7 +1775,7 @@ function eventSelected() {
           }
         } else if ($selectedMessageType == "Sales Communication") {
           if ($selectedMessageName == "Sales Communication"){
-            return $drafts.html($sc_drafts[0] + doubleSpaceAndLine + $sc_drafts[1] + doubleSpaceAndLine + $sc_drafts[2] + "<br><br>");
+            return $drafts.html($sc_drafts[0] + /* doubleSpaceAndLine + $sc_drafts[1] + doubleSpaceAndLine + $sc_drafts[2] +*/ "<br><br>");
           }
         } else if ($selectedMessageType == "Registrant Communication") {
             if ($selectedMessageName == "Sorry We Missed You"){
@@ -1622,7 +1807,29 @@ function eventSelected() {
             } if ($selectedMessageName == "See You Today (Meal Donation)") {
               return $drafts.html($rc_drafts[13]);
             }
-          } else return $drafts.html("This message does not exist.");
+          } else if ($selectedMessageType == "Past Attendee Panel Recruitment") {
+            if ($selectedMessageName == "1.1"){
+              return $drafts.html($pa_pr_drafts[0] + doubleSpaceAndLine + $pa_pr_drafts[1] + doubleSpaceAndLine + $pa_pr_drafts[2] + "<br><br>");
+            } else if ($selectedMessageName == "1.2") {
+              return $drafts.html($pa_pr_drafts[1]);
+            } if ($selectedMessageName == "1.3") {
+              return $drafts.html($pa_pr_drafts[2]);
+            } else if ($selectedMessageName == "Full Sequence") {
+              return $drafts.html($pa_pr_drafts[0] + doubleSpaceAndLine + $pa_pr_drafts[1] + doubleSpaceAndLine + $pa_pr_drafts[2] + "<br><br>");
+            }
+          }
+            else if ($selectedMessageType == "Opt-In Panel Recruitment") {
+              if ($selectedMessageName == "1.1"){
+                return $drafts.html($oi_pr_drafts[0] + doubleSpaceAndLine + $oi_pr_drafts[1] + doubleSpaceAndLine + $oi_pr_drafts[2] + "<br><br>");
+              } else if ($selectedMessageName == "1.2") {
+                return $drafts.html($oi_pr_drafts[1]);
+              } if ($selectedMessageName == "1.3") {
+                return $drafts.html($oi_pr_drafts[2]);
+              } else if ($selectedMessageName == "Full Sequence") {
+                return $drafts.html($oi_pr_drafts[0] + doubleSpaceAndLine + $oi_pr_drafts[1] + doubleSpaceAndLine + $oi_pr_drafts[2] + "<br><br>");
+              }
+            }
+        else return $drafts.html("This message does not exist.");
       };
 
       function generateAutomaticMessage() {
@@ -1630,6 +1837,7 @@ function eventSelected() {
         predraftedHTML.html("");
 
         if ($selectedMessageType == "Panel Recruitment") {
+          document.querySelector(".personalization-container").style.display = "block";
           if ($selectedMessageName == "1.1"){
             return predraftedHTML.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
           } else if ($selectedMessageName == "1.2") {
@@ -1674,6 +1882,24 @@ function eventSelected() {
             } if ($selectedMessageName == "One Week Reminder") {
               return predraftedHTML.html($rc_drafts[10]);
            }
+          else if ($selectedMessageType == "Past Attendee Panel Recruitment") {
+            if ($selectedMessageName == "1.1"){
+              return $drafts.html($pa_pr_drafts[0] + doubleSpaceAndLine + $pa_pr_drafts[1] + doubleSpaceAndLine + $pa_pr_drafts[2] + "<br><br>");
+            } else if ($selectedMessageName == "1.2") {
+              return $drafts.html($pa_pr_drafts[1]);
+            } if ($selectedMessageName == "1.3") {
+              return $drafts.html($pa_pr_drafts[2]);
+            }
+          }
+          else if ($selectedMessageType == "Opt-In Panel Recruitment") {
+            if ($selectedMessageName == "1.1"){
+              return $drafts.html($oi_pr_drafts[0] + doubleSpaceAndLine + $oi_pr_drafts[1] + doubleSpaceAndLine + $oi_pr_drafts[2] + "<br><br>");
+            } else if ($selectedMessageName == "1.2") {
+              return $drafts.html($oi_pr_drafts[1]);
+            } if ($selectedMessageName == "1.3") {
+              return $drafts.html($oi_pr_drafts[2]);
+            }
+          }
       } else return predraftedHTML.html("This message does not exist.");
       };
       generateCustomMessage();

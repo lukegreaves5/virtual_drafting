@@ -630,11 +630,6 @@ input[type=checkbox] {
   padding-bottom: 5%;
   -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.274);
           box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.274);
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -1040,4 +1035,187 @@ span#view {
 .predrafted-message {
   cursor: pointer;
 }
-/*# sourceMappingURL=style.css.map */
+
+
+/* Personalization pulsing dropdown styles */
+
+
+
+
+.personalization-container {
+  position: fixed;
+  top: 0%;
+  right: 0%;
+  z-index: 100;
+  display: none;
+}
+
+.personalization-float-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  float: left;
+  text-align: left;
+}
+
+.personalization-float-left .active small {
+  color: #3b5998;
+}
+
+.personalization-btn {
+  outline: 0;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  background: #3b5898e0;
+  min-width: 35em;
+  border: 0;
+  border-bottom-left-radius: 20px;
+  box-shadow: 2px 2px 20px #7189bdc7;
+  box-sizing: border-box;
+  padding: 16px 20px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 1;
+}
+.personalization-btn:focus .personalization-dropdown, .personalization-btn:active .personalization-dropdown {
+  -webkit-transform: translate(0, 20px);
+          transform: translate(0, 20px);
+  opacity: 1;
+  visibility: visible;
+  background: white;
+  z-index: 100;
+}
+.personalization-btn .material-icons, .material-icons {
+  border-radius: 100%;
+  -webkit-animation: ripple 0.6s linear infinite;
+          animation: ripple 0.6s linear infinite;
+}
+.personalization-btn .personalization-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  opacity: 1;
+  visibility: hidden;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  z-index: 100;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.personalization-btn .personalization-dropdown:before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  background: white;
+  box-shadow: 2px -2px 6px rgba(0, 0, 0, 0.05);
+  border-top: 6px solid #ffffff;
+  border-right: 6px solid #ffffff;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid transparent;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  mix-blend-mode: multiple;
+  opacity: 1;
+}
+
+.personalization-btn .personalization-dropdown p {
+  z-index: 100;
+  position: relative;
+  background: white;
+  padding: 0 30px;
+  opacity: 1;
+  color: #3b5998;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 16px;
+}
+
+.personalization-btn .personalization-dropdown ol, .personalization-btn .personalization-dropdown li {
+  z-index: 100;
+  position: relative;
+  background: white;
+  padding: 0 20px;
+  font-weight: normal;
+  font-size: 16px;
+  opacity: 1;
+  color: #3b5998;
+  letter-spacing: 0;
+  text-transform: none;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  padding-top: 20px;
+  list-style: inside decimal;
+}
+
+.personalization-btn .personalization-dropdown li:hover {
+  background: #8c9ec473;
+}
+
+.personalization-btn .personalization-dropdown p.active {
+  color: #3b5998;
+}
+
+.personalization-btn .personalization-dropdown a {
+  display: block;
+  color: inherit;
+  letter-spacing: 0;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+  }
+}
+
+
+.open-personalization1, .open-personalization2 {
+  width: max-content;
+  color: white;
+  margin: 0;
+  padding: 1%;
+  font-size: 15px;
+  background: #3e5c9c;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  cursor: pointer;
+  transition: ease-in-out 300ms;
+    -webkit-animation: ripple 0.6s linear infinite;
+          animation: ripple 0.6s linear infinite;
+}
+
+.open-personalization:hover {
+  background: #5c7abb;
+  transition: ease-in-out 300ms;
+}
