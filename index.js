@@ -787,17 +787,18 @@ function eventSelected() {
           </small>`
         )
       }
-      let personalizationListOptions = document.querySelectorAll(".personalization-list li");
 
-      console.log(personalizationListOptions);
+      let personalizationListOptions = document.querySelectorAll(".personalization-list li");
       personalizationListOptions.forEach(option => {
         option.addEventListener("click", function() {
           document.querySelector(".open-personalization1") ? document.querySelector(".open-personalization1").remove() : null;
+          document.querySelector(".personalization1") ? document.querySelector(".personalization1").innerHTML = insertPersonalizationTemplate(option.value) : null;
+          console.log(insertPersonalizationTemplate(option.value))
           document.querySelector(".open-personalization2") ? document.querySelector(".open-personalization2").remove() : null;
-          document.querySelector(".personalization1").innerHTML = insertPersonalizationTemplate(option.value);
-          document.querySelector(".personalization2").innerHTML = insertPersonalizationTemplate(option.value);
-        })
-      })
+          document.querySelector(".personalization2") ? document.querySelector(".personalization2").innerHTML = insertPersonalizationTemplate(option.value) : null;
+          return;
+        });
+      });
 
       const $pr_drafts = 
       [
@@ -1725,17 +1726,19 @@ function eventSelected() {
   
       function generateCustomMessage() {
         if ($selectedMessageType == "Panel Recruitment") {
-          document.querySelector(".personalization-container").style.display = "block";
           if ($selectedMessageName == "1.1"){
-            return $drafts.html($pr_drafts[0]);
+            $drafts.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
+            return document.querySelector(".personalization-container").style.display = "block";
           } else if ($selectedMessageName == "1.2") {
             return $drafts.html($pr_drafts[1]);
           } if ($selectedMessageName == "1.3") {
-            return $drafts.html($pr_drafts[2]);
+            $drafts.html($pr_drafts[2]);
+            return document.querySelector(".personalization-container").style.display = "block";
           } else if ($selectedMessageName == "1.4") {
             return $drafts.html($pr_drafts[3]);
           } else if ($selectedMessageName == "Full Sequence") {
-            return $drafts.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
+            $drafts.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
+            return document.querySelector(".personalization-container").style.display = "block";
           }
         } else if ($selectedMessageType == "Registrant Recruitment") {
           if ($selectedMessageName == "Reschedule 1.1") {
@@ -1837,13 +1840,14 @@ function eventSelected() {
         predraftedHTML.html("");
 
         if ($selectedMessageType == "Panel Recruitment") {
-          document.querySelector(".personalization-container").style.display = "block";
           if ($selectedMessageName == "1.1"){
-            return predraftedHTML.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
+            predraftedHTML.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
+            return document.querySelector(".personalization-container").style.display = "block";
           } else if ($selectedMessageName == "1.2") {
             return predraftedHTML.html($pr_drafts[1]);
           } if ($selectedMessageName == "1.3") {
-            return predraftedHTML.html($pr_drafts[2]);
+            predraftedHTML.html($pr_drafts[2]);
+            return document.querySelector(".personalization-container").style.display = "block";
           } else if ($selectedMessageName == "1.4") {
             return predraftedHTML.html($pr_drafts[3]);
           }
