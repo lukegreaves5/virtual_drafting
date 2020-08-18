@@ -632,6 +632,7 @@ input[type=checkbox] {
           box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.274);
   overflow-y: auto;
   overflow-x: hidden;
+  z-index: 100;
 }
 
 #drafts {
