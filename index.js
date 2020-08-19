@@ -373,6 +373,8 @@ function eventSelected() {
       $event_moderator_full_name = objectCheck(['moderator_api']),
       $event_moderator_company = objectCheck(['Moderator Company']),
       $event_venue_address = objectCheck(['(Map) Venue Address']),
+      $event_function = objectCheck(['Function']),
+      $event_function_leaders = objectCheck(['Function leaders']),
       $event_audience = objectCheck(['Audience']),
       $event_target = objectCheck(['Target #']),
       $event_benefit = objectCheck(['Benefit']), //$event.Benefit,
@@ -397,7 +399,8 @@ function eventSelected() {
       $event_timezone = objectCheck(['Timezone']),
       $event_theme = objectCheck(['Content Theme']),
       $event_goal = objectCheck(['Content Goal']),
-      $event_zoom_link = objectCheck(['Zoom Link']);
+      $event_zoom_link = objectCheck(['Zoom Link']),
+      $event_panel_13_customization = objectCheck(['Panel 1.3 Customization']);
 
       function objectCheck(propCheck) {
         if($event.hasOwnProperty(propCheck)) {
@@ -439,6 +442,7 @@ function eventSelected() {
         } else return string;
       };
 
+      console.log("Missing Fields:");
       console.log($missing_fields);
 
       function doesThisObjectExist(object_key) {
@@ -807,7 +811,7 @@ function eventSelected() {
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.1</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" + //target_subject($event_target_copy)
 
-        "Hi {{FIRST_NAME}},<br><br>" +
+        "Hey {{FIRST_NAME}},<br><br>" +
 
         "<p class='open-personalization1'> <span class='personalization'> Open personalization strategies <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>"+
         "<span class='personalization1'></span><br><br>" +
@@ -816,7 +820,7 @@ function eventSelected() {
 
         $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>"+
 
-        "As a panelist, you’ll have the chance to share your insights and learn from your fellow attendees, network with your peers, and enjoy lunch on us with a " + ifCanada("money") + ".<br><br>"+
+        "As a panelist, you’ll have the chance to share your insights and learn from your fellow attendees, network with your peers, and enjoy lunch on us with a " + ifCanada("money") + " code.<br><br>"+
 
         "If you agree you’d be a good fit, may I send you more info on the discussion topics?<br><br>" +
 
@@ -851,8 +855,7 @@ function eventSelected() {
 
         "Reaching back out to see if you’ve had a chance to check out our event site and the discussion topics?<br><br>" +
 
-        "<p class='open-personalization2'> Open personalization strategies <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>" +
-        $event_audience + " <span class='personalization2'></span><br><br>" +
+        $event_panel_13_customization + "<br><br>" +
 
         "Our panelists tell us that these events are not only a great opportunity to demonstrate their expertise and build their personal brand, but also to learn from their fellow attendees.<br><br>" +
 
@@ -860,7 +863,7 @@ function eventSelected() {
 
         "Let me know!<br><br>" +
 
-        "Happy " + highlight_This("Send Day") + ".<br><br>" +
+        "Happy " + highlight_This("Send Day") + ",<br><br>" +
 
         highlight_This("SIGNATURE"),
 
@@ -1519,7 +1522,7 @@ function eventSelected() {
 
         createPanelistList_full() +
         
-        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending " + ifCanada('money') + " codes so each attendee can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>"+
+        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending " + ifCanada('money') + " codes so each attendee can enjoy a nice meal, with the option to donate it to the Food Bank for New York City if you prefer.<br><br>"+
         
         `Interested in joining us, {{FIRST_NAME}}? To RSVP please email <a href="mailto:RSVP for the ` + $event_theme + ' ' + target_lunch_or_brunch($event_target_copy) + ' event on ' + $event_month_number + '/' + $event_day_number + `">steven.etzler@bdionline.com</a>.<br><br>` +
 
@@ -1582,7 +1585,7 @@ function eventSelected() {
 
         createPanelistList_full() +
         
-        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending " + ifCanada('money') + " codes so each attendee can enjoy a nice meal, with the option to donate it to healthcare workers if you prefer.<br><br>"+
+        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending " + ifCanada('money') + " codes so each attendee can enjoy a nice meal, with the option to donate it to the Food Bank for New York City if you prefer.<br><br>"+
         
         `Interested in joining us, {{FIRST_NAME}}? To RSVP please email <a href="mailto:RSVP for the ` + $event_theme + ' ' + target_lunch_or_brunch($event_target_copy) + ' event on ' + $event_month_number + '/' + $event_day_number + `">steven.etzler@bdionline.com</a>.<br><br>` +
 
@@ -1602,7 +1605,9 @@ function eventSelected() {
 
         "Hey {{FIRST_NAME}},<br><br>" +
 
-        "Glad you were able to join us at " + highlight_This("{{PAST EVENT}}") + " in " + highlight_This("{{PAST EVENT MONTH}}, {{PAST EVENT YEAR}}") + ". I hope you enjoyed the event as much as we did!<br><br>" +
+        highlight_This($event_snippet) + " " + highlight_This("{{PAST EVENT}}") + " in " + highlight_This("{{PAST EVENT MONTH}} {{PAST EVENT YEAR}}") + ". I hope you enjoyed the event as much as we did!<br><br>" +
+
+        "We’d love to have you participate as a panelist in our upcoming virtual discussion, " + $event_full_title + " , on " + $event_long_date + " from 11:45am – 1:30pm " + $event_timezone + ". This time, our conversation will revolve around " + $event_panel_snippet + ".<br><br>" +
         
         "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " leaders join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" +
 
@@ -1647,7 +1652,7 @@ function eventSelected() {
 
         "Hope your day is going well, {{FIRST_NAME}}. Just wanted to bring this invite to the top of your inbox.<br><br>" +
 
-        "The event should be a great opportunity for you to demonstrate your expertise as a " + $event_audience + " leader, and to share your experience with industry peers.<br><br>" +
+        "The event should be a great opportunity for you to demonstrate your expertise as a " + $event_function + " leader, and to share your experience with industry peers.<br><br>" +
         
         "Happy to jump on a 5-minute call to further explain our objectives and to share more about the panel experience.<br><br>" +
 
@@ -1670,19 +1675,19 @@ function eventSelected() {
 
         "Hey {{FIRST_NAME}},<br><br>" +
 
-        "Reaching out because you were interested in our thought leadership event, " + highlight_This("{{PAST_EVENT}}") + ", in " + highlight_This("{{PAST EVENT MONTH}}, {{PAST EVENT YEAR}}") + ".<br><br>" +
+        "Reaching out because you were interested in our thought leadership event, " + highlight_This("{{PAST_EVENT}}") + ", in " + highlight_This("{{PAST EVENT MONTH}} {{PAST EVENT YEAR}}") + ".<br><br>" +
         
         "As " + highlight_This("TITLE") + " at " + highlight_This("COMPANY")  + " , I thought you’d make a great addition to the panel for our upcoming virtual event, " + $event_full_title + ", on " + $event_long_date + " from 11:45am – 1:30pm " + $event_timezone + ". This time, our conversation will revolve around " + highlight_This("PANEL SNIPPET 1") + ".<br><br>" +
         
         "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" + 
         
-        "Lunch is on us in the form of a " + ifCanada("money") + " , or attendees also have the option of donating their meal to the Food Bank for New York City.<br><br>" +
+        "Lunch is on us in the form of a " + ifCanada("money") + " code, or attendees also have the option of donating their meal to the Food Bank for New York City.<br><br>" +
         
         "You can find further details on the proposed discussion topics on our event website." + $event_website + "<br><br>" +
         
         `May I confirm your interest and follow up with additional details?<br><br>` +
 
-        "Best<br>" +
+        "Best,<br>" +
         "Steve Etzler",
 
         // 1.2
@@ -1692,7 +1697,7 @@ function eventSelected() {
 
         "Hey {{FIRST_NAME}},<br><br>" +
 
-        "Reaching back out to see if you’ve had a chance to check out our event site and the discussion topics?.<br><br>" +
+        "Reaching back out to see if you’ve had a chance to check out our event site and the discussion topics?<br><br>" +
         
         "Our panelists tell us that these events are not only a great opportunity to demonstrate their expertise and build their personal brand, but also to learn from their fellow attendees.<br><br>" +
         
