@@ -1221,3 +1221,22 @@ span#view {
   background: #5c7abb;
   transition: ease-in-out 300ms;
 }
+
+.msg-option-btn {
+  padding: 0.1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  background: #3e5c9c;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: ease-in-out 300ms;
+}
+
+.msg-option-btn:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 300ms;
+}
+
