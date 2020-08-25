@@ -400,7 +400,8 @@ function eventSelected() {
       $event_theme = objectCheck(['Content Theme']),
       $event_goal = objectCheck(['Content Goal']),
       $event_zoom_link = objectCheck(['Zoom Link']),
-      $event_panel_13_customization = objectCheck(['Panel 1.3 Customization']);
+      $event_panel_13_customization = objectCheck(['Panel 1.3 Customization']),
+      $event_subject = objectCheck(['Subject']);
 
       function objectCheck(propCheck) {
         if($event.hasOwnProperty(propCheck)) {
@@ -953,7 +954,7 @@ function eventSelected() {
 
         // RR MESSAGE 1.3
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.3</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.3</p>" +
         "<p class='messagesubject'><i class='fa fa-reply'></i> re: How Can You " + $event_goal + "?</p><br><br>" +
 
         "I know it’s still a bit early to think about " + target_lunch_or_brunch($event_target_copy) + " plans on " + $event_long_date + ", but how about joining us for some " +  ifCanada('no') + " and virtual networking at " + $event_full_title + "?<br><br>" +
@@ -973,7 +974,7 @@ function eventSelected() {
 
         // RR MESSAGE 2.1
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.3</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 2.1</p>" +
         "<p class='messagesubject'><i class='fa fa-reply'></i> {{FIRST_NAME}}, " + target_lunch_or_brunch($event_target_copy) + " is on us!</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
@@ -1919,6 +1920,76 @@ function eventSelected() {
 
       ]
 
+      const $rr_personalized_drafts = 
+
+      [
+        // REGISTRANT RECRUITMENT PERSONALIZED
+
+        // Extensive past work experience
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Extensive past work experience - They’ve been in the industry or with their company for many years</p><br><br>" +
+
+        "<div class='editor_rrp1'>" +
+        "I came across your LinkedIn looking for " + $event_subject + " experts. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("# years") + ", and in the " + highlight_This("FIELD (i.e. MARKETING, IT, SECURITY, HR, etc.)") + " space for a lot longer." +
+        "</div>",
+
+        // Recommendation
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Recommendation - They’ve got a rec from someone that talks about skills relevant to the event/topic</p><br><br>" +
+
+        "<div class='editor_rrp2'>" +
+        "I came across your LinkedIn looking for " + highlight_This('PROSPECT_GENERAL ROLE/TITLEs (i.e. marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)') + " and I saw " + highlight_This("RECOMMEDER_NAME’s recommendation—he/she mentioned you RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye—that’s the sort of leader that I look for as I build panels." +
+        "</div>",
+
+        // Career Evolution
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Career Evolution -  They didn’t start our doing what they are now, and had a couple jobs in another role</p><br><br>" +
+
+        "<div class='editor_rrp3'>" +
+        "I came across your LinkedIn profile looking for " + $event_subject + " experts, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + " —I’m sure that " + highlight_This("PRIOR_ROLE") + " background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
+        "</div>",
+
+        // Endorsed Skills
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Endorsed Skills - They’ve got upwards of 20 endorsements for a <b>RELEVANT</b> (to the event) skill or two</p><br><br>" +
+
+        "<div class='editor_rrp4'>" +
+        "You’ve got # endorsements for " + highlight_This("SKILL_TYPE") + " and " + highlight_This("# for SKILL_TYPE2") + " skills on LinkedIn—definitely caught my attention." +
+        "</div>",
+
+        // About
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> ‘About’ - They’ve got relevant experience or skills listed in the section they wrote about themselves</p><br><br>" +
+
+        "<div class='editor_rrp5'>" +
+        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)") + ", and I saw you mention you " + highlight_This("ABOUT_QUOTE") + " in your ‘about’ section." +
+        "</div>",
+
+        // Certifications
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Certifications - They’ve got a RELEVANT (to the event) certification that they’ve completed</p><br><br>" +
+
+        "<div class='editor_rrp6'>" +
+        "I came across you on LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)") + ", and I saw you’ve got a certification/certifications in " + highlight_This("CERTIFICATION and CERTIFICATION_2") + "—definitely caught my attention." +
+        "</div>",
+
+        // Interests
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Interests - They’re following a person/company/group that is interesting or out of the norm (ideally relevant to the event)</p><br><br>" +
+
+        "<div class='editor_rrp7'>" +
+        "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + "—I thought his/her/their recent article/video/post on topic was a great one." +
+        "</div>",
+
+      ]
+
       const doubleSpaceAndLine = "<br><br><br>" + "<hr>" + "<br><br><br>";
   
       function generateCustomMessage() {
@@ -2059,6 +2130,19 @@ function eventSelected() {
               } else if ($selectedMessageName == "Full Sequence") {
                 document.querySelector(".personalization-container").style.display = "block";
                 return $drafts.html($oi_rr_drafts[0] + doubleSpaceAndLine + $oi_rr_drafts[1] + doubleSpaceAndLine + $oi_rr_drafts[2] + doubleSpaceAndLine + $oi_rr_drafts[3] + "<br><br>");
+              }
+            }
+            else if ($selectedMessageType == "Registrant Recruitment Personalization") {
+              if ($selectedMessageName == "Create Personalization"){
+                $drafts.html($rr_personalized_drafts[0] + doubleSpaceAndLine + $rr_personalized_drafts[1] + doubleSpaceAndLine + $rr_personalized_drafts[2] + doubleSpaceAndLine + $rr_personalized_drafts[3] + doubleSpaceAndLine + $rr_personalized_drafts[4] + doubleSpaceAndLine + $rr_personalized_drafts[5] + doubleSpaceAndLine + $rr_personalized_drafts[6] + "<br><br>");
+                var quill1 = new Quill('.editor_rrp1',{theme:'snow',});
+                var quill2 = new Quill('.editor_rrp2',{theme:'snow',});
+                var quill3 = new Quill('.editor_rrp3',{theme:'snow',});
+                var quill4 = new Quill('.editor_rrp4',{theme:'snow',});
+                var quill5 = new Quill('.editor_rrp5',{theme:'snow',});
+                var quill6 = new Quill('.editor_rrp6',{theme:'snow',});
+                var quill7 = new Quill('.editor_rrp7',{theme:'snow',});
+                return;
               }
             }
         else return $drafts.html("This message does not exist.");

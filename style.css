@@ -1240,3 +1240,8 @@ span#view {
   transition: ease-in-out 300ms;
 }
 
+div.ql-container {
+  height: max-content;
+  padding-bottom: 3em;
+  font-size: 15px;
+}
