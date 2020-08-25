@@ -1240,8 +1240,35 @@ span#view {
   transition: ease-in-out 300ms;
 }
 
-div.ql-container {
-  height: max-content;
+div.ql-editor {
+  height: max-content !important;
+  font-size: 15px;
+}
+
+div.ql-container.ql-snow {
+  height: max-content !important;
   padding-bottom: 3em;
   font-size: 15px;
+  border: 1px solid #dfe3ee !important;
+  border-top: none !important;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.ql-toolbar.ql-snow {
+  border: 1px solid #dfe3ee !important;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.ql-snow .ql-picker {
+  color: #3b5998 !important;
+}
+
+.ql-formats button {
+  color: #3b5998 !important;
+}
+
+.ql-snow .ql-stroke {
+  stroke: #3b5998 !important;
 }
