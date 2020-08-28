@@ -2072,7 +2072,7 @@ function eventSelected() {
         "<div class='editor_rrp15'>" +
         "Hey {{FIRST_NAME}},<br><br>" +
 
-        "<p class='open-personalization1'> <span class='personalization'> Open personalization strategies <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>"+
+        "<p class='open-personalization1'> <span class='personalization'>" + highlight_This("{{ Open personalization strategie }}") + " <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>"+
         "<span class='personalization1'></span><br>" +
 
         "Based on your profile, I thought you’d enjoy a virtual thought-leadership event I’m organizing on " + $event_long_date + " from 12:00 pm to 1:30pm " + $event_timezone + ".<br><br>" +
@@ -2351,7 +2351,7 @@ function eventSelected() {
                 new Quill('.editor_rrp18',{theme:'snow',});
               } else if ($selectedMessageName == "Full Sequence") {
                 document.querySelector(".personalization-container").style.display = "block";
-                $drafts.html($$rr_drafts_new[0] + doubleSpaceAndLine + $rr_drafts_new[1] + doubleSpaceAndLine + $rr_drafts_new[2] + doubleSpaceAndLine + $rr_drafts_new[3] + "<br><br>");
+                $drafts.html($rr_drafts_new[0] + doubleSpaceAndLine + $rr_drafts_new[1] + doubleSpaceAndLine + $rr_drafts_new[2] + doubleSpaceAndLine + $rr_drafts_new[3] + "<br><br>");
                 new Quill('.editor_rrp15',{theme:'snow',});
                 new Quill('.editor_rrp16',{theme:'snow',});
                 new Quill('.editor_rrp17',{theme:'snow',});
