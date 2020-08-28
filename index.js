@@ -400,7 +400,8 @@ function eventSelected() {
       $event_theme = objectCheck(['Content Theme']),
       $event_goal = objectCheck(['Content Goal']),
       $event_zoom_link = objectCheck(['Zoom Link']),
-      $event_panel_13_customization = objectCheck(['Panel 1.3 Customization']),
+      $event_customization_1 = objectCheck(['Customization 1']),
+      $event_customization_2 = objectCheck(['Customization 2']),
       $event_subject = objectCheck(['Subject']);
 
       function objectCheck(propCheck) {
@@ -529,9 +530,6 @@ function eventSelected() {
           } else return;
         }
       };
-
-      console.log($event_panelists_full_formatted);
-      console.log($event_panelists_title_and_company)
 
       function parkingInstructions($event_parking){
          if (Array.isArray($event_parking) == false){
@@ -874,7 +872,7 @@ function eventSelected() {
 
         "Reaching back out to see if you’ve had a chance to check out our event site and the discussion topics?<br><br>" +
 
-        $event_panel_13_customization + "<br><br>" +
+        $event_customization_1 + "<br><br>" +
 
         "Our panelists tell us that these events are not only a great opportunity to demonstrate their expertise and build their personal brand, but also to learn from their fellow attendees.<br><br>" +
 
@@ -909,7 +907,7 @@ function eventSelected() {
       [
         // RR MESSAGE 1.1
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.1</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Legacy Registrant Recruitment 1.1</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> Interested in Thought Leadership on "+ $event_theme +"?</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
@@ -935,7 +933,7 @@ function eventSelected() {
 
         // RR MESSAGE 1.2
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.2</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Legacy Registrant Recruitment 1.2</p>" +
         "<p class='messagesubject'><i class='fa fa-reply'></i> Connect with your peers over "+ $event_theme +"!</p><br><br>" +
         
         "Hey {{FIRST_NAME}},<br><br>" +
@@ -954,7 +952,7 @@ function eventSelected() {
 
         // RR MESSAGE 1.3
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 1.3</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Legacy Registrant Recruitment 1.3</p>" +
         "<p class='messagesubject'><i class='fa fa-reply'></i> re: How Can You " + $event_goal + "?</p><br><br>" +
 
         "I know it’s still a bit early to think about " + target_lunch_or_brunch($event_target_copy) + " plans on " + $event_long_date + ", but how about joining us for some " +  ifCanada('no') + " and virtual networking at " + $event_full_title + "?<br><br>" +
@@ -974,7 +972,7 @@ function eventSelected() {
 
         // RR MESSAGE 2.1
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 2.1</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Legacy Registrant Recruitment 2.1</p>" +
         "<p class='messagesubject'><i class='fa fa-reply'></i> {{FIRST_NAME}}, " + target_lunch_or_brunch($event_target_copy) + " is on us!</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
@@ -992,7 +990,7 @@ function eventSelected() {
         // RR MESSAGE 2.2
 
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 2.2</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Legacy Registrant Recruitment 2.2</p>" +
         "<p class='messagesubject'><i class='fa fa-reply'></i> Check out who’s attending—" + $event_short_title + "</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
@@ -1013,7 +1011,7 @@ function eventSelected() {
 
         // RR MESSAGE 2.3
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 2.3</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Legacy Registrant Recruitment 2.3</p>" +
         "<p class='messagesubject'><i class='fa fa-reply'></i> Hear what our expert panel has to say about " + $event_theme + "</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
@@ -1028,7 +1026,7 @@ function eventSelected() {
 
         // RR MESSAGE 3.1
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 3.1</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Legacy Registrant Recruitment 3.1</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_Name}}, Open Spots Remaining for " + thisWeek_nextWeek_Tomorrow() + " " + $event_theme + " Event</p><br><br>" +
 
         "Hi {{FIRST_NAME}},<br><br>" +
@@ -1047,7 +1045,7 @@ function eventSelected() {
 
         // RR MESSAGE 4.1
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment 4.1</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Legacy Registrant Recruitment 4.1</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Network with Us at " + thisWeek_nextWeek_Tomorrow() + " " + $event_theme + " Event!</p><br><br>" +
 
         "Hey {{FIRST_NAME}},<br><br>" +
@@ -1066,7 +1064,7 @@ function eventSelected() {
 
         // RR MESSAGE - RESCHEDULE 1.1
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment - Reschedule 1.1</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Legacy Registrant Recruitment - Reschedule 1.1</p>" +
         "<p class='messagesubject'><i class='fa fa-reply'></i> re: Coronavirus Update: "+ $event_short_title +" changed to a virtual event</p><br><br>" +
 
         "Hey {{FIRST_NAME}},<br><br>" +
@@ -2061,6 +2059,111 @@ function eventSelected() {
 
       ]
 
+      const $rr_drafts_new = 
+
+      [
+        // PAST ATTENDEE REGISTRANT RECRUITMENT
+
+        // 1.1
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> New Cold Registrant Recruitment - 1.1</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Lunch and Learn on " + $event_month_number + "/" + $event_day_number +"?" +"</p><br><br>" +
+
+        "<div class='editor_rrp15'>" +
+        "Hey {{FIRST_NAME}},<br><br>" +
+
+        "<p class='open-personalization1'> <span class='personalization'> Open personalization strategies <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>"+
+        "<span class='personalization1'></span><br>" +
+
+        "Based on your profile, I thought you’d enjoy a virtual thought-leadership event I’m organizing on " + $event_long_date + " from 12:00 pm to 1:30pm " + $event_timezone + ".<br><br>" +
+        
+         $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>" +
+        
+        "As an attendee, you’ll have the chance to hear our expert panel share their insights, learn from and network with your peers, and enjoy lunch on us with a " + ifCanada("money") + " code.<br><br>" + 
+        
+        "If this seems relevant and interesting, may I send you more info?.<br><br>" +
+        
+        "You can find further details on the proposed discussion topics on our event website. " + highlight_This($event_website) + "<br><br>" +
+        
+        "Have a great " + highlight_This("SEND_DAY") + ",<br><br>" +
+
+        "Best,<br>" +
+        highlight_This("Signature") + "<br><br>" +
+
+        emailFooter() +
+        "</div>",
+
+        // 1.2
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> New Cold Registrant Recruitment - 1.2</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Re: {{FIRST_NAME}}, Lunch and Learn on " + $event_month_number + "/" + $event_day_number +"?" +"</p><br><br>" +
+
+        "<div class='editor_rrp16'>" +
+        "Hey again {{FIRST_NAME}},<br><br>" +
+
+        "Reaching back out to share our <span style='color:red;'><b><u>event website </u></b></span>" + " " +  highlight_This($event_website) + " which includes the discussion topics and our panel.<br><br>"+
+        "<span class='personalization1'></span>" +
+
+        $event_audience + " " + $event_customization_1 + "<br>" +
+
+        "Our attendees love these events! They are not only a great opportunity to learn from our expert panelists, but also to connect and share insight with peers in similar roles and industries.<br><br>" +
+        
+        "Does the content seem relevant to you? Let me know if you’d like to join us and I’m happy to sign you up.<br><br>" +
+        
+        "Hope you’re having a great day,<br><br>"+
+        highlight_This("Signature") +
+        "</div>"
+        ,
+ + 
+
+        // 1.3
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> New Cold Registrant Recruitment - 1.3</i></p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Re: {{FIRST_NAME}}, Lunch and Learn on " + $event_month_number + "/" + $event_day_number +"?" +"</p><br><br>" +
+
+        "<div class='editor_rrp17'>" +
+        "Hi {{FIRST_NAME}},<br><br>" +
+
+        "We love bringing together exceptional panels to discuss the challenges and opportunities impacting business professionals today.<br><br>" +
+        
+        "For " + $event_full_title + " we’ve got an exciting panel featuring following leaders:<br>" +
+
+        createPanelistList_full_title_company_only_listFormat() +
+
+        "Along with our moderator from " + $event_client + ", the panel will be leading a conversation about " + $event_snippet + ".<br><br>" + 
+        
+        "You’ll also get the chance to meet the speakers and your fellow participants in smaller groups and discuss the event topics.<br><br>" + 
+        
+        "May I RSVP you, {{FIRST_NAME}}?<br><br>" +
+
+        "Best,<br>" +
+        "Steve" +
+        "</div>"
+        ,
+
+        // 1.4
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> New Cold Registrant Recruitment - 1.4</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Re: {{FIRST_NAME}}, Lunch and Learn on " + $event_month_number + "/" + $event_day_number +"?" +"</p><br><br>" +
+
+        "<div class='editor_rrp18'>" +
+        "{{FIRST_NAME}}, just want to say one more time—I think you’d love this event.<br><br>" +
+
+        $event_audience + " " + $event_customization_2 + "<br>" +
+
+        "Our discussion of " + $event_theme.toLowerCase() + " promises to be valuable to all, and the conversation would definitely benefit from your participation.<br><br>" +
+        
+        "Hope you’re willing to join our conversation and also interested in the opportunity to network with other " + $event_function + ".<br><br>" +
+        
+        "And don’t forget, lunch is on us!<br><br>" + 
+        
+        "Can I count you in for " + $event_long_date + "?<br><br>" +
+
+        highlight_This("Signature") +
+        "</div>",
+
+      ]
+
       const doubleSpaceAndLine = "<br><br><br>" + "<hr>" + "<br><br><br>";
   
       function generateCustomMessage() {
@@ -2079,7 +2182,7 @@ function eventSelected() {
             $drafts.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
           }
-        } else if ($selectedMessageType == "Registrant Recruitment") {
+        } else if ($selectedMessageType == "Registrant Recruitment Legacy") {
           if ($selectedMessageName == "Reschedule 1.1") {
             return $drafts.html($rr_drafts[8]);
           } if ($selectedMessageName == "1.1"){
@@ -2228,6 +2331,32 @@ function eventSelected() {
                 var quill14 = new Quill('.editor_rrp14',{theme:'snow',});
                 return;
               }
+            } else if ($selectedMessageType == "Registrant Recruitment New") {
+              if ($selectedMessageName == "1.1"){
+                document.querySelector(".personalization-container").style.display = "block";
+                $drafts.html($rr_drafts_new[0] + doubleSpaceAndLine + $rr_drafts_new[1] + doubleSpaceAndLine + $rr_drafts_new[2] + doubleSpaceAndLine + $rr_drafts_new[3] + "<br><br>");
+                new Quill('.editor_rrp15',{theme:'snow',});
+                new Quill('.editor_rrp16',{theme:'snow',});
+                new Quill('.editor_rrp17',{theme:'snow',});
+                new Quill('.editor_rrp18',{theme:'snow',});
+              } else if ($selectedMessageName == "1.2") {
+                document.querySelector(".personalization-container").style.display = "block";
+                $drafts.html($rr_drafts_new[1]);
+                new Quill('.editor_rrp16',{theme:'snow',});
+              } if ($selectedMessageName == "1.3") {
+                $drafts.html($rr_drafts_new[2]);
+                new Quill('.editor_rrp17',{theme:'snow',});
+              } if ($selectedMessageName == "1.4") {
+                $drafts.html($rr_drafts_new[3]);
+                new Quill('.editor_rrp18',{theme:'snow',});
+              } else if ($selectedMessageName == "Full Sequence") {
+                document.querySelector(".personalization-container").style.display = "block";
+                $drafts.html($$rr_drafts_new[0] + doubleSpaceAndLine + $rr_drafts_new[1] + doubleSpaceAndLine + $rr_drafts_new[2] + doubleSpaceAndLine + $rr_drafts_new[3] + "<br><br>");
+                new Quill('.editor_rrp15',{theme:'snow',});
+                new Quill('.editor_rrp16',{theme:'snow',});
+                new Quill('.editor_rrp17',{theme:'snow',});
+                new Quill('.editor_rrp18',{theme:'snow',});
+              }
             }
         else return $drafts.html("This message does not exist.");
       };
@@ -2248,7 +2377,7 @@ function eventSelected() {
           } else if ($selectedMessageName == "1.4") {
             return predraftedHTML.html($pr_drafts[3]);
           }
-        } else if ($selectedMessageType == "Registrant Recruitment") {
+        } else if ($selectedMessageType == "Registrant Recruitment Legacy") {
           if ($selectedMessageName == "1.1"){
             return predraftedHTML.html($rr_drafts[0] + doubleSpaceAndLine + $rr_drafts[1] + doubleSpaceAndLine + $rr_drafts[2] + doubleSpaceAndLine + $rr_drafts[3] + doubleSpaceAndLine + $rr_drafts[4] + doubleSpaceAndLine + $rr_drafts[5] + doubleSpaceAndLine + $rr_drafts[6] + doubleSpaceAndLine + $rr_drafts[7] + "<br><br>");
           } else if ($selectedMessageName == "1.2") {
@@ -2325,6 +2454,22 @@ function eventSelected() {
               return $drafts.html($oi_rr_drafts[3]);
             } else if ($selectedMessageName == "Full Sequence") {
               return $drafts.html($oi_rr_drafts[0] + doubleSpaceAndLine + $oi_rr_drafts[1] + doubleSpaceAndLine + $oi_rr_drafts[2] + doubleSpaceAndLine + $oi_rr_drafts[3] + "<br><br>");
+            }
+          }
+          else if ($selectedMessageType == "Registrant Recruitment New") {
+            if ($selectedMessageName == "1.1"){
+              document.querySelector(".personalization-container").style.display = "block";
+              return $drafts.html($rr_drafts_new[0] + doubleSpaceAndLine + $rr_drafts_new[1] + doubleSpaceAndLine + $rr_drafts_new[2] + doubleSpaceAndLine + $rr_drafts_new[3] + "<br><br>");
+            } else if ($selectedMessageName == "1.2") {
+              document.querySelector(".personalization-container").style.display = "block";
+              return $drafts.html($rr_drafts_new[1]);
+            } if ($selectedMessageName == "1.3") {
+              return $drafts.html($rr_drafts_new[2]);
+            } if ($selectedMessageName == "1.4") {
+              return $drafts.html($rr_drafts_new[3]);
+            } else if ($selectedMessageName == "Full Sequence") {
+              document.querySelector(".personalization-container").style.display = "block";
+              return $drafts.html($$rr_drafts_new[0] + doubleSpaceAndLine + $rr_drafts_new[1] + doubleSpaceAndLine + $rr_drafts_new[2] + doubleSpaceAndLine + $rr_drafts_new[3] + "<br><br>");
             }
           }
       } else return predraftedHTML.html("This message does not exist.");
