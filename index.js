@@ -1938,7 +1938,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Recommendation</b> - They’ve got a rec from someone that talks about skills relevant to the event/topic</p><br><br>" +
 
         "<div class='editor_rrp2'>" +
-        "I came across your LinkedIn looking for " + highlight_This('PROSPECT_GENERAL ROLE/TITLEs (i.e. marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)') + " and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation -" + highlight_This("he/she") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye—that’s the sort of leader that I look for as I build panels." +
+        "I came across your LinkedIn looking for " + highlight_This('PROSPECT_GENERAL ROLE/TITLEs (i.e. marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)') + " and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation —" + highlight_This("he/she") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye—that’s the sort of leader that I look for as I build panels." +
         "</div>",
 
         // Career Evolution
@@ -2054,7 +2054,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Interests</b> - They’re following a person/company/group that is interesting or out of the norm (ideally relevant to the event)</p><br><br>" +
 
         "<div class='editor_rrp14'>" +
-        "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST—") + " I thought " + highlight_This("his/her/their") + " recent " + highlight_This("article/video/post") + " on topic was a great one." +
+        "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + "—I thought " + highlight_This("his/her/their") + " recent " + highlight_This("article/video/post") + " on topic was a great one." +
         "</div>",
 
       ]
@@ -2377,7 +2377,7 @@ function eventSelected() {
           } else if ($selectedMessageName == "1.4") {
             return predraftedHTML.html($pr_drafts[3]);
           }
-        } else if ($selectedMessageType == "Registrant Recruitment Legacy") {
+        } else if ($selectedMessageType == "Registrant Recruitment") { // Takes single select name from emails table so has to remain Registrant Recruitment
           if ($selectedMessageName == "1.1"){
             return predraftedHTML.html($rr_drafts[0] + doubleSpaceAndLine + $rr_drafts[1] + doubleSpaceAndLine + $rr_drafts[2] + doubleSpaceAndLine + $rr_drafts[3] + doubleSpaceAndLine + $rr_drafts[4] + doubleSpaceAndLine + $rr_drafts[5] + doubleSpaceAndLine + $rr_drafts[6] + doubleSpaceAndLine + $rr_drafts[7] + "<br><br>");
           } else if ($selectedMessageName == "1.2") {
