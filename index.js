@@ -1843,7 +1843,7 @@ function eventSelected() {
 
         "Hey {{FIRST_NAME}},<br><br>" +
 
-        highlight_This("{{ Thanks for speaking on our panel }} or {{ Glad you were able to join us at }}") + " " + highlight_This("{{SNIPPET 2-PAST_EVENT}}") + ", in " + highlight_This("{{SNIPPET 3-MONTH}}") + " " + highlight_This("{{SNIPPET 4-YEAR}}") + ".<br><br>" +
+        "Reaching out because you were interested in our thought leadership event, " + highlight_This("{{PAST_EVENT}}") + ", in " + highlight_This("{{PAST EVENT MONTH}} {{PAST EVENT YEAR}}") + ".<br><br>" +
         
         "I’d love to have you join us for our upcoming virtual event, " + $event_function + ", on " + $event_long_date + " from 12  – 1:30pm " + $event_timezone + ". This time, our conversation will revolve around " + $event_panel_snippet + ".<br><br>" +
         
