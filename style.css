@@ -1280,3 +1280,7 @@ div.ql-container.ql-snow {
 .ql-editor ul > li::before {
   content: '' !important;
 }
+
+.capitalize {
+  text-transform: capitalize;
+}

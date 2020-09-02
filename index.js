@@ -523,7 +523,7 @@ function eventSelected() {
           if ($event_panelists_title_and_company !== undefined) {
           let listOpen = '<ul style="list-style:none">'
           $event_panelists_title_and_company.forEach(panelist => {
-            listOpen += '<li>'+ panelist + '</li>';
+            listOpen += '<li>'+ panelist.charAt(0).toUpperCase() + panelist.slice(1) + '</li>';
           });
           listOpen += '</ul>';
           return listOpen;
@@ -539,7 +539,7 @@ function eventSelected() {
           let listOpen = '<ul>'
           $event_panelists_title_and_company.forEach(panelist => {
             if (!panelist.includes($event_client)) {
-              listOpen += '<li>'+ panelist + '</li>';
+              listOpen += '<li>'+ panelist.charAt(0).toUpperCase() + panelist.slice(1) + '</li>';
             }
           });
           listOpen += '</ul>';
@@ -2113,7 +2113,7 @@ function eventSelected() {
           "Reaching back out to share our <span style='color:red;'><b><u>event website </u></b></span>" + " " +  highlight_This($event_website) + " which includes the discussion topics and our panel.<br><br>"+
           "<span class='personalization1'></span>" +
 
-          $event_audience + " " + $event_customization_1 + "<br><br>" +
+          $event_audience.charAt(0).toUpperCase() + $event_audience.slice(1) + " " + $event_customization_1 + "<br><br>" +
 
           "Our attendees love these events! They are not only a great opportunity to learn from our expert panelists, but also to connect and share insight with peers in similar roles and industries.<br><br>" +
           
@@ -2153,7 +2153,7 @@ function eventSelected() {
         "<div class='editor_rrp18'>" +
           "{{FIRST_NAME}}, just want to say one more time—I think you’d love this event.<br><br>" +
 
-          $event_audience + " " + $event_customization_2 + "<br><br>" +
+          $event_audience.charAt(0).toUpperCase() + $event_audience.slice(1) + " " + $event_customization_2 + "<br><br>" +
 
           "Our discussion of " + $event_theme.toLowerCase() + " promises to be valuable to all, and the conversation would definitely benefit from your participation.<br><br>" +
           
