@@ -1272,3 +1272,11 @@ div.ql-container.ql-snow {
 .ql-snow .ql-stroke {
   stroke: #3b5998 !important;
 }
+
+.ql-editor ul > li::before {
+  content: '' !important;
+}
+
+.ql-editor ul > li::before {
+  content: '' !important;
+}

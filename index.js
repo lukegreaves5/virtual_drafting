@@ -521,11 +521,28 @@ function eventSelected() {
           return "<span style='background-color:yellow;text-transform:uppercase;'>PANELISTS MISSING</span>";
         } else {
           if ($event_panelists_title_and_company !== undefined) {
+          let listOpen = '<ul style="list-style:none">'
+          $event_panelists_title_and_company.forEach(panelist => {
+            listOpen += '<li>'+ panelist + '</li>';
+          });
+          listOpen += '</ul>';
+          return listOpen;
+          } else return;
+        }
+      };
+
+      function createPanelistList_full_title_company_only_listFormat_excluding_moderator() { //$event_panelists_title_and_company
+        if ($event_panelists_title_and_company.includes("yellow") == true) {
+          return "<span style='background-color:yellow;text-transform:uppercase;'>PANELISTS MISSING</span>";
+        } else {
+          if ($event_panelists_title_and_company !== undefined) {
           let listOpen = '<ul>'
           $event_panelists_title_and_company.forEach(panelist => {
+            if (!panelist.includes($event_client)) {
               listOpen += '<li>'+ panelist + '</li>';
-            });
-            listOpen += '</ul>';
+            }
+          });
+          listOpen += '</ul>';
           return listOpen;
           } else return;
         }
@@ -2062,7 +2079,7 @@ function eventSelected() {
       const $rr_drafts_new = 
 
       [
-        // PAST ATTENDEE REGISTRANT RECRUITMENT
+        // NEW COLD REGISTRANT RECRUITMENT
 
         // 1.1
 
@@ -2070,27 +2087,19 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Lunch and Learn on " + $event_month_number + "/" + $event_day_number +"?" +"</p><br><br>" +
 
         "<div class='editor_rrp15'>" +
-        "Hey {{FIRST_NAME}},<br><br>" +
+          "Hey {{FIRST_NAME}},<br><br>" +
 
-        "<p class='open-personalization1'> <span class='personalization'>" + highlight_This("{{ Open personalization strategie }}") + " <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>"+
-        "<span class='personalization1'></span><br>" +
+          $event_snippet + "<br><br>" +
 
-        "Based on your profile, I thought you’d enjoy a virtual thought-leadership event I’m organizing on " + $event_long_date + " from 12:00 pm to 1:30pm " + $event_timezone + ".<br><br>" +
-        
-         $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>" +
-        
-        "As an attendee, you’ll have the chance to hear our expert panel share their insights, learn from and network with your peers, and enjoy lunch on us with a " + ifCanada("money") + " code.<br><br>" + 
-        
-        "If this seems relevant and interesting, may I send you more info?.<br><br>" +
-        
-        "You can find further details on the proposed discussion topics on our event website. " + highlight_This($event_website) + "<br><br>" +
-        
-        "Have a great " + highlight_This("SEND_DAY") + ",<br><br>" +
-
-        "Best,<br>" +
-        highlight_This("Signature") + "<br><br>" +
-
-        emailFooter() +
+          "Based on your profile, I thought you’d enjoy a virtual thought-leadership event I’m organizing on " + $event_long_date + " from 12:00 pm to 1:30pm " + $event_timezone + ".<br><br>" +
+          
+          $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>" +
+          
+          "As an attendee, you’ll have the chance to hear our expert panel share their insights, learn from and network with your peers, and enjoy lunch on us with a " + ifCanada("money") + " code.<br><br>" + 
+          
+          "If this seems relevant and interesting, may I send you more info?.<br><br>" +
+          
+          "Have a great " + highlight_This("SEND_DAY") + ",<br><br>" +
         "</div>",
 
         // 1.2
@@ -2099,45 +2108,40 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> Re: {{FIRST_NAME}}, Lunch and Learn on " + $event_month_number + "/" + $event_day_number +"?" +"</p><br><br>" +
 
         "<div class='editor_rrp16'>" +
-        "Hey again {{FIRST_NAME}},<br><br>" +
+          "Hey again {{FIRST_NAME}},<br><br>" +
 
-        "Reaching back out to share our <span style='color:red;'><b><u>event website </u></b></span>" + " " +  highlight_This($event_website) + " which includes the discussion topics and our panel.<br><br>"+
-        "<span class='personalization1'></span>" +
+          "Reaching back out to share our <span style='color:red;'><b><u>event website </u></b></span>" + " " +  highlight_This($event_website) + " which includes the discussion topics and our panel.<br><br>"+
+          "<span class='personalization1'></span>" +
 
-        $event_audience + " " + $event_customization_1 + "<br>" +
+          $event_audience + " " + $event_customization_1 + "<br><br>" +
 
-        "Our attendees love these events! They are not only a great opportunity to learn from our expert panelists, but also to connect and share insight with peers in similar roles and industries.<br><br>" +
-        
-        "Does the content seem relevant to you? Let me know if you’d like to join us and I’m happy to sign you up.<br><br>" +
-        
-        "Hope you’re having a great day,<br><br>"+
-        highlight_This("Signature") +
-        "</div>"
-        ,
- + 
+          "Our attendees love these events! They are not only a great opportunity to learn from our expert panelists, but also to connect and share insight with peers in similar roles and industries.<br><br>" +
+          
+          "Does the content seem relevant to you? Let me know if you’d like to join us and I’m happy to sign you up.<br><br>" +
+          
+          "Hope you’re having a great day,<br><br>"+
+          highlight_This("Signature") + "</div>",
 
         // 1.3
-
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> New Cold Registrant Recruitment - 1.3</i></p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> New Cold Registrant Recruitment - 1.3</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> Re: {{FIRST_NAME}}, Lunch and Learn on " + $event_month_number + "/" + $event_day_number +"?" +"</p><br><br>" +
 
         "<div class='editor_rrp17'>" +
-        "Hi {{FIRST_NAME}},<br><br>" +
+          "Hi {{FIRST_NAME}},<br><br>" +
 
-        "We love bringing together exceptional panels to discuss the challenges and opportunities impacting business professionals today.<br><br>" +
-        
-        "For " + $event_full_title + " we’ve got an exciting panel featuring following leaders:<br>" +
+          "We love bringing together exceptional panels to discuss the challenges and opportunities impacting business professionals today.<br><br>" +
+          
+          "For " + $event_full_title + " we’ve got an exciting panel featuring following leaders:<br>" +
 
-        createPanelistList_full_title_company_only_listFormat() +
+          createPanelistList_full_title_company_only_listFormat_excluding_moderator() +
 
-        "Along with our moderator from " + $event_client + ", the panel will be leading a conversation about " + $event_snippet + ".<br><br>" + 
-        
-        "You’ll also get the chance to meet the speakers and your fellow participants in smaller groups and discuss the event topics.<br><br>" + 
-        
-        "May I RSVP you, {{FIRST_NAME}}?<br><br>" +
+          "Along with our moderator from " + $event_client + ", the panel will be leading a conversation about " + $event_snippet + ".<br><br>" + 
+          
+          "You’ll also get the chance to meet the speakers and your fellow participants in smaller groups and discuss the event topics.<br><br>" + 
+          
+          "May I RSVP you, {{FIRST_NAME}}?<br><br>" +
 
-        "Best,<br>" +
-        "Steve" +
+          "Best,<br>" +
         "</div>"
         ,
 
@@ -2147,19 +2151,19 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> Re: {{FIRST_NAME}}, Lunch and Learn on " + $event_month_number + "/" + $event_day_number +"?" +"</p><br><br>" +
 
         "<div class='editor_rrp18'>" +
-        "{{FIRST_NAME}}, just want to say one more time—I think you’d love this event.<br><br>" +
+          "{{FIRST_NAME}}, just want to say one more time—I think you’d love this event.<br><br>" +
 
-        $event_audience + " " + $event_customization_2 + "<br>" +
+          $event_audience + " " + $event_customization_2 + "<br><br>" +
 
-        "Our discussion of " + $event_theme.toLowerCase() + " promises to be valuable to all, and the conversation would definitely benefit from your participation.<br><br>" +
-        
-        "Hope you’re willing to join our conversation and also interested in the opportunity to network with other " + $event_function + ".<br><br>" +
-        
-        "And don’t forget, lunch is on us!<br><br>" + 
-        
-        "Can I count you in for " + $event_long_date + "?<br><br>" +
+          "Our discussion of " + $event_theme.toLowerCase() + " promises to be valuable to all, and the conversation would definitely benefit from your participation.<br><br>" +
+          
+          "Hope you’re willing to join our conversation and also interested in the opportunity to network with other " + $event_function + ".<br><br>" +
+          
+          "And don’t forget, lunch is on us!<br><br>" + 
+          
+          "Can I count you in for " + $event_long_date + "?<br><br>" +
 
-        highlight_This("Signature") +
+          highlight_This("Signature") +
         "</div>",
 
       ]
