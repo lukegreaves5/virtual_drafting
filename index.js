@@ -813,6 +813,10 @@ function eventSelected() {
           return (
             "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + "—I thought his/her/their recent article/video/post on topic was a great one."
           )
+        }else if (template === 8) {
+          return (
+            "I saw on LinkedIn that you’re the " + highlight_This("(TITLE)") + " at " + highlight_This("(COMPANY)") + ". I thought about reaching out to you on LinkedIn, but I wasn’t sure if you’re very active there — figured shooting you a quick email would be better.”"
+          )
         }
       }
 
@@ -2003,6 +2007,15 @@ function eventSelected() {
         "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + "—I thought " + highlight_This("his/her/their recent article/video/post") + " on topic was a great one." +
         "</div>",
 
+        // ONLY
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> If there is NOTHING on their profile but title and company</p><br><br>" +
+
+        "<div class='editor_rrp19'>" +
+        "I saw on LinkedIn that you’re the " + highlight_This("(TITLE)") + " at " + highlight_This("(COMPANY)") + ". I thought about reaching out to you on LinkedIn, but I wasn’t sure if you’re very active there — figured shooting you a quick email would be better.”" +
+        "</div>"
+
       ]
 
       const $rr_personalized_drafts = 
@@ -2073,6 +2086,15 @@ function eventSelected() {
         "<div class='editor_rrp14'>" +
         "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + "—I thought " + highlight_This("his/her/their") + " recent " + highlight_This("article/video/post") + " on topic was a great one." +
         "</div>",
+
+        // ONLY
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> If there is NOTHING on their profile but title and company</p><br><br>" +
+
+        "<div class='editor_rrp20'>" +
+        "I saw on LinkedIn that you’re the " + highlight_This("(TITLE)") + " at " + highlight_This("(COMPANY)") + ". I thought about reaching out to you on LinkedIn, but I wasn’t sure if you’re very active there — figured shooting you a quick email would be better." +
+        "</div>"
 
       ]
 
@@ -2312,7 +2334,7 @@ function eventSelected() {
             }
             else if ($selectedMessageType == "Panel Recruitment Personalization") {
               if ($selectedMessageName == "Create Personalization"){
-                $drafts.html($pr_personalized_drafts[0] + doubleSpaceAndLine + $pr_personalized_drafts[1] + doubleSpaceAndLine + $pr_personalized_drafts[2] + doubleSpaceAndLine + $pr_personalized_drafts[3] + doubleSpaceAndLine + $pr_personalized_drafts[4] + doubleSpaceAndLine + $pr_personalized_drafts[5] + doubleSpaceAndLine + $pr_personalized_drafts[6] + "<br><br>");
+                $drafts.html($pr_personalized_drafts[0] + doubleSpaceAndLine + $pr_personalized_drafts[1] + doubleSpaceAndLine + $pr_personalized_drafts[2] + doubleSpaceAndLine + $pr_personalized_drafts[3] + doubleSpaceAndLine + $pr_personalized_drafts[4] + doubleSpaceAndLine + $pr_personalized_drafts[5] + doubleSpaceAndLine + $pr_personalized_drafts[6] + doubleSpaceAndLine + $pr_personalized_drafts[7] + "<br><br>");
                 var quill1 = new Quill('.editor_rrp1',{theme:'snow',});
                 var quill2 = new Quill('.editor_rrp2',{theme:'snow',});
                 var quill3 = new Quill('.editor_rrp3',{theme:'snow',});
@@ -2320,12 +2342,13 @@ function eventSelected() {
                 var quill5 = new Quill('.editor_rrp5',{theme:'snow',});
                 var quill6 = new Quill('.editor_rrp6',{theme:'snow',});
                 var quill7 = new Quill('.editor_rrp7',{theme:'snow',});
+                var quill19 = new Quill('.editor_rrp19',{theme:'snow',});
                 return;
               }
             }
             else if ($selectedMessageType == "Registrant Recruitment Personalization") {
               if ($selectedMessageName == "Create Personalization"){
-                $drafts.html($rr_personalized_drafts[0] + doubleSpaceAndLine + $rr_personalized_drafts[1] + doubleSpaceAndLine + $rr_personalized_drafts[2] + doubleSpaceAndLine + $rr_personalized_drafts[3] + doubleSpaceAndLine + $rr_personalized_drafts[4] + doubleSpaceAndLine + $rr_personalized_drafts[5] + doubleSpaceAndLine + $rr_personalized_drafts[6] + "<br><br>");
+                $drafts.html($rr_personalized_drafts[0] + doubleSpaceAndLine + $rr_personalized_drafts[1] + doubleSpaceAndLine + $rr_personalized_drafts[2] + doubleSpaceAndLine + $rr_personalized_drafts[3] + doubleSpaceAndLine + $rr_personalized_drafts[4] + doubleSpaceAndLine + $rr_personalized_drafts[5] + doubleSpaceAndLine + $rr_personalized_drafts[6] + doubleSpaceAndLine + $rr_personalized_drafts[7] + "<br><br>");
                 var quill8 = new Quill('.editor_rrp8',{theme:'snow',});
                 var quill9 = new Quill('.editor_rrp9',{theme:'snow',});
                 var quill10 = new Quill('.editor_rrp10',{theme:'snow',});
@@ -2333,6 +2356,7 @@ function eventSelected() {
                 var quill12 = new Quill('.editor_rrp12',{theme:'snow',});
                 var quill13 = new Quill('.editor_rrp13',{theme:'snow',});
                 var quill14 = new Quill('.editor_rrp14',{theme:'snow',});
+                var quill20 = new Quill('.editor_rrp20',{theme:'snow',});
                 return;
               }
             } else if ($selectedMessageType == "Registrant Recruitment New") {
