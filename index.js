@@ -803,7 +803,7 @@ function eventSelected() {
           )
         } else if (template === 5) {
           return (
-            "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)") + ", and I saw you mention you " + highlight_This("ABOUT_QUOTE") + " in your about section."
+            "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs") + ", and I saw you mention you in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "."
           )
         } else if (template === 6) {
           return (
@@ -1986,7 +1986,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>‘About’</b> - They’ve got relevant experience or skills listed in the section they wrote about themselves</p><br><br>" +
 
         "<div class='editor_rrp5'>" +
-        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)") + ", and I saw you mention you " + highlight_This("ABOUT_QUOTE") + " in your ‘about’ section." +
+        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs") + ", and I saw you mention you in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "." +
         "</div>",
 
         // Certifications
@@ -2066,7 +2066,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>‘About’</b> - They’ve got relevant experience or skills listed in the section they wrote about themselves</p><br><br>" +
 
         "<div class='editor_rrp12'>" +
-        "I came across your LinkedIn looking for " + highlight_This('PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)') + ", and I saw you mention you " + highlight_This("ABOUT_QUOTE") + " in your ‘about’ section." +
+        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs") + ", and I saw you mention you in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "." + 
         "</div>",
 
         // Certifications
