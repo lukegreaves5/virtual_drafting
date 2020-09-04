@@ -2111,7 +2111,7 @@ function eventSelected() {
         "<div class='editor_rrp15'>" +
           "Hey {{FIRST_NAME}},<br><br>" +
 
-          $event_snippet + "<br><br>" +
+          $event_snippet.charAt(0).toUpperCase() + $event_snippet.slice(1) + " " + "<br><br>" +
 
           "Based on your profile, I thought you’d enjoy a virtual thought-leadership event I’m organizing on " + $event_long_date + " from 12:00 pm to 1:30pm " + $event_timezone + ".<br><br>" +
           
