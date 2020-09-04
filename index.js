@@ -803,7 +803,7 @@ function eventSelected() {
           )
         } else if (template === 5) {
           return (
-            "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs") + ", and I saw you mention you in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "."
+            "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "."
           )
         } else if (template === 6) {
           return (
@@ -1866,7 +1866,7 @@ function eventSelected() {
 
         "Reaching out because you were interested in our thought leadership event, " + highlight_This("{{PAST_EVENT}}") + ", in " + highlight_This("{{PAST EVENT MONTH}} {{PAST EVENT YEAR}}") + ".<br><br>" +
         
-        "I’d love to have you join us for our upcoming virtual event, " + $event_function + ", on " + $event_long_date + " from 12  – 1:30pm " + $event_timezone + ". This time, our conversation will revolve around " + $event_panel_snippet + ".<br><br>" +
+        "I’d love to have you join us for our upcoming virtual event, " + $event_full_title + ", on " + $event_long_date + " from 12  – 1:30pm " + $event_timezone + ". This time, our conversation will revolve around " + $event_panel_snippet + ".<br><br>" +
         
         "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" + 
         
@@ -1986,7 +1986,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>‘About’</b> - They’ve got relevant experience or skills listed in the section they wrote about themselves</p><br><br>" +
 
         "<div class='editor_rrp5'>" +
-        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs") + ", and I saw you mention you in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "." +
+        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "." +
         "</div>",
 
         // Certifications
@@ -2066,7 +2066,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>‘About’</b> - They’ve got relevant experience or skills listed in the section they wrote about themselves</p><br><br>" +
 
         "<div class='editor_rrp12'>" +
-        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs") + ", and I saw you mention you in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "." + 
+        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "." + 
         "</div>",
 
         // Certifications
@@ -2173,13 +2173,14 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> Re: {{FIRST_NAME}}, Lunch and Learn on " + $event_month_number + "/" + $event_day_number +"?" +"</p><br><br>" +
 
         "<div class='editor_rrp18'>" +
+
           "{{FIRST_NAME}}, just want to say one more time—I think you’d love this event.<br><br>" +
 
-          $event_audience.charAt(0).toUpperCase() + $event_audience.slice(1) + " " + $event_customization_2 + "<br><br>" +
+          $event_function_leaders.charAt(0).toUpperCase() + $event_function_leaders.slice(1) + " " + $event_customization_2 + "<br><br>" +
 
           "Our discussion of " + $event_theme.toLowerCase() + " promises to be valuable to all, and the conversation would definitely benefit from your participation.<br><br>" +
           
-          "Hope you’re willing to join our conversation and also interested in the opportunity to network with other " + $event_function + ".<br><br>" +
+          "Hope you’re willing to join our conversation and also interested in the opportunity to network with other " + $event_function_leaders + ".<br><br>" +
           
           "And don’t forget, lunch is on us!<br><br>" + 
           
@@ -2510,3 +2511,4 @@ eventSelected();
 $("#back-button").click(function(){
   location.reload();
 });
+
