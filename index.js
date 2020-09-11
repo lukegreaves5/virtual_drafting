@@ -1820,7 +1820,7 @@ function eventSelected() {
 
         "We love bringing together exceptional panels to discuss the challenges and opportunities impacting business professionals today.<br><br>" +
         
-        "For " + $event_full_title + " we’ve got an exciting panel featuring following leaders:<br>" +
+        "For " + $event_full_title + " we’ve got an exciting panel featuring the following leaders:<br>" +
 
         createPanelistList_full_title_company_only_listFormat() +
 
@@ -1907,7 +1907,7 @@ function eventSelected() {
 
         "We love bringing together exceptional panels to discuss the challenges and opportunities impacting business professionals today.<br><br>" +
         
-        "For " + $event_full_title + " we’ve got an exciting panel featuring following leaders:<br>" +
+        "For " + $event_full_title + " we’ve got an exciting panel featuring the following leaders:<br>" +
 
         createPanelistList_full_title_company_only_listFormat() +
 
@@ -2153,7 +2153,7 @@ function eventSelected() {
 
           "We love bringing together exceptional panels to discuss the challenges and opportunities impacting business professionals today.<br><br>" +
           
-          "For " + $event_full_title + " we’ve got an exciting panel featuring following leaders:<br>" +
+          "For " + $event_full_title + " we’ve got an exciting panel featuring the following leaders:<br>" +
 
           createPanelistList_full_title_company_only_listFormat_excluding_moderator() +
 
