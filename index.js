@@ -854,7 +854,7 @@ function eventSelected() {
         "<p class='open-personalization1'> <span class='personalization'> Open personalization strategies <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>"+
         "<span class='personalization1'></span><br><br>" +
 
-        "Based on your profile, I thought you’d make an exceptional panelist for a virtual thought-leadership event I’m organizing on " + $event_long_date + " from 12 to 1:30pm " + $event_timezone + ".<br><br>" +
+        "Based on your profile, I thought you’d make an exceptional panelist for a virtual thought-leadership event I’m organizing on " + $event_long_date + " from 11:45am to 1:30pm " + $event_timezone + ".<br><br>" +
 
         $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>"+
 
@@ -890,6 +890,8 @@ function eventSelected() {
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.3</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" +
+
+        "Hey {{FIRST_NAME}}<br><br>" +
 
         "Reaching back out to see if you’ve had a chance to check out our event site and the discussion topics?<br><br>" +
 
@@ -2119,7 +2121,7 @@ function eventSelected() {
           
           "As an attendee, you’ll have the chance to hear our expert panel share their insights, learn from and network with your peers, and enjoy lunch on us with a " + ifCanada("money") + " code.<br><br>" + 
           
-          "If this seems relevant and interesting, may I send you more info?.<br><br>" +
+          "If this seems relevant and interesting, may I send you more info?<br><br>" +
           
           "Have a great " + highlight_This("SEND_DAY") + ",<br><br>" +
         "</div>",
