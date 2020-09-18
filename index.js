@@ -376,10 +376,10 @@ function eventSelected() {
       $event_function = objectCheck(['Function']),
       $event_function_leaders = objectCheck(['Function leaders']),
       $event_audience = objectCheck(['Audience']),
-      $event_target = objectCheck(['Target #']),
+      $event_target = objectCheck(['Event Size']),
       $event_benefit = objectCheck(['Benefit']), //$event.Benefit,
-      $event_audience_and_size = objectCheck(['Target #']) + " " + objectCheck(['Audience']),
-      $event_audience_and_size_or_so = objectCheck(['Target #']) + " or so " + objectCheck(['Audience']),
+      $event_audience_and_size = objectCheck(['Event Size']) + " " + objectCheck(['Audience']),
+      $event_audience_and_size_or_so = objectCheck(['Event Size']) + " or so " + objectCheck(['Audience']),
       $event_venue = objectCheck(['venue_api']),
       $event_parking = objectCheck(['parking_api']),
       $event_website = objectCheck(['website_api']),
@@ -396,13 +396,15 @@ function eventSelected() {
       $event_target_copy = objectCheck(['Target']),
       $event_target_region = objectCheck(['Region']),
       $event_target_vertical = objectCheck(['Vertical']),
+      $event_local_time = objectCheck(['Event Time Display']),
       $event_timezone = objectCheck(['Timezone']),
       $event_theme = objectCheck(['Content Theme']),
       $event_goal = objectCheck(['Content Goal']),
       $event_zoom_link = objectCheck(['Zoom Link']),
       $event_customization_1 = objectCheck(['Customization 1']),
       $event_customization_2 = objectCheck(['Customization 2']),
-      $event_subject = objectCheck(['Subject']);
+      $event_subject = objectCheck(['Subject']),
+      $event_discussion_topics = objectCheck(['Discussion Topics']);
 
       function objectCheck(propCheck) {
         if($event.hasOwnProperty(propCheck)) {
@@ -842,6 +844,29 @@ function eventSelected() {
         });
       });
 
+      function discussionTopics() {
+        if ($event_discussion_topics.includes("yellow") !== -1 && $event_discussion_topics.includes("•") !== -1) {
+          console.log($event_discussion_topics);
+          let bullets =  $event_discussion_topics.split("•");
+          return (
+            "<ul>" +
+              bullets.map(bullet => {
+                if (bullet !== "") {
+                  return "<li>" + bullet.replace(/\n/ig, '') + "</li>"
+                }
+              }).join('')
+            + "</ul>"
+          )
+        } else return(
+            `<ul>
+              <li>DISUCSSION TOPIC 1</li>
+              <li>DISUCSSION TOPIC 2</li>
+              <li>DISUCSSION TOPIC 3</li>
+              <li>DISUCSSION TOPIC 4</li>
+            </ul>`
+        )
+      };
+
       const $pr_drafts = 
       [
         // PR MESSAGE 1.1
@@ -854,7 +879,7 @@ function eventSelected() {
         "<p class='open-personalization1'> <span class='personalization'> Open personalization strategies <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>"+
         "<span class='personalization1'></span><br><br>" +
 
-        "Based on your profile, I thought you’d make an exceptional panelist for a virtual thought-leadership event I’m organizing on " + $event_long_date + " from 11:45am to 1:30pm " + $event_timezone + ".<br><br>" +
+        "Based on your profile, I thought you’d make an exceptional panelist for a virtual thought-leadership event I’m organizing on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ".<br><br>" +
 
         $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>"+
 
@@ -943,7 +968,7 @@ function eventSelected() {
         <ul style='list-style:none;'>
         <li>${ $event_full_title }</li><br>
         <li>Date: ${ $event_long_date }</li><br>
-        <li>Time: 12 to 1:30pm ${ $event_timezone }</li><br>
+        <li>Time: ${ $event_local_time + " " + $event_timezone }</li><br>
         <li>Details: event website ${ highlight_This($event_website) } </li><br>
         </ul>
         `+
@@ -1000,7 +1025,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I’d like to invite you and any interested colleagues to join our virtual event on " + $event_long_date + " from 12 to 1:30pm " + $event_timezone + ".<br><br>" + 
+        "I’d like to invite you and any interested colleagues to join our virtual event on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ".<br><br>" + 
 
         "At " + $event_full_title + ", you’d network with an invite-only group of other " + $event_audience + " from " + target_2_1_area($event_target_copy) + ", and engage in thought-provoking discussions about " + $event_snippet + ". See details on our site " + $event_website + ".<br><br>" +
 
@@ -1054,7 +1079,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I know that your calendar probably fills up quickly, but we still have a couple open spots for " + $event_short_title + " on " + $event_long_date + ". The event will run from 12 to 1:30pm " + $event_timezone + ".<br><br>" +
+        "I know that your calendar probably fills up quickly, but we still have a couple open spots for " + $event_short_title + " on " + $event_long_date + ". The event will run from " + $event_local_time + " " + $event_timezone + ".<br><br>" +
 
         "Happy to save one of those spots for you. As an attendee, you’ll receive a " + ifCanada('money') + " code, so you can order up your favorite delivery while our panel leads an engaging discussion about " + contentSnippetThree() + ". If you prefer, we’re happy to donate your meal to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need.<br><br>" +
 
@@ -1075,7 +1100,7 @@ function eventSelected() {
 
         $event_full_title + " is just around the corner!<br><br>" +
 
-        "Last call to join us " + thisWeek_nextWeek_Tomorrow_inCopy() + " " + $event_long_date + " from 12 – 1:30pm " + $event_timezone + ".<br><br>" +
+        "Last call to join us " + thisWeek_nextWeek_Tomorrow_inCopy() + " " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ".<br><br>" +
 
         "Check out who you’d be networking with here." + $event_promo_reg_list + "<br><br>" +
 
@@ -1112,7 +1137,7 @@ function eventSelected() {
 
         "Hi NAME,<br><br>" +
 
-        "I’d like to invite you to our virtual lunch & learn event, " + $event_short_title + " on " + $event_month_number + "/" + $event_day_number + " from 12-1:130PM " + $event_timezone + ". Details at website " + $event_website + ". We'll be sending a " + ifCanada() + " code for lunch! May I count you in? If so, please send me your email address.<br><br>",
+        "I’d like to invite you to our virtual lunch & learn event, " + $event_short_title + " on " + $event_month_number + "/" + $event_day_number + " from " + $event_local_time + " " + $event_timezone + ". Details at website " + $event_website + ". We'll be sending a " + ifCanada() + " code for lunch! May I count you in? If so, please send me your email address.<br><br>",
 
       ];
 
@@ -1321,7 +1346,7 @@ function eventSelected() {
 
         "Hello all,<br><br>" +
 
-        "We’re excited for your panel participation at " + $event_short_title + " virtual meeting, taking place on " + $event_long_date + " from 11:45AM – 1:30PM " + $event_timezone + " on our video-based platform Zoom.<br><br>" +
+        "We’re excited for your panel participation at " + $event_short_title + " virtual meeting, taking place on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + " on our video-based platform Zoom.<br><br>" +
 
         "We would like to schedule a 30 minute panel practice run on "+ highlight_This("DAY, DATE") +" between "+ highlight_This("TIME") +".<br><br>"+
 
@@ -1429,7 +1454,7 @@ function eventSelected() {
 
         "This is <span style='color:red;'>{VA}</span> calling from BDI.<br><br>"+
 
-        "We have you registered to join us at "+ $event_full_title +" tomorrow, "+ $event_long_date + " from 12-1:30PM " + $event_timezone + ".<br><br>" +
+        "We have you registered to join us at "+ $event_full_title +" tomorrow, "+ $event_long_date + " from " + $event_local_time + " " + $event_timezone + ".<br><br>" +
 
         "Please be prepared to participate via video on your computer or mobile device. We'll be providing a code for food delivery!<br><br>" +
 
@@ -1477,7 +1502,7 @@ function eventSelected() {
         `<ul>
         <li>Program: `+ $event_full_title +`</li>
         <li>Date: `+ $event_long_date +`</li>
-        <li>Time: Video-based virtual meeting from 12pm -30pm `+ $event_timezone +`</li>
+        <li>Time: Video-based virtual meeting from ` + $event_local_time + " " + $event_timezone +`</li>
         <li>Location: `+ $event_virtual_link +`</li>
         <li>Website: `+ $event_website +`</li>
         <li>Registration List: `+ $event_promo_reg_list +`</li>
@@ -1512,20 +1537,15 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I thought you'd make a great <i>panelist</i> for a virtual " + target_lunch_or_brunch($event_target_copy) + "-and-learn event we are organizing on " + $event_long_date + " from 12 to 1:30pm " + $event_timezone + ". Here is our event website " + highlight_This($event_website) + " for your reference.<br><br>" +
+        "I thought you'd make a great <i>panelist</i> for a virtual " + target_lunch_or_brunch($event_target_copy) + "-and-learn event we are organizing on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ". Here is our event website " + highlight_This($event_website) + " for your reference.<br><br>" +
 
         $event_full_title + " will gather " + $event_audience + " for video-networking in small breakout rooms before and after an interactive panel discussion. It’ll be conversational, with no formal presentations or press.<br><br>" +
 
-        "Our peer-to-peer program will revolve around " + $event_snippet + " .At a high level, we are looking to explore the discussion points below, though these conversations tend to flow in the direction of attendees’ interests and the passions of our panel—we can dive into your expertise and preference in greater detail on our panel practice run:.<br>" +
+        "Our peer-to-peer program will revolve around " + $event_snippet + " .At a high level, we are looking to explore the discussion points below, though these conversations tend to flow in the direction of attendees’ interests and the passions of our panel—we can dive into your expertise and preference in greater detail on our panel practice run:<br>" +
 
-        `<ul>
-        <li>DISUCSSION TOPIC 1</li>
-        <li>DISUCSSION TOPIC 2</li>
-        <li>DISUCSSION TOPIC 3</li>
-        <li>DISUCSSION TOPIC 4</li>
-        </ul>` +
+        discussionTopics() +
 
-        "We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from 11:45am to 1:30pm " + $event_timezone + " the day of.<br><br>" +
+        "We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from " + $event_local_time + " " + $event_timezone + " the day of.<br><br>" +
 
         "We are also providing a " + ifCanada("money") + " code for all participants.<br><br>" +
 
@@ -1552,7 +1572,7 @@ function eventSelected() {
         `<ul>
         <li>` + $event_full_title + `</li>
         <li>Date: ` + $event_long_date + `</li>
-        <li>Time: 12 to 1:30pm `+ $event_timezone + `</li>
+        <li>Time: ` + $event_local_time + " " + $event_timezone + `</li>
         <li>Details: Event Site ` + $event_website + `</li>
         </ul>` +
         
@@ -1615,7 +1635,7 @@ function eventSelected() {
         `<ul>
         <li>` + $event_full_title + `</li>
         <li>Date: ` + $event_long_date + `</li>
-        <li>Time: 12 to 1:30pm `+ $event_timezone + `</li>
+        <li>Time: ` + $event_local_time + " " + $event_timezone + `</li>
         <li>Details: Event Site ` + $event_website + `</li>
         </ul>` +
         
@@ -1717,7 +1737,7 @@ function eventSelected() {
 
         "Reaching out because you were interested in our thought leadership event, " + highlight_This("{{PAST_EVENT}}") + ", in " + highlight_This("{{PAST EVENT MONTH}} {{PAST EVENT YEAR}}") + ".<br><br>" +
         
-        "As " + highlight_This("TITLE") + " at " + highlight_This("COMPANY")  + " , I thought you’d make a great addition to the panel for our upcoming virtual event, " + $event_full_title + ", on " + $event_long_date + " from 11:45am – 1:30pm " + $event_timezone + ". This time, our conversation will revolve around " + highlight_This("PANEL SNIPPET 1") + ".<br><br>" +
+        "As " + highlight_This("TITLE") + " at " + highlight_This("COMPANY")  + " , I thought you’d make a great addition to the panel for our upcoming virtual event, " + $event_full_title + ", on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ". This time, our conversation will revolve around " + highlight_This("PANEL SNIPPET 1") + ".<br><br>" +
         
         "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" + 
         
@@ -1781,7 +1801,7 @@ function eventSelected() {
 
         highlight_This("{{ Thanks for speaking on our panel }} or {{ Glad you were able to join us at }}") + " " + highlight_This("{{PAST EVENT}}") + " in " + highlight_This("{{PAST EVENT MONTH}} {{PAST EVENT YEAR}}") + ". I hope you enjoyed the event as much as we did!<br><br>" +
         
-        "We’d love to have you participate in our upcoming virtual discussion, " + $event_full_title + ", on " + $event_long_date + " from 12pm – 1:30pm " + $event_timezone + ". This time, our conversation will revolve around " + $event_snippet + ".<br><br>" +
+        "We’d love to have you participate in our upcoming virtual discussion, " + $event_full_title + ", on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ". This time, our conversation will revolve around " + $event_snippet + ".<br><br>" +
         
         "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" + 
         
@@ -1868,7 +1888,7 @@ function eventSelected() {
 
         "Reaching out because you were interested in our thought leadership event, " + highlight_This("{{PAST_EVENT}}") + ", in " + highlight_This("{{PAST EVENT MONTH}} {{PAST EVENT YEAR}}") + ".<br><br>" +
         
-        "I’d love to have you join us for our upcoming virtual event, " + $event_full_title + ", on " + $event_long_date + " from 12  – 1:30pm " + $event_timezone + ". This time, our conversation will revolve around " + $event_panel_snippet + ".<br><br>" +
+        "I’d love to have you join us for our upcoming virtual event, " + $event_full_title + ", on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ". This time, our conversation will revolve around " + $event_panel_snippet + ".<br><br>" +
         
         "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" + 
         
@@ -2115,7 +2135,7 @@ function eventSelected() {
 
           $event_snippet.charAt(0).toUpperCase() + $event_snippet.slice(1) + " " + "<br><br>" +
 
-          "Based on your profile, I thought you’d enjoy a virtual thought-leadership event I’m organizing on " + $event_long_date + " from 12:00 pm to 1:30pm " + $event_timezone + ".<br><br>" +
+          "Based on your profile, I thought you’d enjoy a virtual thought-leadership event I’m organizing on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ".<br><br>" +
           
           $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>" +
           
