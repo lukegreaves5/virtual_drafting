@@ -1990,7 +1990,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Career Evolution</b> -  They didn’t start our doing what they are now, and had a couple jobs in another role</p><br><br>" +
 
         "<div class='editor_rrp3'>" +
-        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + "—I’m sure your " + highlight_This("PRIOR_INDUSTRY") + " background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
+        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + "—I’m sure your <b><i>" + highlight_This("PRIOR_ROLE") + "</i></b> background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
         "</div>",
 
         // Endorsed Skills
@@ -2070,7 +2070,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Career Evolution</b> -  They didn’t start our doing what they are now, and had a couple jobs in another role</p><br><br>" +
 
         "<div class='editor_rrp10'>" +
-        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + "—I’m sure your " + highlight_This("PRIOR_INDUSTRY") + " background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
+        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + "—I’m sure your <b><i>" + highlight_This("PRIOR_INDUSTRY") + "</i></b> background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
         "</div>",
 
         // Endorsed Skills
