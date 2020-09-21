@@ -462,14 +462,6 @@ h1 {
   border-radius: 0;
 }
 
-#logo:hover {
-  -webkit-transform: scale(1.1) rotate(360deg);
-          transform: scale(1.1) rotate(360deg);
-  -webkit-transition: ease-in-out 200ms;
-  transition: ease-in-out 200ms;
-  width: 200px;
-}
-
 #event-search, #message-type-search, #message-name-search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -650,7 +642,7 @@ input[type=checkbox] {
   margin-left: 3%;
 }
 
-.custom-select {
+.select {
   position: relative;
   margin: 0 auto;
   z-index: 10;
@@ -671,7 +663,7 @@ input[type=checkbox] {
   -o-border-radius: 20px;
 }
 
-.custom-select:hover {
+.select:hover {
   -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.048);
           box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.048);
   border: 2px solid #d3e5ff65;
@@ -1284,3 +1276,8 @@ div.ql-container.ql-snow {
 .capitalize {
   text-transform: capitalize;
 }
+
+
+
+
+

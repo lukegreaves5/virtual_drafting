@@ -789,35 +789,35 @@ function eventSelected() {
       function insertPersonalizationTemplate(template) {
         if (template === 1) {
           return (
-            "I came across your LinkedIn looking for " + highlight_This("SUBJECT") + " experts. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("FIELD (i.e. MARKETING, IT, SECURITY, HR, etc.)") + " space for a lot longer—it’s quite impressive."
-          )
+            "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("INDUSTRY") + " space for a lot longer."
+            )
         } else if (template === 2) {
           return (
-            "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)") + " and I saw " + highlight_This("RECOMMEDER_NAME’s recommendation—he/she mentioned you RECOMMENDATION_INDIRECT_QUOTE.")
-          )
+            "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation — " + highlight_This("he/she") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye."
+            )
         } else if (template === 3) {
           return (
-            "I came across your LinkedIn profile looking for " + highlight_This("SUBJECT") + " experts, and loved seeing your journey from " + highlight_This("PRIOR_ROLE to CURRENT_ROLE") + "—I’m sure that " + highlight_This("PRIOR_ROLE") + " background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "."
-          )
+            "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + "—I’m sure your " + highlight_This("PRIOR_INDUSTRY") + " background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "."
+            )
         } else if (template === 4) {
           return (
-            "You’ve got " + highlight_This("# endorsements") + " for " + highlight_This("SKILL_TYPE") + " and " + highlight_This("# for SKILL_TYPE2") + " skills on LinkedIn—definitely caught my attention."
-          )
+            "You’ve got " + highlight_This("#") + " endorsements on LinkedIn for your " + highlight_This("SKILL_TYPE") + " skills and " + highlight_This("#") + " for " + highlight_This("SKILL_TYPE2") + "—definitely caught my attention."
+            )
         } else if (template === 5) {
           return (
-            "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "."
-          )
+            "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "."
+            )
         } else if (template === 6) {
           return (
-            "I came across you on LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity),") + "and I saw you’ve got a certification/certifications in " + highlight_This("CERTIFICATION and CERTIFICATION_2") + "—definitely caught my attention."
-          )
+            "I came across you on LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw you’ve got a " + highlight_This("CERTIFICATION_CERTIFICATIONS") + " in " + highlight_This("CERTIFICATION") + " and " + highlight_This("CERTIFICATION_2") + "—definitely caught my attention."
+            )
         } else if (template === 7) {
           return (
-            "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + "—I thought his/her/their recent article/video/post on topic was a great one."
-          )
+            "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + "—I thought " + highlight_This("HIS/HER/THEIR") + " recent " + highlight_This("ARTICLE/VIDEO/POST") + " on " + highlight_This("TOPIC") + " was a great one."
+            )
         }else if (template === 8) {
           return (
-            "I saw on LinkedIn that you’re the " + highlight_This("(TITLE)") + " at " + highlight_This("(COMPANY)") + ". I thought about reaching out to you on LinkedIn, but I wasn’t sure if you’re very active there — figured shooting you a quick email would be better.”"
+            "I saw on LinkedIn that you’re the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ". I thought about reaching out to you on LinkedIn, but I wasn’t sure if you’re very active there — figured shooting you a quick email would be better."
           )
         }
       }
@@ -1972,7 +1972,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Extensive past work experience</b> - They’ve been in the industry or with their company for many years</p><br><br>" +
 
         "<div class='editor_rrp1'>" +
-        "I came across your LinkedIn looking for " + $event_subject.toLowerCase() + " experts. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("FIELD (i.e. MARKETING, IT, SECURITY, HR, etc.)") + " space for a lot longer." +
+        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("INDUSTRY") + " space for a lot longer." +
         "</div>",
 
         // Recommendation
@@ -1981,7 +1981,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Recommendation</b> - They’ve got a rec from someone that talks about skills relevant to the event/topic</p><br><br>" +
 
         "<div class='editor_rrp2'>" +
-        "I came across your LinkedIn looking for " + highlight_This('PROSPECT_GENERAL ROLE/TITLEs (i.e. marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)') + " and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation —" + highlight_This("he/she") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye—that’s the sort of leader that I look for as I build panels." +
+        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation — " + highlight_This("he/she") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye–that’s the sort of leader that I look for as I build panels." +
         "</div>",
 
         // Career Evolution
@@ -1990,7 +1990,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Career Evolution</b> -  They didn’t start our doing what they are now, and had a couple jobs in another role</p><br><br>" +
 
         "<div class='editor_rrp3'>" +
-        "I came across your LinkedIn profile looking for " + $event_subject.toLowerCase() + " experts, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + " —I’m sure that " + highlight_This("PRIOR_ROLE") + " background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
+        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + "—I’m sure your " + highlight_This("PRIOR_INDUSTRY") + " background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
         "</div>",
 
         // Endorsed Skills
@@ -1999,7 +1999,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Endorsed Skills</b> - They’ve got upwards of 20 endorsements for a <b>RELEVANT</b> (to the event) skill or two</p><br><br>" +
 
         "<div class='editor_rrp4'>" +
-        "You’ve got " + highlight_This("#") + " endorsements for " + highlight_This("SKILL_TYPE") + " and " + highlight_This("# for SKILL_TYPE2") + " skills on LinkedIn—definitely caught my attention." +
+        "You’ve got " + highlight_This("#") + " endorsements on LinkedIn for your " + highlight_This("SKILL_TYPE") + " skills and " + highlight_This("#") + " for " + highlight_This("SKILL_TYPE2") + "—definitely caught my attention." +
         "</div>",
 
         // About
@@ -2008,7 +2008,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>‘About’</b> - They’ve got relevant experience or skills listed in the section they wrote about themselves</p><br><br>" +
 
         "<div class='editor_rrp5'>" +
-        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "." +
+        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "." + 
         "</div>",
 
         // Certifications
@@ -2017,7 +2017,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Certifications</b> - They’ve got a RELEVANT (to the event) certification that they’ve completed</p><br><br>" +
 
         "<div class='editor_rrp6'>" +
-        "I came across you on LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)") + ", and I saw you’ve got a certification/certifications in " + highlight_This("CERTIFICATION and CERTIFICATION_2") + "—definitely caught my attention." +
+        "I came across you on LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw you’ve got a " + highlight_This("CERTIFICATION_CERTIFICATIONS") + " in " + highlight_This("CERTIFICATION") + " and " + highlight_This("CERTIFICATION_2") + "—definitely caught my attention." +
         "</div>",
 
         // Interests
@@ -2026,16 +2026,16 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Interests</b> - They’re following a person/company/group that is interesting or out of the norm (ideally relevant to the event)</p><br><br>" +
 
         "<div class='editor_rrp7'>" +
-        "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + "—I thought " + highlight_This("his/her/their recent article/video/post") + " on topic was a great one." +
+        "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + "—I thought " + highlight_This("HIS/HER/THEIR") + " recent " + highlight_This("ARTICLE/VIDEO/POST") + " on " + highlight_This("TOPIC") + " was a great one." +
         "</div>",
 
         // ONLY
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> If there is NOTHING on their profile but title and company</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>No Useful Info</b> - If there is NOTHING on their profile but title and company</p><br><br>" +
 
         "<div class='editor_rrp19'>" +
-        "I saw on LinkedIn that you’re the " + highlight_This("(TITLE)") + " at " + highlight_This("(COMPANY)") + ". I thought about reaching out to you on LinkedIn, but I wasn’t sure if you’re very active there — figured shooting you a quick email would be better.”" +
+        "I saw on LinkedIn that you’re the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ". I thought about reaching out to you on LinkedIn, but I wasn’t sure if you’re very active there — figured shooting you a quick email would be better." + 
         "</div>"
 
       ]
@@ -2051,7 +2051,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Extensive past work experience</b> - They’ve been in the industry or with their company for many years</p><br><br>" +
 
         "<div class='editor_rrp8'>" +
-        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("FIELD (i.e. MARKETING, IT, SECURITY, HR, etc.)") + " space for a lot longer." +
+        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("INDUSTRY") + " space for a lot longer." +
         "</div>",
         
 
@@ -2061,7 +2061,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Recommendation</b> - They’ve got a rec from someone that talks about skills relevant to the event/topic</p><br><br>" +
 
         "<div class='editor_rrp9'>" +
-        "I came across your LinkedIn looking for " + highlight_This('PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)') + " and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation-" + highlight_This("he/she") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye." +
+        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation — " + highlight_This("he/she") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye." +
         "</div>",
 
         // Career Evolution
@@ -2070,7 +2070,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Career Evolution</b> -  They didn’t start our doing what they are now, and had a couple jobs in another role</p><br><br>" +
 
         "<div class='editor_rrp10'>" +
-        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " +  highlight_This("CURRENT_ROLE") + "—I’m sure that " + highlight_This("PRIOR_ROLE") + " background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
+        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + "—I’m sure your " + highlight_This("PRIOR_INDUSTRY") + " background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
         "</div>",
 
         // Endorsed Skills
@@ -2088,7 +2088,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>‘About’</b> - They’ve got relevant experience or skills listed in the section they wrote about themselves</p><br><br>" +
 
         "<div class='editor_rrp12'>" +
-        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL ROLE/TITLEs") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "." + 
+        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "." + 
         "</div>",
 
         // Certifications
@@ -2097,7 +2097,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Certifications</b> - They’ve got a RELEVANT (to the event) certification that they’ve completed</p><br><br>" +
 
         "<div class='editor_rrp13'>" +
-        "I came across you on LinkedIn looking for " + highlight_This('PROSPECT_GENERAL ROLE/TITLEs (i.e. “marketing directors”, not Sr. Directors of Marketing, East; “cybersecurity leaders” not VP Corporate Information Security - Global or Executive Director - Cloud & Container Cybersecurity)') + ", and I saw you’ve got a certification/certifications in " + highlight_This("CERTIFICATION and CERTIFICATION_2") + "—definitely caught my attention." +
+        "I came across you on LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw you’ve got a " + highlight_This("CERTIFICATION_CERTIFICATIONS") + " in " + highlight_This("CERTIFICATION") + " and " + highlight_This("CERTIFICATION_2") + "—definitely caught my attention." +
         "</div>",
 
         // Interests
@@ -2106,16 +2106,16 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Interests</b> - They’re following a person/company/group that is interesting or out of the norm (ideally relevant to the event)</p><br><br>" +
 
         "<div class='editor_rrp14'>" +
-        "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + "—I thought " + highlight_This("his/her/their") + " recent " + highlight_This("article/video/post") + " on topic was a great one." +
+        "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + "—I thought " + highlight_This("HIS/HER/THEIR") + " recent " + highlight_This("ARTICLE/VIDEO/POST") + " on " + highlight_This("TOPIC") + " was a great one." +
         "</div>",
 
         // ONLY
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> If there is NOTHING on their profile but title and company</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>No Useful Info</b> - If there is NOTHING on their profile but title and company</p><br><br>" +
 
         "<div class='editor_rrp20'>" +
-        "I saw on LinkedIn that you’re the " + highlight_This("(TITLE)") + " at " + highlight_This("(COMPANY)") + ". I thought about reaching out to you on LinkedIn, but I wasn’t sure if you’re very active there — figured shooting you a quick email would be better." +
+        "I saw on LinkedIn that you’re the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ". I thought about reaching out to you on LinkedIn, but I wasn’t sure if you’re very active there — figured shooting you a quick email would be better." + 
         "</div>"
 
       ]
@@ -2187,7 +2187,7 @@ function eventSelected() {
 
           "Best,<br>" +
         "</div>"
-        ,
+,
 
         // 1.4
 
@@ -2533,4 +2533,3 @@ eventSelected();
 $("#back-button").click(function(){
   location.reload();
 });
-
