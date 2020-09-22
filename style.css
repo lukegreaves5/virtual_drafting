@@ -18,12 +18,12 @@ body {
 }
 
 select {
-  color: #8b9dc3;
+  color: #274b75;
   opacity: 1;
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -35,7 +35,7 @@ select {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #dfe3ee;
+  background-color: #274b75;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -44,7 +44,7 @@ select {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #dfe3ee;
+  background: #315d91;
 }
 
 select, option, a {
@@ -207,11 +207,12 @@ select, option, a {
   width: 50%;
   text-align: center;
   font-weight: 400;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   font-size: 20px;
   margin: 0;
   padding: 1% 1%;
   cursor: pointer;
+  font-weight: bold;
 }
 
 #todays-drafts-button {
@@ -225,7 +226,8 @@ select, option, a {
   border-top-right-radius: 20px;
   color: #fff;
   height: 90%;
-  background: #3b5998;
+  background-color: #274b75;
+  background-image: linear-gradient(180deg,#274b75,#315f92);
 }
 
 #draft-selection {
@@ -383,8 +385,9 @@ select, option, a {
 
 #draft-container h2 {
   text-align: center;
-  letter-spacing: 2px;
-  color: #3b5998;
+  letter-spacing: 1px;
+  color: #274b75;
+  font-weight: bold;
 }
 
 h1 {
@@ -410,7 +413,7 @@ h1 {
           justify-content: center;
   vertical-align: center;
   text-align: center;
-  color: #3b5998;
+  color: #274b75;
   font-size: 26px;
   letter-spacing: 2px;
   -ms-flex-item-align: center;
@@ -424,15 +427,19 @@ h1 {
 
 .logo-title {
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.342);
+  background-color: #274b75;
+  background-image: linear-gradient(0deg,#274b75,#315f92);
+  color: white;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   margin: auto;
   margin-top: 5px;
   padding: 8px;
-  -webkit-box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.212);
-          box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.212);
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 0.875em;
+  letter-spacing: 0;
 }
 
 #logo {
@@ -495,7 +502,8 @@ h1 {
   width: 80%;
   padding: 3%;
   margin-top: 3%;
-  background: #3b5998;
+  background-color: #274b75;
+  background-image: linear-gradient(180deg,#274b75,#315f92);
   color: #fff;
   border: none;
   font-size: 20px;
@@ -504,6 +512,7 @@ h1 {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+  font-weight: bold;
 }
 
 #draft-button:hover {
@@ -580,7 +589,7 @@ input[type=checkbox] {
   height: 12vh;
   width: 12vh;
   font-size: 75px;
-  color: #3b5998;
+  color: #274b75;
   cursor: pointer;
 }
 
@@ -646,7 +655,7 @@ input[type=checkbox] {
   position: relative;
   margin: 0 auto;
   z-index: 10;
-  border: 2px solid #dfe3ee;
+  border: 2px solid #e5e5e5;
   outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -698,7 +707,7 @@ ul .inner li {
   padding: 1.5%;
   cursor: pointer;
   margin: 0;
-  color: #3b5998;
+  color: #274b75;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
@@ -755,7 +764,7 @@ ul li a.toggle p.name span.first {
   display: -ms-flexbox;
   display: flex;
   width: 85%;
-  color: #3b5998;
+  color: #274b75;
   font-size: 26px;
 }
 
@@ -810,10 +819,10 @@ hr {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  color: #3b5998;
+  color: #274b75;
   padding: 1%;
   font-size: 15px;
-  background: #dfe3ee;
+  background: #e5e5e5;
   border-radius: 40px;
   -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
@@ -1004,11 +1013,12 @@ hr {
     width: 50%;
     text-align: center;
     font-weight: 400;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     font-size: 18px;
     margin: 0;
     padding: 1% 1%;
     cursor: pointer;
+    font-weight: bold;
   }
 }
 
@@ -1018,7 +1028,7 @@ span#view {
 }
 
 .last-updated {
-  color: #8b9dc3;
+  color: #537396;
   text-align: right;
   position: absolute;
   bottom: 5px;
@@ -1052,7 +1062,7 @@ span#view {
 }
 
 .personalization-float-left .active small {
-  color: #3b5998;
+  color: #274b75;
 }
 
 .personalization-btn {
@@ -1063,11 +1073,12 @@ span#view {
           align-items: center;
   -webkit-box-pack: justify;
           justify-content: space-between;
-  background: #3b5898e0;
+  background-color: #274b75;
+  background-image: linear-gradient(0deg,#274b75,#315f92);
   min-width: 35em;
   border: 0;
   border-bottom-left-radius: 20px;
-  box-shadow: 2px 2px 20px #7189bdc7;
+  box-shadow: 2px 2px 20px #ffffffc7;
   box-sizing: border-box;
   padding: 16px 20px;
   color: #ffffff;
@@ -1135,7 +1146,7 @@ span#view {
   background: white;
   padding: 0 30px;
   opacity: 1;
-  color: #3b5998;
+  color: #274b75;
   letter-spacing: 0;
   text-transform: none;
   font-size: 16px;
@@ -1149,7 +1160,7 @@ span#view {
   font-weight: normal;
   font-size: 16px;
   opacity: 1;
-  color: #3b5998;
+  color: #274b75;
   letter-spacing: 0;
   text-transform: none;
   padding-bottom: 20px;
@@ -1159,11 +1170,11 @@ span#view {
 }
 
 .personalization-btn .personalization-dropdown li:hover {
-  background: #8c9ec473;
+  background: #efefef;
 }
 
 .personalization-btn .personalization-dropdown p.active {
-  color: #3b5998;
+  color: #274b75;
 }
 
 .personalization-btn .personalization-dropdown a {
@@ -1220,7 +1231,7 @@ span#view {
   padding-right: 0.5em;
   margin-right: 1em;
   margin-bottom: 1em;
-  background: #3e5c9c;
+  background: #274b75;
   color: #fff;
   border-radius: 20px;
   cursor: pointer;
@@ -1254,15 +1265,15 @@ div.ql-container.ql-snow {
 }
 
 .ql-snow .ql-picker {
-  color: #3b5998 !important;
+  color: #274b75 !important;
 }
 
 .ql-formats button {
-  color: #3b5998 !important;
+  color: #274b75 !important;
 }
 
 .ql-snow .ql-stroke {
-  stroke: #3b5998 !important;
+  stroke: #274b75 !important;
 }
 
 .ql-editor ul > li::before {
