@@ -872,6 +872,7 @@ function eventSelected() {
 
       const $pr_drafts = 
       [
+        // COLD PANEL RECRUITMENT
         // PR MESSAGE 1.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.1</p>" +
@@ -886,7 +887,7 @@ function eventSelected() {
 
         $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>"+
 
-        "As a panelist, you’ll have the chance to share your insights and learn from your fellow attendees, network with your peers, and enjoy lunch on us with a " + ifCanada("money") + " code.<br><br>"+
+        "As a panelist, you’ll have the chance to share your insights and learn from your fellow attendees, network with your peers, and final attendees can enjoy lunch on us with a " + ifCanada("money") + " code.<br><br>"+
 
         "If you agree you’d be a good fit, may I send you more info on the discussion topics?<br><br>" +
 
@@ -2142,7 +2143,7 @@ function eventSelected() {
           
           $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>" +
           
-          "As an attendee, you’ll have the chance to hear our expert panel share their insights, learn from and network with your peers, and enjoy lunch on us with a " + ifCanada("money") + " code.<br><br>" + 
+          "As an attendee, you’ll have the chance to hear our expert panel share their insights, learn from and network with your peers, and final attendees can enjoy lunch on us with a " + ifCanada("money") + " code.<br><br>" + 
           
           "If this seems relevant and interesting, may I send you more info?<br><br>" +
           
