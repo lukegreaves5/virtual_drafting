@@ -38,7 +38,7 @@ $messageTypeOptions = [],
 $messageNameOptions = [],
 $panelOptions = ["Full Sequence", "1.1", "1.2", "1.3", "1.4"],
 $RegistrantRecruitmentOptions = ["Full Sequence", "1.1", "1.2", "1.3", "2.1", "2.2", "2.3", "3.1", "4.1",],
-$RegistrantCommunicationOptions = ["Final Confirmation / Per my Voicemail", "Thanks for attending", "Sorry we missed you", "One week Reminder (Confirmed)", "One week Reminder (Tentaive)"],
+$RegistrantCommunicationOptions = ["Final Confirmation / Per my Voicemail", "Thanks for attending", "Sorry we missed you", "One week Reminder (Confirmed)"],
 $selectedEvent = [],
 $selectedMessageType = "",
 $selectedMessageName = "",
@@ -387,6 +387,7 @@ function eventSelected() {
       $event_parking = objectCheck(['parking_api']),
       $event_website = objectCheck(['website_api']),
       $event_survey = "https://airtable.com/shrvy749ZtQCE9gJ6", //objectCheck(['Survey']),
+      $event_moderator_first_name = objectCheck(['Moderator First Name']),
       $event_panelists_first_name = objectCheck(['speakers_first_name_api']),
       $event_panelists_last_name = objectCheck(['speakers_last_name_api']),
       $event_panelists_titles = objectCheck(['speakers_title_api']),
@@ -407,7 +408,8 @@ function eventSelected() {
       $event_customization_1 = objectCheck(['Customization 1']),
       $event_customization_2 = objectCheck(['Customization 2']),
       $event_subject = objectCheck(['Subject']),
-      $event_discussion_topics = objectCheck(['Discussion Topics']);
+      $event_discussion_topics = objectCheck(['Discussion Topics']),
+      $event_time_display = objectCheck(['Event Time Display']);
 
       function objectCheck(propCheck) {
         if($event.hasOwnProperty(propCheck)) {
@@ -719,10 +721,10 @@ function eventSelected() {
       }
       */
 
-      function target_subject(target) {
-        if (target == "Vertical") {
-          return "Brunch";
-        } else return "Lunch"
+      function target_subject() {
+        if ($event_target_region.includes("yellow") == true) {
+          return $event_target_vertical
+        } else return $event_target_region
       }
 
       function target_local(target) {
@@ -1173,21 +1175,21 @@ function eventSelected() {
         // THANK YOU MESSAGE
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - Thank You for Attending</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Thanks for attending!</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Thank You For Attending</p><br><br>" +
         
         "Hi FIRST NAME,<br><br>" +
 
-        "Thank you so much for attending the " + $event_short_title + " virtual meeting last " + $event_long_date +"!<br><br>" +
+        "Thank you so much for attending the " + $event_short_title + " virtual meeting on " + highlight_This("DAY/yesterday") + "! We hope you found the discussion valuable.<br><br>" +
 
-        "Special thanks to " + $event_client + " for making the event possible, and the following panelists for leading an exceptional discussion:<br>"+
+        "Here is your Grubhub eGift card " + highlight_This(" NUMBER, ((NUMBER))") + " and your PIN," + highlight_This("((PIN))") + ", so you can enjoy lunch courtesy of " + $event_client + "!<br><br>" +
 
-        createPanelistList_full() +
+        "Please let us know if you’d prefer to have your meal donated to Food Bank for New York City to provide food security and other essential services for low-income communities in need.<br><br>" +
+
+        "Special thanks to " + $event_client + " for making the event possible, and to our moderator, " + $event_moderator_first_name + ", and to " + $event_panelists_first_name + " for leading the exceptional discussion.<br><br>"+
 
         "We'd love to hear your thoughts on your experience. Would you mind answering " + eventSurvey($event_survey) +
 
-        "If you’re interested in continuing your conversation with " + $event_client + ", please contact <span style='background-color:yellow;text-transform:uppercase;'>CONTACT @ EMAIL.</span><br><br>" +
-
-        "Want to hear more about " + $event_short_title + " and check out some great webinar selections? " + highlight_This("Click here to learn more") + "<br><br>" +
+        "If you’re interested in continuing your conversation with " + $event_client + ", please contact <span style='background-color:yellow;text-transform:uppercase;'>POINT OF CONTACT @ EMAIL.</span><br><br>" +
 
         "Thank you. We hope to see you at a future event!<br><br>" +
 
@@ -1200,23 +1202,23 @@ function eventSelected() {
 
         "Hi FIRST NAME,<br><br>" +
 
-        "Thank you for your response! Delighted to have you join!<br>" +
+        "Thank you for your response! Delighted to have you join!<br><br>" +
 
         "Here is the meeting link: "+ $event_zoom_link +"<br><br>" +
 
         `The agenda for the session is simple:<br>
         <ul>
-        <li style="list-style: none;"><b>12:00PM Attendees Enter Virtual Event & Welcome Remarks</b></li>
-        <li style="list-style: none;"><b>12:05PM Video Networking in Breakout Rooms</b></li>
-        <li style="list-style: none;"><b>12:15PM Panel Discussion</b></li>
-        <li style="list-style: none;"><b>12:55PM Audience Q&A</b></li>
-        <li style="list-style: none;"><b>1:10PM Breakout Networking Sessions</b></li>
+        <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
+        <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
+        <li style="list-style: none;">12:15PM Panel Discussion</li>
+        <li style="list-style: none;">12:55PM Audience Q&A</li>
+        <li style="list-style: none;">1:10PM Breakout Networking Sessions</li>
         </ul><br>`
         +
 
-        `We will provide you with the food delivery code on the day of the event—stay tuned for that. Or please let us know if you’d prefer to have your meal donated to Food Bank for New York City instead.<br><br>` +
+        `We will provide food delivery codes to final attendees the day after the event—stay tuned for that. Or please let us know if you’d prefer to have your meal donated to Food Bank for New York City instead.<br><br>` +
 
-        "Please make sure to whitelist our email address to ensure the code isn't sent to spam. Looking forward to your participation!<br><br>" +
+        "Please make sure to add etzler.steven@bdionline.com to your safe sender list to ensure the code isn't sent to spam. Looking forward to your participation!<br><br>" +
 
         "Steve",
 
@@ -1227,22 +1229,21 @@ function eventSelected() {
 
         "Hi FIRST NAME,<br><br>" +
 
-        "Thanks for your response & interest in our event!<br><br>" +
+        "Thanks for your response and interest in our event!<br><br>" +
         
-        "We will put you down as a tentative registrant for now, and will send you a calendar invite as a placeholder. To learn more about the discussion topics and our panel, check out the event website: " + highlight_This($event_website) +"<br><br>" +
+        "We will put you down as a tentative registrant for now, and will send you a calendar invite as a placeholder. To learn more about the discussion topics and our panel, check out the event website: " + highlight_This($event_website) + "<br><br>" +
                         
-        "You can also view who we have confirmed so far on this link." + $event_promo_reg_list +"<br><br>" + 
+        "You can also view who we have confirmed so far on this link.<br><br>" + 
 
         `Here is the agenda for the session:<br>
         <li style="list-style: none;"><b>12:00PM Attendees Enter Virtual Event & Welcome Remarks</b></li>
         <li style="list-style: none;"><b>12:05PM Video Networking in Breakout Rooms</b></li>
         <li style="list-style: none;"><b>12:15PM Panel Discussion</b></li>
         <li style="list-style: none;"><b>12:55PM Audience Q&A</b></li>
-        <li style="list-style: none;"><b>1:10PM Breakout Networking Sessions</b></li>
-        <li style="list-style: none;"><b>01:30PM Event Ends</b></li>`
+        <li style="list-style: none;"><b>1:10PM Breakout Networking Sessions</b></li>`
         +
 
-        "Look forward to your participation!<br><br>" +
+        "Look forward to confirming your participation!<br><br>" +
 
         `Steve`,
 
@@ -1253,13 +1254,13 @@ function eventSelected() {
 
         "Hi FIRSTNAME,<br><br>" +
 
-         highlight_This("(Following up on a voicemail we just left for you. I want to confirm your participation at tomorrow's // I want to confirm your participation at tomorrow's)") + " " + $event_short_title + " video-based virtual meeting, taking place from 12 to 1:30PM on Zoom.<br><br>" + 
+         highlight_This("(Following up on a voicemail we just left for you. I want to confirm your participation at tomorrow's // I want to confirm your participation at tomorrow's)") + " " + $event_short_title + " virtual meeting from " + $event_time_display + " " + $event_timezone + " on Zoom.<br><br>" + 
 
         "To join the meeting, click here. "+ $event_virtual_link +"<br><br>"+
 
         "Please be prepared to have your <b>video and microphone on</b>.<br><br>"+
 
-        "Please reply back to confirm your participation so we can send you a " + ifCanada('no-money') + " code for lunch! Or please let us know if you’d prefer to have your meal donated to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need.<br><br>"+
+        "Please reply back to confirm your participation and let us know if you’d prefer a " + ifCanada('no-money') + " code or to have your meal donated to Food Bank for New York City. All final attendees will receive an email with their redeemable " + ifCanada('no-money') + " code after the event.<br><br>"+
 
         `Here is the agenda for the session:<br>
         <ul>
@@ -1285,14 +1286,14 @@ function eventSelected() {
 
          "We look forward to seeing you today at "+ highlight_This("TIME") +" at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
 
-         "<span style='color:red;'><b>Here is your " + ifCanada(false) + " eGift card NUMBER and your PIN PINNUMBER so you may enjoy lunch, courtesy of <span style='color:red;'>"+ $event_client +"</span>! </b></span><br><br>"+
+         "Our objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants before and after the panel in breakout rooms. <br><br>" +
 
-         "Please let us know if you’d prefer to have your meal donated to <b>Food Bank for New York City</b> instead, to provide food security and other essential services for low-income New Yorkers/communities in need.<br><br>" +
+         "Final attendees will receive their " + ifCanada('money') + " eGift card after the event, so keep your eye on your inbox after the panel.<br><br>" +
+
+         "We also like to give registrants the option to donate your meal to Food Bank for New York City to provide food security and other essential services for low-income communities in need. If you’d like to do that instead, please reply to this email and let me know.<br><br>" +
 
          "To join the meeting, please click here: " + $event_virtual_link +"<br><br>"+
          
-         "The objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants BEFORE and AFTER the panel in breakout rooms.<br><br>" +
-
          "See you soon,<br>" +
          "<b>Steve Etzler</b><br>" +
          "<b>Business Development Institute</b><br>",
@@ -1350,18 +1351,18 @@ function eventSelected() {
 
         "Hello all,<br><br>" +
 
-        "We’re excited for your panel participation at " + $event_short_title + " virtual meeting, taking place on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + " on our video-based platform Zoom.<br><br>" +
+        "We’re excited for your panel participation at " + $event_short_title + " virtual meeting, taking place on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + " on Zoom.<br><br>" +
 
-        "We would like to schedule a 30 minute panel practice run on "+ highlight_This("DAY, DATE") +" between "+ highlight_This("TIME") +".<br><br>"+
+        "We would like to schedule a 30 minute panel practice run and to get everyone's availability, we kindly ask you to fill out this form: https://airtable.com/shrJaDgJjLAQsYlcp " + highlight_This("LINK TO FORM ON RSVP SHEET") + ".<br><br>"+
 
         "As soon as I hear back from everyone, I’ll respond with a calendar invite for the time that works best across the board.<br><br>"+
 
         "Thank you!<br>"+
         isBlank($event_account_manager),
 
-        // PANEL PREP CALL AGENDA
+        // PANEL PREP AGENDA
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Prep Call Agenda</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Prep Agenda</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i>" + $event_short_title + " | Panel Prep</p><br><br>" +
  
         "Hi all,<br><br>"+
@@ -1386,7 +1387,7 @@ function eventSelected() {
         "<li>Date: " + $event_long_date +"</li>"+
         "<li>Time: Video-based virtual meeting from 12pm - 1:30pm </li>"+
         "<li>Location: " + "<a href='" + $event_virtual_link + "'>LINK</a></li>" +
-        "<li>Event Website: " + "<a href='" + highlight_This($event_website) + "'>LINK</a></li>" +
+        "<li>Event Website: " + "<a href='" + $event_website + "'>LINK</a></li>" +
         "<li>Registration List: " + "<a href='" + $event_promo_reg_list + "'>LINK</a></li>" +
         "<li>Consent Form: " + highlight_This("(thank you if you already filled it out): LINK") + "</li></ul><br>" +
 
@@ -1399,10 +1400,10 @@ function eventSelected() {
         "<li>1:10PM Breakout Networking Sessions</li></ul><br><br>" +
 
         "<b>LUNCH</b><br>" +
-        "<p>We will provide a "+ ifCanada('money') +" code so you may enjoy lunch on the morning of the event - stay tuned for that! Or let us know if you’d prefer to have your meal donated to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need.</p><br>"+
+        "<p>We will provide a " + ifCanada('money') + " code for Grubhub to all final attendees after the event—stay tuned for that! Or let us know if you’d prefer to have your meal donated to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need.</p><br>"+
 
         "<b>PANEL DISCUSSION QUESTIONS</b><br>" +
-        "<p>"+ highlight_This("Insert bullet points from website OR panel questions provided by moderator") + "</p><br><br>",
+        discussionTopics(),
 
         // ONE WEEK REMNINDER
 
@@ -1421,9 +1422,9 @@ function eventSelected() {
 
         "This email serves as a reminder and an invite for you to share with a colleague who may also find this event valuable.<br><br>"+
 
-        "To ensure you're able to receive your " + ifCanada('money') + " code, please make sure to whitelist our email address so the message doesn't end up in your spam folder!<br><br>" +
+        "After the event we'll send your " + ifCanada('money') + " code in our follow up email. To ensure you're able to receive your code, please make sure to add our etzler.steven@bdionline.com email to your safe senders list so the message doesn't end up in your spam folder!<br><br>" +
 
-        "Thanks, we look forward to seeing you online from 12 to 1:30 pm on " +  $event_long_date + ".<br><br>" + 
+        "Thank you. We look forward to seeing you online from " + $event_time_display + " on " + $event_long_date + ".<br><br>" + 
 
         "Best regards,<br>" +
         "<b>Steve Etzler</b><br>"+
@@ -1475,11 +1476,11 @@ function eventSelected() {
 
          "We look forward to seeing you today at "+ highlight_This("TIME") +" at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
 
-         "Thank you for choosing to donate your meal to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need. You will receive an email confirming for your donation shortly. <br><br>"+
+         "Thank you for choosing to donate your meal to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need. You will receive an email confirming for your donation shortly.<br><br>"+
 
          "To join the meeting, please click here: " + $event_virtual_link +"<br><br>"+
          
-         "The objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants BEFORE and AFTER the panel in breakout rooms.<br><br>" +
+         "The objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants before and after the panel in breakout rooms.<br><br>" +
 
          "See you soon,<br>" +
          "<b>Steve Etzler</b><br>" +
@@ -1492,7 +1493,7 @@ function eventSelected() {
         // EVENT PREP DETAILS
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Event Prep Details - Client Communication</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i>  Event Prep for Virtual "+ $event_short_title +"</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i>  Event Prep for Virtual "+ $event_short_title + " | " + target_subject() + "</p><br><br>" +
 
         "Hello all,<br><br>" +
 
@@ -1507,9 +1508,9 @@ function eventSelected() {
         <li>Program: `+ $event_full_title +`</li>
         <li>Date: `+ $event_long_date +`</li>
         <li>Time: Video-based virtual meeting from ` + $event_local_time + " " + $event_timezone +`</li>
-        <li>Location: `+ $event_virtual_link +`</li>
-        <li>Website: `+ $event_website +`</li>
-        <li>Registration List: `+ $event_promo_reg_list +`</li>
+        <li>Location: `+ highlight_This($event_virtual_link) +`</li>
+        <li>Website: `+ highlight_This($event_website) +`</li>
+        <li>Registration List: `+ highlight_This($event_promo_reg_list) +`</li>
         <li>Sales Prep Guide - <i>see attached</i></li>
         </ul><br>`+
 
@@ -1521,17 +1522,16 @@ function eventSelected() {
 
         "<b>VIRTUAL EVENT FLOW</b>" +
         `<ul>
-        <li>Sales reps will act as breakout room moderator</li>
-        <li>We can work on giving each sales rep their own breakout room</li>
-        <li>We can receive breakout room assignments to group them with a specific sales rep</li>
-        <li style="list-style: none;"><b>12:00PM Attendees Enter Virtual Event & Welcome Remarks</b></li>
-        <li style="list-style: none;"><b>12:05PM Video Networking in Breakout Rooms</b></li>
-        <li>Breakout 1: Sales reps asking each person to introduce themselves and share what they are looking to get out of the event</li>
-        <li style="list-style: none;"><b>12:15PM Panel Discussion</b></li>
-        <li style="list-style: none;"><b>12:55PM Audience Q&A</b></li>
-        <li style="list-style: none;"><b>1:10PM Breakout Networking Sessions</b></li>
-        <li>Breakout 2: Sales reps can ask open ended questions to get the conversation flowing</li>
-        <li style="list-style: none;"><b>01:30PM Event Ends</b></li>
+        <li>11:30AM Practice Run for Sales Team</li>
+        <li>11:45AM Panelists Join Virtual Event</li>
+        <li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
+        <li>12:05PM Video Networking in Breakout Rooms</b></li>
+        <li style="list-style:none;padding-left:5px;">Breakout 1: Sales reps asking each person to introduce themselves and share what they are looking to get out of the event</li>
+        <li>12:15PM Panel Discussion</li>
+        <li>12:55 PM Audience Q&A</li>
+        <li>1:10PM Breakout Networking Sessions</li>
+        <li style="list-style:none;padding-left:5px;">Breakout 2: Sales reps can ask open ended questions to get the conversation flowing</li>
+        <li>1:30PM Event formally ends</li>
         </ul><br><br>`,
 
         // CLIENT PANEL RECRUITMENT
@@ -1541,22 +1541,21 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I thought you'd make a great <i>panelist</i> for a virtual " + target_lunch_or_brunch($event_target_copy) + "-and-learn event we are organizing on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ". Here is our event website " + highlight_This($event_website) + " for your reference.<br><br>" +
+        "I’m organizing an event for thought leaders in " + $event_subject + " and would love to have you share your expertise as a panelist. The virtual ‘lunch and learn’ event will be on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ". Check out our event website " + highlight_This($event_website) + " for more details.<br><br>" +
 
-        $event_full_title + " will gather " + $event_audience + " for video-networking in small breakout rooms before and after an interactive panel discussion. It’ll be conversational, with no formal presentations or press.<br><br>" +
+        "<b>" + $event_full_title + "</b> will gather " + $event_audience + " in the " + target_subject() + " for video-networking in small breakout rooms before and after an interactive panel discussion. This isn’t a formal presentation or webinar—it’s an opportunity for all panelists and attendees to have an engaging conversation.<br><br>" +
 
-        "Our peer-to-peer program will revolve around " + $event_snippet + " .At a high level, we are looking to explore the discussion points below, though these conversations tend to flow in the direction of attendees’ interests and the passions of our panel—we can dive into your expertise and preference in greater detail on our panel practice run:<br>" +
+        "Our peer-to-peer program will revolve around " + $event_snippet + ". We provide a few discussion topics (see below), but these conversations tend to flow in the direction of attendees’ interests and panelists’ passions.<br>" +
 
         discussionTopics() +
 
-        "We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from " + $event_local_time + " " + $event_timezone + " the day of.<br><br>" +
+        "We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from " + $event_local_time + " " + $event_timezone + " the day of the panel.<br><br>" +
 
-        "We are also providing a " + ifCanada("money") + " code for all participants.<br><br>" +
+        "We will also provide a " + ifCanada("money") + " gift code to all final attendees.<br><br>" +
 
-        "Would you be open to speaking on our virtual panel, FIRST NAME?<br><br>" + 
+        "Do you want to hear more about speaking on our virtual panel, {{FIRST_NAME}}?<br><br>" + 
 
         "Thanks<br><br>" +
-
         "Steve",
 
 
@@ -1567,28 +1566,28 @@ function eventSelected() {
 
         "Hello {{FIRST_NAME}},<br><br>" +
 
-        "Would you be interested in participating in our virtual, thought-leadership event?<br><br>" +
+        "We’re hosting a virtual thought leadership event on " + $event_theme + ", and we’d love to see you there. Are you free for lunch on " + $event_long_date + "?<br><br>" +
+
+        $event_full_title + " will focus on peer-to-peer networking for a group of " + $event_audience + " from " + target_2_1_area($event_target_copy) + "<br><br>" +
         
-        $event_full_title + " will revolve around peer-to-peer networking for a group of " + $event_audience + " from " + target_2_1_area($event_target_copy) + ".<br><br>" +
-        
-        "Here are the details:<br>" + 
+        "Here’s what you need to know:<br>" + 
 
         `<ul>
         <li>` + $event_full_title + `</li>
         <li>Date: ` + $event_long_date + `</li>
-        <li>Time: ` + $event_local_time + " " + $event_timezone + `</li>
-        <li>Details: Event Site ` + $event_website + `</li>
+        <li>Time: ` + $event_time_display + " " + $event_timezone + `</li>
+        <li>Details: Event Site ` + highlight_This($event_website) + `</li>
         </ul>` +
         
-        "The agenda includes video networking in small breakout rooms and a moderated panel discussion about " + $event_snippet + "<br><br>" +
+        "The event agenda includes a moderated panel discussion about " + $event_snippet + ", audience Q&A, and video networking in small breakout rooms.<br><br>" +
         
         "Our panel includes the following leaders:<br>" +
 
         createPanelistList_full() +
         
-        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending " + ifCanada('money') + " codes so each attendee can enjoy a nice meal, with the option to donate it to the Food Bank for New York City if you prefer.<br><br>"+
+        "As an attendee, you’ll have the chance to hear the panel share their insights, learn from others in your field, and network with your peers. Final attendees can also enjoy lunch on us with a " + ifCanada('money') + " code.<br><br>"+
         
-        `Interested in joining us, {{FIRST_NAME}}? To RSVP please email <a href="mailto:RSVP for the ` + $event_theme + ' ' + target_lunch_or_brunch($event_target_copy) + ' event on ' + $event_month_number + '/' + $event_day_number + `">steven.etzler@bdionline.com</a>.<br><br>` +
+        `Interested in joining us, {{FIRST_NAME}}? Please use the form on the event site to RSVP today.<br><br>` +
 
         "Best<br><br>",
 
@@ -1617,6 +1616,53 @@ function eventSelected() {
         "Thanks – have a great day!<br><br>" +
 
         $event_account_manager,
+
+        // Calendar Invite to Sales Team + AGENDA
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Calendar Invite to Sales Team + AGENDA - Client Communication</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Sales Prep + Event | " + $event_short_title + "</p><br><br>" +
+
+        "Send calendar invite (from AM) to Moderator & Sponsors → 11:30AM - 1:30PM<br><br>" +
+
+        "<hr></hr><br><br>" +
+        
+        "Hi all,<br><br>" +  
+        
+        "Looking forward to connecting at " + highlight_This("TIME TIME_ZONE") + ".<br><br>" +
+        
+        "We’ll meet here: Zoom Link " + highlight_This($event_zoom_link)  + "<br><br>" +
+
+        "<b>EVENT DETAILS</b>" +
+        `<ul>
+        <li>Program: `+ $event_full_title +`</li>
+        <li>Date: `+ $event_long_date +`</li>
+        <li>Time: Video-based virtual meeting from ` + $event_local_time + " " + $event_timezone +`</li>
+        <li>Location: `+ highlight_This($event_virtual_link) +`</li>
+        <li>Website: `+ highlight_This($event_website) +`</li>
+        <li>Registration List: `+ highlight_This($event_promo_reg_list) +`</li>
+        <li>Sales Prep Guide - <i>see attached</i></li>
+        </ul><br>`+
+
+        "<b>PANELISTS</b>" +
+        createPanelistList_full() + "<br>" +
+
+        "<b>MODERATOR</b>" +
+        "<ul><li>"+$event_moderator_full_formatted+"</li></ul><br>"+
+
+        "<b>VIRTUAL EVENT FLOW</b><br><br>" +
+        "Sales reps will act as breakout room moderator.<br>" +
+        "We can work on giving each sales rep their own breakout room<br>" +
+        "We can receive breakout room assignments to group them with a specific sales rep <br>" +
+        `<ul>
+        <li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
+        <li>12:05PM Video Networking in Breakout Rooms</b></li>
+        <li style="list-style:none;padding-left:5px;">Breakout 1: Sales reps asking each person to introduce themselves and share what they are looking to get out of the event</li>
+        <li>12:15PM Panel Discussion</li>
+        <li>12:55 PM Audience Q&A</li>
+        <li>1:10PM Breakout Networking Sessions</li>
+        <li style="list-style:none;padding-left:5px;">Breakout 2: Sales reps can ask open ended questions to get the conversation flowing</li>
+        <li>1:30PM Event ends</li>
+        </ul><br><br>`,
     
       ];
 
@@ -2270,6 +2316,8 @@ function eventSelected() {
             return $drafts.html($cc_drafts[2]);
           } if ($selectedMessageName == "Final Attendee List for Client"){
             return $drafts.html($cc_drafts[3]);
+          } if ($selectedMessageName == "Calendar Invite to Sales Team + AGENDA"){
+            return $drafts.html($cc_drafts[4]);
           }
         } else if ($selectedMessageType == "Sales Communication") {
           if ($selectedMessageName == "Sales Communication"){
@@ -2294,7 +2342,7 @@ function eventSelected() {
               return $drafts.html($rc_drafts[7]);
             } if ($selectedMessageName == "Scheduling Panel Prep Call") {
               return $drafts.html($rc_drafts[8]);
-            } if ($selectedMessageName == "Panel Prep Call Agenda") {
+            } if ($selectedMessageName == "Panel Prep Agenda") {
               return $drafts.html($rc_drafts[9]);
             } if ($selectedMessageName == "One Week Reminder") {
               return $drafts.html($rc_drafts[10]);
