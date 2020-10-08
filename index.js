@@ -872,6 +872,93 @@ function eventSelected() {
         )
       };
 
+      const $pr_drafts_test = 
+      [
+        // COLD PANEL RECRUITMENT TEST
+        // PR MESSAGE 1.1
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.1 - TEST</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" + //target_subject($event_target_copy)
+
+        "Hey {{FIRST_NAME}},<br><br>" +
+
+        "<p class='open-personalization1'> <span class='personalization'> Open personalization strategies <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>"+
+        "<span class='personalization1'></span><br><br>" +
+
+        "Based on your profile, I thought you’d make an excellent panelist for our virtual " + highlight_This("Industry") + " event I’m organizing on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ".<br><br>" +
+
+        $event_full_title + " will gather " + $event_audience_and_size + " from " + target_2_1_area($event_target_copy) + " for an executive roundtable featuring video networking in small breakout rooms and an interactive panel discussion. It’ll be conversational, with no formal presentations or press.<br><br>"+
+
+        "As a panelist, you’ll have the chance to share your insights, meet other thought leaders in the industry, and establish your own expertise. We ask a total time commitment of two hours and 15 minutes from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from " + $event_time_display + " " + $event_timezone + " the day of.<br><br>"+
+
+        "Are you interested in learning more about the discussion topics for the event?<br><br>" +
+
+        "Have a great " + highlight_This("Send Day") + "<br><br>" +
+
+        highlight_This("SIGNATURE") + "<br><br>" +
+
+        emailFooter(),
+
+        // PR MESSAGE 1.2
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.2 - TEST</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" +
+        
+        "Hi {{FIRST_NAME}},<br><br>" +
+
+        "I just wanted to follow up and share the event website for " + $event_short_title + ", linked here. " + highlight_This($event_website) + "<br><br>" +
+
+        "On it, you can find all of the proposed discussion topics, but we’d also love to hear your input on the content to provide the highest value for the " + $event_audience + " who will be participating in the event.<br><br>" +
+
+        "Are you interested in speaking on these topics? Would you like to propose any additional points for discussion?<br><br>" +
+
+        "Hope you’re having a great week.<br><br>" +
+
+        "Cheers,<br>" +
+        highlight_This("SIGNATURE"),
+
+        // PR MESSAGE 1.3
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.3 - TEST</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" +
+
+        "Hi {{FIRST_NAME}},<br><br>" +
+
+        "Hope your day is going well! I’m reaching back out to share our event website " + highlight_This($event_website) + " for " + $event_short_title + ".<br><br>" +
+
+        "We would love to have you as a panelist if you’re available and the content appeals to you.<br><br>" +
+
+        "In addition to building your personal brand, demonstrating your expertise, and learning from fellow attendees, we’re sending each panelist and attendee a " + ifCanada('money') + " to enjoy after the event. You also have the option to donate your meal to the Food Bank for New York City if you prefer.<br><br>" +
+
+        "If you have questions about our virtual event structure, the content, or about the panel experience, I’m happy to answer them.<br><br>" +
+
+        "Would you like to join us on " + $event_long_date + "?<br><br>" +
+
+        "Steve",
+
+        // PR MESSAGE 1.4
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.4 - TEST</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" +
+
+        "Hi {{FIRST_NAME}},<br><br>" +
+
+        "I wanted to follow up one more time to see what you thought about our " + $event_theme + " event on " + $event_long_date + ". I think you’d have a lot to contribute to our discussion of " + $event_snippet + " and would love to have you as part of the conversation.<br><br>" +
+
+        $event_customization_1 + "<br><br>" +
+
+        "We’d love to hear your take on this and if you have any relevant experience to share. The event should be a great opportunity for " + $event_function_leaders + " leaders like yourself to connect with industry peers and spark new ideas.<br><br>" +
+        
+        "Hope you’re willing to share and also interested in the opportunity to network with other " + $event_audience + ".<br><br>" +
+                
+        "And don’t forget, lunch is on us!<br><br>" +
+
+        "Can I count you in?<br><br>" +
+
+        "Thanks,<br>Steve",
+
+      ];
+
       const $pr_drafts = 
       [
         // COLD PANEL RECRUITMENT
@@ -2279,6 +2366,21 @@ function eventSelected() {
             return $drafts.html($pr_drafts[3]);
           } else if ($selectedMessageName == "Full Sequence") {
             $drafts.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
+            return document.querySelector(".personalization-container").style.display = "block";
+          }
+        } else if ($selectedMessageType == "Panel Recruitment TEST") {
+          if ($selectedMessageName == "1.1"){
+            $drafts.html($pr_drafts_test[0] + doubleSpaceAndLine + $pr_drafts_test[1] + doubleSpaceAndLine + $pr_drafts_test[2] + doubleSpaceAndLine + $pr_drafts_test[3] + "<br><br>");
+            return document.querySelector(".personalization-container").style.display = "block";
+          } else if ($selectedMessageName == "1.2") {
+            return $drafts.html($pr_drafts_test[1]);
+          } if ($selectedMessageName == "1.3") {
+            $drafts.html($pr_drafts_test[2]);
+            return document.querySelector(".personalization-container").style.display = "block";
+          } else if ($selectedMessageName == "1.4") {
+            return $drafts.html($pr_drafts_test[3]);
+          } else if ($selectedMessageName == "Full Sequence") {
+            $drafts.html($pr_drafts_test[0] + doubleSpaceAndLine + $pr_drafts_test[1] + doubleSpaceAndLine + $pr_draft_tests[2] + doubleSpaceAndLine + $pr_drafts_test[3] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
           }
         } else if ($selectedMessageType == "Registrant Recruitment Legacy") {
