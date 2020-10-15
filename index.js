@@ -13,7 +13,7 @@ const $airtableEvents = "https://api.airtable.com/v0/appdISq2lodl6vyot/Marketing
 $k = "api_key=keyxV8TiVBBweSkZ5",
 $airtableEventsSorted = "https://api.airtable.com/v0/appdISq2lodl6vyot/Events?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine&sort%5B0%5D%5Bfield%5D=Event%20Date",
 $airtableEmails = "https://api.airtable.com/v0/appdISq2lodl6vyot/Messages & Templates?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine - Virtual",
-$airtableTodayEmails = "https://api.airtable.com/v0/appdISq2lodl6vyot/Emails?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine"
+$airtableTodayEmails = "https://api.airtable.com/v0/appdISq2lodl6vyot/Marketing%20Emails?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine"
 // ------
 
 // -- GLOBAL VARIABLES -- 
