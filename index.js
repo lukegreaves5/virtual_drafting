@@ -9,11 +9,11 @@ Tools & libraries used: HTML, CSS, SCSS, JavaScript, jQuery, Airtable API, Under
 ------------------ */
 
 // -- AIRTABLE KEYS --
-const $airtableEvents = "https://api.airtable.com/v0/appdISq2lodl6vyot/Marketing%20Emails/",
+const $airtableEvents = "https://api.airtable.com/v0/appdISq2lodl6vyot/Events/",
 $k = "api_key=keyxV8TiVBBweSkZ5",
 $airtableEventsSorted = "https://api.airtable.com/v0/appdISq2lodl6vyot/Events?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine&sort%5B0%5D%5Bfield%5D=Event%20Date",
 $airtableEmails = "https://api.airtable.com/v0/appdISq2lodl6vyot/Messages & Templates?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine - Virtual",
-$airtableTodayEmails = "https://api.airtable.com/v0/appdISq2lodl6vyot/Marketing%20Emails?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine"
+$airtableTodayEmails = "https://api.airtable.com/v0/appdISq2lodl6vyot/Marketing%20Emails?api_key=keyxV8TiVBBweSkZ5&view=Content%20Engine";
 // ------
 
 // -- GLOBAL VARIABLES -- 
@@ -135,7 +135,7 @@ function todaysEmails_unsent(data) {
       if (record.fields.Sender.name == sender.sender) { // if email campaign sender matches the sender object's name.
         arr.push({
         emailName: record.fields.Email,
-        eventRecordId: record.fields.Events,
+        eventRecordId: record.fields.Event,
         messageType: ifOutreachTypeNull(record),
         messageName: ifOutreachNameNull(record),
         sender: sender.sender,
@@ -217,6 +217,7 @@ function todaysEmails_unsent(data) {
 
   $("li .predrafted-message").click(function(e){
     let thisRecord = $(this).attr("eventrecord");
+    console.log(thisRecord);
     let thisMessageType = $(this).attr("messagetype");
     let thisMessageName = $(this).attr("messagename");
     console.log("Selected event record: " + thisRecord);
