@@ -1314,7 +1314,7 @@ function eventSelected() {
         </ul><br>`
         +
 
-        `We will provide food delivery codes to final attendees the day after the event—stay tuned for that. Or please let us know if you’d prefer to have your meal donated to Food Bank for New York City instead.<br><br>` +
+        `Final attendees will receive their ${ ifCanada() } code after the event as a thank you for attending, so check your inbox for your code the day after the event. Please let us know if you’d prefer to have your meal donated to Food Bank for New York City instead.<br><br>` +
 
         "Please make sure to add etzler.steven@bdionline.com to your safe sender list to ensure the code isn't sent to spam. Looking forward to your participation!<br><br>" +
 
@@ -1358,7 +1358,7 @@ function eventSelected() {
 
         "Please be prepared to have your <b>video and microphone on</b>.<br><br>"+
 
-        "Please reply back to confirm your participation and let us know if you’d prefer a " + ifCanada('no-money') + " code or to have your meal donated to Food Bank for New York City. All final attendees will receive an email with their redeemable " + ifCanada('no-money') + " code after the event.<br><br>"+
+        "Please reply back to confirm your participation and let us know if you’d prefer to donate your meal to Food Bank for New York City, or if you’d like to receive a " + ifCanada() + " code after the event. All final attendees will receive an email the day following the event with their redeemable " + ifCanada() + " code as a thank you for attending."
 
         `Here is the agenda for the session:<br>
         <ul>
@@ -1386,7 +1386,7 @@ function eventSelected() {
 
          "Our objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants before and after the panel in breakout rooms. <br><br>" +
 
-         "Final attendees will receive their " + ifCanada('money') + " eGift card after the event, so keep your eye on your inbox after the panel.<br><br>" +
+         "After the event, final attendees will receive their " + ifCanada() + " gift code as a thank you for attending. Keep your eye on your inbox the day after the panel for lunch on us!<br><br>" +
 
          "We also like to give registrants the option to donate your meal to Food Bank for New York City to provide food security and other essential services for low-income communities in need. If you’d like to do that instead, please reply to this email and let me know.<br><br>" +
 
