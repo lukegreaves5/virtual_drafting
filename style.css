@@ -634,9 +634,10 @@ input[type=checkbox] {
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 99;
+  flex-direction: column;
 }
 
-#drafts {
+#drafts, #drafts-breadcrumbs {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -644,6 +645,18 @@ input[type=checkbox] {
   font-size: 16px;
   width: 80%;
   height: 100%;
+}
+
+#drafts-breadcrumbs p {
+  text-align: center;
+}
+
+#drafts-breadcrumbs p span {
+  color: #274b75;
+  padding: 1%;
+  font-size: 15px;
+  background: #e5e5e5;
+  border-radius: 40px;
 }
 
 #drafts li {
