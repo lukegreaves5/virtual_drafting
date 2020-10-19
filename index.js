@@ -118,13 +118,13 @@ function todaysEmails_unsent(data) {
 };
 
   function ifOutreachNameNull(record) {
-      if (record.fields["Outreach #"] == null || record.fields["Outreach #"] == undefined) {
+      if (record.fields["Outreach"] == null || record.fields["Outreach"] == undefined) {
         return record.fields["Message Type"];
-      } else if (record.fields["Outreach #"] == "Confirmed") {
+      } else if (record.fields["Outreach"] == "Confirmed") {
         return "One Week Reminder (Confirmed)";
-      } else if (record.fields["Outreach #"] == "Tentative") {
+      } else if (record.fields["Outreach"] == "Tentative") {
         return "One Week Reminder (Tentative)";
-      } else return record.fields["Outreach #"];
+      } else return record.fields["Outreach"];
   };
 
 
@@ -301,9 +301,8 @@ function eventSelected() {
         url: $airtableEmails,
         type: 'GET',
         success: function(data) {
-        createMessageNameOptions(data, $selectedMessageType)
-        $messageNameOptions.push(data.records);
-
+          createMessageNameOptions(data, $selectedMessageType)
+          $messageNameOptions.push(data.records);
         }
       });
   });
@@ -332,7 +331,7 @@ function eventSelected() {
       } else if ($messageTypeSelect[0].value == "Message Type"){
         $messageTypeSelect.css("border", "solid 2px red");
         return;
-      } else if ($messageNameSelect[0].value == "Outreach #"){
+      } else if ($messageNameSelect[0].value == "Outreach"){
         $messageNameSelect.css("border", "solid 2px red");
         return;
       } else 
@@ -2719,7 +2718,7 @@ function eventSelected() {
         $("#predrafted-preview").append(predraftedHTML);
         predraftedHTML.html("");
 
-        if ($selectedMessageType == "Panel Recruitment") {
+        if ($selectedMessageType == "Panel Recruitment" || $selectedMessageType == "PR") {
           if ($selectedMessageName == "1.1"){
             predraftedHTML.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
@@ -2731,7 +2730,7 @@ function eventSelected() {
           } else if ($selectedMessageName == "1.4") {
             return predraftedHTML.html($pr_drafts[3]);
           }
-        } else if ($selectedMessageType == "Registrant Recruitment") { // Takes single select name from emails table so has to remain Registrant Recruitment
+        } else if ($selectedMessageType == "Registrant Recruitment" || $selectedMessageType == "RR") { // Takes single select name from emails table so has to remain Registrant Recruitment
           if ($selectedMessageName == "1.1"){
             return predraftedHTML.html($rr_drafts[0] + doubleSpaceAndLine + $rr_drafts[1] + doubleSpaceAndLine + $rr_drafts[2] + doubleSpaceAndLine + $rr_drafts[3] + doubleSpaceAndLine + $rr_drafts[4] + doubleSpaceAndLine + $rr_drafts[5] + doubleSpaceAndLine + $rr_drafts[6] + doubleSpaceAndLine + $rr_drafts[7] + "<br><br>");
           } else if ($selectedMessageName == "1.2") {
