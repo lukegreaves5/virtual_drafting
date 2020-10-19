@@ -1314,7 +1314,7 @@ function eventSelected() {
         </ul><br>`
         +
 
-        `Final attendees will receive their ${ ifCanada() } code after the event as a thank you for attending, so check your inbox for your code the day after the event. Please let us know if you’d prefer to have your meal donated to Food Bank for New York City instead.<br><br>` +
+        "Final attendees will receive their " + ifCanada() + " code after the event as a thank you for attending, so check your inbox for your code the day after the event. Please let us know if you’d prefer to have your meal donated to Food Bank for New York City instead.<br><br>" +
 
         "Please make sure to add etzler.steven@bdionline.com to your safe sender list to ensure the code isn't sent to spam. Looking forward to your participation!<br><br>" +
 
@@ -1358,7 +1358,7 @@ function eventSelected() {
 
         "Please be prepared to have your <b>video and microphone on</b>.<br><br>"+
 
-        "Please reply back to confirm your participation and let us know if you’d prefer to donate your meal to Food Bank for New York City, or if you’d like to receive a " + ifCanada() + " code after the event. All final attendees will receive an email the day following the event with their redeemable " + ifCanada() + " code as a thank you for attending."
+        "Please reply back to confirm your participation and let us know if you’d prefer to donate your meal to Food Bank for New York City, or if you’d like to receive a " + ifCanada() + " code after the event. All final attendees will receive an email the day following the event with their redeemable " + ifCanada() + " code as a thank you for attending.<br><br>" + 
 
         `Here is the agenda for the session:<br>
         <ul>
