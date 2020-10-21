@@ -1376,20 +1376,20 @@ function eventSelected() {
 
         // SEE YOU TODAY (Grubhub/Uber Eats)
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - See you today</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - See you today (Grubhub/Uber Eats)</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> See you today at our virtual event!</p><br><br>" +
 
-         "Hi NAME,<br><br>" +
+         "Hi " + highlight_This("NAME") + ",<br><br>" +
 
-         "We look forward to seeing you today at "+ highlight_This("TIME") +" at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
+         "We look forward to seeing you today at "+ highlight_This("TIME") + " " + $event_timezone + " at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
 
-         "Our objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants before and after the panel in breakout rooms. <br><br>" +
+         "Our objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants before and after the panel in breakout rooms.<br><br>" +
 
-         "After the event, final attendees will receive their " + ifCanada() + " gift code as a thank you for attending. Keep your eye on your inbox the day after the panel for lunch on us!<br><br>" +
+         "After the event, final attendees will receive their Grubhub gift code as a thank you for attending. Keep your eye on your inbox the day after the panel for lunch on us!<br><br>" +
 
          "We also like to give registrants the option to donate your meal to Food Bank for New York City to provide food security and other essential services for low-income communities in need. If you’d like to do that instead, please reply to this email and let me know.<br><br>" +
 
-         "To join the meeting, please click here: " + $event_virtual_link +"<br><br>"+
+         "To join the meeting, please click here: " + highlight_This($event_virtual_link) +"<br><br>"+
          
          "See you soon,<br>" +
          "<b>Steve Etzler</b><br>" +
@@ -1399,23 +1399,23 @@ function eventSelected() {
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Onboarding Panelist - Confirmed</p>" +
 
-         "Hi NAME,<br><br>" +
+         "Hi " + highlight_This("NAME") + ",<br><br>" +
 
-         "Great news – delighted to have you join us!<br><br>" +
+         "Great news—delighted to have you join us!<br><br>" +
 
-         "The only thing I need from you is a headshot so we can add you to the event website " + highlight_This($event_website) +". Happy to grab the one you have on LinkedIn if that’s okay.<br><br>" +
+         "The only thing I need from you is a headshot so we can add you to the event website " + highlight_This($event_website) + ". Happy to grab the one you have on LinkedIn if that’s okay.<br><br>" +
  
-         "My colleague " + highlight_This('AM NAME') + " (CCed above) will circle back in a few weeks to lock in a 30-minute video call to prepare for the panel. I’ll introduce you to your moderator and fellow panelists then.<br><br>" +
+         "My colleague, " + highlight_This("AM NAME") + ", (CCed above) will circle back in a few weeks to lock in a 30-minute video call to prepare for the panel. I’ll introduce you to your moderator and fellow panelists then.<br><br>" +
          
-         "Please note that the virtual meeting will be recorded and by participating in this event, you are agreeing to have this recording used. Do let us know if this is an issue for you. If not, kindly fill out this brief consent form: [" + highlight_This("LINK from RSVP Base") + "]<br><br>" +
+         "Please note that we record our virtual events and by participating, you are agreeing to have the recording used for video content creation.<br><br>" +
+
+         "Our goal in creating content is to share the takeaways from the event with those who are unable to participate and with attendees who wish to revisit the discussion. We do provide a disclaimer that all views and opinions are those of individuals and not of their employers.<br><br>" +
    
-         "Lastly, please expect a calendar invite shortly.<br><br>" +
+         "Do let us know if this is an issue for you. If not, kindly fill out this brief consent form: " + highlight_This("[LINK from RSVP Base]") + ".<br><br>" +
         
-         "Thank you again, and looking forward to your panel participation!<br><br>" +
+         "Lastly, please expect a calendar invite shortly.Thank you again, " + highlight_This("{{FIRST_NAME}}") + ". Please do not hesitate to reach out if you have any questions in the meantime!<br><br>" +
         
-         "Best,<br>" +
-         
-         "Steve",
+         "Best,<br>",
 
         // ONBOARDING PANELIST - TENTATIVE
 
@@ -1566,12 +1566,12 @@ function eventSelected() {
 
         // SEE YOU TODAY (Meal Donation)
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - See you today</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - See you today (Meal Donation)</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> See you today at our virtual event!</p><br><br>" +
 
-         "Hi NAME,<br><br>" +
+         "Hi " + highlight_This("NAME") + ",<br><br>" +
 
-         "We look forward to seeing you today at "+ highlight_This("TIME") +" at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
+         "We look forward to seeing you today at "+ highlight_This("TIME") + " " + $event_timezone + " at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
 
          "Thank you for choosing to donate your meal to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need. You will receive an email confirming for your donation shortly.<br><br>"+
 
