@@ -401,7 +401,6 @@ function eventSelected() {
       $event_target_copy = objectCheck(['Target']),
       $event_target_region = objectCheck(['Region']),
       $event_target_vertical = objectCheck(['Vertical']),
-      $event_local_time = objectCheck(['Event Time Display']),
       $event_timezone = objectCheck(['Timezone']),
       $event_theme = objectCheck(['Content Theme']),
       $event_goal = objectCheck(['Content Goal']),
@@ -410,7 +409,53 @@ function eventSelected() {
       $event_customization_2 = objectCheck(['Customization 2']),
       $event_subject = objectCheck(['Subject']),
       $event_discussion_topics = objectCheck(['Discussion Topics']),
-      $event_time_display = objectCheck(['Event Time Display']);
+      $event_local_time = objectCheck(['Event Time Display']),
+      $event_time_display = objectCheck(['Event Time Display']),
+      $event_time_EST = objectCheck(['Event Time (EST)']);
+
+      console.log("Event local time:")
+      console.log($event_local_time);
+
+      function createDynamic_attendee_Agenda() {
+
+        let timezone; // timezone
+
+        switch($event_timezone[0]) {
+          case "EST":
+            timezone = "America/New_York";
+            break;
+          case "CST":
+            timezone = "America/Chicago";
+            break;
+          case "MST":
+            timezone = "America/Denver";
+            break;
+          case "PST":
+            timezone = "America/Los_Angeles";
+            break;
+          default:
+        }
+
+        console.log($event_timezone)
+
+
+        Date.prototype.addHours = function(h) {
+          this.setHours(this.getHours() + h);
+          return this;
+        };
+
+        console.log($event_timezone + " " + timezone + " " + new Date().addHours(1));
+
+        /*
+        <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
+        <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
+        <li style="list-style: none;">12:15PM Panel Discussion</li>
+        <li style="list-style: none;">12:55PM Audience Q&A</li>
+        <li style="list-style: none;">1:10PM Breakout Networking Sessions</li>
+        */
+
+      }
+      createDynamic_attendee_Agenda();
 
       function accountDirectorFormat_firstName(AD) {
         if (AD = "HD") {
@@ -1276,7 +1321,7 @@ function eventSelected() {
         
         "Hi FIRST NAME,<br><br>" +
 
-        "Thank you so much for attending the " + $event_short_title + " virtual meeting on " + highlight_This("DAY/yesterday") + "! We hope you found the discussion valuable.<br><br>" +
+        "Thank you so much for participating in the " + $event_short_title + " virtual meeting on " + highlight_This("DAY/yesterday") + "! We hope you found the discussion valuable.<br><br>" +
 
         "Here is your Grubhub eGift card " + highlight_This(" NUMBER, ((NUMBER))") + " and your PIN," + highlight_This("((PIN))") + ", so you can enjoy lunch courtesy of " + $event_client + "!<br><br>" +
 
