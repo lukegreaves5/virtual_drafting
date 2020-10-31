@@ -454,6 +454,7 @@ function eventSelected() {
           console.log("Event time display does not exist");
           return (
             `
+              <p style="background-color:yellow;">Adenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
               <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
               <li style="list-style: none;">12:15PM Panel Discussion</li>
@@ -463,6 +464,7 @@ function eventSelected() {
           )
         } else return (
             `
+              <p style="background-color:yellow;">Adenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
               <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
               <li style="list-style: none;">12:15PM Panel Discussion</li>
@@ -497,6 +499,7 @@ function eventSelected() {
           console.log("Event time display does not exist");
           return (
             `
+              <p style="background-color:yellow;">Adenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li style="list-style: none;">11:45AM Panelists & Moderator join</li>
               <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
               <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
@@ -507,6 +510,7 @@ function eventSelected() {
           )
         } else return (
             `
+              <p style="background-color:yellow;">Adenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li style="list-style: none;">11:45AM Panelists & Moderator join</li>
               <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
               <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
@@ -546,6 +550,7 @@ function eventSelected() {
           console.log("Event time display does not exist");
           return (
             `
+              <p style="background-color:yellow;">Adenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li>11:30AM  Practice Run for Sales Team</li>
               <li>11:45AM  Panelists Join Virtual Event</li>
               <li>12:00PM  Attendees Enter Virtual Event & Welcome Remarks</li>
@@ -560,6 +565,7 @@ function eventSelected() {
           )
         } else return (
             `
+              <p style="background-color:yellow;">Adenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li>11:30AM  Practice Run for Sales Team</li>
               <li>11:45AM  Panelists Join Virtual Event</li>
               <li>12:00PM  Attendees Enter Virtual Event & Welcome Remarks</li>
