@@ -413,13 +413,8 @@ function eventSelected() {
       $event_time_display = objectCheck(['Event Time Display']),
       $event_time_EST = objectCheck(['Event Time (EST)']);
 
-      console.log("Event local time:")
-      console.log($event_local_time);
-
-      function createDynamic_attendee_Agenda() {
-
-        let timezone; // timezone
-
+      function dynamic_attendee_Agenda() {
+        let timezone;
         switch($event_timezone[0]) {
           case "EST":
             timezone = "America/New_York";
@@ -436,26 +431,148 @@ function eventSelected() {
           default:
         }
 
-        console.log($event_timezone)
-
-
-        Date.prototype.addHours = function(h) {
-          this.setHours(this.getHours() + h);
+        Date.prototype.addMinutes = function(h) {
+          this.setMinutes(this.getMinutes() + h);
           return this;
         };
 
-        console.log($event_timezone + " " + timezone + " " + new Date().addHours(1));
+        let eventDate = moment($event_date_full_numeric);
+        let start;
+        if (!$event_time_display.includes("yellow")) { // if Event time Display field is filled
+          start = new Date( new Date(eventDate).setHours( $event_time_display[0].split("-")[0].split(":")[0] ) ); // Calculate start time. Event Time Display field is required.
+          console.log("Event time display exists");
+          return (
+            `
+              <li style="list-style: none;">${ moment(start).format('h:mm A') } Attendees Enter Virtual Event & Welcome Remarks</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(5)).format('h:mm A') } Video Networking in Breakout Rooms</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(10)).format('h:mm A') } Panel Discussion</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(40)).format('h:mm A') } Audience Q&A</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(15)).format('h:mm A') } Breakout Networking Sessions</li>
+            `
+          )
+        } else if (!$event_time_EST.includes("yellow")) { // if Event time Display field is not filled but Event time EST field is
+          console.log("Event time display does not exist");
+          return (
+            `
+              <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
+              <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
+              <li style="list-style: none;">12:15PM Panel Discussion</li>
+              <li style="list-style: none;">12:55PM Audience Q&A</li>
+              <li style="list-style: none;">1:10PM Breakout Networking Sessions</li>
+            `
+          )
+        } else return (
+            `
+              <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
+              <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
+              <li style="list-style: none;">12:15PM Panel Discussion</li>
+              <li style="list-style: none;">12:55PM Audience Q&A</li>
+              <li style="list-style: none;">1:10PM Breakout Networking Sessions</li>
+            `
+        )
+      };
 
-        /*
-        <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
-        <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
-        <li style="list-style: none;">12:15PM Panel Discussion</li>
-        <li style="list-style: none;">12:55PM Audience Q&A</li>
-        <li style="list-style: none;">1:10PM Breakout Networking Sessions</li>
-        */
+      function dynamic_client_Agenda() {
+        Date.prototype.addMinutes = function(h) {
+          this.setMinutes(this.getMinutes() + h);
+          return this;
+        };
 
-      }
-      createDynamic_attendee_Agenda();
+        let eventDate = moment($event_date_full_numeric);
+        let start;
+        if (!$event_time_display.includes("yellow")) { // if Event time Display field is filled
+          start = new Date( new Date(eventDate).setHours( $event_time_display[0].split("-")[0].split(":")[0] ) ); // Calculate start time. Event Time Display field is required.
+          console.log("Event time display exists");
+          return (
+            `
+              <li style="list-style: none;">${ moment(start.addMinutes(-15)).format('h:mm A') }  Panelists & Moderator join</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(15)).format('h:mm A') } Attendees Enter Virtual Event & Welcome Remarks</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(5)).format('h:mm A') } Video Networking in Breakout Rooms</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(10)).format('h:mm A') } Panel Discussion</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(40)).format('h:mm A') } Audience Q&A</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(15)).format('h:mm A') } Breakout Networking Sessions</li>
+            `
+          )
+        } else if (!$event_time_EST.includes("yellow")) { // if Event time Display field is not filled but Event time EST field is
+          console.log("Event time display does not exist");
+          return (
+            `
+              <li style="list-style: none;">11:45AM Panelists & Moderator join</li>
+              <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
+              <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
+              <li style="list-style: none;">12:15PM Panel Discussion</li>
+              <li style="list-style: none;">12:55PM Audience Q&A</li>
+              <li style="list-style: none;">1:10PM Breakout Networking Sessions</li>
+            `
+          )
+        } else return (
+            `
+              <li style="list-style: none;">11:45AM Panelists & Moderator join</li>
+              <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
+              <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
+              <li style="list-style: none;">12:15PM Panel Discussion</li>
+              <li style="list-style: none;">12:55PM Audience Q&A</li>
+              <li style="list-style: none;">1:10PM Breakout Networking Sessions</li>
+            `
+        )
+      };
+
+      function dynamic_virtual_event_flow() {
+        Date.prototype.addMinutes = function(h) {
+          this.setMinutes(this.getMinutes() + h);
+          return this;
+        };
+
+        let eventDate = moment($event_date_full_numeric);
+        let start;
+        if (!$event_time_display.includes("yellow")) { // if Event time Display field is filled
+          start = new Date( new Date(eventDate).setHours( $event_time_display[0].split("-")[0].split(":")[0] ) ); // Calculate start time. Event Time Display field is required.
+          console.log("Event time display exists");
+          return (
+            `
+              <li>${ moment(start.addMinutes(-30)).format('h:mm A') }  Practice Run for Sales Team</li>
+              <li>${ moment(start.addMinutes(15)).format('h:mm A') }  Panelists Join Virtual Event</li>
+              <li>${ moment(start.addMinutes(15)).format('h:mm A') }  Attendees Enter Virtual Event & Welcome Remarks</li>
+              <li>${ moment(start.addMinutes(5)).format('h:mm A') }  Video Networking in Breakout Rooms</b></li>
+              <li style="list-style:none;padding-left:5px;">Breakout 1: Sales reps asking each person to introduce themselves and share what they are looking to get out of the event</li>
+              <li>${ moment(start.addMinutes(10)).format('h:mm A') }  Panel Discussion</li>
+              <li>${ moment(start.addMinutes(40)).format('h:mm A') }  PM Audience Q&A</li>
+              <li>${ moment(start.addMinutes(20)).format('h:mm A') }  Breakout Networking Sessions</li>
+              <li style="list-style:none;padding-left:5px;">Breakout 2: Sales reps can ask open ended questions to get the conversation flowing</li>
+              <li>${ moment(start.addMinutes(15)).format('h:mm A') }  Event formally ends</li>
+            `
+          )
+        } else if (!$event_time_EST.includes("yellow")) { // if Event time Display field is not filled but Event time EST field is
+          console.log("Event time display does not exist");
+          return (
+            `
+              <li>11:30AM  Practice Run for Sales Team</li>
+              <li>11:45AM  Panelists Join Virtual Event</li>
+              <li>12:00PM  Attendees Enter Virtual Event & Welcome Remarks</li>
+              <li>12:05PM  Video Networking in Breakout Rooms</b></li>
+              <li style="list-style:none;padding-left:5px;">Breakout 1: Sales reps asking each person to introduce themselves and share what they are looking to get out of the event</li>
+              <li>12:15PM  Panel Discussion</li>
+              <li>12:55PM  PM Audience Q&A</li>
+              <li>1:10PM Breakout Networking Sessions</li>
+              <li style="list-style:none;padding-left:5px;">Breakout 2: Sales reps can ask open ended questions to get the conversation flowing</li>
+              <li>1:30PM Event formally ends</li>
+            `
+          )
+        } else return (
+            `
+              <li>11:30AM  Practice Run for Sales Team</li>
+              <li>11:45AM  Panelists Join Virtual Event</li>
+              <li>12:00PM  Attendees Enter Virtual Event & Welcome Remarks</li>
+              <li>12:05PM  Video Networking in Breakout Rooms</b></li>
+              <li style="list-style:none;padding-left:5px;">Breakout 1: Sales reps asking each person to introduce themselves and share what they are looking to get out of the event</li>
+              <li>12:15PM  Panel Discussion</li>
+              <li>12:55PM  PM Audience Q&A</li>
+              <li>1:10PM Breakout Networking Sessions</li>
+              <li style="list-style:none;padding-left:5px;">Breakout 2: Sales reps can ask open ended questions to get the conversation flowing</li>
+              <li>1:30PM Event formally ends</li>
+            `
+        )
+      };
 
       function accountDirectorFormat_firstName(AD) {
         if (AD = "HD") {
@@ -1349,12 +1466,8 @@ function eventSelected() {
         "Here is the meeting link: "+ $event_zoom_link +"<br><br>" +
 
         `The agenda for the session is simple:<br>
-        <ul>
-        <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
-        <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
-        <li style="list-style: none;">12:15PM Panel Discussion</li>
-        <li style="list-style: none;">12:55PM Audience Q&A</li>
-        <li style="list-style: none;">1:10PM Breakout Networking Sessions</li>
+        <ul style="padding-left:0;">
+        ${ dynamic_attendee_Agenda() }
         </ul><br>`
         +
 
@@ -1378,11 +1491,10 @@ function eventSelected() {
         "You can also view who we have confirmed so far on this link.<br><br>" + 
 
         `Here is the agenda for the session:<br>
-        <li style="list-style: none;"><b>12:00PM Attendees Enter Virtual Event & Welcome Remarks</b></li>
-        <li style="list-style: none;"><b>12:05PM Video Networking in Breakout Rooms</b></li>
-        <li style="list-style: none;"><b>12:15PM Panel Discussion</b></li>
-        <li style="list-style: none;"><b>12:55PM Audience Q&A</b></li>
-        <li style="list-style: none;"><b>1:10PM Breakout Networking Sessions</b></li>`
+        <ul>
+        ${ dynamic_attendee_Agenda() }
+        </ul>
+        `
         +
 
         "Look forward to confirming your participation!<br><br>" +
@@ -1406,11 +1518,7 @@ function eventSelected() {
 
         `Here is the agenda for the session:<br>
         <ul>
-        <li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
-        <li>12:05PM Video Networking in Breakout Rooms</li>
-        <li>12:15PM Panel Discussion</li>
-        <li>12:55PM Audience Q&A</li>
-        <li>1:10PM Breakout Networking Sessions</li>
+        ${ dynamic_attendee_Agenda() }
         </ul><br>
 
         Thank you and we look forward to seeing you tomorrow!<br><br>
@@ -1533,13 +1641,9 @@ function eventSelected() {
         "<li>Registration List: " + "<a href='" + $event_promo_reg_list + "'>LINK</a></li>" +
         "<li>Consent Form: " + highlight_This("(thank you if you already filled it out): LINK") + "</li></ul><br>" +
 
-        "<b>AGENDA</b>"+
-        "<li>11:45AM Panelists & Moderator join </li>"+
-        "<li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>"+
-        "<li>12:05PM Video Networking in Breakout Rooms </li>"+
-        "<li>12:15PM Panel Discussion</li>" +
-        "<li>12:55PM Audience Q&A<br>" +
-        "<li>1:10PM Breakout Networking Sessions</li></ul><br><br>" +
+        "<b>AGENDA</b><br><ul>" +
+        dynamic_client_Agenda() +
+        "</ul><br><br>" +
 
         "<b>LUNCH</b><br>" +
         "<p>We will provide a " + ifCanada('money') + " code for Grubhub to all final attendees after the event—stay tuned for that! Or let us know if you’d prefer to have your meal donated to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need.</p><br>"+
@@ -1664,16 +1768,7 @@ function eventSelected() {
 
         "<b>VIRTUAL EVENT FLOW</b>" +
         `<ul>
-        <li>11:30AM Practice Run for Sales Team</li>
-        <li>11:45AM Panelists Join Virtual Event</li>
-        <li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
-        <li>12:05PM Video Networking in Breakout Rooms</b></li>
-        <li style="list-style:none;padding-left:5px;">Breakout 1: Sales reps asking each person to introduce themselves and share what they are looking to get out of the event</li>
-        <li>12:15PM Panel Discussion</li>
-        <li>12:55 PM Audience Q&A</li>
-        <li>1:10PM Breakout Networking Sessions</li>
-        <li style="list-style:none;padding-left:5px;">Breakout 2: Sales reps can ask open ended questions to get the conversation flowing</li>
-        <li>1:30PM Event formally ends</li>
+          ${ dynamic_virtual_event_flow() }
         </ul><br><br>`,
 
         // CLIENT PANEL RECRUITMENT
@@ -1792,19 +1887,8 @@ function eventSelected() {
         "<ul><li>"+$event_moderator_full_formatted+"</li></ul><br>"+
 
         "<b>VIRTUAL EVENT FLOW</b><br><br>" +
-        "Sales reps will act as breakout room moderator.<br>" +
-        "We can work on giving each sales rep their own breakout room<br>" +
-        "We can receive breakout room assignments to group them with a specific sales rep <br>" +
-        `<ul>
-        <li>12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
-        <li>12:05PM Video Networking in Breakout Rooms</b></li>
-        <li style="list-style:none;padding-left:5px;">Breakout 1: Sales reps asking each person to introduce themselves and share what they are looking to get out of the event</li>
-        <li>12:15PM Panel Discussion</li>
-        <li>12:55 PM Audience Q&A</li>
-        <li>1:10PM Breakout Networking Sessions</li>
-        <li style="list-style:none;padding-left:5px;">Breakout 2: Sales reps can ask open ended questions to get the conversation flowing</li>
-        <li>1:30PM Event ends</li>
-        </ul><br><br>`,
+        dynamic_virtual_event_flow() + 
+        "</ul><br><br>",
     
       ];
 

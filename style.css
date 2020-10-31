@@ -661,7 +661,7 @@ input[type=checkbox] {
 
 #drafts li {
   list-style: disc;
-  margin-left: 3%;
+  margin-left: 1%;
 }
 
 .select {
@@ -1301,7 +1301,10 @@ div.ql-container.ql-snow {
   text-transform: capitalize;
 }
 
-
+ul li {
+  padding: none;
+  margin: none;=[]p
+}
 
 
 
