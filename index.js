@@ -972,8 +972,9 @@ function eventSelected() {
 
       function insertPersonalizationTemplate(template) {
         if (template === 1) {
+          console.log("Theme" + $event_theme)
           return (
-            "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("INDUSTRY") + " space for a lot longer."
+            "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme + " thought leadership. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("INDUSTRY") + " space for a lot longer."
             )
         } else if (template === 2) {
           return (
@@ -981,7 +982,7 @@ function eventSelected() {
             )
         } else if (template === 3) {
           return (
-            "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + "—I’m sure your " + highlight_This("PRIOR_INDUSTRY") + " background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "."
+            "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + "—I’m sure your " + highlight_This("PRIOR_INDUSTRY") + " background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "."
             )
         } else if (template === 4) {
           return (
@@ -2333,7 +2334,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Extensive past work experience</b> - They’ve been in the industry or with their company for many years</p><br><br>" +
 
         "<div class='editor_rrp8'>" +
-        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("INDUSTRY") + " space for a lot longer." +
+        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme + " thought leadership. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("INDUSTRY") + " space for a lot longer." +
         "</div>",
         
 
@@ -2352,7 +2353,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Career Evolution</b> -  They didn’t start our doing what they are now, and had a couple jobs in another role</p><br><br>" +
 
         "<div class='editor_rrp10'>" +
-        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + "—I’m sure your <b><i>" + highlight_This("PRIOR_INDUSTRY") + "</i></b> background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
+        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + "—I’m sure your <b><i>" + highlight_This("PRIOR_INDUSTRY") + "</i></b> background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
         "</div>",
 
         // Endorsed Skills
@@ -2539,7 +2540,7 @@ function eventSelected() {
 
         "Hi " + highlight_This("NAME") + ",<br><br>" +
         
-        "You caught my eye as a fantastic potential registrant for a virtual thought-leadership event I’m organizing, " + $event_short_title + ". You can find more details on the event website here: website " + highlight_This($event_website) + ". Does the date/time work for you? Let me know, and I can add your contact information to our RSVP list.<br><br>" + 
+        "You caught my eye as a fantastic potential registrant for a virtual thought-leadership event I’m organizing, " + $event_short_title + ". You can find more details on the event website here: " + highlight_This($event_website) + ". Does the date/time work for you? Let me know, and I can add your contact information to our RSVP list.<br><br>" + 
 
         $event_account_director_first_name + "<br><br><br><hr><br>" +
 
@@ -2549,7 +2550,7 @@ function eventSelected() {
 
         "Hi " + highlight_This("NAME") + ",<br><br>" +
         
-        "I hope all is well! You caught my eye as a fantastic potential registrant for a thought-leadership event I’m organizing, " + $event_short_title + ". You can find more details on the event website here:" + highlight_This($event_website) + ". Would you like to attend? Kindly reply w/ your email to register for this event or opt In for future ones.<br><br>" + 
+        "I hope all is well! You caught my eye as a fantastic potential registrant for a thought-leadership event I’m organizing, " + $event_short_title + ". You can find more details on the event website here: " + highlight_This($event_website) + ". Would you like to attend? Kindly reply w/ your email to register for this event or opt In for future ones.<br><br>" + 
         
         $event_account_director_first_name + "<br><br><br><hr><br>",
 
@@ -2577,7 +2578,7 @@ function eventSelected() {
 
         "<p style='font-weight: bold;'><i>*Those who we invited to another event over the past month or so <span style='color:red;'>AND DECLINED</span>*</i></p>" +
 
-        "Hi " + highlight_This("NAME") + ", I noticed that you weren’t able to make our " + highlight_This("PAST EVENT") + " event—bummer! It would be great to connect at another one of our virtual events.<br><br>" + 
+        "Hi " + highlight_This("NAME") + ", I noticed that you weren’t able to make our " + highlight_This("PAST EVENT") + " event but understand it can be challenging to participate! It would be great to connect at another one of our virtual events.<br><br>" + 
         
         "We’re hosting " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ", and I think it may spark your interest based on your background. Check out the event website: " + highlight_This($event_website) + " <br><br>" + 
 
