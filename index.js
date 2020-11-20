@@ -2505,7 +2505,7 @@ function eventSelected() {
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> LinkedIn Connection Request Campaigns - <b>Version 1</b></p>" +
 
-        "Hi " + highlight_This("NAME") + "," + " I came across your profile looking for " + highlight_This("industry leaders") + ", and I thought you’d be a great fit for our virtual lunch & learn, " + $event_short_title + " on " + $event_month_number + "/" + $event_day_number + " from " + $event_time_display + " " + $event_timezone + " (" + ifCanada() + " code included). Check out the website: " + highlight_This($event_website) + ". Let me know if you have any questions?<br><br>" + 
+        "Hi " + highlight_This("NAME") + "," + " I came across your profile looking for " + highlight_This("industry leaders") + ", and I thought you’d be a great fit for our virtual lunch & learn, " + $event_short_title + " on " + $event_month_number + "/" + $event_day_number + " from " + $event_time_display + " " + $event_timezone + " (" + ifCanada() + " code included). Check out the website: " + $event_website + ". Let me know if you have any questions?<br><br>" + 
         
         $event_account_director_first_name + "<br><br><br><hr><br>" +
         
@@ -2513,7 +2513,7 @@ function eventSelected() {
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> LinkedIn Connection Request Campaigns - <b>Version 2</b></p>" +
 
-        "Hi " + highlight_This("NAME") + "," + " I’m hosting an invite-only virtual event, " + $event_short_title + ", on " + $event_month_number + "/" + $event_day_number + " for " + highlight_This("industry") + " thought leaders. More details here: " + highlight_This($event_website) + ". Based on your profile, you’d be an insightful addition to the conversation. Can I count you in?<br><br>" + 
+        "Hi " + highlight_This("NAME") + "," + " I’m hosting an invite-only virtual event, " + $event_short_title + ", on " + $event_month_number + "/" + $event_day_number + " for " + highlight_This("industry") + " thought leaders. More details here: " + $event_website + ". Based on your profile, you’d be an insightful addition to the conversation. Can I count you in?<br><br>" + 
         
         $event_account_director_first_name + "<br><br><br><hr><br>" +
         
@@ -2521,7 +2521,7 @@ function eventSelected() {
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> LinkedIn Connection Request Campaigns - <b>Version 3</b></p>" +
 
-        "Hey " + highlight_This("NAME") + ", I came across your profile and I was impressed. I think you’d make an excellent contribution to the invite-only virtual event " + $event_short_title + " that I’m hosting on " + $event_month_number + "/" + $event_day_number + ". Here is the website link, " + highlight_This($event_website) + ", and let me know what you think. Will you be able to make it?<br><br>" + 
+        "Hey " + highlight_This("NAME") + ", I came across your profile and I was impressed. I think you’d make an excellent contribution to the invite-only virtual event " + $event_short_title + " that I’m hosting on " + $event_month_number + "/" + $event_day_number + ". Here is the website link, " + $event_website + ", and let me know what you think. Will you be able to make it?<br><br>" + 
         
         $event_account_director_first_name + "<br><br><br><hr><br>" +
 
@@ -2529,7 +2529,7 @@ function eventSelected() {
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> LinkedIn Connection Request Campaigns - <b>Version 4</b></p>" +
 
-        "Hi " + highlight_This("NAME") + ", you caught my eye as a fantastic potential registrant for a virtual thought-leadership event I’m organizing, " + $event_short_title + ". More details on the event website here: " + highlight_This($event_website) + ". Does the date/time work for you? Let me know, and I can add you to our RSVP list.<br><br>" + 
+        "Hi " + highlight_This("NAME") + ", you caught my eye as a fantastic potential registrant for a virtual thought-leadership event I’m organizing, " + $event_short_title + ". More details on the event website here: " + $event_website + ". Does the date/time work for you? Let me know, and I can add you to our RSVP list.<br><br>" + 
 
         $event_account_director_first_name + "<br><br><br><hr><br>" +
 
@@ -2537,7 +2537,7 @@ function eventSelected() {
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> LinkedIn Connection Request Campaigns - <b>Version 5 (old copy)</b></p>" +
 
-        "Hi " + highlight_This("NAME") + ", I hope all is well! You caught my eye as a fantastic potential registrant for a thought-leadership event I’m organizing, " + $event_short_title + ". More details on the event website here: " + highlight_This($event_website) + ". Would you like to attend? Kindly reply w/ your email to register for this event or opt In for future ones.<br><br>" + 
+        "Hi " + highlight_This("NAME") + ", I hope all is well! You caught my eye as a fantastic potential registrant for a thought-leadership event I’m organizing, " + $event_short_title + ". More details on the event website here: " + $event_website + ". Would you like to attend? Kindly reply w/ your email to register for this event or opt In for future ones.<br><br>" + 
         
         $event_account_director_first_name + "<br><br><br><hr><br>",
 
@@ -2553,7 +2553,7 @@ function eventSelected() {
 
         "Hi " + highlight_This("NAME") + ", I was glad to see that you were interested in " + highlight_This("PAST EVENT") + ". I hope you enjoyed the event and gained valuable insights from our panelists.<br><br>" + 
         
-        "It would be great to see you at an upcoming virtual event that’s similar to " + highlight_This("PAST EVENT") + ". We’re hosting " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ". Check out the event website: " + highlight_This($event_website) + " and let me know what you think!<br><br>" + 
+        "It would be great to see you at an upcoming virtual event that’s similar to " + highlight_This("PAST EVENT") + ". We’re hosting " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ". Check out the event website: " + $event_website + " and let me know what you think!<br><br>" + 
 
         "Can I count you in?<br><br>" +
         
@@ -2567,14 +2567,28 @@ function eventSelected() {
 
         "Hi " + highlight_This("NAME") + ", I noticed that you weren’t able to make our " + highlight_This("PAST EVENT") + " event but understand it can be challenging to participate! It would be great to connect at another one of our virtual events.<br><br>" + 
         
-        "We’re hosting " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ", and I think it may spark your interest based on your background. Check out the event website: " + highlight_This($event_website) + " <br><br>" + 
+        "We’re hosting " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ", and I think it may spark your interest based on your background. Check out the event website: " + $event_website + " <br><br>" + 
 
         "As I mentioned in the past, we’ll provide you with lunch! Let me know your thoughts?<br><br>" +
         
         "Cheers,<br>" +
         "Steve<br><br><br><hr><br>" +
-        
+
         // Version 3
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> LinkedIn 1st Degree Connections Message</p>" +
+
+        "<p style='font-weight: bold;'><i>*Those who we invited to another event over the past month or so <span style='color:red;'>AND DID NOT RESPOND</span>*</i></p>" +
+
+        "Hi " + highlight_This("NAME") + ", BDI is hosting another virtual event that I thought you might be the perfect candidate for " + $event_full_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ". Check out the event website: " + $event_website + " and let me know what you think!<br><br>" + 
+        
+        "Also, we’ll provide you with lunch via a " + ifCanada() + " code after the event! You may elect to donate your meal to the Food Bank for New York City if you’d prefer.<br><br>" + 
+
+        "Can I count you in?<br><br>" +
+        
+        "Steve<br><br><br><hr><br>" +
+        
+        // Version 4
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> LinkedIn 1st Degree Connections Message</p>" +
 
@@ -2592,9 +2606,9 @@ function eventSelected() {
 
         "<hr><br>" +
 
-        "I wanted to invite you to an upcoming virtual even and I figured reaching out on LinkedIn might be easier.<br><br>" +
+        "I wanted to invite you to an upcoming virtual event and I figured reaching out on LinkedIn might be easier.<br><br>" +
 
-        "BDI is hosting " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ", and I thought you might be the perfect candidate to attend. Check out the event website: " + highlight_This($event_website) + " and let me know what you think!<br><br>" +
+        "BDI is hosting " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ", and I thought you might be the perfect candidate to attend. Check out the event website: " + $event_website + " and let me know what you think!<br><br>" +
 
         "Also, we’ll provide you with lunch via a " + ifCanada() + " code after the event! You may elect to donate your meal to the Food Bank for New York City if you’d prefer. <br><br>" +
 
@@ -2602,11 +2616,11 @@ function eventSelected() {
         
         "Steve<br><br><br><hr><br>" +
 
-        // Version 4
+        // Version 5
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> LinkedIn 1st Degree Connections Message</p>" +
 
-        "<p style='font-weight: bold;'><i>Second Touch</i></p>" +
+        "<p style='font-weight: bold;'><i>SECOND TOUCH</i></p>" +
 
         "Hi " + highlight_This("NAME") + ", hope you’re having a great " + highlight_This(dayName) + "!<br><br>" +
         
