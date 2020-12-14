@@ -2249,31 +2249,13 @@ function eventSelected() {
       [
         // PANEL RECRUITMENT PERSONALIZED
 
-        // Extensive past work experience
-
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Extensive past work experience</b> - They’ve been in the industry or with their company for many years</p><br><br>" +
-
-        "<div class='editor_rrp1'>" +
-        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("INDUSTRY") + " space for a lot longer." +
-        "</div>",
-
         // Recommendation
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Recommendation</b> - They’ve got a rec from someone that talks about skills relevant to the event/topic</p><br><br>" +
 
         "<div class='editor_rrp2'>" +
-        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation — " + highlight_This("HE_SHE") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye–that’s the sort of leader that I look for as I build panels." +
-        "</div>",
-
-        // Career Evolution
-
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Career Evolution</b> -  They didn’t start our doing what they are now, and had a couple jobs in another role</p><br><br>" +
-
-        "<div class='editor_rrp3'>" +
-        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme.toLowerCase() + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + " — I’m sure your <b><i>" + highlight_This("PRIOR_ROLE") + "</i></b> background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
+        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation — " + highlight_This("HE_SHE") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye. That’s the sort of leader that I look for as I build panels." +
         "</div>",
 
         // Endorsed Skills
@@ -2312,13 +2294,49 @@ function eventSelected() {
         "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + " — I thought " + highlight_This("HIS_HER_THEIR") + " recent " + highlight_This("ARTICLE_VIDEO_POST") + " on " + highlight_This("TOPIC") + " was a great one." +
         "</div>",
 
-        // ONLY
+        // No useful info
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>No Useful Info</b> - If there is NOTHING on their profile but title and company</p><br><br>" +
 
         "<div class='editor_rrp19'>" +
         "I saw on LinkedIn that you’re the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ". I thought about reaching out to you on LinkedIn, but I wasn’t sure if you’re very active there — figured shooting you a quick email would be better." + 
+        "</div>",
+        
+        // Promotion
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Promotion</b></p><br><br>" +
+
+        "<div class='editor_rrp_promotion1'>" +
+        "Noticed on your LinkedIn that you’ve recently been promoted to " + highlight_This("NEW TITLE") + " at " + highlight_This("COMPANY") + ". Congratulations!" +
+        "</div>",
+
+        // College Alumni
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>College Alumni</b></p><br><br>" +
+
+        "<div class='editor_rrp_college1'>" +
+        "I came across your LinkedIn looking for leaders in " + highlight_This("INDUSTRY") + " and saw that you’re an alumnus of " + highlight_This("UNIVERSITY") + ". I thought their recent " + highlight_This("ARTICLE VIDEO POST") + " on " + highlight_This("TOPIC") + " was a great one." +
+        "</div>",
+
+        // Current Responsibilities
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Current Responsibilities</b></p><br><br>" +
+
+        "<div class='editor_rrp_responsibilites1'>" +
+        "I came across your LinkedIn looking for leaders in " + highlight_This("INDUSTRY") + " and I noticed that you’re responsible for " + highlight_This("CURRENT_RESPONSIBILITIES") + " in your current role—definitely caught my attention." +
+        "</div>",
+
+        // Company News/Update
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Company News/Update</b></p><br><br>" +
+
+        "<div class='editor_rrp_companyNews1'>" +
+        "I saw on LinkedIn that you’re the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ". I saw on " + highlight_This("COMPANY") +"’s LinkedIn that you recently " + highlight_This("NEWS") + "—seems like an exciting time to be there." +
         "</div>"
 
       ]
@@ -2327,16 +2345,6 @@ function eventSelected() {
 
       [
         // REGISTRANT RECRUITMENT PERSONALIZED
-
-        // Extensive past work experience
-
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Extensive past work experience</b> - They’ve been in the industry or with their company for many years</p><br><br>" +
-
-        "<div class='editor_rrp8'>" +
-        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme + " thought leadership. I see that you’ve been at your role with " + highlight_This("COMPANY") + " for " + highlight_This("#") + " years, and in the " + highlight_This("INDUSTRY") + " space for a lot longer." +
-        "</div>",
-        
 
         // Recommendation
 
@@ -2392,14 +2400,50 @@ function eventSelected() {
         "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + " — I thought " + highlight_This("HIS_HER_THEIR") + " recent " + highlight_This("ARTICLE_VIDEO_POST") + " on " + highlight_This("TOPIC") + " was a great one." +
         "</div>",
 
-        // ONLY
+        // No useful info
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>No Useful Info</b> - If there is NOTHING on their profile but title and company</p><br><br>" +
 
         "<div class='editor_rrp20'>" +
         "I saw on LinkedIn that you’re the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ". I thought about reaching out to you on LinkedIn, but I wasn’t sure if you’re very active there — figured shooting you a quick email would be better." + 
-        "</div>"
+        "</div>",
+
+         // Promotion
+
+         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
+         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Promotion</b></p><br><br>" +
+ 
+         "<div class='editor_rrp_promotion2'>" +
+         "Noticed on your LinkedIn that you’ve recently been promoted to " + highlight_This("NEW TITLE") + " at " + highlight_This("COMPANY") + ". Congratulations!" +
+         "</div>",
+ 
+         // College Alumni
+ 
+         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
+         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>College Alumni</b></p><br><br>" +
+ 
+         "<div class='editor_rrp_college2'>" +
+         "I came across your LinkedIn looking for leaders in " + highlight_This("INDUSTRY") + " and saw that you’re an alumnus of " + highlight_This("UNIVERSITY") + ". I thought their recent " + highlight_This("ARTICLE VIDEO POST") + " on " + highlight_This("TOPIC") + " was a great one." +
+         "</div>",
+ 
+         // Current Responsibilities
+ 
+         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
+         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Current Responsibilities</b></p><br><br>" +
+ 
+         "<div class='editor_rrp_responsibilites2'>" + // NEEDS NEW
+         "I came across your LinkedIn looking for leaders in " + highlight_This("INDUSTRY") + " and I noticed that you’re responsible for " + highlight_This("CURRENT_RESPONSIBILITIES") + " in your current role—definitely caught my attention." +
+         "</div>",
+ 
+         // Company News/Update
+ 
+         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment Personalization</p>" +
+         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Company News/Update</b></p><br><br>" +
+ 
+         "<div class='editor_rrp_companyNews2'>" + // NEEDS NEW
+         "I saw on LinkedIn that you’re the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ". I saw on " + highlight_This("COMPANY") +"’s LinkedIn that you recently " + highlight_This("NEWS") + "—seems like an exciting time to be there." +
+         "</div>",
 
       ]
 
@@ -2438,11 +2482,12 @@ function eventSelected() {
           "Hey again {{FIRST_NAME}},<br><br>" +
 
           "Reaching back out to share our <span style='color:red;'><b><u>event website </u></b></span>" + " " +  highlight_This($event_website) + " which includes the discussion topics and our panel.<br><br>"+
+
           "<span class='personalization1'></span>" +
 
           $event_audience.charAt(0).toUpperCase() + $event_audience.slice(1) + " " + $event_customization_1 + "<br><br>" +
 
-          "Our attendees love these events! They are not only a great opportunity to learn from our expert panelists, but also to connect and share insight with peers in similar roles and industries.<br><br>" +
+          "We'd love to hear your thoughts, experiences, and questions related to the above, to share the insights of our expert panelists, and also to connect you with peers in similar roles and industries.<br><br>" +
           
           "Does the content seem relevant to you? Let me know if you’d like to join us and I’m happy to sign you up.<br><br>" +
           
@@ -2800,21 +2845,24 @@ function eventSelected() {
             }
             else if ($selectedMessageType == "Panel Recruitment Personalization") {
               if ($selectedMessageName == "Create Personalization"){
-                $drafts.html($pr_personalized_drafts[0] + doubleSpaceAndLine + $pr_personalized_drafts[1] + doubleSpaceAndLine + $pr_personalized_drafts[2] + doubleSpaceAndLine + $pr_personalized_drafts[3] + doubleSpaceAndLine + $pr_personalized_drafts[4] + doubleSpaceAndLine + $pr_personalized_drafts[5] + doubleSpaceAndLine + $pr_personalized_drafts[6] + doubleSpaceAndLine + $pr_personalized_drafts[7] + "<br><br>");
+                $drafts.html($pr_personalized_drafts[0] + doubleSpaceAndLine + $pr_personalized_drafts[1] + doubleSpaceAndLine + $pr_personalized_drafts[2] + doubleSpaceAndLine + $pr_personalized_drafts[3] + doubleSpaceAndLine + $pr_personalized_drafts[4] + doubleSpaceAndLine + $pr_personalized_drafts[5] + doubleSpaceAndLine + $pr_personalized_drafts[6] + doubleSpaceAndLine + $pr_personalized_drafts[7] + doubleSpaceAndLine + $pr_personalized_drafts[8] + doubleSpaceAndLine + $pr_personalized_drafts[9] + "<br><br>");
                 var quill1 = new Quill('.editor_rrp1',{theme:'snow',});
                 var quill2 = new Quill('.editor_rrp2',{theme:'snow',});
-                var quill3 = new Quill('.editor_rrp3',{theme:'snow',});
                 var quill4 = new Quill('.editor_rrp4',{theme:'snow',});
                 var quill5 = new Quill('.editor_rrp5',{theme:'snow',});
                 var quill6 = new Quill('.editor_rrp6',{theme:'snow',});
                 var quill7 = new Quill('.editor_rrp7',{theme:'snow',});
                 var quill19 = new Quill('.editor_rrp19',{theme:'snow',});
+                var quill3 = new Quill('.editor_rrp_promotion1',{theme:'snow',}); // promotion
+                var quill21 = new Quill('.editor_rrp_responsibilites1',{theme:'snow',}); // Current Responsibilities
+                var quill22 = new Quill('.editor_rrp_college1',{theme:'snow',}); // College Alumni
+                var quill23 = new Quill('.editor_rrp_companyNews1',{theme:'snow',}); // Company News/Update
                 return;
               }
             }
             else if ($selectedMessageType == "Registrant Recruitment Personalization") {
               if ($selectedMessageName == "Create Personalization"){
-                $drafts.html($rr_personalized_drafts[0] + doubleSpaceAndLine + $rr_personalized_drafts[1] + doubleSpaceAndLine + $rr_personalized_drafts[2] + doubleSpaceAndLine + $rr_personalized_drafts[3] + doubleSpaceAndLine + $rr_personalized_drafts[4] + doubleSpaceAndLine + $rr_personalized_drafts[5] + doubleSpaceAndLine + $rr_personalized_drafts[6] + doubleSpaceAndLine + $rr_personalized_drafts[7] + "<br><br>");
+                $drafts.html($rr_personalized_drafts[0] + doubleSpaceAndLine + $rr_personalized_drafts[1] + doubleSpaceAndLine + $rr_personalized_drafts[2] + doubleSpaceAndLine + $rr_personalized_drafts[3] + doubleSpaceAndLine + $rr_personalized_drafts[4] + doubleSpaceAndLine + $rr_personalized_drafts[5] + doubleSpaceAndLine + $rr_personalized_drafts[6] + doubleSpaceAndLine + $rr_personalized_drafts[7] + doubleSpaceAndLine + $rr_personalized_drafts[8] + doubleSpaceAndLine + $rr_personalized_drafts[9] + doubleSpaceAndLine + $rr_personalized_drafts[10] + "<br><br>");
                 var quill8 = new Quill('.editor_rrp8',{theme:'snow',});
                 var quill9 = new Quill('.editor_rrp9',{theme:'snow',});
                 var quill10 = new Quill('.editor_rrp10',{theme:'snow',});
@@ -2823,6 +2871,10 @@ function eventSelected() {
                 var quill13 = new Quill('.editor_rrp13',{theme:'snow',});
                 var quill14 = new Quill('.editor_rrp14',{theme:'snow',});
                 var quill20 = new Quill('.editor_rrp20',{theme:'snow',});
+                var quill24 = new Quill('.editor_rrp_promotion2',{theme:'snow',}); // promotion
+                var quill25 = new Quill('.editor_rrp_responsibilites2',{theme:'snow',}); // Current Responsibilities
+                var quill26 = new Quill('.editor_rrp_college2',{theme:'snow',}); // College Alumni
+                var quill27 = new Quill('.editor_rrp_companyNews2',{theme:'snow',}); // Company News/Update
                 return;
               }
             } else if ($selectedMessageType == "Registrant Recruitment New") {
