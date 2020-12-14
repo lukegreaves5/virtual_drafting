@@ -2255,7 +2255,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Recommendation</b> - They’ve got a rec from someone that talks about skills relevant to the event/topic</p><br><br>" +
 
         "<div class='editor_rrp2'>" +
-        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation — " + highlight_This("HE_SHE") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye. That’s the sort of leader that I look for as I build panels." +
+        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation — " + highlight_This("HE_SHE_THEY") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye. That’s the sort of leader that I look for as I build panels." +
         "</div>",
 
         // Endorsed Skills
@@ -2264,7 +2264,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Endorsed Skills</b> - They’ve got upwards of 20 endorsements for a <b>RELEVANT</b> (to the event) skill or two</p><br><br>" +
 
         "<div class='editor_rrp4'>" +
-        "You’ve got " + highlight_This("#") + " endorsements on LinkedIn for your " + highlight_This("SKILL_TYPE") + " skills and " + highlight_This("#") + " for " + highlight_This("SKILL_TYPE2") + " — definitely caught my attention." +
+        "I see you’ve got " + highlight_This("#") + " endorsements on LinkedIn for your " + highlight_This("SKILL_TYPE") + " skills and " + highlight_This("#") + " for " + highlight_This("SKILL_TYPE2") + ". Your profile definitely caught my attention as I was looking for experienced " + highlight_This("INDUSTRY") + " leaders." +
         "</div>",
 
         // About
@@ -2273,7 +2273,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>‘About’</b> - They’ve got relevant experience or skills listed in the section they wrote about themselves</p><br><br>" +
 
         "<div class='editor_rrp5'>" +
-        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "." + 
+        "I came across your LinkedIn looking for leaders in " + highlight_This("INDUSTRY") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + ". Definitely caught my eye!" + 
         "</div>",
 
         // Certifications
@@ -2282,7 +2282,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Certifications</b> - They’ve got a RELEVANT (to the event) certification that they’ve completed</p><br><br>" +
 
         "<div class='editor_rrp6'>" +
-        "I came across you on LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw you’ve got <b><i>" + highlight_This("A_CERTIFICATION_CERTIFICATIONS") + "</i></b> in " + highlight_This("CERTIFICATION") + " and " + highlight_This("CERTIFICATION_2") + " — definitely caught my attention." +
+        "I came across your LinkedIn profile looking for leaders in " + highlight_This("INDUSTRY") + ", and I saw you’re certified " + highlight_This("INDUSTRY") + " from " + highlight_This("CERTIFICATION_SOURCE") + "—definitely caught my attention." +
         "</div>",
 
         // Interests
@@ -2291,7 +2291,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Interests</b> - They’re following a person/company/group that is interesting or out of the norm (ideally relevant to the event)</p><br><br>" +
 
         "<div class='editor_rrp7'>" +
-        "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + " — I thought " + highlight_This("HIS_HER_THEIR") + " recent " + highlight_This("ARTICLE_VIDEO_POST") + " on " + highlight_This("TOPIC") + " was a great one." +
+        "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + " — I thought " + highlight_This("HIS_HER_THEIR") + " recent " + highlight_This("ARTICLE_VIDEO_POST") + " on " + highlight_This("TOPIC") + " was really interesting." +
         "</div>",
 
         // No useful info
@@ -2352,7 +2352,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Recommendation</b> - They’ve got a rec from someone that talks about skills relevant to the event/topic</p><br><br>" +
 
         "<div class='editor_rrp9'>" +
-        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation — " + highlight_This("HE_SHE") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye." +
+        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation — " + highlight_This("HE_SHE_THEY") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye." +
         "</div>",
 
         // Career Evolution
@@ -2370,7 +2370,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Endorsed Skills</b> - They’ve got upwards of 20 endorsements for a <b>RELEVANT</b> (to the event) skill or two</p><br><br>" +
 
         "<div class='editor_rrp11'>" +
-        "You’ve got " + highlight_This("#") + " endorsements on LinkedIn for your " + highlight_This("SKILL_TYPE") + " skills and " + highlight_This("#") + " for " + highlight_This("SKILL_TYPE2") + " — definitely caught my attention." +
+        "I see you’ve got " + highlight_This("#") + " endorsements on LinkedIn for your " + highlight_This("SKILL_TYPE") + " skills and " + highlight_This("#") + " for " + highlight_This("SKILL_TYPE2") + ". Your profile definitely caught my attention as I was looking for experienced " + highlight_This("INDUSTRY") + " leaders." +
         "</div>",
 
         // About
@@ -2379,7 +2379,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>‘About’</b> - They’ve got relevant experience or skills listed in the section they wrote about themselves</p><br><br>" +
 
         "<div class='editor_rrp12'>" +
-        "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + "." + 
+        "I came across your LinkedIn looking for leaders in " + highlight_This("INDUSTRY") + ", and I saw you mention in your ‘about’ section that you " + highlight_This("ABOUT_QUOTE") + ". Definitely caught my eye!" + 
         "</div>",
 
         // Certifications
@@ -2388,7 +2388,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Certifications</b> - They’ve got a RELEVANT (to the event) certification that they’ve completed</p><br><br>" +
 
         "<div class='editor_rrp13'>" +
-        "I came across you on LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw you’ve got <b><i>" + highlight_This("A_CERTIFICATION_CERTIFICATIONS") + "</i></b> in " + highlight_This("CERTIFICATION") + " and " + highlight_This("CERTIFICATION_2") + " — definitely caught my attention." +
+        "I came across your LinkedIn profile looking for leaders in " + highlight_This("INDUSTRY") + ", and I saw you’re certified " + highlight_This("INDUSTRY") + " from " + highlight_This("CERTIFICATION_SOURCE") + "—definitely caught my attention." +
         "</div>",
 
         // Interests
@@ -2397,7 +2397,7 @@ function eventSelected() {
         "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Interests</b> - They’re following a person/company/group that is interesting or out of the norm (ideally relevant to the event)</p><br><br>" +
 
         "<div class='editor_rrp14'>" +
-        "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + " — I thought " + highlight_This("HIS_HER_THEIR") + " recent " + highlight_This("ARTICLE_VIDEO_POST") + " on " + highlight_This("TOPIC") + " was a great one." +
+        "I saw on your LinkedIn that one of your interests is " + highlight_This("INTEREST") + " — I thought " + highlight_This("HIS_HER_THEIR") + " recent " + highlight_This("ARTICLE_VIDEO_POST") + " on " + highlight_This("TOPIC") + " was really interesting." +
         "</div>",
 
         // No useful info
