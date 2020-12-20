@@ -2355,15 +2355,6 @@ function eventSelected() {
         "I came across your LinkedIn looking for " + highlight_This("PROSPECT_GENERAL_TITLEs") + ", and I saw " + highlight_This("RECOMMEDER_NAME’s") + " recommendation — " + highlight_This("HE_SHE_THEY") + " mentioned you " + highlight_This("RECOMMENDATION_INDIRECT_QUOTE") + ", and it caught my eye." +
         "</div>",
 
-        // Career Evolution
-
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> <b>Career Evolution</b> -  They didn’t start our doing what they are now, and had a couple jobs in another role</p><br><br>" +
-
-        "<div class='editor_rrp10'>" +
-        "I came across your LinkedIn profile looking for professionals who might be interested in " + $event_theme + " thought leadership, and loved seeing your journey from " + highlight_This("PRIOR_ROLE") + " to " + highlight_This("CURRENT_ROLE") + "—I’m sure your <b><i>" + highlight_This("PRIOR_INDUSTRY") + "</i></b> background lends some interesting insight into what you’ve been up to at " + highlight_This("COMPANY") + "." +
-        "</div>",
-
         // Endorsed Skills
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Recruitment Personalization</p>" +
@@ -2862,7 +2853,7 @@ function eventSelected() {
             }
             else if ($selectedMessageType == "Registrant Recruitment Personalization") {
               if ($selectedMessageName == "Create Personalization"){
-                $drafts.html($rr_personalized_drafts[0] + doubleSpaceAndLine + $rr_personalized_drafts[1] + doubleSpaceAndLine + $rr_personalized_drafts[2] + doubleSpaceAndLine + $rr_personalized_drafts[3] + doubleSpaceAndLine + $rr_personalized_drafts[4] + doubleSpaceAndLine + $rr_personalized_drafts[5] + doubleSpaceAndLine + $rr_personalized_drafts[6] + doubleSpaceAndLine + $rr_personalized_drafts[7] + doubleSpaceAndLine + $rr_personalized_drafts[8] + doubleSpaceAndLine + $rr_personalized_drafts[9] + doubleSpaceAndLine + $rr_personalized_drafts[10] + "<br><br>");
+                $drafts.html($rr_personalized_drafts[0] + doubleSpaceAndLine + $rr_personalized_drafts[1] + doubleSpaceAndLine + $rr_personalized_drafts[2] + doubleSpaceAndLine + $rr_personalized_drafts[3] + doubleSpaceAndLine + $rr_personalized_drafts[4] + doubleSpaceAndLine + $rr_personalized_drafts[5] + doubleSpaceAndLine + $rr_personalized_drafts[6] + doubleSpaceAndLine + $rr_personalized_drafts[7] + doubleSpaceAndLine + $rr_personalized_drafts[8] + doubleSpaceAndLine + $rr_personalized_drafts[9] + "<br><br>");
                 var quill8 = new Quill('.editor_rrp8',{theme:'snow',});
                 var quill9 = new Quill('.editor_rrp9',{theme:'snow',});
                 var quill10 = new Quill('.editor_rrp10',{theme:'snow',});
