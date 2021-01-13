@@ -1808,7 +1808,7 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I’m organizing an event for thought leaders in " + $event_subject + " and would love to have you share your expertise as a panelist. The virtual ‘lunch and learn’ event will be on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ". Check out our event website " + highlight_This($event_website) + " for more details.<br><br>" +
+        "I’m organizing an event for thought leaders in " + $event_theme + " and would love to have you share your expertise as a panelist. The virtual ‘lunch and learn’ event will be on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ". Check out our event website " + highlight_This($event_website) + " for more details.<br><br>" +
 
         "<b>" + $event_full_title + "</b> will gather " + $event_audience + " in the " + target_subject() + " for video-networking in small breakout rooms before and after an interactive panel discussion. This isn’t a formal presentation or webinar—it’s an opportunity for all panelists and attendees to have an engaging conversation.<br><br>" +
 
