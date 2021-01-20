@@ -442,7 +442,6 @@ function eventSelected() {
         let start;
         if (!$event_time_display.includes("yellow")) { // if Event time Display field is filled
           start = new Date( new Date(eventDate).setHours( $event_time_display[0].split("-")[0].split(":")[0] ) ); // Calculate start time. Event Time Display field is required.
-          console.log("Event time display exists");
           return (
             `
               <li style="list-style: none;">${ moment(start).format('h:mm A') } Attendees Enter Virtual Event & Welcome Remarks</li>
@@ -486,7 +485,6 @@ function eventSelected() {
         let start;
         if (!$event_time_display.includes("yellow")) { // if Event time Display field is filled
           start = new Date( new Date(eventDate).setHours( $event_time_display[0].split("-")[0].split(":")[0] ) ); // Calculate start time. Event Time Display field is required.
-          console.log("Event time display exists");
           return (
             `
               <li style="list-style: none;">${ moment(start.addMinutes(-15)).format('h:mm A') }  Panelists & Moderator join</li>
@@ -533,7 +531,6 @@ function eventSelected() {
         let start;
         if (!$event_time_display.includes("yellow")) { // if Event time Display field is filled
           start = new Date( new Date(eventDate).setHours( $event_time_display[0].split("-")[0].split(":")[0] ) ); // Calculate start time. Event Time Display field is required.
-          console.log("Event time display exists");
           return (
             `
               <li>${ moment(start.addMinutes(-30)).format('h:mm A') }  Practice Run for Sales Team</li>
@@ -2535,7 +2532,7 @@ function eventSelected() {
           "May I RSVP you, {{FIRST_NAME}}?<br><br>" +
 
           "Best,<br>" +
-          "Steve",
+          "Steve" +
         "</div>",
 
         // 1.4
@@ -3123,15 +3120,19 @@ function eventSelected() {
             return predraftedHTML.html($rr_drafts[1]);
           } if ($selectedMessageName == "1.3") {
             return predraftedHTML.html($rr_drafts[2]);
-          } else if ($selectedMessageName == "2.1") {
+          } else if ($selectedMessageName == "1.4") {
+            console.error("testing");
+            return predraftedHTML.html($rr_drafts_new[3]);
+            //return predraftedHTML.html($rr_drafts_new[3]);
+          } if ($selectedMessageName == "2.1") {
             return predraftedHTML.html($rr_drafts[3]);
-          } if ($selectedMessageName == "2.2") {
+          } else if ($selectedMessageName == "2.2") {
             return predraftedHTML.html($rr_drafts[4]);
-          } else if ($selectedMessageName == "2.3") {
+          } if ($selectedMessageName == "2.3") {
             return predraftedHTML.html($rr_drafts[5]);
-          } if ($selectedMessageName == "3.1") {
+          } else if ($selectedMessageName == "3.1") {
             return predraftedHTML.html($rr_drafts[6]);
-          } else if ($selectedMessageName == "4.1") {
+          } if ($selectedMessageName == "4.1") {
             return predraftedHTML.html($rr_drafts[7]);
           }
         }
@@ -3205,7 +3206,7 @@ function eventSelected() {
             } if ($selectedMessageName == "1.3") {
               return $drafts.html($rr_drafts_new[2]);
             } if ($selectedMessageName == "1.4") {
-              return $drafts.html($rr_drafts_new[3]);
+              return $drafts.html($rr_drafts_new[2]);
             } else if ($selectedMessageName == "Full Sequence") {
               document.querySelector(".personalization-container").style.display = "block";
               return $drafts.html($$rr_drafts_new[0] + doubleSpaceAndLine + $rr_drafts_new[1] + doubleSpaceAndLine + $rr_drafts_new[2] + doubleSpaceAndLine + $rr_drafts_new[3] + "<br><br>");
