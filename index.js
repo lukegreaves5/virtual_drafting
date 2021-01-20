@@ -412,7 +412,8 @@ function eventSelected() {
       $event_discussion_topics = objectCheck(['Discussion Topics']),
       $event_local_time = objectCheck(['Event Time Display']),
       $event_time_display = objectCheck(['Event Time Display']),
-      $event_time_EST = objectCheck(['Event Time (EST)']);
+      $event_time_EST = objectCheck(['Event Time (EST)']),
+      $event_panel_highlight = objectCheck(['Panel Highlight']);
 
       function dynamic_attendee_Agenda() {
         let timezone;
@@ -2148,11 +2149,13 @@ function eventSelected() {
 
         "We love bringing together exceptional panels to discuss the challenges and opportunities impacting business professionals today.<br><br>" +
         
-        "For " + $event_full_title + " we’ve got an exciting panel featuring the following leaders:<br>" +
+        "For " + $event_full_title + " we’ll be in conversation with the following leaders:<br>" +
 
         createPanelistList_full_title_company_only_listFormat() +
 
-        "Along with our moderator from " + $event_client + ", the panel will be leading a conversation about " + $event_snippet + ".<br><br>" + 
+        $event_panel_highlight + " <br><br> " +
+
+        "Along with our moderator from " + $event_client + ", the panel will be leading a discussion about " + $event_snippet + ".<br><br>" + 
         
         "You’ll also get the chance to meet the speakers and your fellow participants  in smaller groups and discuss the event topics.<br><br>" + 
         
@@ -2235,11 +2238,13 @@ function eventSelected() {
 
         "We love bringing together exceptional panels to discuss the challenges and opportunities impacting business professionals today.<br><br>" +
         
-        "For " + $event_full_title + " we’ve got an exciting panel featuring the following leaders:<br>" +
+        "For " + $event_full_title + " we’ll be in conversation with the following leaders:<br>" +
 
         createPanelistList_full_title_company_only_listFormat() +
 
-        "Along with our moderator from " + $event_client + ", the panel will be leading a conversation about " + $event_snippet + ".<br><br>" + 
+        $event_panel_highlight + " <br><br> " +
+
+        "Along with our moderator from " + $event_client + ", the panel will be leading a discussion about " + $event_snippet + ".<br><br>" + 
         
         "You’ll also get the chance to meet the speakers and your fellow participants  in smaller groups and discuss the event topics.<br><br>" + 
         
@@ -2517,17 +2522,20 @@ function eventSelected() {
 
           "We love bringing together exceptional panels to discuss the challenges and opportunities impacting business professionals today.<br><br>" +
           
-          "For " + $event_full_title + " we’ve got an exciting panel featuring the following leaders:<br>" +
+          "For " + $event_full_title + " we’ll be in conversation with the following leaders:<br>" +
 
-          createPanelistList_full_title_company_only_listFormat_excluding_moderator() +
+          createPanelistList_full_title_company_only_listFormat() +
 
-          "Along with our moderator from " + $event_client + ", the panel will be leading a conversation about " + $event_snippet + ".<br><br>" + 
+          $event_panel_highlight + " <br><br> " +
+
+          "Along with our moderator from " + $event_client + ", the panel will be leading a discussion about " + $event_snippet + ".<br><br>" + 
           
-          "You’ll also get the chance to meet the speakers and your fellow participants in smaller groups and discuss the event topics.<br><br>" + 
+          "You’ll also get the chance to meet the speakers and your fellow participants  in smaller groups and discuss the event topics.<br><br>" + 
           
           "May I RSVP you, {{FIRST_NAME}}?<br><br>" +
 
           "Best,<br>" +
+          "Steve",
         "</div>",
 
         // 1.4
