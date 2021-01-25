@@ -1136,7 +1136,7 @@ function eventSelected() {
 
         "We would love to have you as a panelist if you’re available and the content appeals to you.<br><br>" +
 
-        "In addition to building your personal brand, demonstrating your expertise, and learning from fellow attendees, we’re sending each panelist and attendee a " + ifCanada('money') + " to enjoy after the event. You also have the option to donate your meal to the Food Bank for New York City if you prefer.<br><br>" +
+        "In addition to building your personal brand, demonstrating your expertise, and learning from fellow attendees, we’re sending each panelist and attendee a meal delivery code to enjoy after the event. You also have the option to donate your meal to the Food Bank for New York City if you prefer.<br><br>" +
 
         "If you have questions about our virtual event structure, the content, or about the panel experience, I’m happy to answer them.<br><br>" +
 
@@ -1184,7 +1184,7 @@ function eventSelected() {
 
         $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>"+
 
-        "As a panelist, you’ll have the chance to share your insights and learn from your fellow attendees, network with your peers, and final attendees can enjoy lunch on us with a " + ifCanada("money") + " code.<br><br>"+
+        "As a panelist, you’ll have the chance to share your insights and learn from your fellow attendees, network with your peers, and final attendees can enjoy lunch on us with a meal delivery code.<br><br>"+
 
         "If you agree you’d be a good fit, may I send you more info on the discussion topics?<br><br>" +
 
@@ -1274,7 +1274,7 @@ function eventSelected() {
         </ul>
         `+
 
-        "We traditionally host these events at award-winning restaurants, so to keep our '" + target_lunch_or_brunch($event_target_copy) + " and learn’ structure, we’re sending " + ifCanada('money') + " codes so each attendee can enjoy a nice meal, with the option to donate it to the Food Bank for New York City if you prefer.<br><br>" +
+        "We traditionally host these events at award-winning restaurants, so to keep our '" + target_lunch_or_brunch($event_target_copy) + " and learn’ structure, we’re sending $30 meal delivery codes so each attendee can enjoy a nice meal, with the option to donate it to charity if you prefer.<br><br>" +
 
         "Interested in joining us, {{FIRST_NAME}}? Happy to answer any questions, or to save you a spot.<br><br>"+
         
@@ -1304,11 +1304,11 @@ function eventSelected() {
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Legacy Registrant Recruitment 1.3</p>" +
         "<p class='messagesubject'><i class='fa fa-reply'></i> re: How Can You " + $event_goal + "?</p><br><br>" +
 
-        "I know it’s still a bit early to think about " + target_lunch_or_brunch($event_target_copy) + " plans on " + $event_long_date + ", but how about joining us for some " +  ifCanada('no') + " and virtual networking at " + $event_full_title + "?<br><br>" +
+        "I know it’s still a bit early to think about " + target_lunch_or_brunch($event_target_copy) + " plans on " + $event_long_date + ", but how about joining us for some meal delivery code and virtual networking at " + $event_full_title + "?<br><br>" +
 
         "We’ll be hosting a group of your peers on Zoom for a great discussion between our panelists about " + contentSnippetThree() + ".<br><br>" +
 
-        "You’ll receive a " +  ifCanada('no') + " code so you can " + target_lunch_or_brunch($event_target_copy) + " while you learn, or you can choose to donate it to the the Food Bank for New York City.<br><br>" +
+        "You’ll receive a meal delivery code so you can " + target_lunch_or_brunch($event_target_copy) + " while you learn, or you can choose to donate it to charity if you prefer.<br><br>" +
 
         "We’re happy to have the opportunity to connect leaders in a time where peer-to-peer learning is more valuable than ever, and yet less available.<br><br>" +
 
@@ -1330,7 +1330,7 @@ function eventSelected() {
 
         "At " + $event_full_title + ", you’d network with an invite-only group of other " + $event_audience + " from " + target_2_1_area($event_target_copy) + ", and engage in thought-provoking discussions about " + $event_snippet + ". See details on our site " + $event_website + ".<br><br>" +
 
-        "For this '"+ target_lunch_or_brunch($event_target_copy) + " and learn', we’ll be sharing a " + ifCanada('money') + " code, or we can donate the meal to the Food Bank for New York City in your name. The best part of these gatherings isn’t the spring rolls anyway—it’s the community of professionals we bring together.<br><br>" +
+        "For this '"+ target_lunch_or_brunch($event_target_copy) + " and learn', we’ll be sharing a meal delivery code, or we can donate the meal to the Food Bank for New York City in your name. The best part of these gatherings isn’t the spring rolls anyway—it’s the community of professionals we bring together.<br><br>" +
 
         "Join the conversation?<br><br>"+
 
@@ -1382,7 +1382,7 @@ function eventSelected() {
 
         "I know that your calendar probably fills up quickly, but we still have a couple open spots for " + $event_short_title + " on " + $event_long_date + ". The event will run from " + $event_local_time + " " + $event_timezone + ".<br><br>" +
 
-        "Happy to save one of those spots for you. As an attendee, you’ll receive a " + ifCanada('money') + " code, so you can order up your favorite delivery while our panel leads an engaging discussion about " + contentSnippetThree() + ". If you prefer, we’re happy to donate your meal to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need.<br><br>" +
+        "Happy to save one of those spots for you. As an attendee, you’ll receive a meal delivery code, so you can order up your favorite delivery while our panel leads an engaging discussion about " + contentSnippetThree() + ". If you prefer, we’re happy to donate your meal to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need.<br><br>" +
 
         "You can find details on our panel and specific discussion topics at our event website " + highlight_This($event_website) + ".<br><br>" +
 
@@ -1424,7 +1424,7 @@ function eventSelected() {
 
         "To preserve the networking value of the lunch, attendees will be able to join small group discussions in breakout room sessions and meet other marketing leaders local to the "+ $event_city +" area.<br><br>" +
 
-        "And while we will no longer be hosting the event at "+ $event_venue +", we will be sending all attendees a "+ ifCanada('money') +" code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes..<br><br>" +
+        "And while we will no longer be hosting the event at "+ $event_venue +", we will be sending all attendees a meal delivery code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes..<br><br>" +
 
         "The virtual event will run tomorrow, " + $event_long_date +" from 12 pm to 1:30 pm. Full event details are available here at our event website " + highlight_This($event_website) + ").<br><br>" +
 
@@ -1468,9 +1468,9 @@ function eventSelected() {
 
         "Thank you so much for participating in the " + $event_short_title + " virtual meeting on " + highlight_This("DAY/yesterday") + "! We hope you found the discussion valuable.<br><br>" +
 
-        "Here is your Grubhub eGift card " + highlight_This(" NUMBER, ((NUMBER))") + " and your PIN," + highlight_This("((PIN))") + ", so you can enjoy lunch courtesy of " + $event_client + "!<br><br>" +
+        "Please use this link to access your Hoppier gift card so that you can enjoy lunch courtesy of " + $event_client + "! To redeem your card, please make sure you sign in with THIS email address!<br><br>" +
 
-        "Please let us know if you’d prefer to have your meal donated to Food Bank for New York City to provide food security and other essential services for low-income communities in need.<br><br>" +
+        "Once you log into Hoppier, you’ll have the option of using your $30 code to order lunch from your choice of food delivery app or local restaurant, or to donate your meal to Food Bank for New York City instead. Please note that the gift card balance is redeemable through 30 DAYS FROM NOW.<br><br>" +
 
         "Special thanks to " + $event_client + " for making the event possible, and to our moderator, " + $event_moderator_first_name + ", and to " + $event_panelists_first_name + " for leading the exceptional discussion.<br><br>"+
 
@@ -1499,7 +1499,7 @@ function eventSelected() {
         </ul><br>`
         +
 
-        "Final attendees will receive their meal delivery code after the event as a thank you for attending, so check your inbox for your code the day after the event. You will also have the chance to donate your meal to various organizations at that time.<br><br>" +
+        "Final attendees will receive their Hoppier gift card after the event as a thank you for attending, so check your inbox for your code the day after the event. On Hoppier, you’ll be able to choose to order lunch from a variety of food delivery apps or to donate your meal to Food Bank for New York City instead.<br><br>" +
 
         "Please make sure to add etzler.steven@bdionline.com to your safe sender list to ensure the code isn't sent to spam. Looking forward to your participation!<br><br>" +
 
@@ -1536,13 +1536,13 @@ function eventSelected() {
 
         "Hi FIRSTNAME,<br><br>" +
 
-         highlight_This("(Following up on a voicemail we just left for you. I want to confirm your participation at tomorrow's // I want to confirm your participation at tomorrow's)") + " " + $event_short_title + " virtual meeting from " + $event_time_display + " " + $event_timezone + " on Zoom.<br><br>" + 
+        "Please reply back to confirm your participation at tomorrow’s " + $event_short_title + " virtual meeting from " + $event_time_display + " " + $event_timezone + " on Zoom.<br><br>" + 
 
         "To join the meeting, click here. "+ $event_virtual_link +"<br><br>"+
 
         "Please be prepared to have your <b>video and microphone on</b>.<br><br>"+
 
-        "Please reply back to confirm your participation and let us know if you’d prefer to donate your meal to Food Bank for New York City, or if you’d like to receive a " + ifCanada() + " code after the event. All final attendees will receive an email the day following the event with their redeemable " + ifCanada() + " code as a thank you for attending.<br><br>" + 
+        "All final attendees will receive an email the day following the event allowing you to log in to Hoppier and choose whether you’d like to order lunch via a food delivery app or donate your meal to Food Bank for New York City.<br><br>" + 
 
         `Here is the agenda for the session:<br>
         <ul>
@@ -1566,9 +1566,9 @@ function eventSelected() {
 
          "Our objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants before and after the panel in breakout rooms.<br><br>" +
 
-         "After the event, final attendees will receive their Grubhub gift code as a thank you for attending. Keep your eye on your inbox the day after the panel for lunch on us!<br><br>" +
+         "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. <b>Please note that you must log into Hoppier with this email for access</b>. Keep your eye on your inbox the day after the panel for lunch on us!<br><br>" +
 
-         "We also like to give registrants the option to donate your meal to Food Bank for New York City to provide food security and other essential services for low-income communities in need. If you’d like to do that instead, please reply to this email and let me know.<br><br>" +
+         "Via the Hoppier platform, you’ll also have the option to donate your meal to Food Bank for New York City to provide food security and other essential services for low-income communities in need.<br><br>" +
 
          "To join the meeting, please click here: " + highlight_This($event_virtual_link) +"<br><br>"+
          
@@ -1674,7 +1674,7 @@ function eventSelected() {
         "</ul><br><br>" +
 
         "<b>LUNCH</b><br>" +
-        "<p>We will provide a " + ifCanada('money') + " code for Grubhub to all final attendees after the event—stay tuned for that! Or let us know if you’d prefer to have your meal donated to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need.</p><br>"+
+        "<p>We will provide a $30 meal delivery code for lunch to all final attendees after the event—stay tuned for that! You'll also have the option to donate your meal to charity if you prefer.</p><br>"+
 
         "<b>PANEL DISCUSSION QUESTIONS</b><br>" +
         discussionTopics(),
@@ -1696,7 +1696,7 @@ function eventSelected() {
 
         "This email serves as a reminder and an invite for you to share with a colleague who may also find this event valuable.<br><br>"+
 
-        "After the event we'll send your " + ifCanada('money') + " code in our follow up email. To ensure you're able to receive your code, please make sure to add our etzler.steven@bdionline.com email to your safe senders list so the message doesn't end up in your spam folder!<br><br>" +
+        "After the event we'll send your meal delivery code in our follow up email. To ensure you're able to receive your code, please make sure to add our etzler.steven@bdionline.com email to your safe senders list so the message doesn't end up in your spam folder!<br><br>" +
 
         "Thank you. We look forward to seeing you online from " + $event_time_display + " on " + $event_long_date + ".<br><br>" + 
 
@@ -1716,7 +1716,7 @@ function eventSelected() {
 
          "You let me know a while back that you wouldn’t be able to join us at "+ $event_venue +" in " + $event_city +" for "+ $event_full_title + " on "+ $event_long_date +". At this time, due to current Coronavirus concerns, we’ve decided to take the entire event virtual!<br><br>"+
  
-         "Instead of going from 12 – 2pm at the restaurant, we’ll go from 12 – 1:30pm online—the agenda will still include an interactive panel discussion, breakout session networking with your local peers, and we’ll be sending "+ ifCanada('money') +" codes to all the attendees—so lunch is still on us!<br><br>"+
+         "Instead of going from 12 – 2pm at the restaurant, we’ll go from 12 – 1:30pm online—the agenda will still include an interactive panel discussion, breakout session networking with your local peers, and we’ll be sending meal delivery codes to all the attendees—so lunch is still on us!<br><br>"+
  
          "Please check out the event website "+ highlight_This($event_website) +" and let me know if you’re able to join us—we’d love to have you, and I’m happy to save you a spot.<br><br>"+
  
@@ -1750,11 +1750,13 @@ function eventSelected() {
 
          "We look forward to seeing you today at "+ highlight_This("TIME") + " " + $event_timezone + " at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
 
-         "Thank you for choosing to donate your meal to Food Bank for New York City instead, to provide food security and other essential services for low-income New Yorkers/communities in need. You will receive an email confirming for your donation shortly.<br><br>"+
+         "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. <b>Please note that you must log into Hoppier with this email for access</b>. Keep your eye on your inbox the day after the panel for lunch on us!<br><br>" +
+
+         "Via the Hoppier platform, you’ll also have the option to donate your meal to Food Bank for New York City to provide food security and other essential services for low-income communities in need.<br><br>" +
 
          "To join the meeting, please click here: " + $event_virtual_link +"<br><br>"+
-         
-         "The objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants before and after the panel in breakout rooms.<br><br>" +
+
+        "The objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants before and after the panel in breakout rooms.<br><br>" +
 
          "See you soon,<br>" +
          "<b>Steve Etzler</b><br>" +
@@ -1816,7 +1818,7 @@ function eventSelected() {
 
         "We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from " + $event_local_time + " " + $event_timezone + " the day of the panel.<br><br>" +
 
-        "We will also provide a " + ifCanada("money") + " gift code to all final attendees.<br><br>" +
+        "We will also provide a $30 meal delivery code to all final attendees.<br><br>" +
 
         "Do you want to hear more about speaking on our virtual panel, {{FIRST_NAME}}?<br><br>" + 
 
@@ -1850,7 +1852,7 @@ function eventSelected() {
 
         createPanelistList_full() +
         
-        "As an attendee, you’ll have the chance to hear the panel share their insights, learn from others in your field, and network with your peers. Final attendees can also enjoy lunch on us with a " + ifCanada('money') + " code.<br><br>"+
+        "As an attendee, you’ll have the chance to hear the panel share their insights, learn from others in your field, and network with your peers. Final attendees can also enjoy lunch on us with a $30 meal delivery code.<br><br>"+
         
         `Interested in joining us, {{FIRST_NAME}}? Please use the form on the event site to RSVP today.<br><br>` +
 
@@ -1949,7 +1951,7 @@ function eventSelected() {
 
         createPanelistList_full() +
         
-        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending " + ifCanada('money') + " codes so each attendee can enjoy a nice meal, with the option to donate it to the Food Bank for New York City if you prefer.<br><br>"+
+        "We traditionally host these events at award-winning restaurants, so to keep our ‘"+ target_lunch_or_brunch($event_target_copy) +" and learn’ structure, we’re sending meal delivery codes so each attendee can enjoy a nice meal, with the option to donate it to the Food Bank for New York City if you prefer.<br><br>"+
         
         `Interested in joining us, {{FIRST_NAME}}? To RSVP please email <a href="mailto:RSVP for the ` + $event_theme + ' ' + target_lunch_or_brunch($event_target_copy) + ' event on ' + $event_month_number + '/' + $event_day_number + `">steven.etzler@bdionline.com</a>.<br><br>` +
 
@@ -1975,7 +1977,7 @@ function eventSelected() {
         
         "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " leaders join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" +
 
-        "Lunch is on us in the form of a " + ifCanada("money") + " code, or final attendees also have the option of donating their meal to the Food Bank for New York City.<br><br>" +
+        "Lunch is on us in the form of a meal delivery code, or final attendees also have the option of donating their meal to the Food Bank for New York City.<br><br>" +
 
         "You can find further details on the proposed discussion topics on our event website. " + $event_website + "<br><br>" +
 
@@ -2045,7 +2047,7 @@ function eventSelected() {
         
         "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" + 
         
-        "Lunch is on us in the form of a " + ifCanada("money") + " code, or final attendees also have the option of donating their meal to the Food Bank for New York City.<br><br>" +
+        "Lunch is on us in the form of a $30 meal delivery code, or attendees also have the option of donating their meal to charity if you prefer.<br><br>" +
         
         "You can find further details on the proposed discussion topics on our event website." + $event_website + "<br><br>" +
         
@@ -2109,7 +2111,7 @@ function eventSelected() {
         
         "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" + 
         
-        "Lunch is on us in the form of a " + ifCanada("money") + " code, or final attendees also have the option of donating their meal to the Food Bank for New York City.<br><br>" +
+        "Lunch is on us in the form of a $30 meal delivery code, or attendees also have the option of donating their meal to charity.<br><br>" +
         
         "You can find further details on the proposed discussion topics on our event website. " + $event_website + "<br><br>" +
         
@@ -2198,7 +2200,7 @@ function eventSelected() {
         
         "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" + 
         
-        "Lunch is on us in the form of a " + ifCanada("money") + " code, or attendees also have the option of donating their meal to the Food Bank for New York City.<br><br>" +
+        "Lunch is on us in the form of a meal delivery code, or attendees also have the option of donating their meal to the Food Bank for New York City.<br><br>" +
         
         "You can find further details on the proposed discussion topics on our event website. " + $event_website + "<br><br>" +
         
@@ -2482,7 +2484,7 @@ function eventSelected() {
           
           $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>" +
           
-          "As an attendee, you’ll have the chance to hear our expert panel share their insights, learn from and network with your peers, and final attendees can enjoy lunch on us with a " + ifCanada("money") + " code.<br><br>" + 
+          "As an attendee, you’ll have the chance to hear our expert panel share their insights, learn from and network with your peers, and final attendees can enjoy lunch on us with a meal delivery code sent after the event.<br><br>" + 
           
           "If this seems relevant and interesting, may I send you more info?<br><br>" +
           
@@ -2492,7 +2494,7 @@ function eventSelected() {
         // 1.2
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> New Cold Registrant Recruitment - 1.2</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Re: {{FIRST_NAME}}, Lunch and Learn on " + $event_month_number + "/" + $event_day_number +"?" +"</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> re:" +"</p><br><br>" +
 
         "<div class='editor_rrp16'>" +
           "Hey again {{FIRST_NAME}},<br><br>" +
@@ -2512,7 +2514,7 @@ function eventSelected() {
 
         // 1.3
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> New Cold Registrant Recruitment - 1.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Re: {{FIRST_NAME}}, Lunch and Learn on " + $event_month_number + "/" + $event_day_number +"?" +"</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> re:" +"</p><br><br>" +
 
         "<div class='editor_rrp17'>" +
           "Hi {{FIRST_NAME}},<br><br>" +
@@ -2527,7 +2529,7 @@ function eventSelected() {
 
           "Along with our moderator from " + $event_client + ", the panel will be leading a discussion about " + $event_snippet + ".<br><br>" + 
           
-          "You’ll also get the chance to meet the speakers and your fellow participants  in smaller groups and discuss the event topics.<br><br>" + 
+          "You’ll also get the chance to meet the speakers and your fellow participants in smaller groups and discuss the event topics.<br><br>" + 
           
           "May I RSVP you, {{FIRST_NAME}}?<br><br>" +
 
@@ -2569,7 +2571,7 @@ function eventSelected() {
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> LinkedIn Connection Request Campaigns - <b>Version 1</b></p>" +
 
-        "Hi " + highlight_This("NAME") + "," + " I came across your profile looking for " + highlight_This("industry leaders") + ", and I thought you’d be a great fit for our virtual lunch & learn, " + $event_short_title + " on " + $event_month_number + "/" + $event_day_number + " from " + $event_time_display + " " + $event_timezone + " (" + ifCanada() + " code included). Check out the website: <u>" + $event_website + "</u>. Let me know if you have any questions?<br><br>" + 
+        "Hi " + highlight_This("NAME") + "," + " I came across your profile looking for " + highlight_This("industry leaders") + ", and I thought you’d be a great fit for our virtual lunch & learn, " + $event_short_title + " on " + $event_month_number + "/" + $event_day_number + " from " + $event_time_display + " " + $event_timezone + " (meal delivery code included). Check out the website: <u>" + $event_website + "</u>. Let me know if you have any questions?<br><br>" + 
         
         $event_account_director_first_name + "<br><br><br><hr><br>" +
         
@@ -2858,6 +2860,29 @@ function eventSelected() {
         createPanelistList_full() + "<br>" +
 
         "Will I see you there?<br><br>" +
+
+        highlight_This("SIGNATURE") + "<br><br><br><hr><br>" +
+
+        // Version 12
+
+        `<div class='flex-row'>
+         <p class='messagetypename number-icon-custom'>12</p>
+          <p class='align-items-center' style='font-weight: bold;'><i>Follow-up // When the panel is full</i></p>
+        </div>
+        <br>  
+        `
+
+        +
+
+        "Hey " + highlight_This("NAME") + "<br><br>" + 
+        
+        "Just wanted to send an update and let you know our panel is now full, but I would still love to have you participate in the event on " + $event_month_number + "/" + $event_day_number + "!<br><br>" +
+        
+        "Our format is highly interactive and all attendees are welcome to contribute to the conversation. I’m sure you’d both add to and find a ton of value in the discussion on " + $event_theme + ".<br><br>" +
+
+        "You’re also more than welcome to bring an interested colleague!<br><br>" +
+
+        "Can I count you in?<br>" +
 
         highlight_This("SIGNATURE") + "<br><br><br><br>"
 
