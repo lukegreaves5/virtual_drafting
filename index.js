@@ -1702,7 +1702,7 @@ function eventSelected() {
 
         "Best regards,<br>" +
         "<b>Steve Etzler</b><br>"+
-        "<b>Business Development Institute</br><br>"+
+        "<br>Business Development Institute</br><br>"+
         
         "REGISTRATION LIST<br>"+
         highlight_This("{{{COPY AND PASTE REG LIST HERE}}}"),
@@ -1808,22 +1808,21 @@ function eventSelected() {
 
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "I’m organizing an event for thought leaders in " + $event_theme + " and would love to have you share your expertise as a panelist. The virtual ‘lunch and learn’ event will be on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ". Check out our event website " + highlight_This($event_website) + " for more details.<br><br>" +
+        $event_client + " is organizing an upcoming thought-leadership event on " + $event_theme + " and I’m reaching out to invite you to join us as a <b>panelist</b>—I think you’d be a great addition to the conversation.<br><br>" +
 
-        "<b>" + $event_full_title + "</b> will gather " + $event_audience + " in the " + target_subject() + " for video-networking in small breakout rooms before and after an interactive panel discussion. This isn’t a formal presentation or webinar—it’s an opportunity for all panelists and attendees to have an engaging conversation.<br><br>" +
+        $event_full_title + "<br>" +
+        "<b>Day: </b>" + $event_long_date + " from 12:00 pm to 1:30 pm " + $event_timezone + "<br>" +
+        "<b>Website: </b>" + $event_website + "<br><br>" +
 
-        "Our peer-to-peer program will revolve around " + $event_snippet + ". We provide a few discussion topics (see below), but these conversations tend to flow in the direction of attendees’ interests and panelists’ passions.<br>" +
+        "We’ll gather a group of 30 or so " + $event_audience + " for an interactive panel discussion revolving around " + $event_snippet + ". We’ve drafted a few discussion topics (see below), but as this doesn’t include any formal script or presentations, these conversations tend to flow in the direction of attendees’ interests and panelists’ passions.<br>" +
 
         discussionTopics() +
 
-        "We ask a total time commitment of two hours from our panelists: 30 minutes for a panel practice run prior to the event, and attendance from " + $event_local_time + " " + $event_timezone + " the day of the panel.<br><br>" +
+        "Being a panelist is a great way to network and ‘talk shop’ with peers across the country, strengthen your personal brand, and it’s a casual commitment—we only ask for 30 minutes for a practice run prior to the event and attendance from 11:45 am to 1:30 pm day-of.<br><br>" +
 
-        "We will also provide a $30 meal delivery code to all final attendees.<br><br>" +
+        "We’ll also be providing a $30 meal delivery code to all speakers and attendees.<br><br>" +
 
-        "Do you want to hear more about speaking on our virtual panel, {{FIRST_NAME}}?<br><br>" + 
-
-        "Thanks<br><br>" +
-        "Steve",
+        "Do you want to hear more about speaking on our virtual panel, {{FIRST_NAME}}?<br><br>",
 
 
         // CLIENT REGISTRANT RECRUITMENT
