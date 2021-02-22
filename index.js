@@ -723,9 +723,11 @@ function eventSelected() {
           if ($event_panelists_title_and_company !== undefined) {
           let listOpen = '<ul>'
           $event_panelists_title_and_company.forEach(panelist => {
-            if (!panelist.includes($event_client)) {
-              listOpen += '<li>'+ panelist.charAt(0).toUpperCase() + panelist.slice(1) + '</li>';
-            }
+            if (panelist) {
+              if (!panelist.includes($event_client)) {
+                listOpen += '<li>'+ panelist.charAt(0).toUpperCase() + panelist.slice(1) + '</li>';
+              }
+            } else return;
           });
           listOpen += '</ul>';
           return listOpen;
