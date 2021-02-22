@@ -1877,6 +1877,9 @@ function eventSelected() {
 
         "<b>RECORDING</b><br>" +
         "Here is the <u>" + highlight_This("link to the recording") + "</u> for INTERNAL USE ONLY. If you want to use the recordings for external purposes, please contact us regarding the panelist consent approvals that are required.<br><br>" + 
+
+        "<b>SLIDO SURVEY RESULTS</b><br>" +
+        highlight_This("Attaching this as a CSV.<br><br>") + 
       
         "<b>POST EVENT COMMUNICATION</b><br>" +
         "Please let us know if we should include any links/collateral in the post event communication emails (thank you for attending & sorry we missed you). We will share the post event survey results with you once we have them.<br><br>" +
