@@ -1557,9 +1557,9 @@ function eventSelected() {
         Steve Etzler<br>
         Business Development Institute`,
 
-        // SEE YOU TODAY (Grubhub/Uber Eats)
+        // SEE YOU TODAY (Hoppier)
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - See you today (Grubhub/Uber Eats)</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - See you today (Hoppier)</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> See you today at our virtual event!</p><br><br>" +
 
          "Hi " + highlight_This("NAME") + ",<br><br>" +
@@ -2983,7 +2983,7 @@ function eventSelected() {
               return $drafts.html($rc_drafts[3]);
             } if ($selectedMessageName == "Final Confirmation") {
               return $drafts.html($rc_drafts[4]);
-            } if ($selectedMessageName == "See You Today (Grubhub/Uber Eats)") {
+            } if ($selectedMessageName == "See You Today (Hoppier)") {
               return $drafts.html($rc_drafts[5]);
             } if ($selectedMessageName == "Onboarding Panelist - Confirmed") {
               return $drafts.html($rc_drafts[6]);
