@@ -736,7 +736,7 @@ function eventSelected() {
       };
 
       function checkLinkedInURLExists(panelist) {
-        if (panelist.includes("linkedin")) {
+        if (panelist && panelist.includes("linkedin")) {
           return panelist;
         } else return panelist + " " + highlight_This("Add LinkeIn URL");
       }
