@@ -1871,18 +1871,25 @@ function eventSelected() {
         "<b>FINAL ATTENDEES</b><br>" +
         "Please <u>see here</u> " + highlight_This($event_promo_reg_list) + " for the final attendee list.<br>" +
         "I am also attaching this as a CSV.<br><br>" +
-     
-        "<b>OTHER LISTS</b><br>" +
-        "Here is a <u>link</u> " + highlight_This($event_client_rsvp_list) + " to the data points for: RSVP No, Cancellations, No Shows, and Invite List. I am also attaching this as a CSV.<br><br>" + 
 
-        "<b>RECORDING</b><br>" +
-        "Here is the <u>" + highlight_This("link to the recording") + "</u> for INTERNAL USE ONLY. If you want to use the recordings for external purposes, please contact us regarding the panelist consent approvals that are required.<br><br>" + 
+        "<b>WARM LEADS</b><br>" +
+        "Here is a <u>link</u> " + highlight_This($event_client_rsvp_list) + " to the cancellations, no-shows, or RSVP NO contacts which can be fantastic follow-up opportunities for your team.<br>" +
+        "I am also attaching this as a CSV.<br><br>" +
+
+        "<b>INVITE LIST</b><br>" +
+        "Here is a <u>link</u> " + highlight_This($event_client_rsvp_list) + " to the complete invite list.<br>" +
+        "I am also attaching this as a CSV.<br><br>" +
+
+        "<b>RECORDING – <i>" + highlight_This("OPTIONAL FOR MAX CLIENTS") + "</i></b><br>" +
+        "Here is the <u>link</u> to the recording for INTERNAL USE ONLY.<br><br>" + 
+
+        "If you want to use the recordings for external purposes, please contact us regarding the panelist consent approvals that are required.<br><br>" +
 
         "<b>SLIDO SURVEY RESULTS</b><br>" +
-        highlight_This("Attaching this as a CSV.<br><br>") + 
+        "Attaching this as a CSV.<br><br>" + 
       
-        "<b>POST EVENT COMMUNICATION</b><br>" +
-        "Please let us know if we should include any links/collateral in the post event communication emails (thank you for attending & sorry we missed you). We will share the post event survey results with you once we have them.<br><br>" +
+        "<b>POST EVENT COMMUNICATION - <i>" + highlight_This("ONLY IF NOT RECEIVED PRIOR") + "</i></b><br>" +
+        "Please let us know if we should include any links/collateral in the post-event communication emails (thank you for attending & sorry we missed you). We will share the post-event survey results with you once we have them <b><i>(OPTIONAL)</i></b>.<br><br>" +
 
         "Thanks – have a great day!<br><br>" +
 
