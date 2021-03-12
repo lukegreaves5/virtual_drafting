@@ -1534,7 +1534,7 @@ function eventSelected() {
         // FINAL CONFIRMATIONS / PER MY VOICEMAIL
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - Final Confirmation </p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Please Confirm: Tomorrow's " + $event_short_title + " Virtual Meeting</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Ready for tomorrow’s" + $event_short_title + " discussion?</p><br><br>" +
 
         "Hi FIRSTNAME,<br><br>" +
 
@@ -1560,7 +1560,7 @@ function eventSelected() {
         // SEE YOU TODAY (Hoppier)
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - See you today (Hoppier)</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> See you today at our virtual event!</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> See you in a few!</p><br><br>" +
 
          "Hi " + highlight_This("NAME") + ",<br><br>" +
 
@@ -1684,7 +1684,7 @@ function eventSelected() {
         // ONE WEEK REMNINDER
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> One Week Reminder (Confirmed)</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> See you (on your webcam) next " + $event_weekday + "!</p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> " + $event_weekday + " is going to be your favorite day next week</p><br><br>" +
 
         "Hi NAME,<br><br>"+
 
