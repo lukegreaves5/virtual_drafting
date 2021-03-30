@@ -75,15 +75,15 @@ let $todaysEmails = $.ajax({
   url: $airtableTodayEmails,
   type: 'GET',
   success: function(data) {
-  let $unsentEmails = [];
-  data.records.map( record => {
-    if (record.fields.Sender == undefined) {
-      return;
-    } else if (record.fields.Status == null || record.fields.Status == "Not Started") {
-      $unsentEmails.push(record);
-    };
-  });
-  todaysEmails_unsent($unsentEmails);
+    let $unsentEmails = [];
+    data.records.map( record => {
+      if (record.fields.Sender == undefined) {
+        return;
+      } else if (record.fields.Status == null || record.fields.Status == "Not Started") {
+        $unsentEmails.push(record);
+      };
+    });
+    todaysEmails_unsent($unsentEmails);
   },
 });
 // ------
@@ -1551,7 +1551,9 @@ function eventSelected() {
         ${ dynamic_attendee_Agenda() }
         </ul><br>
 
-        Thank you and we look forward to seeing you tomorrow!<br><br>
+        If you're no longer able to make it tomorrow, please reply directly to this email and let us know, as we are holding your virtual spot.<br>
+
+        Thank you, and we look forward to seeing you tomorrow!<br><br>
 
         Best regards,<br>
         Steve Etzler<br>
