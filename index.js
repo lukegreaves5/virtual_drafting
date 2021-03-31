@@ -1566,13 +1566,11 @@ function eventSelected() {
 
          "Hi " + highlight_This("NAME") + ",<br><br>" +
 
-         "We look forward to seeing you today at "+ highlight_This("TIME") + " " + $event_timezone + " at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
+         "We’re so excited for today’s event "+ highlight_This("TIME") + " " + $event_timezone + " and we hope that you are, too!<br><br>" +
 
-         "Our objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants before and after the panel in breakout rooms.<br><br>" +
+         "Though we can’t all be seated together for lunch at a nice restaurant, we encourage all of our attendees to interact with each other and engage with the event content as much as you feel comfortable. We hope you’ll come out of today’s event with valuable insights and new connections with fellow AUDIENCE thought leaders.<br><br>" +
 
-         "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. <b>Please note that you must log into Hoppier with this email for access</b>. Keep your eye on your inbox the day after the panel for lunch on us!<br><br>" +
-
-         "Via the Hoppier platform, you’ll also have the option to donate your meal to Food Bank for New York City to provide food security and other essential services for low-income communities in need.<br><br>" +
+         "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. Keep your eye on your inbox for lunch on us!<br><br>" +
 
          "To join the meeting, please click here: " + highlight_This($event_virtual_link) +"<br><br>"+
          
