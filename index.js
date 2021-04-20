@@ -579,6 +579,19 @@ function eventSelected() {
         )
       };
 
+      function agenda_for_calendar_invite() {
+          return (
+            `
+              <li><b>11:45AM:</b> The moderator and panel will join 15 minutes early to chat through any last questions and get ready for the event to start.</li>
+              <li><b>12:00PM:</b> The event starts, attendees are let in, welcome remarks.</li>
+              <li><b>12:05PM:</b> We move to smaller groups of 6-10 in breakout rooms to go through introductions and some networking all around.</li>
+              <li><b>12:15PM:</b> We’ll come back to the main room for the panel discussion. The moderator will introduce themselves, and ask the panel to do the same.</li>
+              <li><b>1:10PM:</b> Back to our smaller groups for very interactive discussions on the same or adjacent topics to the ones we covered on the panel—attendees will be able to share their experiences as well.</li>
+              <li><b>1:28 - 1:30pm:</b> We’ll head back to the main room to say a quick goodbye and the event ends.</li>
+            `
+          )
+      };
+
       function accountDirectorFormat_firstName(AD) {
         if (AD = "HD") {
           return "Hope"
@@ -1893,43 +1906,47 @@ function eventSelected() {
 
         "Thanks – have a great day!<br><br>" +
 
-        $event_account_manager,
+        $event_account_manager ? $event_account_manager : "",
 
         // Calendar Invite to Sales Team + AGENDA
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Calendar Invite to Sales Team + AGENDA - Client Communication</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> Sales Prep + Event | " + $event_short_title + "</p><br><br>" +
-
-        "Send calendar invite (from AM) to Moderator & Sponsors → 11:30AM - 1:30PM<br><br>" +
-
-        "<hr></hr><br><br>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Calendar Invite: Panel Prep Call (Agenda) - Client Communication</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> " + $event_short_title + " Panel Prep</p><br><br>" +
         
         "Hi all,<br><br>" +  
         
-        "Looking forward to connecting at " + highlight_This("TIME TIME_ZONE") + ".<br><br>" +
+        "Looking forward to our panel prep call on " + highlight_This("DAY") + "," + highlight_This("DATE") + " at " + highlight_This("TIME") + "" + ". To join the video meeting, please click here: " + highlight_This("AM Zoom") + ".<br><br>" +
         
-        "We’ll meet here: Zoom Link " + highlight_This($event_zoom_link)  + "<br><br>" +
+        "If you haven’t already filled it out, please sign our recording consent form linked " + highlight_This("here") + ". <br><br>" +
 
-        "<b>EVENT DETAILS</b>" +
-        `<ul>
-        <li>Program: `+ $event_full_title +`</li>
-        <li>Date: `+ $event_long_date +`</li>
-        <li>Time: Video-based virtual meeting from ` + $event_local_time + " " + $event_timezone +`</li>
-        <li>Location: `+ highlight_This($event_virtual_link) +`</li>
-        <li>Website: `+ highlight_This($event_website) +`</li>
-        <li>Registration List: `+ highlight_This($event_promo_reg_list) +`</li>
-        <li>Sales Prep Guide - <i>see attached</i></li>
-        </ul><br>`+
+        "Kindly see the agenda and event details below.<br><br>" +
 
-        "<b>PANELISTS</b>" +
-        createPanelistList_full() + "<br>" +
+        "Thank you,<br><br>" +
+        $event_account_manager + "<br>" +
 
-        "<b>MODERATOR</b>" +
-        "<ul><li>"+$event_moderator_full_formatted+"</li></ul><br>"+
+        "<b>INTRODUCTIONS</b><br><br>" +
 
-        "<b>VIRTUAL EVENT FLOW</b><br><br>" +
-        dynamic_virtual_event_flow() + 
-        "</ul><br><br>",
+        "<div class='list-indent'>" +
+
+          "Panelists" +
+          createPanelistList_full() + "<br>" +
+
+          "Moderator" +
+          "<ul><li>"+$event_moderator_full_formatted+"</li></ul><br>" +
+
+          "<br><b>EVENT DETAILS</b></br>" +
+            `<ul>
+              <li>Program: `+ $event_full_title +`</li>
+              <li>Date: `+ $event_long_date +`</li>
+              <li>Event Website: `+ highlight_This($event_website) +`</li>
+              <li>Live Registration List: `+ highlight_This($event_promo_reg_list) +`</li>
+            </ul><br>` +
+
+          "<b>AGENDA</b><br><ul>" +
+          agenda_for_calendar_invite() + 
+          "</ul><br><br>" +
+          
+        "</div>"
     
       ];
 
@@ -2973,6 +2990,7 @@ function eventSelected() {
           } if ($selectedMessageName == "Final Attendee List for Client"){
             return $drafts.html($cc_drafts[3]);
           } if ($selectedMessageName == "Calendar Invite to Sales Team + AGENDA"){
+            console.log($cc_drafts[4])
             return $drafts.html($cc_drafts[4]);
           }
         } else if ($selectedMessageType == "Sales Communication") {
