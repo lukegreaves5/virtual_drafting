@@ -1910,7 +1910,7 @@ function eventSelected() {
 
         // Calendar Invite to Sales Team + AGENDA
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Calendar Invite: Panel Prep Call (Agenda) - Client Communication</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Calendar Invite: Panel Prep Call (AGENDA) - Client Communication</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> " + $event_short_title + " Panel Prep</p><br><br>" +
         
         "Hi all,<br><br>" +  
@@ -1945,8 +1945,51 @@ function eventSelected() {
           "<b>AGENDA</b><br><ul>" +
           agenda_for_calendar_invite() + 
           "</ul><br><br>" +
+
+          "<b>PANEL DISCUSSION QUESTIONS</b><br><ul>" +
+          discussionTopics() + 
+          "</ul><br><br>" +
+
+          "<b>THANK YOU</b><br><ul>" +
+          "We will send you a $30 meal delivery code after the event—stay tuned for that email from Steve Etzler! You'll have the option to donate your meal if you prefer." + 
+          "</ul><br><br>" +
           
-        "</div>"
+        "</div>",
+
+        // Calendar Invite to Sales Team + EVENT
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Calendar Invite: Panel Prep Call (EVENT) - Client Communication</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> " + $event_short_title + " Virtual Panel Event</p><br><br>" +
+        
+        "Hi all,<br><br>" +  
+        
+        "Looking forward to connecting at " +  $event_local_time + " " + $event_timezone + " .<br><br>" +
+        
+        "We’ll meet here: " + highlight_This($event_zoom_link) + " <br><br>" +
+
+        "<div class='list-indent'>" +
+
+        "<br><b>EVENT DETAILS</b></br>" +
+            "<ul>" +
+             "<li>" + $event_full_title + "</li>" +
+             "<li>Date:" + $event_long_date + " " + $event_timezone + "</li>" +
+             "<li>Location:" + $event_zoom_link + "</li>" +
+            "</ul><br>" +
+
+          "<b>EVENT ATTENDANCE</b><br><ul>" +
+          "<li>Panelists are on the Event Website: " + $event_website + "</li>" +
+          "<li>Live Registration List: " + highlight_This($event_promo_reg_list) + "</li>" +
+          "</ul><br>" +
+
+          "<b>AGENDA & YOUR ROLE</b><br><ul>" +
+            "<li><b>12:00PM:</b> Attendees will be let in, some welcome and housekeeping remarks..</li>" +
+            "<li><b>12:05PM:</b> We’ll move to breakout rooms for interactive discussion between small groups (6-10 people each). You’ll be assigned to the same room as those prospects or customers that you requested. <i>Please consider yourself responsible for the breakout conversation, and facilitate introductions all around, as well as some light conversation on what attendees are hoping to hear from the panel</i>.</li>" +
+            "<li><b>12:15PM:</b> We’ll come back together for the moderated panel discussion.</li>" +
+            "<li><b>1:10PM:</b> The moderated discussion will wrap up, and we’ll head back to those smaller groups again. <i>Again, please facilitate a group discussion on the topics that the panel discussed, involving every attendee as much as possible. This is a great opportunity to get notes on the challenges each attendee is facing for personal follow up later on</i>.</li>" +
+            "<li><b>1:30pm:</b> We’ll come back together for a quick thank you, event officially ends.</li>" +
+          "</ul><br><br>" +
+          
+        "</div>",
     
       ];
 
@@ -2990,8 +3033,9 @@ function eventSelected() {
           } if ($selectedMessageName == "Final Attendee List for Client"){
             return $drafts.html($cc_drafts[3]);
           } if ($selectedMessageName == "Calendar Invite to Sales Team + AGENDA"){
-            console.log($cc_drafts[4])
             return $drafts.html($cc_drafts[4]);
+          } if ($selectedMessageName == "Calendar Invite to Sales Team + EVENT"){
+            return $drafts.html($cc_drafts[5]);
           }
         } else if ($selectedMessageType == "Sales Communication") {
           if ($selectedMessageName == "Sales Communication"){
