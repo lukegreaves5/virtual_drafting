@@ -1041,7 +1041,7 @@ span#view {
 }
 
 .last-updated {
-  color: #537396;
+  color: #768ea8;
   text-align: right;
   position: absolute;
   bottom: 5px;
@@ -1052,11 +1052,7 @@ span#view {
   cursor: pointer;
 }
 
-
 /* Personalization pulsing dropdown styles */
-
-
-
 
 .personalization-container {
   position: fixed;
