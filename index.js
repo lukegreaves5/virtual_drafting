@@ -603,6 +603,9 @@ function eventSelected() {
       };
 
       function objectCheck(propCheck) {
+        if (propCheck == "Zoom Linnk") {
+          propcheck = "Link";
+        }
         if($event.hasOwnProperty(propCheck)) {
           return $event[propCheck];
         } else {
@@ -1579,9 +1582,9 @@ function eventSelected() {
 
          "Hi " + highlight_This("NAME") + ",<br><br>" +
 
-         "We’re so excited for today’s event "+ highlight_This("TIME") + " " + $event_timezone + " and we hope that you are, too!<br><br>" +
+         "We’re so excited for today’s event " + $event_full_title + " and we hope that you are, too!<br><br>" +
 
-         "Though we can’t all be seated together for lunch at a nice restaurant, we encourage all of our attendees to interact with each other and engage with the event content as much as you feel comfortable. We hope you’ll come out of today’s event with valuable insights and new connections with fellow AUDIENCE thought leaders.<br><br>" +
+         "Though we can’t all be seated together for lunch at a nice restaurant, we encourage all of our attendees to interact with each other and engage with the event content as much as you feel comfortable. We hope you’ll come out of today’s event with valuable insights and new connections with fellow " + $event_audience + " thought leaders.<br><br>" +
 
          "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. Keep your eye on your inbox for lunch on us!<br><br>" +
 
@@ -1644,7 +1647,7 @@ function eventSelected() {
 
         "Hello all,<br><br>" +
 
-        "We’re excited for your panel participation at " + $event_short_title + " virtual meeting, taking place on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + " on Zoom.<br><br>" +
+        "We’re excited for your panel participation at " + $event_short_title + " virtual meeting, taking place on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + " on our virtual event platform.<br><br>" +
 
         "We would like to schedule a 30 minute panel practice run and to get everyone's availability, we kindly ask you to fill out this form: https://airtable.com/shrJaDgJjLAQsYlcp " + highlight_This("LINK TO FORM ON RSVP SHEET") + ".<br><br>"+
 
@@ -1755,27 +1758,6 @@ function eventSelected() {
         "If your schedule has changed and you can no longer attend, please let us know by responding to Steve's email.<br><br>" +
 
         "Thank you! Bye!<br><br>",
-
-        // SEE YOU TODAY (Meal Donation)
-
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - See you today (Meal Donation)</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> See you today at our virtual event!</p><br><br>" +
-
-         "Hi " + highlight_This("NAME") + ",<br><br>" +
-
-         "We look forward to seeing you today at "+ highlight_This("TIME") + " " + $event_timezone + " at our virtual lunch & learn—" + $event_full_title +"!<br><br>" +
-
-         "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. <b>Please note that you must log into Hoppier with this email for access</b>. Keep your eye on your inbox the day after the panel for lunch on us!<br><br>" +
-
-         "Via the Hoppier platform, you’ll also have the option to donate your meal to Food Bank for New York City to provide food security and other essential services for low-income communities in need.<br><br>" +
-
-         "To join the meeting, please click here: " + $event_virtual_link +"<br><br>"+
-
-        "The objective is to provide a virtual, video-based networking experience in addition to valuable content. Please expect to network with other participants before and after the panel in breakout rooms.<br><br>" +
-
-         "See you soon,<br>" +
-         "<b>Steve Etzler</b><br>" +
-         "<b>Business Development Institute</b><br>",
 
       ];
 
@@ -3068,8 +3050,6 @@ function eventSelected() {
               return $drafts.html($rc_drafts[11]);
             } if ($selectedMessageName == "Confirmation Calls Script") {
               return $drafts.html($rc_drafts[12]);
-            } if ($selectedMessageName == "See You Today (Meal Donation)") {
-              return $drafts.html($rc_drafts[13]);
             }
           } else if ($selectedMessageType == "Past Attendee Panel Recruitment") {
             if ($selectedMessageName == "1.1"){
