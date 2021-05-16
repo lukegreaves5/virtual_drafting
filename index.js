@@ -444,18 +444,18 @@ function eventSelected() {
           start = new Date( new Date(eventDate).setHours( $event_time_display[0].split("-")[0].split(":")[0] ) ); // Calculate start time. Event Time Display field is required.
           return (
             `
-              <li style="list-style: none;">${ moment(start).format('h:mm A') } Attendees Enter Virtual Event & Welcome Remarks</li>
-              <li style="list-style: none;">${ moment(start.addMinutes(5)).format('h:mm A') } Video Networking in Breakout Rooms</li>
-              <li style="list-style: none;">${ moment(start.addMinutes(10)).format('h:mm A') } Panel Discussion</li>
-              <li style="list-style: none;">${ moment(start.addMinutes(40)).format('h:mm A') } Audience Q&A</li>
-              <li style="list-style: none;">${ moment(start.addMinutes(15)).format('h:mm A') } Breakout Networking Sessions</li>
+              <li style="list-style: none;">${ moment(start).format('h:mm') }pm Attendees Enter Virtual Event & Welcome Remarks</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(5)).format('h:mm') }pm Video Networking in Breakout Rooms</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(10)).format('h:mm') }pm Panel Discussion</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(40)).format('h:mm') }pm Audience Q&A</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(15)).format('h:mm') }pm Breakout Networking Sessions</li>
             `
           )
         } else if (!$event_time_EST.includes("yellow")) { // if Event time Display field is not filled but Event time EST field is
           console.log("Event time display does not exist");
           return (
             `
-              <p style="background-color:yellow;">Adenda is not dynamic: [Event Time Display] field is require in Airtable</p>
+              <p style="background-color:yellow;">Agenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
               <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
               <li style="list-style: none;">12:15PM Panel Discussion</li>
@@ -465,12 +465,67 @@ function eventSelected() {
           )
         } else return (
             `
-              <p style="background-color:yellow;">Adenda is not dynamic: [Event Time Display] field is require in Airtable</p>
+              <p style="background-color:yellow;">Agenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
               <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
               <li style="list-style: none;">12:15PM Panel Discussion</li>
               <li style="list-style: none;">12:55PM Audience Q&A</li>
               <li style="list-style: none;">1:10PM Breakout Networking Sessions</li>
+            `
+        )
+      };
+
+
+      function final_confirmation_agenda() {
+        let timezone;
+        switch($event_timezone[0]) {
+          case "EST":
+            timezone = "America/New_York";
+            break;
+          case "CST":
+            timezone = "America/Chicago";
+            break;
+          case "MST":
+            timezone = "America/Denver";
+            break;
+          case "PST":
+            timezone = "America/Los_Angeles";
+            break;
+          default:
+        }
+
+        Date.prototype.addMinutes = function(h) {
+          this.setMinutes(this.getMinutes() + h);
+          return this;
+        };
+
+        let eventDate = moment($event_date_full_numeric);
+        let start;
+        if (!$event_time_display.includes("yellow")) { // if Event time Display field is filled
+          start = new Date( new Date(eventDate).setHours( $event_time_display[0].split("-")[0].split(":")[0] ) ); // Calculate start time. Event Time Display field is required.
+          return (
+            `
+              <li style="list-style: none;">${ moment(start).format('h:mm') } - ${ moment(start.addMinutes(15)).format('h:mm') }pm <b>Networking in Virtual Breakout Rooms</b></li>
+              <li style="list-style: none;">${ moment(start).format('h:mm') } - ${ moment(start.addMinutes(55)).format('h:mm') }pm <b>Moderated Panel Panel Discussion</b> w/ interactive Q&A</li>
+              <li style="list-style: none;">${ moment(start).format('h:mm') } - ${ moment(start.addMinutes(20)).format('h:mm') }pm <b>Back to Breakouts</b> for more interactive discussion</li>
+            `
+          )
+        } else if (!$event_time_EST.includes("yellow")) { // if Event time Display field is not filled but Event time EST field is
+          console.log("Event time display does not exist");
+          return (
+            `
+              <p style="background-color:yellow;">Agenda is not dynamic: [Event Time Display] field is require in Airtable</p>
+              <li style="list-style: none;">12:00 - 12:15pm: <b>Networking in Virtual Breakout Rooms</b></li>
+              <li style="list-style: none;">12:15 - 1:00pm: <b>Moderated Panel Panel Discussion</b> w/ interactive Q&A</li>
+              <li style="list-style: none;">12:10 - 1:30pm: <b>Back to Breakouts</b> for more interactive discussion</li>
+            `
+          )
+        } else return (
+            `
+              <p style="background-color:yellow;">Agenda is not dynamic: [Event Time Display] field is require in Airtable</p>
+              <li style="list-style: none;">12:00 - 12:15pm: <b>Networking in Virtual Breakout Rooms</b></li>
+              <li style="list-style: none;">12:15 - 1:00pm: <b>Moderated Panel Panel Discussion</b> w/ interactive Q&A</li>
+              <li style="list-style: none;">12:10 - 1:30pm: <b>Back to Breakouts</b> for more interactive discussion</li>
             `
         )
       };
@@ -499,7 +554,7 @@ function eventSelected() {
           console.log("Event time display does not exist");
           return (
             `
-              <p style="background-color:yellow;">Adenda is not dynamic: [Event Time Display] field is require in Airtable</p>
+              <p style="background-color:yellow;">Agenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li style="list-style: none;">11:45AM Panelists & Moderator join</li>
               <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
               <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
@@ -510,7 +565,7 @@ function eventSelected() {
           )
         } else return (
             `
-              <p style="background-color:yellow;">Adenda is not dynamic: [Event Time Display] field is require in Airtable</p>
+              <p style="background-color:yellow;">Agenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li style="list-style: none;">11:45AM Panelists & Moderator join</li>
               <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
               <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
@@ -549,7 +604,7 @@ function eventSelected() {
           console.log("Event time display does not exist");
           return (
             `
-              <p style="background-color:yellow;">Adenda is not dynamic: [Event Time Display] field is require in Airtable</p>
+              <p style="background-color:yellow;">Agenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li>11:30AM  Practice Run for Sales Team</li>
               <li>11:45AM  Panelists Join Virtual Event</li>
               <li>12:00PM  Attendees Enter Virtual Event & Welcome Remarks</li>
@@ -564,7 +619,7 @@ function eventSelected() {
           )
         } else return (
             `
-              <p style="background-color:yellow;">Adenda is not dynamic: [Event Time Display] field is require in Airtable</p>
+              <p style="background-color:yellow;">Agenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li>11:30AM  Practice Run for Sales Team</li>
               <li>11:45AM  Panelists Join Virtual Event</li>
               <li>12:00PM  Attendees Enter Virtual Event & Welcome Remarks</li>
@@ -1488,7 +1543,7 @@ function eventSelected() {
 
         "Please use this link to access your Hoppier gift card so that you can enjoy lunch courtesy of " + $event_client + "! To redeem your card, please make sure you sign in with THIS email address!<br><br>" +
 
-        "Once you log into Hoppier, you’ll have the option of using your $30 code to order lunch from your choice of food delivery app or local restaurant, or to donate your meal to Food Bank for New York City instead. Please note that the gift card balance is redeemable through 30 DAYS FROM NOW.<br><br>" +
+        "Once you log into Hoppier, you’ll have the option of using your $30 code to order lunch from your choice of food delivery app or local restaurant, or to donate the money to Food Bank for New York City or Give India for COVID relief. Please note that the gift card balance is redeemable through 30 DAYS FROM NOW.<br><br>" +
 
         "Special thanks to " + $event_client + " for making the event possible, and to our moderator, " + $event_moderator_first_name + ", and to " + $event_panelists_first_name + " for leading the exceptional discussion.<br><br>"+
 
@@ -1517,7 +1572,7 @@ function eventSelected() {
         </ul><br>`
         +
 
-        "Final attendees will receive their Hoppier gift card after the event as a thank you for attending, so check your inbox for your code the day after the event. On Hoppier, you’ll be able to choose to order lunch from a variety of food delivery apps or to donate your meal to Food Bank for New York City instead.<br><br>" +
+        "Final attendees will receive their Hoppier gift card after the event as a thank you for attending, so check your inbox for your code the day after the event. On Hoppier, you’ll be able to choose to order lunch from a variety of food delivery apps or to donate the money to Food Bank for New York City or Give India for COVID relief.<br><br>" +
 
         "Please make sure to add etzler.steven@bdionline.com to your safe sender list to ensure the code isn't sent to spam. Looking forward to your participation!<br><br>" +
 
@@ -1554,20 +1609,22 @@ function eventSelected() {
 
         "Hi FIRSTNAME,<br><br>" +
 
-        "Please reply back to confirm your participation at tomorrow’s " + $event_short_title + " virtual meeting from " + $event_time_display + " " + $event_timezone + " on Zoom.<br><br>" + 
+        "We’re looking forward to our interactive virtual roundtable tomorrow at " + $event_short_title + " from " + $event_local_time + " " + $event_timezone + "!<br><br>" + 
+
+        "We have a great panel lined up to talk about " + $event_snippet + ". I hope you’re as excited as we are to learn from them and to share your own thoughts on the future of " + $event_theme + ".<br><br>" +
 
         "To join the meeting, click here. "+ $event_virtual_link +"<br><br>"+
 
-        "Please be prepared to have your <b>video and microphone on</b>.<br><br>"+
+        "Tomorrow’s event will feature networking in small breakout rooms, Q&A following the panel discussion, and live attendee polling to kick off the event. Our goal is to give every attendee the opportunity to have their voice heard. If you’re comfortable, please be prepared to have your video and microphone on.<br><br>" +
 
-        "All final attendees will receive an email the day following the event allowing you to log in to Hoppier and choose whether you’d like to order lunch via a food delivery app or donate your meal to Food Bank for New York City.<br><br>" + 
+        "All final attendees will receive an email the day following the event allowing you to redeem your ‘lunch on us’ code via a food delivery app, or choose to donate the money to Food Bank for New York City or Give India for COVID relief.<br><br>" + 
 
         `Here is the agenda for the session:<br>
         <ul>
-        ${ dynamic_attendee_Agenda() }
+        ${ final_confirmation_agenda() }
         </ul><br>
 
-        If you're no longer able to make it tomorrow, please reply directly to this email and let us know, as we are holding your virtual spot.<br>
+        If you're no longer able to make it tomorrow, please reply directly to this email and let us know, as we are holding your virtual spot.<br><br>
 
         Thank you, and we look forward to seeing you tomorrow!<br><br>
 
@@ -1582,11 +1639,11 @@ function eventSelected() {
 
          "Hi " + highlight_This("NAME") + ",<br><br>" +
 
-         "We’re so excited for today’s event " + $event_full_title + " and we hope that you are, too!<br><br>" +
+         "We look forward to seeing you today at " + $event_local_time + " " + $event_timezone + " at our virtual lunch & learn—"+ $event_short_title +"!<br><br>" +
 
-         "Though we can’t all be seated together for lunch at a nice restaurant, we encourage all of our attendees to interact with each other and engage with the event content as much as you feel comfortable. We hope you’ll come out of today’s event with valuable insights and new connections with fellow " + $event_audience + " thought leaders.<br><br>" +
+         "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. <b>Please note that you must log into Hoppier with this email for access</b>. Keep your eye on your inbox the day after the panel for lunch on us!<br><br>" +
 
-         "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. Keep your eye on your inbox for lunch on us!<br><br>" +
+         "Via the Hoppier platform, you’ll also have the option to donate your meal to Food Bank for New York City to provide food security for low-income communities in need or to Give India for critical aid to families impacted by COVID.<br><br>" +
 
          "To join the meeting, please click here: " + highlight_This($event_virtual_link) +"<br><br>"+
          
