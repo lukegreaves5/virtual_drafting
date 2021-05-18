@@ -1639,7 +1639,7 @@ function eventSelected() {
 
          "Hi " + highlight_This("NAME") + ",<br><br>" +
 
-         "We look forward to seeing you today at " + $event_local_time + " " + $event_timezone + " at our virtual lunch & learn—"+ $event_short_title +"!<br><br>" +
+         "We look forward to seeing you today from " + $event_local_time + " " + $event_timezone + " at our virtual lunch & learn—"+ $event_short_title +"!<br><br>" +
 
          "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. <b>Please note that you must log into Hoppier with this email for access</b>. Keep your eye on your inbox the day after the panel for lunch on us!<br><br>" +
 
