@@ -1943,9 +1943,7 @@ function eventSelected() {
         "<b>POST EVENT COMMUNICATION - <i>" + highlight_This("ONLY IF NOT RECEIVED PRIOR") + "</i></b><br>" +
         "Please let us know if we should include any links/collateral in the post-event communication emails (thank you for attending & sorry we missed you). We will share the post-event survey results with you once we have them <b><i>(OPTIONAL)</i></b>.<br><br>" +
 
-        "Thanks – have a great day!<br><br>" +
-
-        $event_account_manager ? $event_account_manager : "",
+        "Thanks – have a great day!<br><br>",
 
         // Calendar Invite to Sales Team + AGENDA
 
