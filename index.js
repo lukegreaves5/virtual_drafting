@@ -1462,6 +1462,107 @@ function eventSelected() {
 
       ];
 
+      const $rr_drafts_cold_new_copy = 
+      [
+        // COLD REGISTRANT RECRUITMENT TEST - NEW COPY - JULY, 2021
+        
+        // RR MESSAGE 1.1
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Cold Registrant Recruitment 1.1 - NEW COPY</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Virtual Event on " + $event_month_number + "/" + $event_day_number + "</p><br><br>" + //target_subject($event_target_copy)
+
+        "Hey {{FIRST_NAME}},<br><br>" +
+
+        "<p class='open-personalization1'> <span class='personalization'> Select personalization strategy from dropdown (top-right) <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>"+
+        "<span class='personalization1'></span><br>" +
+
+        "<i style='color:red;'>-or-</i><br>" +
+        "<i style='color:red;'>Personaliation 1</i><br><br>" +
+
+        $event_customization_1 + "<br><br>" +
+
+        "<i style='color:red;'>-or-</i><br>" +
+        "<i style='color:red;'>Personaliation 2</i><br><br>" +
+
+        $event_customization_2 + "<br><br>" +
+        
+        "<i style='color:red;'>-or-</i><br><br>" +
+
+        "Hope you’re having a great week so far!<br><br>" +
+
+        "As the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ", I’m curious to hear how much of your day-to-day revolves around " + $event_theme + "?<br><br>" +
+
+        "I’m organizing an invite-only virtual thought leadership event, " + $event_full_title + ", on " + $event_long_date + " from 12:00 - 1:30 PM " + $event_timezone + " and would love for you to attend. We’ll gather with other " + $event_audience + " to network and gain insights from our panel discussion on " + $event_panel_snippet + ".<br><br>" +
+        
+        "I know event fatigue is at an all-time high, and our goal is to make these events as interactive and valuable as possible. You’ll be able to ask the panelists questions in real-time, chat with peers in breakout rooms, and receive a meal delivery code following the event.<br><br>" +
+
+        "Can I send you more info on our " + $event_month_number + "/" + $event_day_number + " event?<br><br>" +
+
+        "Cheers,<br>" +
+        highlight_This("SIGNATURE") + "<br><br>" +
+
+        emailFooter(),
+
+        // RR MESSAGE 1.2
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Cold Registrant Recruitment 1.2 - NEW COPY</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Re: Virtual Event on " + $event_month_number + "/" + $event_day_number + "</p><br><br>" + //target_subject($event_target_copy)
+        
+        "Hi {{FIRST_NAME}},<br><br>" +
+
+        "Following up with the event website for " + $event_short_title + ", where you can see the discussion topics and confirmed panelists: URL" + highlight_This($event_website) +  "<br><br>" +
+
+        $event_customization_1 + "<br><br>" +
+
+        "The above snippet is just an example of some of the industry trends we’re excited to dig into on the " + $event_day_number + "th.<br><br>" +
+
+        "Does the content seem relevant to your role? Would love to reserve your spot if so!<br><br>" +
+
+        "Have a great " + highlight_This("{{send day - " + getTodaysDate() + "}}") + "<br>" +
+        highlight_This("SIGNATURE") + "<br><br>",
+
+        // RR MESSAGE 1.3
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Cold Registrant Recruitment 1.3 - NEW COPY</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Re: Virtual Event on " + $event_month_number + "/" + $event_day_number + "</p><br><br>" + //target_subject($event_target_copy)
+
+        "Hey again {{FIRST_NAME}},<br><br>" +
+
+        "Hope you had a chance to check out our event site!<br><br>" +
+
+        "One good thing that’s come out of the pandemic is our ability to connect with people across the country, regardless of physical location. At BDI, we love the flexibility and convenience of virtual events.<br><br>" +
+
+        "We’re excited to gather experts from throughout " + highlight_This("{{the U.S. OR REGION}}") + " for " + $event_full_title + ". Take a look at our confirmed panel:<br>" +
+
+        createPanelistList_full() +
+
+        $event_panel_highlight + "<br><br>" +
+
+        "Our panelists, along with the moderator from " + $event_client + ", will be in the breakout networking rooms along with attendees from " + highlight_This("COMPANY_1, COMPANY_2, and COMPANY_3") + " to discuss " + $event_snippet + " with you.<br><br>" +
+
+        "Are you interested in attending?<br><br>" +
+
+        highlight_This("SIGNATURE"),
+
+        // RR MESSAGE 1.4
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Cold Registrant Recruitment 1.4 - NEW COPY</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Re: Virtual Event on " + $event_month_number + "/" + $event_day_number + "</p><br><br>" + //target_subject($event_target_copy)
+
+        "Happy " + highlight_This("{{send day - " + getTodaysDate() + "}}") + "<br><br>" +
+
+        "Reaching out one final time re: our virtual CONTENT_THEME event.<br><br>" +
+
+        $event_customization_2 + "<br><br>" +
+
+        "Would love to hear your thoughts on the above research we reviewed when prepping for this event. It’s just a taste of what’s to come during our conversation! In addition to lively conversation and networking, I’m sure you’d love to order a delicious lunch on us. 😊 <br><br>" +
+                
+        "Can I count you in for " + $event_long_date + "?<br><br>" +
+
+        highlight_This("SIGNATURE")
+
+      ];
+
       const $pr_drafts = 
       [
         // COLD PANEL RECRUITMENT
@@ -3284,7 +3385,27 @@ function eventSelected() {
             $drafts.html($pr_drafts_cold_new_copy[0] + doubleSpaceAndLine + $pr_drafts_cold_new_copy[1] + doubleSpaceAndLine + $pr_drafts_cold_new_copy[2] + doubleSpaceAndLine + $pr_drafts_cold_new_copy[3] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
           }
-        } else if ($selectedMessageType == "NEW COPY - Opt-in Panel Recruitment") {
+        }
+        
+        else if ($selectedMessageType == "NEW COPY - Cold Registrant Recruitment") {
+          if ($selectedMessageName == "1.1"){
+            $drafts.html($rr_drafts_cold_new_copy[0] + doubleSpaceAndLine + $rr_drafts_cold_new_copy[1] + doubleSpaceAndLine + $rr_drafts_cold_new_copy[2] + doubleSpaceAndLine + $rr_drafts_cold_new_copy[3] + "<br><br>");
+            return document.querySelector(".personalization-container").style.display = "block";
+          } else if ($selectedMessageName == "1.2") {
+            return $drafts.html($rr_drafts_cold_new_copy[1]);
+          } if ($selectedMessageName == "1.3") {
+            $drafts.html($rr_drafts_cold_new_copy[2]);
+            return document.querySelector(".personalization-container").style.display = "block";
+          } else if ($selectedMessageName == "1.4") {
+            return $drafts.html($rr_drafts_cold_new_copy[3]);
+          } else if ($selectedMessageName == "Full Sequence") {
+            $drafts.html($rr_drafts_cold_new_copy[0] + doubleSpaceAndLine + $rr_drafts_cold_new_copy[1] + doubleSpaceAndLine + $rr_drafts_cold_new_copy[2] + doubleSpaceAndLine + $rr_drafts_cold_new_copy[3] + "<br><br>");
+            return document.querySelector(".personalization-container").style.display = "block";
+          }
+        } 
+        
+        
+        else if ($selectedMessageType == "NEW COPY - Opt-in Panel Recruitment") {
           if ($selectedMessageName == "1.1"){
             $drafts.html($pr_drafts_oi_new_copy[0] + doubleSpaceAndLine + $pr_drafts_oi_new_copy[1] + doubleSpaceAndLine + $pr_drafts_oi_new_copy[2] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
