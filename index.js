@@ -2149,11 +2149,11 @@ function eventSelected() {
 
          "Hi " + highlight_This("NAME") + ",<br><br>" +
 
-         "We’re so excited for today’s <b>" + $event_short_title + "</b> event at <b>{" + $event_time_display + "}</b> <b>" + $event_timezone + "</b>, and we hope that you are, too!<br><br>" +
+         "We’re so excited for today’s <b>" + $event_short_title + "</b> event at <b>" + highlight_This("{" + $event_time_display + "}") + "}</b> <b>" + $event_timezone + "</b>, and we hope that you are, too!<br><br>" +
 
          "We encourage all of our attendees to interact with each other and engage with the event content as much as you feel comfortable. We hope you’ll come out of today’s event with valuable insights and new connections with fellow <b>" + $event_audience + "</b> thought leaders.<br><br>" +
 
-         "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. <b>Please note that you must log into Hoppier with this {EMAIL} for access</b>. Keep your eye on your inbox the day after the panel for lunch on us!<br><br>" +
+         "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. <b>Please note that you must log into Hoppier with your " + highlight_This("{EMAIL}") + " email for access</b>. Keep your eye on your inbox for lunch on us!<br><br>" +
 
          "To join the meeting, please click here: " + highlight_This($event_virtual_link) +"<br><br>"+
          
