@@ -2388,7 +2388,7 @@ function eventSelected() {
 
         $event_full_title + "<br>" +
         "<b>Day: </b>" + $event_long_date + " from 12:00 pm to 1:30 pm " + $event_timezone + "<br>" +
-        "<b>Website: </b>" + $event_website + "<br><br>" +
+        "<b>Website: </b>" + $event_website + "?rsvp=client <br><br>" +
 
         "We’ll gather a group of 30 or so " + $event_audience + " for an interactive panel discussion revolving around " + $event_snippet + ". We’ve drafted a few discussion topics (see below), but as this doesn’t include any formal script or presentations, these conversations tend to flow in the direction of attendees’ interests and panelists’ passions.<br>" +
 
@@ -2418,7 +2418,7 @@ function eventSelected() {
         <li>` + $event_full_title + `</li>
         <li>Date: ` + $event_long_date + `</li>
         <li>Time: ` + $event_time_display + " " + $event_timezone + `</li>
-        <li>Details: Event Site ` + highlight_This($event_website) + `</li>
+        <li>Details: Event Site ` + highlight_This($event_website + '?rsvp=client') + `</li>
         </ul>` +
         
         "The event agenda includes a moderated panel discussion about " + $event_snippet + ", audience Q&A, and video networking in small breakout rooms.<br><br>" +
