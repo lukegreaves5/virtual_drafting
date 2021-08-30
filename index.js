@@ -1489,18 +1489,7 @@ function eventSelected() {
 
         "Hey {{FIRST_NAME}},<br><br>" +
 
-        "<p class='open-personalization1'> <span class='personalization'> Select personalization strategy from dropdown (top-right) <i class='fa fa-external-link-alt'></i><span class='material-icons'></span></p>"+
-        "<span class='personalization1'></span><br>" +
-
-        "<i style='color:red;'>-or-</i><br>" +
-        "<i style='color:red;'>Personaliation 1</i><br><br>" +
-
-        $event_customization_1 + "<br><br>" +
-
-        "<i style='color:red;'>-or-</i><br>" +
-        "<i style='color:red;'>Personaliation 2</i><br><br>" +
-
-        $event_customization_2 + "<br><br>" +
+        highlight_This("{{SNIPPET_1}}") + "<br><br>" +
         
         "<i style='color:red;'>-or-</i><br><br>" +
 
@@ -1512,7 +1501,7 @@ function eventSelected() {
         
         "I know event fatigue is at an all-time high, and our goal is to make these events as interactive and valuable as possible. You’ll be able to ask the panelists questions in real-time, chat with peers in breakout rooms, and receive a meal delivery code following the event.<br><br>" +
 
-        "Can I send you more info on our " + $event_month_number + "/" + $event_day_number + " event?<br><br>" +
+        "Can I send you more info on our " + $event_month_number + "/" + $event_day_number + " event? We’re happy to have you share the invite with your colleagues as well.<br><br>" +
 
         "Cheers,<br>" +
         highlight_This("SIGNATURE") + "<br><br>" +
@@ -1530,7 +1519,7 @@ function eventSelected() {
 
         $event_customization_1 + "<br><br>" +
 
-        "The above snippet is just an example of some of the industry trends we’re excited to dig into on the " + $event_day_number + "th.<br><br>" +
+        "The above snippet is just an example of some of the industry trends we’re excited to dig into on the " + $event_day_number + " " + highlight_This("th or nd") + ".<br><br>" +
 
         "Does the content seem relevant to your role? Would love to reserve your spot if so!<br><br>" +
 
@@ -1571,9 +1560,9 @@ function eventSelected() {
 
         $event_customization_2 + "<br><br>" +
 
-        "Would love to hear your thoughts on the above research we reviewed when prepping for this event. It’s just a taste of what’s to come during our conversation! In addition to lively conversation and networking, I’m sure you’d love to order a delicious lunch on us. 😊 <br><br>" +
+        "Would love to hear your thoughts on the above research we reviewed when prepping for this event. It’s just a taste of what’s to come during our conversation! In addition to lively conversation and networking, I’m sure you’d love to order a delicious lunch on us.<br><br>" +
                 
-        "Can I count you in for " + $event_long_date + "?<br><br>" +
+        "Can I count you and an interested colleague in for " + $event_long_date + "?<br><br>" +
 
         highlight_This("SIGNATURE")
 
@@ -1598,9 +1587,9 @@ function eventSelected() {
 
         "As the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ", I’m curious to hear how much of your day-to-day revolves around " + $event_theme + "?<br><br>" +
 
-        "I know event fatigue is at an all-time high, and we want to make these events a valuable addition to your calendar. As a reminder about our format, you’ll be able to ask the panelists questions in real-time, chat with peers in breakout rooms, and receive a $30 meal delivery code following the event.<br><br>" +
+        "I know event fatigue is at an all-time high, and we want to make these events a valuable addition to your calendar. As a reminder about our format, you’ll be able to ask the panelists questions in real-time, chat with peers in breakout rooms, and receive a meal delivery code following the event.<br><br>" +
         
-        "Can I send you more info on our " + $event_month_number + "/" + $event_day_number + " event?<br><br>" +
+        "Can I send you more info on our " + $event_month_number + "/" + $event_day_number + " event? We’re happy to have you share the invite with your colleagues as well.<br><br>" +
 
         "Cheers,<br>" +
         highlight_This("SIGNATURE") + "<br><br>" +
@@ -1618,7 +1607,7 @@ function eventSelected() {
 
         $event_customization_1 + "<br><br>" +
 
-        "Can’t wait to talk about top-of-mind trends like the above with our panelists and attendees on the " + $event_day_number + "th.<br><br>" +
+        "Can’t wait to talk about top-of-mind trends like the above with our panelists and attendees on the " + $event_day_number + " " + highlight_This("th or nd") + ".<br><br>" +
 
         "Let me know if the content seems relevant to your role, and I’ll send you the Zoom link to join!<br><br>" +
 
@@ -1656,9 +1645,9 @@ function eventSelected() {
 
         "Reaching out one final time re: our virtual " + $event_theme + " event.<br><br>" +
 
-        "Would love to hear if there are any industry trends or topics you’d like us to include in the conversation on " + $event_month_number + "/" + $event_day_number + ". We love shaping the conversation around attendee interest! In addition to valuable conversation and networking, I’m sure you’d love to order a delicious lunch on us. 😊<br><br>" +
+        "Would love to hear if there are any industry trends or topics you’d like us to include in the conversation on " + $event_month_number + "/" + $event_day_number + ". We love shaping the conversation around attendee interest! In addition to valuable conversation and networking, I’m sure you’d love to order a delicious lunch on us.<br><br>" +
 
-        "Can I count you in for " + $event_long_date + "?<br><br>" +
+        "Can I count you and an interested colleague in for " + $event_long_date + "?<br><br>" +
 
         highlight_This("SIGNATURE")
 
@@ -1683,9 +1672,9 @@ function eventSelected() {
 
         "As the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ", I’m curious to hear how much of your day-to-day revolves around " + $event_theme + "?<br><br>" +
 
-        "I know event fatigue is at an all-time high, and we want to make these events a valuable addition to your calendar. As a reminder about our format, you’ll be able to ask the panelists questions in real-time, chat with peers in breakout rooms, and receive a $30 meal delivery code following the event.<br><br>" +
+        "I know event fatigue is at an all-time high, and we want to make these events a valuable addition to your calendar. As a reminder about our format, you’ll be able to ask the panelists questions in real-time, chat with peers in breakout rooms, and receive a meal delivery code following the event.<br><br>" +
         
-        "Can I send you more info on our " + $event_month_number + "/" + $event_day_number + " event?<br><br>" +
+        "Can I send you more info on our " + $event_month_number + "/" + $event_day_number + " event? We’re happy to have you share the invite with your colleagues as well.<br><br>" +
 
         "Best,<br>" +
         highlight_This("SIGNATURE") + "<br><br>",
@@ -1703,7 +1692,7 @@ function eventSelected() {
 
         $event_customization_1 + "<br><br>" +
 
-        "Can’t wait to talk about top-of-mind trends like the above with our panelists and attendees on the " + $event_day_number + "th.<br><br>" +
+        "Can’t wait to talk about top-of-mind trends like the above with our panelists and attendees on the " + $event_day_number + " " + highlight_This("th or nd") + ".<br><br>" +
 
         "Let me know if the content seems relevant to your role, and I’ll send you the Zoom link to join!<br><br>" +
 
@@ -1742,9 +1731,9 @@ function eventSelected() {
 
         "Reaching out one last time to confirm your interest in our virtual " + $event_theme + " event.<br><br>" +
 
-        "Would love to hear if there are any industry trends or topics you’d like us to include in the conversation on " + $event_month_number + "/" + $event_day_number + ". We love shaping the conversation around attendee interest! In addition to valuable conversation and networking, I’m sure you’d love to order a delicious lunch on us. 😊<br><br>" +
+        "Would love to hear if there are any industry trends or topics you’d like us to include in the conversation on " + $event_month_number + "/" + $event_day_number + ". We love shaping the conversation around attendee interest! In addition to valuable conversation and networking, I’m sure you’d love to order a delicious lunch on us.<br><br>" +
 
-        "Can I count you in for " + $event_long_date + "?<br><br>" +
+        "Can I count you and an interested colleague in for " + $event_long_date + "?<br><br>" +
 
         highlight_This("SIGNATURE")
 
@@ -1829,7 +1818,7 @@ function eventSelected() {
                 
         "And don’t forget, lunch is on us!<br><br>" +
 
-        "Can I count you in for " + $event_long_date + "?<br><br>" +
+        "Can I count you and an interested colleague in for " + $event_long_date + "?<br><br>" +
 
         highlight_This("SIGNATURE"),
 
@@ -2149,11 +2138,11 @@ function eventSelected() {
 
          "Hi " + highlight_This("NAME") + ",<br><br>" +
 
-         "We’re so excited for today’s <b>" + $event_short_title + "</b> event at <b>" + highlight_This("{" + $event_time_display + "}") + "}</b> <b>" + $event_timezone + "</b>, and we hope that you are, too!<br><br>" +
+         "We’re so excited for today’s <b>" + $event_short_title + "</b> event at <b>" + highlight_This("TIME") + "</b> <b>" + $event_timezone + "</b>, and we hope that you are, too!<br><br>" +
 
          "We encourage all of our attendees to interact with each other and engage with the event content as much as you feel comfortable. We hope you’ll come out of today’s event with valuable insights and new connections with fellow <b>" + $event_audience + "</b> thought leaders.<br><br>" +
 
-         "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. <b>Please note that you must log into Hoppier with your " + highlight_This("{EMAIL}") + " email for access</b>. Keep your eye on your inbox for lunch on us!<br><br>" +
+         "After the event, final attendees will receive a Hoppier gift card as a thank you for attending. <b>Please note that you must log into Hoppier with your " + highlight_This("EMAIL") + " email for access</b>. Keep your eye on your inbox for lunch on us!<br><br>" +
 
          "To join the meeting, please click here: " + highlight_This($event_virtual_link) +"<br><br>"+
          
@@ -2717,7 +2706,7 @@ function eventSelected() {
         
         "And don’t forget, lunch is on us!<br><br>" + 
         
-        "Can I count you in for " + $event_long_date + "?<br><br>" +
+        "Can I count you and an interested colleague in for " + $event_long_date + "?<br><br>" +
 
         "Steve",
 
@@ -2745,7 +2734,7 @@ function eventSelected() {
         
         "You can find further details on the proposed discussion topics on our event website. " + $event_website + "<br><br>" +
         
-        `May I confirm your interest and follow up with additional details?<br><br>` +
+        `May I confirm your interest and follow up with additional details? We’re happy to have you share the invite with your colleagues as well.<br><br>` +
 
         "Best,<br>" +
         "Steve Etzler",
@@ -2806,7 +2795,7 @@ function eventSelected() {
         
         "And don’t forget, lunch is on us!<br><br>" + 
         
-        "Can I count you in for " + $event_long_date + "?<br><br>" +
+        "Can I count you and an interested colleague in for " + $event_long_date + "?<br><br>" +
 
         highlight_This("Signature"),
 
@@ -2824,7 +2813,7 @@ function eventSelected() {
 
         "Hey {{FIRST_NAME}},<br><br>" +
 
-        "Reaching out because you were interested in our thought leadership event, " + highlight_This("{{PAST_EVENT}}") + ", in " + highlight_This("{{PAST EVENT MONTH}} {{PAST EVENT YEAR}}") + ".<br><br>" +
+        "Reaching out because you were interested in our thought leadership event, " + highlight_This("{{SNIPPET 3 - PAST_EVENT}}") + ", in " + highlight_This("{{SNIPPER 4 - PAST EVENT MONTH}} {{SNIPPET 5 - PAST EVENT YEAR}}") + ".<br><br>" +
         
         "I’d love to have you join us for our upcoming virtual event, " + $event_full_title + ", on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ". This time, our conversation will revolve around " + $event_panel_snippet + ".<br><br>" +
         
@@ -2834,7 +2823,7 @@ function eventSelected() {
         
         "You can find further details on the proposed discussion topics on our event website. " + $event_website + "<br><br>" +
         
-        `May I confirm your interest and follow up with additional details?<br><br>` +
+        `May I confirm your interest and follow up with additional details? We’re happy to have you share the invite with your colleagues as well.<br><br>` +
 
         "Cheers,<br>" +
         "Steve Etzler",
@@ -2895,7 +2884,7 @@ function eventSelected() {
         
         "And don’t forget, lunch is on us!<br><br>" + 
         
-        "Can I count you in for " + $event_long_date + "?<br><br>" +
+        "Can I count you and an interested colleague in for " + $event_long_date + "?<br><br>" +
 
         highlight_This("Signature"),
 
@@ -3116,7 +3105,7 @@ function eventSelected() {
           
           "As an attendee, you’ll have the chance to hear our expert panel share their insights, learn from and network with your peers, and final attendees can enjoy lunch on us with a meal delivery code sent after the event.<br><br>" + 
           
-          "If this seems relevant and interesting, may I send you more info?<br><br>" +
+          "If this seems relevant and interesting, may I send you more info? We’re happy to have you share the invite with your colleagues as well.<br><br>" +
           
           "Have a great " + highlight_This("SEND_DAY") + ",<br><br>" +
         "</div>",
@@ -3184,7 +3173,7 @@ function eventSelected() {
           
           "And don’t forget, lunch is on us!<br><br>" + 
           
-          "Can I count you in for " + $event_long_date + "?<br><br>" +
+          "Can I count you and an interested colleague in for " + $event_long_date + "?<br><br>" +
 
           highlight_This("Signature") +
         "</div>",
