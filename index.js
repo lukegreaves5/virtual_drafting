@@ -21,6 +21,7 @@ let $inputs_container = $('#frontpage-container'),
 $eventSearch = $("#eventsearch"),
 $select = $("#select"),
 $eventSelect = $('#event-select'),
+$messageCategorySelect = $('#message-category'),
 $messageTypeSelect = $('#message-type'),
 $messageNameSelect = $('#message-name'),
 $draft_button = $('#draft-button'),
@@ -275,20 +276,18 @@ function createEventOptions(data) {
 };
 
 function eventSelected() {
-  $eventSelect.change(function () {
+  $eventSelect.change(function () { 
     optionSelected = null;
     optionSelected = $(this).find("option:selected");
-
     $.ajax({
-    url: $airtableEvents + optionSelected[0].attributes.record.value + "?" + $k,
-    type: 'GET',
-    success: function(data) {
-    $selectedEvent.push(data);
-    console.log($selectedEvent);
-    },
+      url: $airtableEvents + optionSelected[0].attributes.record.value + "?" + $k,
+      type: 'GET',
+      success: function(data) {
+        $selectedEvent.push(data);
+        console.log($selectedEvent);
+      },
+    });
   });
-
-});
 };
 
   const messageTypeSelected = $messageTypeSelect.change(function () {
@@ -305,6 +304,7 @@ function eventSelected() {
           $messageNameOptions.push(data.records);
         }
       });
+
   });
 
     function createMessageNameOptions(data, messageType) {
@@ -533,7 +533,7 @@ function eventSelected() {
               <p style="background-color:yellow;">Agenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li style="list-style: none;">12:00 - 12:15pm: <b>Networking in Virtual Breakout Rooms</b></li>
               <li style="list-style: none;">12:15 - 1:00pm: <b>Moderated Panel Panel Discussion</b> w/ interactive Q&A</li>
-              <li style="list-style: none;">12:10 - 1:30pm: <b>Back to Breakouts</b> for more interactive discussion</li>
+              <li style="list-style: none;">12:10 - 1:15pm: <b>Back to Breakouts</b> for more interactive discussion</li>
             `
           )
         } else return (
@@ -541,7 +541,7 @@ function eventSelected() {
               <p style="background-color:yellow;">Agenda is not dynamic: [Event Time Display] field is require in Airtable</p>
               <li style="list-style: none;">12:00 - 12:15pm: <b>Networking in Virtual Breakout Rooms</b></li>
               <li style="list-style: none;">12:15 - 1:00pm: <b>Moderated Panel Panel Discussion</b> w/ interactive Q&A</li>
-              <li style="list-style: none;">12:10 - 1:30pm: <b>Back to Breakouts</b> for more interactive discussion</li>
+              <li style="list-style: none;">12:10 - 1:15pm: <b>Back to Breakouts</b> for more interactive discussion</li>
             `
         )
       };
@@ -630,7 +630,7 @@ function eventSelected() {
               <li>12:55PM  PM Audience Q&A</li>
               <li>1:10PM Breakout Networking Sessions</li>
               <li style="list-style:none;padding-left:5px;">Breakout 2: Sales reps can ask open ended questions to get the conversation flowing</li>
-              <li>1:30PM Event formally ends</li>
+              <li>1:15PM Event formally ends</li>
             `
           )
         } else return (
@@ -1270,7 +1270,7 @@ function eventSelected() {
 
         "As the " + highlight_This("{ TITLE }") + " at " + highlight_This("{ COMPANY }")  + ", I thought you’d be an excellent fit to speak on the virtual panel at our upcoming event, " + $event_full_title + ".<br><br>" +
 
-        "On " + $event_long_date + " from 12:00 - 1:30 PM " + $event_timezone + ", we’re gathering " + $event_audience + " for an invite-only chat about " + $event_snippet + ".<br><br>" +
+        "On " + $event_long_date + " from 12:00 - 1:15 PM " + $event_timezone + ", we’re gathering " + $event_audience + " for an invite-only chat about " + $event_snippet + ".<br><br>" +
 
         "These events are meant to be as interactive as possible, and as a panelist, we’d encourage you to bring your expertise and viewpoint (the more nontraditional, the better!) to the conversation. To simulate our in-person lunch and learns, we send all final attendees a meal delivery code following the event.<br><br>"+
 
@@ -1357,7 +1357,7 @@ function eventSelected() {
 
         "I’m excited about our upcoming virtual event, " + $event_full_title + ", and thought you would be, too! As the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ", I’m sure you have a lot to say about " + $event_theme + ", and I’d love to pick your brain.<br><br>" +
 
-        "Our invite-only chat about " + $event_snippet + " is taking place on " + $event_long_date + " from 12:00 - 1:30 PM " + $event_timezone + ". We’d love to have you join us and share your experience and opinions (no matter how avant garde!) with " + $event_audience + ". As a reminder, we send all final attendees a $30 meal delivery code following the event to replicate our in-person lunch and learns.<br><br>"+
+        "Our invite-only chat about " + $event_snippet + " is taking place on " + $event_long_date + " from 12:00 - 1:15 PM " + $event_timezone + ". We’d love to have you join us and share your experience and opinions (no matter how avant garde!) with " + $event_audience + ". As a reminder, we send all final attendees a $30 meal delivery code following the event to replicate our in-person lunch and learns.<br><br>"+
 
         "Check out the event website for more details: URL " + highlight_This($event_website) + ".<br><br>"+
 
@@ -1426,7 +1426,7 @@ function eventSelected() {
 
         "We’re excited about our upcoming virtual event, " + $event_full_title + ", and thought you would be, too! I’d love to pick your brain about " + $event_snippet + " and give you the opportunity to share your experience and opinions (no matter how avant garde!) with " + $event_audience + ".<br><br>" +
 
-        "Our invite-only discussion is taking place on DAY, DATE from 12:00 - 1:30 PM " + $event_timezone + ". As a reminder, we’ll have a panel discussion and live Q&A session bookended by two interactive networking sessions. We also send all final attendees a $30 meal delivery code following the event to replicate our in-person lunch and learns.<br><br>"+
+        "Our invite-only discussion is taking place on DAY, DATE from 12:00 - 1:15 PM " + $event_timezone + ". As a reminder, we’ll have a panel discussion and live Q&A session bookended by two interactive networking sessions. We also send all final attendees a $30 meal delivery code following the event to replicate our in-person lunch and learns.<br><br>"+
 
         "For more details, check out the event website: URL " + highlight_This($event_website) + ".<br><br>"+
 
@@ -1508,7 +1508,7 @@ function eventSelected() {
 
         "As the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ", I’m curious to hear how much of your day-to-day revolves around " + $event_theme + "?<br><br>" +
 
-        "I’m organizing an invite-only virtual thought leadership event, " + $event_full_title + ", on " + $event_long_date + " from 12:00 - 1:30 PM " + $event_timezone + " and would love for you to attend. We’ll gather with other " + $event_audience + " to network and gain insights from our panel discussion on " + $event_panel_snippet + ".<br><br>" +
+        "I’m organizing an invite-only virtual thought leadership event, " + $event_full_title + ", on " + $event_long_date + " from 12:00 - 1:15 PM " + $event_timezone + " and would love for you to attend. We’ll gather with other " + $event_audience + " to network and gain insights from our panel discussion on " + $event_panel_snippet + ".<br><br>" +
         
         "I know event fatigue is at an all-time high, and our goal is to make these events as interactive and valuable as possible. You’ll be able to ask the panelists questions in real-time, chat with peers in breakout rooms, and receive a meal delivery code following the event.<br><br>" +
 
@@ -1594,7 +1594,7 @@ function eventSelected() {
 
         "I’d love to have you join our upcoming virtual event, " + $event_full_title + ", as I’d guess a decent amount of your day-to-day at " + highlight_This("COMPANY") + " revolves around " + $event_theme + ".<br><br>" +
 
-        "This time, our invite-only chat about " + $event_snippet + " is taking place on " + $event_long_date + " from 12:00 - 1:30 PM " + $event_timezone + ". I’d love to have you join as an attendee where you can gather and network with other " + $event_audience + ".<br><br>" +
+        "This time, our invite-only chat about " + $event_snippet + " is taking place on " + $event_long_date + " from 12:00 - 1:15 PM " + $event_timezone + ". I’d love to have you join as an attendee where you can gather and network with other " + $event_audience + ".<br><br>" +
 
         "As the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ", I’m curious to hear how much of your day-to-day revolves around " + $event_theme + "?<br><br>" +
 
@@ -1679,7 +1679,7 @@ function eventSelected() {
 
         "I’d love to have you join us again at our upcoming virtual event, " + $event_full_title + ". If I remember correctly, a decent amount of your day-to-day work at " + highlight_This("COMPANY") + " revolves around " + $event_theme + ".<br><br>" +
 
-        "This time, our invite-only chat about " + $event_snippet + " is taking place on " + $event_long_date + " from 12:00 - 1:30 PM " + $event_timezone + ".  I’d love to have you join as an attendee where you’d have another opportunity to gather and network with other " + $event_audience + "<br><br>" +
+        "This time, our invite-only chat about " + $event_snippet + " is taking place on " + $event_long_date + " from 12:00 - 1:15 PM " + $event_timezone + ".  I’d love to have you join as an attendee where you’d have another opportunity to gather and network with other " + $event_audience + "<br><br>" +
 
         "As the " + highlight_This("TITLE") + " at " + highlight_This("COMPANY") + ", I’m curious to hear how much of your day-to-day revolves around " + $event_theme + "?<br><br>" +
 
@@ -1756,7 +1756,7 @@ function eventSelected() {
         // PR MESSAGE 1.1
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.1</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" + //target_subject($event_target_copy)
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Panel Invite for " + $event_month_number + "/" + $event_day_number + " </p><br><br>" + //target_subject($event_target_copy)
 
         "Hey {{FIRST_NAME}},<br><br>" +
 
@@ -1780,7 +1780,7 @@ function eventSelected() {
         // PR MESSAGE 1.2
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.2</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Panel Invite for " + $event_month_number + "/" + $event_day_number + " </p><br><br>" + //target_subject($event_target_copy)
         
         "Hi {{FIRST_NAME}},<br><br>" +
 
@@ -1798,40 +1798,57 @@ function eventSelected() {
         // PR MESSAGE 1.3
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.3</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Panel Invite for " + $event_month_number + "/" + $event_day_number + " </p><br><br>" + //target_subject($event_target_copy)
 
-        "Hey {{FIRST_NAME}}<br><br>" +
+        "{{FIRST_NAME}}, just want to say one more time—I think you’d make an awesome panelist.<br><br>" +
 
-        "Reaching back out to see if you’ve had a chance to check out our event site and the discussion topics?<br><br>" +
+        "Our discussion of " + $event_theme + " promises to be valuable to all, but the conversation would definitely benefit from your experience.<br><br>" +
 
-        $event_customization_1 + "<br><br>" +
+        "Hope you’re willing to share and also interested in the opportunity to network with other " + $event_function_leaders + ".<br><br>" +
 
-        "Our panelists tell us that these events are not only a great opportunity to demonstrate their expertise and build their personal brand, but also to learn from their fellow attendees.<br><br>" +
+        "And don’t forget, lunch is on us!<br><br>" +
 
-        "Also, if you’re interested in the event, but not in speaking, you’re more than welcome to join us as an attendee.<br><br>" +
+        "Can I count you in for " + $event_long_date + "?",
 
-        "Let me know!<br><br>" +
+        // PR MESSAGE 2.1
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 2.1</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Join us as an attendee on " + $event_month_number + "/" + $event_day_number + " </p><br><br>" + //target_subject($event_target_copy)
+
+        "Hey {{FIRST_NAME}},<br><br>" +
+
+        "I sent you an invitation a few weeks ago to join the panel for our virtual event on " + $event_function + ", but now that our panel is full, I wanted to circle back and invite you to participate as an attendee.<br><br>" +
+        
+        "At " + $event_full_title + " on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ", we’ll be chatting with a group of " + $event_audience + " about strategies they’ve developed for " + $event_panel_snippet + ".<br><br>" +
+                
+        "Our goal is for you to make connections with peers who are having the same, real life problems as you and to walk away with actionable takeaways you can share with your team.<br><br>" +
+
+        "Can I count you in for " + $event_month_number  + "/" + $event_day_number + " ? You’re welcome to invite an interested coworker to the discussion as well?<br><br>" +
 
         "Happy " + highlight_This("Send Day") + ",<br><br>" +
 
         highlight_This("SIGNATURE"),
 
-        // PR MESSAGE 1.4
+        // PR MESSAGE 2.2
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 1.4</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> re: {{FIRST_NAME}}, Share Your Insight💡 </p><br><br>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Panel Recruitment 2.2</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Join us as an attendee on " + $event_month_number + "/" + $event_day_number + " </p><br><br>" + //target_subject($event_target_copy)
 
-        "{{FIRST_NAME}}, just want to say one more time—I think you’d make an awesome panelist.<br><br>" +
+        "Hi again {{FIRST_NAME}},<br><br>" +
 
-        "Our discussion of " + $event_theme + " promises to be valuable to all, but the conversation would definitely benefit from your experience.<br><br>" +
+        "Reaching out one final time about our " + $event_short_title + " event. We have a really phenomenal group of panelists speaking on " + $event_month_number + "/" + $event_day_number + " I wanted to share with you. Check them out:<br><br>" +
+
+        createPanelistList_full() +
+
+        $event_panel_highlight + " <br><br> " +
         
-        "Hope you’re willing to share and also interested in the opportunity to network with other " + $event_audience + ".<br><br>" +
+        "If you’re able to join us, you’ll get the chance to ask the speakers questions in real-time and to chat with the panelists and fellow attendees in smaller breakout rooms to discuss the event topics. We’ll also send all we’ll final attendees a gift card to use with your favorite meal delivery service. Your next coffee, pizza, or late-night snack is on us!.<br><br>" +
                 
-        "And don’t forget, lunch is on us!<br><br>" +
+        "Are you interested in attending, {{FIRST_NAME}}?<br><br>" +
 
-        "Can I count you in for " + $event_long_date + "?<br><br>" +
+        "Hope to see you there!<br><br>" +
 
-        highlight_This("SIGNATURE"),
+        highlight_This("SIGNATURE")   
 
       ];
 
@@ -2009,7 +2026,7 @@ function eventSelected() {
 
         "And while we will no longer be hosting the event at "+ $event_venue +", we will be sending all attendees a meal delivery code so everyone can still enjoy the discussion and networking over a lunch of their choice, from the comfort of their offices/homes..<br><br>" +
 
-        "The virtual event will run tomorrow, " + $event_long_date +" from 12 pm to 1:30 pm. Full event details are available here at our event website " + highlight_This($event_website) + ").<br><br>" +
+        "The virtual event will run tomorrow, " + $event_long_date +" from 12 pm to 1:15 pm. Full event details are available here at our event website " + highlight_This($event_website) + ").<br><br>" +
 
         "{{FIRST_NAME}}, would you like to join us?<br><br>"+
 
@@ -2072,7 +2089,7 @@ function eventSelected() {
 
         "Hi FIRST NAME,<br><br>" +
 
-        "Thank you for your response! Delighted to have you join!<br><br>" +
+        "Delighted to have you join us on " + $event_weekday + ", " + $event_date_month_and_number  + "<br><br>" +
 
         "Here is the meeting link: "+ $event_zoom_link +"<br><br>" +
 
@@ -2142,7 +2159,7 @@ function eventSelected() {
         Steve Etzler<br>
         Business Development Institute`,
 
-        // SEE YOU TODAY (Hoppier)
+        // SEE YOU TODAY (Virtual, Hoppier)
 
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Registrant Communication - See you today (Virtual, Hoppier)</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> See you in a few!</p><br><br>" +
@@ -2207,14 +2224,30 @@ function eventSelected() {
         
         "Steve",
 
-        // SCHEDULING PANEL PREP CALL
+        // SCHEDULING PANEL PREP CALL (75 min)
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Scheduling Panel Prep Call</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Scheduling Panel Prep Call (75 min)</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i> Scheduling Panel Prep | "+ $event_short_title +"</p><br><br>" +
 
         "Hello all,<br><br>" +
 
-        "We’re excited for your panel participation at " + $event_short_title + " virtual meeting, taking place on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + " on our virtual event platform.<br><br>" +
+        "We’re excited for your panel participation at " + $event_short_title + " virtual meeting, taking place on " + $event_long_date + " from 12:45PM - 2:15PM on our virtual event platform.<br><br>" +
+
+        "We would like to schedule a 30 minute panel practice run and to get everyone's availability, we kindly ask you to fill out this form: https://airtable.com/shrJaDgJjLAQsYlcp " + highlight_This("LINK TO FORM ON RSVP SHEET") + ".<br><br>"+
+
+        "As soon as I hear back from everyone, I’ll respond with a calendar invite for the time that works best across the board.<br><br>"+
+
+        "Thank you!<br>"+
+        isBlank($event_account_manager),
+
+        // SCHEDULING PANEL PREP CALL (90 min)
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Scheduling Panel Prep Call (90 min)</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Scheduling Panel Prep | "+ $event_short_title +"</p><br><br>" +
+
+        "Hello all,<br><br>" +
+
+        "We’re excited for your panel participation at " + $event_short_title + " virtual meeting, taking place on " + $event_long_date + " from  12:45PM - 2:30PM on our virtual event platform.<br><br>" +
 
         "We would like to schedule a 30 minute panel practice run and to get everyone's availability, we kindly ask you to fill out this form: https://airtable.com/shrJaDgJjLAQsYlcp " + highlight_This("LINK TO FORM ON RSVP SHEET") + ".<br><br>"+
 
@@ -2300,7 +2333,7 @@ function eventSelected() {
 
          "You let me know a while back that you wouldn’t be able to join us at "+ $event_venue +" in " + $event_city +" for "+ $event_full_title + " on "+ $event_long_date +". At this time, due to current Coronavirus concerns, we’ve decided to take the entire event virtual!<br><br>"+
  
-         "Instead of going from 12 – 2pm at the restaurant, we’ll go from 12 – 1:30pm online—the agenda will still include an interactive panel discussion, breakout session networking with your local peers, and we’ll be sending meal delivery codes to all the attendees—so lunch is still on us!<br><br>"+
+         "Instead of going from 12 – 2pm at the restaurant, we’ll go from 12 – 1:15pm online—the agenda will still include an interactive panel discussion, breakout session networking with your local peers, and we’ll be sending meal delivery codes to all the attendees—so lunch is still on us!<br><br>"+
  
          "Please check out the event website "+ highlight_This($event_website) +" and let me know if you’re able to join us—we’d love to have you, and I’m happy to save you a spot.<br><br>"+
  
@@ -2338,6 +2371,22 @@ function eventSelected() {
 
         "Warm regards,<br>Steve<br>",
 
+        // ENGAGED FOLLOW UP
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Engaged Follow Up</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> We missed your participation!</p><br><br>" +
+
+        "Hi <span style='color:red;'>{NAME}</span>,<br><br>"+
+
+        "I never heard back from you on " + highlight_This("yesterday's/DAY's") + " " + $event_short_title + " virtual meeting, but I wanted to let you know we had a great conversation. I understand things come up and would still love to have you participate in any future events that interest you.<br><br>"+
+
+        "In case you still want to catch the discussion, we have a recording of the panel here " + highlight_This("PANEL RECORDING LINKED") + ".<br><br>" +
+
+        "Are you open to keeping in touch?<br><br>" +
+
+        "Thank you,<br>Steve<br>",
+
+
       ];
 
       const $cc_drafts = 
@@ -2347,7 +2396,7 @@ function eventSelected() {
         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Event Prep Details - Client Communication</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i>  Event Prep for Virtual "+ $event_short_title + " | " + target_subject() + "</p><br><br>" +
 
-        "Hello all,<br><br>" +
+        "Hi all,<br><br>" +
 
         "We are excited for our virtual "+ $event_short_title +" event, taking place tomorrow, "+ $event_long_date +". See below for additional details.<br><br>" +
 
@@ -2359,11 +2408,8 @@ function eventSelected() {
         `<ul>
         <li>Program: `+ $event_full_title +`</li>
         <li>Date: `+ $event_long_date +`</li>
-        <li>Time: Video-based virtual meeting from ` + $event_local_time + " " + $event_timezone +`</li>
-        <li>Location: `+ highlight_This($event_virtual_link) +`</li>
-        <li>Website: `+ highlight_This($event_website) +`</li>
+        <li>Event Website: `+ highlight_This($event_website) +`</li>
         <li>Registration List: `+ highlight_This($event_promo_reg_list) +`</li>
-        <li>Sales Prep Guide - <i>see attached</i></li>
         </ul><br>`+
 
         "<b>PANELISTS</b>" +
@@ -2387,14 +2433,14 @@ function eventSelected() {
         $event_client + " is organizing an upcoming thought-leadership event on " + $event_theme + " and I’m reaching out to invite you to join us as a <b>panelist</b>—I think you’d be a great addition to the conversation.<br><br>" +
 
         $event_full_title + "<br>" +
-        "<b>Day: </b>" + $event_long_date + " from 12:00 pm to 1:30 pm " + $event_timezone + "<br>" +
+        "<b>Day: </b>" + $event_long_date + " from 12:00 pm to 1:15 pm " + $event_timezone + "<br>" +
         "<b>Website: </b>" + $event_website + "<br><br>" +
 
         "We’ll gather a group of 30 or so " + $event_audience + " for an interactive panel discussion revolving around " + $event_snippet + ". We’ve drafted a few discussion topics (see below), but as this doesn’t include any formal script or presentations, these conversations tend to flow in the direction of attendees’ interests and panelists’ passions.<br>" +
 
         discussionTopics() +
 
-        "Being a panelist is a great way to network and ‘talk shop’ with peers across the country, strengthen your personal brand, and it’s a casual commitment—we only ask for 30 minutes for a practice run prior to the event and attendance from 11:45 am to 1:30 pm day-of.<br><br>" +
+        "Being a panelist is a great way to network and ‘talk shop’ with peers across the country, strengthen your personal brand, and it’s a casual commitment—we only ask for 30 minutes for a practice run prior to the event and attendance from 11:45 am to 1:15 pm day-of.<br><br>" +
 
         "We’ll also be providing a $30 meal delivery code to all speakers and attendees.<br><br>" +
 
@@ -2601,9 +2647,9 @@ function eventSelected() {
 
         "Hey {{FIRST_NAME}},<br><br>" +
 
-        highlight_This(" {{ Thanks for speaking on our panel }}") + " or " + highlight_This("{{ Glad you were able to join us at }}") + " " + highlight_This("{{PAST EVENT}}") + " in " + highlight_This("{{PAST EVENT MONTH}} {{PAST EVENT YEAR}}") + ". I hope you enjoyed the event as much as we did!<br><br>" +
+        highlight_This(" {{ Thanks for speaking on our panel }}") + " or " + highlight_This(" {{ Glad you were able to join us at }} ") + " " + highlight_This("{{PAST EVENT}}") + " in " + highlight_This("{{PAST EVENT MONTH}} {{PAST EVENT YEAR}}") + ". I hope you enjoyed the event as much as we did!<br><br>" +
 
-        "We’d love to have you participate as a panelist in our upcoming virtual discussion, " + $event_full_title + " , on " + $event_long_date + " from 11:45am – 1:30pm " + $event_timezone + ". This time, our conversation will revolve around " + $event_panel_snippet + ".<br><br>" +
+        "We’d love to have you participate as a panelist in our upcoming virtual discussion, " + $event_full_title + " , on " + $event_long_date + " from 11:45am – 1:15pm " + $event_timezone + ". This time, our conversation will revolve around " + $event_panel_snippet + ".<br><br>" +
         
         "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " leaders join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" +
 
@@ -2627,12 +2673,7 @@ function eventSelected() {
         
         "At a high level, we are looking to explore the discussion points below, though these conversations tend to flow in the direction of attendees’ interests and the passions of our panel—we can dive into your expertise and preference in greater detail on our panel practice run: <br>" +
 
-        `<ul>
-        <li>DISUCSSION TOPIC 1</li>
-        <li>DISUCSSION TOPIC 2</li>
-        <li>DISUCSSION TOPIC 3</li>
-        <li>DISUCSSION TOPIC 4</li>
-        </ul>` +
+        discussionTopics() +
 
         "If these topics are of interest to you, but you are not interested in participating as a speaker, we would still love to have you join again as an attendee.<br><br>" +
 
@@ -2652,10 +2693,47 @@ function eventSelected() {
         
         "Happy to jump on a 5-minute call to further explain our objectives and to share more about the panel experience.<br><br>" +
 
-        "May we count you in?<br><br>" +
+        "May we count you in?<br><br>",
 
-        `Best,<br>
-        Steve`,
+         // 2.1
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Past Attendee Panel Recruitment 2.1</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Join us as an attendee on " + $event_month_number + "/" + $event_day_number + " </p><br><br>" + //target_subject($event_target_copy)
+
+        "Hey {{FIRST_NAME}},<br><br>" +
+
+        "I sent you an invitation a few weeks ago to join the panel for our virtual event on " + $event_function + ", but now that our panel is full, I wanted to circle back and invite you to participate as an attendee.<br><br>" +
+        
+        "At " + $event_full_title + " on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ", we’ll be chatting with a group of " + $event_audience + " about strategies they’ve developed for " + $event_panel_snippet + ".<br><br>" +
+                
+        "Our goal is for you to make connections with peers who are having the same, real life problems as you and to walk away with actionable takeaways you can share with your team.<br><br>" +
+
+        "Can I count you in for " + $event_month_number  + "/" + $event_day_number + " ? You’re welcome to invite an interested coworker to the discussion as well?<br><br>" +
+
+        "Happy " + highlight_This("Send Day") + ",<br><br>" +
+
+        highlight_This("SIGNATURE"),
+
+        // 2.2
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Past Attendee Panel Recruitment 2.2</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Join us as an attendee on " + $event_month_number + "/" + $event_day_number + " </p><br><br>" + //target_subject($event_target_copy)
+
+        "Hi again {{FIRST_NAME}},<br><br>" +
+
+        "Reaching out one final time about our " + $event_short_title + " event. We have a really phenomenal group of panelists speaking on " + $event_month_number + "/" + $event_day_number + " I wanted to share with you. Check them out:<br><br>" +
+
+        createPanelistList_full() +
+
+        $event_panel_highlight + " <br><br> " +
+        
+        "If you’re able to join us, you’ll get the chance to ask the speakers questions in real-time and to chat with the panelists and fellow attendees in smaller breakout rooms to discuss the event topics. We’ll also send all we’ll final attendees a gift card to use with your favorite meal delivery service. Your next coffee, pizza, or late-night snack is on us!.<br><br>" +
+                
+        "Are you interested in attending, {{FIRST_NAME}}?<br><br>" +
+
+        "Hope to see you there!<br><br>" +
+
+        highlight_This("SIGNATURE") 
 
       ]
 
@@ -2677,7 +2755,7 @@ function eventSelected() {
         
         "As a refresh on our format, we will have " + $event_audience_and_size_or_so + " join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>" + 
         
-        "Lunch is on us in the form of a $30 meal delivery code, or attendees also have the option of donating their meal to charity if you prefer.<br><br>" +
+        "Lunch is on us in the form of a meal delivery code, or attendees also have the option of donating their meal to charity if you prefer.<br><br>" +
         
         "You can find further details on the proposed discussion topics on our event website." + $event_website + "<br><br>" +
         
@@ -2715,11 +2793,51 @@ function eventSelected() {
         
         "Hope you’re willing to share and also interested in the opportunity to network with other " + $event_audience + " leaders.<br><br>" +
         
-        "And don’t forget, lunch is on us!<br><br>" + 
-        
         "Can I count you in for " + $event_long_date + "?<br><br>" +
 
         "Steve",
+
+        // 2.1
+
+        // PR MESSAGE 2.1
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Opt-In Panel Recruitment 2.1</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Join us as an attendee on " + $event_month_number + "/" + $event_day_number + " </p><br><br>" + //target_subject($event_target_copy)
+
+        "Hey {{FIRST_NAME}},<br><br>" +
+
+        "I sent you an invitation a few weeks ago to join the panel for our virtual event on " + $event_function + ", but now that our panel is full, I wanted to circle back and invite you to participate as an attendee.<br><br>" +
+        
+        "At " + $event_full_title + " on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ", we’ll be chatting with a group of " + $event_audience + " about strategies they’ve developed for " + $event_panel_snippet + ".<br><br>" +
+                
+        "Our goal is for you to make connections with peers who are having the same, real life problems as you and to walk away with actionable takeaways you can share with your team.<br><br>" +
+
+        "Can I count you in for " + $event_month_number  + "/" + $event_day_number + " ? You’re welcome to invite an interested coworker to the discussion as well?<br><br>" +
+
+        "Happy " + highlight_This("Send Day") + ",<br><br>" +
+
+        highlight_This("SIGNATURE"),
+
+        // PR MESSAGE 2.2
+
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Opt-In Panel Recruitment 2.2</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> Join us as an attendee on " + $event_month_number + "/" + $event_day_number + " </p><br><br>" + //target_subject($event_target_copy)
+
+        "Hi again {{FIRST_NAME}},<br><br>" +
+
+        "Reaching out one final time about our " + $event_short_title + " event. We have a really phenomenal group of panelists speaking on " + $event_month_number + "/" + $event_day_number + " I wanted to share with you. Check them out:<br><br>" +
+
+        createPanelistList_full() +
+
+        $event_panel_highlight + " <br><br> " +
+        
+        "If you’re able to join us, you’ll get the chance to ask the speakers questions in real-time and to chat with the panelists and fellow attendees in smaller breakout rooms to discuss the event topics. We’ll also send all we’ll final attendees a gift card to use with your favorite meal delivery service. Your next coffee, pizza, or late-night snack is on us!.<br><br>" +
+                
+        "Are you interested in attending, {{FIRST_NAME}}?<br><br>" +
+
+        "Hope to see you there!<br><br>" +
+
+        highlight_This("SIGNATURE")  
 
       ]
 
@@ -3555,17 +3673,19 @@ function eventSelected() {
 
         if ($selectedMessageType == "Panel Recruitment") {
           if ($selectedMessageName == "1.1"){
-            $drafts.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
+            $drafts.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + doubleSpaceAndLine + $pr_drafts[4] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
           } else if ($selectedMessageName == "1.2") {
             return $drafts.html($pr_drafts[1]);
           } if ($selectedMessageName == "1.3") {
             $drafts.html($pr_drafts[2]);
             return document.querySelector(".personalization-container").style.display = "block";
-          } else if ($selectedMessageName == "1.4") {
+          } else if ($selectedMessageName == "2.1") {
             return $drafts.html($pr_drafts[3]);
+          } else if ($selectedMessageName == "2.2") {
+            return $drafts.html($pr_drafts[4]);
           } else if ($selectedMessageName == "Full Sequence") {
-            $drafts.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
+            $drafts.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + doubleSpaceAndLine + $pr_drafts[4] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
           }
         } else if ($selectedMessageType == "Panel Recruitment TEST") {
@@ -3714,10 +3834,6 @@ function eventSelected() {
           } if ($selectedMessageName == "Calendar Invite to Sales Team + EVENT"){
             return $drafts.html($cc_drafts[5]);
           }
-        } else if ($selectedMessageType == "Sales Communication") {
-          if ($selectedMessageName == "Sales Communication"){
-            return $drafts.html($sc_drafts[0] + /* doubleSpaceAndLine + $sc_drafts[1] + doubleSpaceAndLine + $sc_drafts[2] +*/ "<br><br>");
-          }
         } else if ($selectedMessageType == "Registrant Communication") {
             if ($selectedMessageName == "Sorry We Missed You"){
               return $drafts.html($rc_drafts[0]);
@@ -3729,48 +3845,60 @@ function eventSelected() {
               return $drafts.html($rc_drafts[3]);
             } if ($selectedMessageName == "Final Confirmation") {
               return $drafts.html($rc_drafts[4]);
-            } if ($selectedMessageName == "See You Today (Hoppier)") {
+            } if ($selectedMessageName == "See You Today" || $selectedMessageName == "SYT" || $selectedMessageName == "See You Today (Virtual, Hoppier)") {
               return $drafts.html($rc_drafts[5]);
             } if ($selectedMessageName == "Onboarding Panelist - Confirmed") {
               return $drafts.html($rc_drafts[6]);
             } if ($selectedMessageName == "Onboarding Panelist - Tentative") {
               return $drafts.html($rc_drafts[7]);
-            } if ($selectedMessageName == "Scheduling Panel Prep Call") {
+            } if ($selectedMessageName == "Scheduling Panel Prep (75 min)") {
               return $drafts.html($rc_drafts[8]);
-            } if ($selectedMessageName == "Panel Prep Agenda") {
+            } if ($selectedMessageName == "Scheduling Panel Prep (90 min)") {
               return $drafts.html($rc_drafts[9]);
-            } if ($selectedMessageName == "One Week Reminder") {
+            }if ($selectedMessageName == "Panel Prep Agenda") {
               return $drafts.html($rc_drafts[10]);
-            } if ($selectedMessageName == "Invite for RSVP NO Responses") {
+            } if ($selectedMessageName == "One Week Reminder") {
               return $drafts.html($rc_drafts[11]);
-            } if ($selectedMessageName == "Confirmation Calls Script") {
+            } if ($selectedMessageName == "Invite for RSVP NO Responses") {
               return $drafts.html($rc_drafts[12]);
-            } if ($selectedMessageName == "Event Live Now Follow Up") {
+            } if ($selectedMessageName == "Confirmation Calls Script") {
               return $drafts.html($rc_drafts[13]);
-            } if ($selectedMessageName == "Calendar Invite to Panelists") {
+            } if ($selectedMessageName == "Event Live Now Follow Up") {
+              return $drafts.html($rc_drafts[14]);
+            } if ($selectedMessageName == "Event Live Now Follow Up") {
+              return $drafts.html($rc_drafts[15]);
+            } if ($selectedMessageName == "Engaged Follow Up") {
               $drafts.html($rc_calendar_invite_panelists[0]);
               new Quill('.editor_rrp15',{theme:'snow',});
             }
           } else if ($selectedMessageType == "Past Attendee Panel Recruitment") {
             if ($selectedMessageName == "1.1"){
-              return $drafts.html($pa_pr_drafts[0] + doubleSpaceAndLine + $pa_pr_drafts[1] + doubleSpaceAndLine + $pa_pr_drafts[2] + "<br><br>");
+              return $drafts.html($pa_pr_drafts[0] + doubleSpaceAndLine + $pa_pr_drafts[1] + doubleSpaceAndLine + $pa_pr_drafts[2] + doubleSpaceAndLine + $pa_pr_drafts[3] + doubleSpaceAndLine + $pa_pr_drafts[4] + "<br><br>");
             } else if ($selectedMessageName == "1.2") {
               return $drafts.html($pa_pr_drafts[1]);
             } if ($selectedMessageName == "1.3") {
               return $drafts.html($pa_pr_drafts[2]);
+            } else if ($selectedMessageName == "2.1") {
+              return $drafts.html($pa_pr_drafts[3]);
+            } if ($selectedMessageName == "2.2") {
+              return $drafts.html($pa_pr_drafts[4]);
             } else if ($selectedMessageName == "Full Sequence") {
-              return $drafts.html($pa_pr_drafts[0] + doubleSpaceAndLine + $pa_pr_drafts[1] + doubleSpaceAndLine + $pa_pr_drafts[2] + "<br><br>");
+              return $drafts.html($pa_pr_drafts[0] + doubleSpaceAndLine + $pa_pr_drafts[1] + doubleSpaceAndLine + $pa_pr_drafts[2] + doubleSpaceAndLine + $pa_pr_drafts[3] + doubleSpaceAndLine + $pa_pr_drafts[4] + "<br><br>");
             }
           }
             else if ($selectedMessageType == "Opt-In Panel Recruitment") {
               if ($selectedMessageName == "1.1"){
-                return $drafts.html($oi_pr_drafts[0] + doubleSpaceAndLine + $oi_pr_drafts[1] + doubleSpaceAndLine + $oi_pr_drafts[2] + "<br><br>");
+                return $drafts.html($oi_pr_drafts[0] + doubleSpaceAndLine + $oi_pr_drafts[1] + doubleSpaceAndLine + $oi_pr_drafts[2] + doubleSpaceAndLine + $oi_pr_drafts[3] + doubleSpaceAndLine + $oi_pr_drafts[4] + "<br><br>");
               } else if ($selectedMessageName == "1.2") {
                 return $drafts.html($oi_pr_drafts[1]);
               } if ($selectedMessageName == "1.3") {
                 return $drafts.html($oi_pr_drafts[2]);
+              } else if ($selectedMessageName == "2.1") {
+                return $drafts.html($oi_pr_drafts[3]);
+              } if ($selectedMessageName == "2.2") {
+                return $drafts.html($oi_pr_drafts[4]);
               } else if ($selectedMessageName == "Full Sequence") {
-                return $drafts.html($oi_pr_drafts[0] + doubleSpaceAndLine + $oi_pr_drafts[1] + doubleSpaceAndLine + $oi_pr_drafts[2] + "<br><br>");
+                return $drafts.html($oi_pr_drafts[0] + doubleSpaceAndLine + $oi_pr_drafts[1] + doubleSpaceAndLine + $oi_pr_drafts[2] + doubleSpaceAndLine + $oi_pr_drafts[3] + doubleSpaceAndLine + $oi_pr_drafts[4] + "<br><br>");
               }
             }
             else if ($selectedMessageType == "Past Attendee Registrant Recruitment") {
@@ -3881,15 +4009,17 @@ function eventSelected() {
 
         if ($selectedMessageType == "Panel Recruitment" || $selectedMessageType == "PR") {
           if ($selectedMessageName == "1.1"){
-            predraftedHTML.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + "<br><br>");
+            predraftedHTML.html($pr_drafts[0] + doubleSpaceAndLine + $pr_drafts[1] + doubleSpaceAndLine + $pr_drafts[2] + doubleSpaceAndLine + $pr_drafts[3] + doubleSpaceAndLine + $pr_drafts[4] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
           } else if ($selectedMessageName == "1.2") {
             return predraftedHTML.html($pr_drafts[1]);
           } if ($selectedMessageName == "1.3") {
             predraftedHTML.html($pr_drafts[2]);
             return document.querySelector(".personalization-container").style.display = "block";
-          } else if ($selectedMessageName == "1.4") {
+          } else if ($selectedMessageName == "2.1") {
             return predraftedHTML.html($pr_drafts[3]);
+          } else if ($selectedMessageName == "2.2") {
+            return predraftedHTML.html($pr_drafts[4]);
           }
         } else if ($selectedMessageType == "Registrant Recruitment" || $selectedMessageType == "RR") { // Takes single select name from emails table so has to remain Registrant Recruitment
           if ($selectedMessageName == "1.1"){
@@ -3925,29 +4055,41 @@ function eventSelected() {
               return predraftedHTML.html($rc_drafts[3]);
             } if ($selectedMessageName == "Final Confirmation") {
               return predraftedHTML.html($rc_drafts[4]);
-            } if ($selectedMessageName == "See You Today || See You Today (Virtual, Hoppier) || SYT") {
+            } if ($selectedMessageName == "See You Today" || $selectedMessageName == "SYT" || $selectedMessageName == "See You Today (Virtual, Hoppier)") {
                return predraftedHTML.html($rc_drafts[5]);
             } if ($selectedMessageName == "One Week Reminder") {
               return predraftedHTML.html($rc_drafts[10]);
             } if ($selectedMessageName == "Event Live Now Follow Up") {
               return $drafts.html($rc_drafts[13]);
             }
-          else if ($selectedMessageType == "Past Attendee Panel Recruitment") {
-            if ($selectedMessageName == "1.1"){
-              return $drafts.html($pa_pr_drafts[0] + doubleSpaceAndLine + $pa_pr_drafts[1] + doubleSpaceAndLine + $pa_pr_drafts[2] + "<br><br>");
-            } else if ($selectedMessageName == "1.2") {
-              return $drafts.html($pa_pr_drafts[1]);
-            } if ($selectedMessageName == "1.3") {
-              return $drafts.html($pa_pr_drafts[2]);
+            else if ($selectedMessageType == "Past Attendee Panel Recruitment") {
+              if ($selectedMessageName == "1.1"){
+                return $drafts.html($pa_pr_drafts[0] + doubleSpaceAndLine + $pa_pr_drafts[1] + doubleSpaceAndLine + $pa_pr_drafts[2] + doubleSpaceAndLine + $pa_pr_drafts[3] + doubleSpaceAndLine + $pa_pr_drafts[4] + "<br><br>");
+              } else if ($selectedMessageName == "1.2") {
+                return $drafts.html($pa_pr_drafts[1]);
+              } if ($selectedMessageName == "1.3") {
+                return $drafts.html($pa_pr_drafts[2]);
+              } else if ($selectedMessageName == "2.1") {
+                return $drafts.html($pa_pr_drafts[3]);
+              } if ($selectedMessageName == "2.2") {
+                return $drafts.html($pa_pr_drafts[4]);
+              } else if ($selectedMessageName == "Full Sequence") {
+                return $drafts.html($pa_pr_drafts[0] + doubleSpaceAndLine + $pa_pr_drafts[1] + doubleSpaceAndLine + $pa_pr_drafts[2] + doubleSpaceAndLine + $pa_pr_drafts[3] + doubleSpaceAndLine + $pa_pr_drafts[4] + "<br><br>");
+              }
             }
-          }
           else if ($selectedMessageType == "Opt-In Panel Recruitment") {
             if ($selectedMessageName == "1.1"){
-              return $drafts.html($oi_pr_drafts[0] + doubleSpaceAndLine + $oi_pr_drafts[1] + doubleSpaceAndLine + $oi_pr_drafts[2] + "<br><br>");
+              return $drafts.html($oi_pr_drafts[0] + doubleSpaceAndLine + $oi_pr_drafts[1] + doubleSpaceAndLine + $oi_pr_drafts[2] + doubleSpaceAndLine + $oi_pr_drafts[3] + doubleSpaceAndLine + $oi_pr_drafts[4] + "<br><br>");
             } else if ($selectedMessageName == "1.2") {
               return $drafts.html($oi_pr_drafts[1]);
             } if ($selectedMessageName == "1.3") {
               return $drafts.html($oi_pr_drafts[2]);
+            } else if ($selectedMessageName == "2.1") {
+              return $drafts.html($oi_pr_drafts[3]);
+            } if ($selectedMessageName == "2.2") {
+              return $drafts.html($oi_pr_drafts[4]);
+            } else if ($selectedMessageName == "Full Sequence") {
+              return $drafts.html($oi_pr_drafts[0] + doubleSpaceAndLine + $oi_pr_drafts[1] + doubleSpaceAndLine + $oi_pr_drafts[2] + doubleSpaceAndLine + $oi_pr_drafts[3] + doubleSpaceAndLine + $oi_pr_drafts[4] + "<br><br>");
             }
           }
           else if ($selectedMessageType == "Past Attendee Registrant Recruitment") {
