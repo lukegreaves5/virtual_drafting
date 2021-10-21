@@ -469,7 +469,7 @@ h1 {
   border-radius: 0;
 }
 
-#event-search, #message-type-search, #message-name-search {
+#event-search, #message-type-search, #message-category-search, #message-name-search {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
