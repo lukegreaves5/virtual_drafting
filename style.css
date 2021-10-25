@@ -1338,3 +1338,11 @@ ul li {
 .list-indent ul {
   padding-left: 25px;
 }
+
+.nav.nav-tabs {
+  margin-bottom: 3em;
+}
+
+.nav.nav-tabs a {
+  font-weight: bold;
+}
