@@ -1530,7 +1530,7 @@ function eventSelected() {
 
          "Hi again {{FIRST NAME}},<br><br>" +
 
-         "Reaching out one final time about our " + $event_short_title + " event. We have a really phenomenal group of panelists speaking on "+ $event_month_number + "/" + $event_day_number + " I wanted to share with you. Check them out:<br>" +
+         "Reaching out one final time about our " + $event_short_title + " event. We have a really phenomenal group of panelists speaking on "+ $event_month_number + "/" + $event_day_number + " I wanted to share with you. Check them out:<br><br>" +
 
          $event_panelists_full_formatted +
 
@@ -1551,28 +1551,6 @@ function eventSelected() {
         
         // PR MESSAGE 1.1
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Past Attendee Panel Recruitment 1.1 - NEW COPY</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, join us again as a panelist?</p><br><br>" + //target_subject($event_target_copy)
-
-        "Hey {{FIRST_NAME}},<br><br>" +
-
-        "I was so happy to have you " + highlight_This("{{speak at our panel for}}")  + " or " + highlight_This("{{join us at}}")  + " our thought leadership event " + highlight_This("PAST_EVENT") + " in " + highlight_This("PAST_EVENT_MONTH") + " " + highlight_This("PAST_EVENT_YEAR ") + ". I hope you got some valuable takeaways from the event!<br><br>" +
-
-        "We’re excited about our upcoming virtual event, " + $event_full_title + ", and thought you would be, too! I’d love to pick your brain about " + $event_snippet + " and give you the opportunity to share your experience and opinions (no matter how avant garde!) with " + $event_audience + ".<br><br>" +
-
-        "Our invite-only discussion is taking place on DAY, DATE from 12:00 - 1:15 PM " + $event_timezone + ". As a reminder, we’ll have a panel discussion and live Q&A session bookended by two interactive networking sessions. We also send all final attendees a $30 meal delivery code following the event to replicate our in-person lunch and learns.<br><br>"+
-
-        "For more details, check out the event website: URL " + highlight_This($event_website) + ".<br><br>"+
-
-        "If you’d prefer to join this event as an attendee rather than a speaker, just let me know.<br><br>" +
-
-        "Can I count you in?<br><br>" +
-
-        "Cheers,<br>" +
-        "Steve Etzler<br><br>" +
-
-        emailFooter()
-
         `
         <div class="tabbable">
           <ul class="nav nav-tabs">
@@ -1588,7 +1566,7 @@ function eventSelected() {
               <p class='messagetypename'><i class='fa fa-paper-plane'></i> Past Attendee Panel Recruitment 1.1 - NEW COPY</p>
               <p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, a panel invite for you ✉️</p><br><br>
               
-              Hey {{FIRST_NAME}},
+              Hey {{FIRST_NAME}},<br><br>
       
               Thanks for speaking on our panel (past panelist) at ${highlight_This("{{SNIPPET 3-PAST_EVENT}}")} in ${highlight_This("{{SNIPPET 4-MONTH}}")} ${highlight_This("{{SNIPPET 5-YEAR}}")}. I hope you enjoyed the event as much as we did!<br><br>
       
@@ -1614,7 +1592,7 @@ function eventSelected() {
             <p class='messagetypename'><i class='fa fa-paper-plane'></i> Past Attendee Panel Recruitment 1.1 - NEW COPY</p>
             <p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, join us again?</p><br><br>
             
-              Hey {{FIRST_NAME}},
+              Hey {{FIRST_NAME}},<br><br>
       
               Thanks for speaking on our panel (past panelist) at ${highlight_This("{{SNIPPET 3-PAST_EVENT}}")} in ${highlight_This("{{SNIPPET 4-MONTH}}")} ${highlight_This("{{SNIPPET 5-YEAR}}")}. I hope you enjoyed the event as much as we did!<br><br>
       
@@ -1622,7 +1600,7 @@ function eventSelected() {
       
               As a refresh on our format, we will have ${highlight_This("#")} or so ${$event_function_leaders} join for a panel discussion, bookended by two breakout room sessions for networking and small group conversations.<br><br>
       
-              Lunch is on us in the form of a meal delivery code sent after the event, or attendees also have the option of donating their meal to charity.<br><br>
+              As a thank you for speaking, we'll send all final participants a $30 code to support the charity of your choice. Instead of providing our attendees with a free lunch, we’re hoping to do some good in the world by partnering with local and global causes like Habitat for Humanity, Feeding America, Cancer Research Institute, and Fisher House Foundation.<br><br>
 
               You can find further details on the proposed discussion topics on our event website.<br><br>
 
@@ -1644,7 +1622,7 @@ function eventSelected() {
         
         "Hey {{FIRST_NAME}}, hope your day is going well!<br><br>" +
 
-        "Circling back on my " + $event_month_number + "/" + $event_day_number  + " panel invite to see if you’d had a chance to check out the website and discussion topics. If not, I’ll share the talking points we had in mind here:<br><br" +
+        "Circling back on my " + $event_month_number + "/" + $event_day_number  + " panel invite to see if you’d had a chance to check out the website and discussion topics. If not, I’ll share the talking points we had in mind here:<br><br>" +
 
         discussionTopics() + "<br>" +
 
@@ -1674,17 +1652,13 @@ function eventSelected() {
               <p class='messagetypename'><i class='fa fa-paper-plane'></i> Past Attendee Panel Recruitment 1.3 - NEW COPY</p>
               <p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, join us again as a panelist?</p><br><br>
       
-              Happy ${highlight_This("{{send day - " + getTodaysDate() + "}}")} {{FIRST_NAME}}<br><br>
+              Hope your day is going well, {{FIRST_NAME}}. Just wanted to bring this invite to the top of your inbox.<br><br>
       
-              Reaching out a final time to see if you’d like to speak on our ${$event_theme} virtual panel.<br><br>
+              The event should be a great opportunity for you to demonstrate your expertise as a ${$event_function} leader, and to share your experience with industry peers.<br><br>
       
-              As a thought leader in the ${$event_audience} space, we’d love to have you share your expertise and put your own spin on the discussion. Plus, who doesn’t love to order a delicious lunch?<br><br>
+              Happy to jump on a 5-minute call to further explain our objectives and to share more about the panel experience.<br><br>
       
-              If you prefer to sit in and listen, I’m happy to RSVP you as an attendee, rather than a panelist.<br><br>
-      
-              Can I count you in for ${$event_long_date}?<br><br>
-      
-              Steve
+              May we count you in?<br><br>
 
             </div>
             <!-- TAB 1 - END -->
@@ -1693,22 +1667,18 @@ function eventSelected() {
             <!-- TAB 2 - START -->
             <div class="tab-pane" id="tab28">
               
-            <p class='messagetypename'><i class='fa fa-paper-plane'></i> Past Attendee Panel Recruitment 1.3 - NEW COPY</p>
+              <p class='messagetypename'><i class='fa fa-paper-plane'></i> Past Attendee Panel Recruitment 1.3 - NEW COPY</p>
               <p class='messagesubject'><i class='fa fa-envelope'></i> Attend on ${$event_month_number}/${$event_day_number} For a Charitable Cause</p><br><br>
       
-              Happy ${highlight_This("{{send day - " + getTodaysDate() + "}}")} <br><br>
+              Hope your day is going well, {{FIRST_NAME}}. Just wanted to bring this invite to the top of your inbox.<br><br>
       
-              Wanted to invite you to speak on our ${$event_theme} virtual panel one last time.<br><br>
-      
-              We’d love to hear your thoughts as a thought leader in the space, and I think you’d really enjoy the networking opportunities with fellow $event_audience . And, who doesn’t love to order a delicious lunch?<br><br>
-      
-              If you prefer to sit in and listen, I’m happy to RSVP you as an attendee, rather than a panelist.<br><br>
+              The event should be a great opportunity for you to demonstrate your expertise as a ${$event_function} leader, and to share your experience with industry peers.<br><br>
 
-              And don’t forget, we’ll send you a code to donate to the charity of your choice after the event!
+              And don’t forget, we’ll send you a code to donate to the charity of your choice after the event!<br><br>
       
-              Can I count you in for ${$event_long_date}?<br><br>
+              Happy to jump on a 5-minute call to further explain our objectives and to share more about the panel experience.<br><br>
       
-              Steve
+              May we count you in?<br><br>
 
             </div>
             <!-- TAB 2 - END -->
@@ -1743,9 +1713,9 @@ function eventSelected() {
 
         "Hi again {{FIRST NAME}},<br><br>" +
 
-         "Reaching out one final time about our " + $event_short_title + " event. We have a really phenomenal group of panelists speaking on "+ $event_month_number + "/" + $event_day_number + " I wanted to share with you. Check them out:<br>" +
+         "Reaching out one final time about our " + $event_short_title + " event. We have a really phenomenal group of panelists speaking on "+ $event_month_number + "/" + $event_day_number + " I wanted to share with you. Check them out:<br><br>" +
 
-         $event_panelists_full_formatted +
+         $event_panelists_full_formatted + "<br><br>" +
 
          $event_panel_highlight + "<br><br>" +
  
