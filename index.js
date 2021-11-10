@@ -1242,18 +1242,15 @@ function eventSelected() {
         
         "Hi {{FIRST_NAME}},<br><br>" +
 
-        "Following up with the event website " + highlight_This($event_website)  + " for " + $event_short_title + ":" + highlight_This("URL") + "<br><br" +
+        "I just wanted to follow up and share the event website for " + $event_short_title + ", linked here.<br><br>" +
 
-        "I’m really looking forward to the discussion on " + $event_month_number + "/" + $event_day_number + ", and I’d love to hear your thoughts on the talking points we had in mind: <br><br>" +
+        "On it, you can find all of the proposed discussion topics, but we’d also love to hear your input on the content to provide the highest value for the " + $event_function_leaders + " who will be participating in the event. <br><br>" +
 
-        discussionTopics() + "<br>" +
+        "Are you interested in speaking on these topics? Would you like to propose any additional points for discussion?<br><br>" +
 
-        "How has your time at " + highlight_This("{ COMPANY }") + " impacted your thoughts on the above?<br><br>" +
+        "Hope you’re having a great week.<br><br>" +
 
-        "Would love to pick your brain at the event!<br><br>" +
-
-        "Have a great " + highlight_This("{{send day - " + getTodaysDate() + "}}") + "<br>" +
-        "Steve Etzler",
+        "Cheers,",
         
 
         // PR MESSAGE 1.3
@@ -2029,10 +2026,10 @@ function eventSelected() {
 
         // RR MESSAGE 1.3
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Opt-in Registrant Recruitment 1.3 - NEW COPY</p>" +
-        "<p class='messagesubject'><i class='fa fa-envelope'></i>  {{FIRST_NAME}}, an event invite for you ✉️</p><br><br>" + //target_subject($event_target_copy)
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Past Attendee Registrant Recruitment 1.3 - NEW COPY</p>" +
+        "<p class='messagesubject'><i class='fa fa-envelope'></i> {{FIRST_NAME}}, join us again?</p><br><br>" + //target_subject($event_target_copy)
 
-        "Hey {{FIRST_NAME}},<br><br>" +
+        "Hi {{FIRST_NAME}},<br><br>" +
 
         "What did you think of our event site?<br><br>" +
 
@@ -2046,9 +2043,11 @@ function eventSelected() {
 
         "Our panelists, along with the moderator from " + $event_client + ", will be in the breakout networking rooms along with attendees from " + highlight_This(createRegistrantCompaniesList()) + " to discuss " + $event_snippet + " with you.<br><br>" +
 
-        "Let me know if I can RSVP you to the discussion!<br><br>" +
+        "Let me know if I can RSVP you to the conversation!<br><br>" +
 
         highlight_This("SIGNATURE"),
+
+        // RR MESSAGE 1.4
 
         `
         <div class="tabbable">
@@ -2091,7 +2090,7 @@ function eventSelected() {
  
                  Reaching out one final time re: our virtual ${$event_theme} event.<br><br>
  
-                 Would love to hear your thoughts on the above research we reviewed when prepping for this event. It’s just a taste of what’s to come during our conversation. And don’t forget, we’ll send you a code to donate to the charity of your choice after the event!
+                 Would love to hear your thoughts on the above research we reviewed when prepping for this event. It’s just a taste of what’s to come during our conversation. And don’t forget, we’ll send you a code to donate to the charity of your choice after the event!<br><br>
  
                  Can I count you in for ${$event_long_date}? Happy to have one of your colleagues tag along as well!<br><br>
  
@@ -2272,7 +2271,6 @@ function eventSelected() {
           </div>
         </div>
         `,
-
 
       ];
 
@@ -3509,7 +3507,7 @@ function eventSelected() {
             $drafts.html($pr_drafts_cold_new_copy[0] + doubleSpaceAndLine + $pr_drafts_cold_new_copy[1] + doubleSpaceAndLine + $pr_drafts_cold_new_copy[2] + doubleSpaceAndLine + $pr_drafts_cold_new_copy[3] + doubleSpaceAndLine + $pr_drafts_cold_new_copy[4] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
           }
-        } else if ($selectedMessageType == "NEW COPY - Cold Panel Recruitment") {
+        } else if ($selectedMessageType == "Cold Panel Recruitment") {
           if ($selectedMessageName == "1.1"){
             $drafts.html($pr_drafts_cold_new_copy[0] + doubleSpaceAndLine + $pr_drafts_cold_new_copy[1] + doubleSpaceAndLine + $pr_drafts_cold_new_copy[2] + doubleSpaceAndLine + $pr_drafts_cold_new_copy[3] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
@@ -3526,7 +3524,7 @@ function eventSelected() {
           }
         }
         
-        else if ($selectedMessageType == "NEW COPY - Cold Registrant Recruitment") {
+        else if ($selectedMessageType == "Cold Registrant Recruitment") {
           if ($selectedMessageName == "1.1"){
             $drafts.html($rr_drafts_cold_new_copy[0] + doubleSpaceAndLine + $rr_drafts_cold_new_copy[1] + doubleSpaceAndLine + $rr_drafts_cold_new_copy[2] + doubleSpaceAndLine + $rr_drafts_cold_new_copy[3] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
@@ -3541,7 +3539,7 @@ function eventSelected() {
             $drafts.html($rr_drafts_cold_new_copy[0] + doubleSpaceAndLine + $rr_drafts_cold_new_copy[1] + doubleSpaceAndLine + $rr_drafts_cold_new_copy[2] + doubleSpaceAndLine + $rr_drafts_cold_new_copy[3] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
           }
-        } else if ($selectedMessageType == "NEW COPY - Opt-in Registrant Recruitment") {
+        } else if ($selectedMessageType == "Opt-in Registrant Recruitment") {
           if ($selectedMessageName == "1.1"){
             $drafts.html($rr_drafts_optin_new_copy[0] + doubleSpaceAndLine + $rr_drafts_optin_new_copy[1] + doubleSpaceAndLine + $rr_drafts_optin_new_copy[2] + doubleSpaceAndLine + $rr_drafts_optin_new_copy[3] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
@@ -3556,7 +3554,7 @@ function eventSelected() {
             $drafts.html($rr_drafts_optin_new_copy[0] + doubleSpaceAndLine + $rr_drafts_optin_new_copy[1] + doubleSpaceAndLine + $rr_drafts_optin_new_copy[2] + doubleSpaceAndLine + $rr_drafts_optin_new_copy[3] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
           }
-        } else if ($selectedMessageType == "NEW COPY - Past Attendee Registrant Recruitment") { // $rr_drafts_past_new_copy
+        } else if ($selectedMessageType == "Past Attendee Registrant Recruitment") { // $rr_drafts_past_new_copy
           if ($selectedMessageName == "1.1"){
             $drafts.html($rr_drafts_past_new_copy[0] + doubleSpaceAndLine + $rr_drafts_past_new_copy[1] + doubleSpaceAndLine + $rr_drafts_past_new_copy[2] + doubleSpaceAndLine + $rr_drafts_past_new_copy[3] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
@@ -3571,7 +3569,7 @@ function eventSelected() {
             $drafts.html($rr_drafts_past_new_copy[0] + doubleSpaceAndLine + $rr_drafts_past_new_copy[1] + doubleSpaceAndLine + $rr_drafts_past_new_copy[2] + doubleSpaceAndLine + $rr_drafts_past_new_copy[3] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
           }
-        } else if ($selectedMessageType == "NEW COPY - Opt-in Panel Recruitment") {
+        } else if ($selectedMessageType == "Opt-in Panel Recruitment") {
           if ($selectedMessageName == "1.1"){
             $drafts.html($pr_drafts_oi_new_copy[0] + doubleSpaceAndLine + $pr_drafts_oi_new_copy[1] + doubleSpaceAndLine + $pr_drafts_oi_new_copy[2] + "<br><br>");
             return document.querySelector(".personalization-container").style.display = "block";
