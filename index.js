@@ -3129,7 +3129,7 @@ function eventSelected() {
       ]
 
       const $linkedin_drafts = 
-      // LinkedIn Campaigns
+      // LinkedIn Message Templates
 
       [
         // LinkedIn Connection Request Campaigns
@@ -3180,7 +3180,7 @@ function eventSelected() {
 
         // Version 1
 
-        "<p class='align-items-center' style='font-weight: bold;'>FIRST TOUCH</p>"
+        "<p class='align-items-center' style='font-weight: bold;'>" + highlight_This("First Touch Message") + "</p>"
 
         +
 
@@ -3191,7 +3191,7 @@ function eventSelected() {
         
         +
 
-        "Hi " + highlight_This("NAME") + ", I was glad to see that you were interested in " + highlight_This("PAST EVENT") + ". I hope you enjoyed the event and gained valuable insights from our panelists.<br><br>" + 
+        "Hi " + highlight_This("NAME") + ", I was glad to see that you were interested in " + highlight_This("PAST EVENT") + "! I hope you enjoyed the event and gained valuable insights from our panelists.<br><br>" + 
         
         "It would be great to see you at an upcoming virtual event with similar content themes." + " We’re hosting " + $event_full_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ". Check out the event website: <u>" + $event_website + "</u> and let me know what you think!<br><br>" + 
 
@@ -3212,7 +3212,7 @@ function eventSelected() {
         
         "We’re hosting " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ", and based on your background I think it may spark your interest. Check out the event website: <u>" + $event_website + "</u> <br><br>" + 
 
-        "As I mentioned in the past, we’ll provide you with lunch! Let me know your thoughts?<br><br>" +
+        "We’ll also provide all final attendees with a $30 charity donation code! Let me know your thoughts? <br><br>" +
         
         "Cheers,<br>" +
         highlight_This("SIGNATURE") + "<br><br><br><hr><br>" +
@@ -3226,9 +3226,9 @@ function eventSelected() {
 
         +
 
-        "Hi " + highlight_This("NAME") + ", BDI is hosting another virtual event that I thought you might be the perfect candidate for–" + $event_full_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ". Check out the event website: <u>" + $event_website + "</u> and let me know what you think!<br><br>" + 
+        "Hi " + highlight_This("NAME") + ", BDI is hosting another virtual event that I thought you might be the perfect candidate for—" + $event_full_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ". Check out the event website: <u>" + $event_website + "</u> and let me know what you think!<br><br>" + 
         
-        "We’ll provide you with lunch via a meal code after the event, or you can choose to donate your meal if you prefer.<br><br>" + 
+        "We’ll be offering all final attendees a code to donate $30 to the charity of their choice after the event. We hope you’ll help us partner to do some good!<br><br>" + 
 
         "Can I count you in?<br><br>" +
         
@@ -3260,9 +3260,9 @@ function eventSelected() {
         
         "<i>I sent you an email about our upcoming virtual event, but I figured reaching out on LinkedIn might be easier.</i><br><br>" +
 
-        "BDI is hosting " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ", and I thought you might be the perfect candidate to attend. Check out the event website: " + $event_website + " and let me know what you think!<br><br>" +
+        "BDI is hosting " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ", and I thought you might be the perfect candidate to attend. Check out the event website: <u>" + $event_website + "</u> and let me know what you think!<br><br>" +
 
-        "Also, we’ll provide you with lunch via a meal delivery code after the event! You may elect to donate your meal if you’d prefer.<br><br>" +
+        "We’ll be offering all final attendees a code to donate $30 to the charity of their choice after the event. We hope you’ll help us partner to do some good!<br><br>" +
 
         "Can I count you in?<br><br>" +
 
@@ -3279,9 +3279,9 @@ function eventSelected() {
 
         "<i>I wanted to invite you to an upcoming virtual event and I figured reaching out on LinkedIn might be the easiest way to get in touch.</i><br><br>" +
 
-        "BDI is hosting " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ", and I thought you might be the perfect candidate to attend. Check out the event website: " + $event_website + " and let me know what you think!<br><br>" +
+        "BDI is hosting " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ", and I thought you might be the perfect candidate to attend. Check out the event website: <u>" + $event_website + "</u> and let me know what you think!<br><br>" +
 
-        "Also, we’ll provide you with lunch via a meal delivery code after the event! You may elect to donate your meal if you’d prefer.<br><br>" +
+        "We’ll be offering all final attendees a code to donate $30 to the charity of their choice after the event. We hope you’ll help us partner to do some good!.<br><br>" +
 
         "Can I count you in? <br><br>" +
         
@@ -3302,7 +3302,7 @@ function eventSelected() {
         
         "I know you have a conflict at " + highlight_This("CONFLICT TIME") + " on " + $event_long_date + ", but I’m hosting " + $event_short_title + " from " + $event_time_display + " " + $event_timezone + " and was hoping this time might work better for you?<br><br>" + 
 
-        "Let me know after you check out the event website: " + $event_website + ". Would love to have you there, and isn’t free lunch always a plus?<br><br>" +
+        "Let me know after you check out the event website: <u>" + $event_website + "</u>. Would love to have you there, and we’d love to have you help us do some good with a $30 charity code we’ll send out post-event.<br><br>" +
 
         highlight_This("SIGNATURE") + "<br><br><br><hr><br>" +
 
@@ -3317,11 +3317,11 @@ function eventSelected() {
 
         +
 
-        "Hi " + highlight_This("NAME") + ", how’s your " + getTodaysDate() + " going so far?<br><br>" +
+        "Hi " + highlight_This("NAME") + ", how’s your " + getTodaysDate() + " going?<br><br>" +
         
-        "I know you have a conflict at " + highlight_This("CONFLICT TIME") + " was up your alley, so I thought " + $event_short_title + " on the same day (" + $event_long_date + ") might be a better fit.<br><br>" + 
+        "I know you didn’t think the content for " + highlight_This("OTHER EVENT TITLE") + " was up your alley, so I thought " + $event_short_title + " on the same day (" + $event_long_date + ") might be a better fit.<br><br>" + 
 
-        "Are you able to join us " + $event_time_display + " " + $event_timezone + " to discuss " + highlight_This("EVENT TOPIC") + "? Check out the event website: " + $event_website + ", and let me know what you think!<br><br>" +
+        "Are you able to join us " + $event_time_display + " " + $event_timezone + " to discuss " + highlight_This("EVENT TOPIC") + "? Check out the event website: <u>" + $event_website + "</u>, and let me know what you think!<br><br>" +
 
         highlight_This("SIGNATURE") + "<br><br><br><hr><br>" +
 
@@ -3342,7 +3342,7 @@ function eventSelected() {
 
         "I’m reaching out again to see if you might be interested in " + highlight_This("attending/speaking") + " at " + highlight_This("(CHOOSE ONE!)") + " our upcoming event " + $event_short_title + " on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ".<br><br>" +
 
-        "We’ll of course be providing a delivery code for free lunch, and I’m personally really looking forward to chatting about " + highlight_This("EVENT TOPIC") + ".<br><br>" +
+        "We’ll be providing a delivery code for a $30 donation to the charity of your choice, and I’m personally really looking forward to chatting about " + highlight_This("EVENT TOPIC") + ".<br><br>" +
 
         "Are you able to join us again?<br><br>" +
 
@@ -3361,11 +3361,11 @@ function eventSelected() {
 
         "Hi " + highlight_This("NAME") + ", hope you’re having a great " + getTodaysDate() + "!<br><br>" +
         
-        "I just got off a prep call with our panel for WEEKDAY’s virtual event, " + $event_full_title + ", and I’m really looking forward to the conversation. Feel free to check out the panelists’ profiles:<br>" +
+        "I just got off a prep call with our panel for " + highlight_This("WEEKDAY’s") + " virtual event, " + $event_full_title + ", and I’m really looking forward to the conversation. Feel free to check out the panelists’ profiles:<br><br>" +
 
         createPanelistList_first_and_last_name_linkedin() + "<br>" +
 
-        "I think you’d really enjoy it as well and, as always, we’ll provide a delivery code for free lunch.<br><br>" +
+        "I think you’d really enjoy it as well and, as we’ll also provide a $30 code to donate to the charity of your choice.<br><br>" +
 
         "Can you join us at 12 pm " + $event_timezone + " on " + $event_date_full_numeric + "?<br><br>" +
 
@@ -3386,7 +3386,7 @@ function eventSelected() {
         
         "I know you previously expressed interest in panelist opportunities, so I wanted to share some details for our upcoming virtual event with you. " + $event_full_title + " will take place on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ", and I’d love to have you speak about " + highlight_This("EVENT TOPIC") + ". <br><br>" +
 
-        "Take a look at the event website: " + $event_website + ", and let me know your thoughts. Are you interested in speaking?<br><br>" +
+        "Take a look at the event website: <u>" + $event_website + "</u>, and let me know your thoughts. Are you interested in speaking?<br><br>" +
 
         highlight_This("SIGNATURE") + "<br><br><br><hr><br>" +
 
@@ -3405,7 +3405,7 @@ function eventSelected() {
         
         "I know you previously expressed interest in " + highlight_This("EVENT TOPIC OF INTEREST") + " events, so I wanted to share some details for our upcoming virtual event with you. " + $event_short_title + " will take place on " + $event_long_date + " from " + $event_time_display + " " + $event_timezone + ", and I’d love for you to " + highlight_This("attend/participate (PICK ONE BASED ON RR OR PR)..") + ".<br><br>" +
 
-        "Take a look at the event website: " + $event_website + ", and let me know your thoughts. Are you interested in speaking?<br><br>" +
+        "Take a look at the event website: <u>" + $event_website + "</u>, and let me know your thoughts. Are you interested in speaking?<br><br>" +
 
         highlight_This("SIGNATURE") + "<br><br><br><hr><br>" +
 
@@ -3413,7 +3413,8 @@ function eventSelected() {
 
         `<div class='flex-row'>
          <p class='messagetypename number-icon-custom'>11</p>
-          <p class='align-items-center' style='font-weight: bold;'><i>Follow-Up/Second Touch Message</i></p>
+         <p>${highlight_This("Second Touch Messages")}</p><br><br>
+         <p class='align-items-center' style='font-weight: bold;'><i>Follow-Up/Second Touch Message</i></p>
         </div>
         <br>  
         `
@@ -3428,9 +3429,11 @@ function eventSelected() {
 
         "Will I see you there?<br><br>" +
 
-        highlight_This("SIGNATURE") + "<br><br><br><hr><br>" +
+        highlight_This("SIGNATURE") + "<br><br><br><hr><br>"
 
         // Version 12
+
+        /*
 
         `<div class='flex-row'>
          <p class='messagetypename number-icon-custom'>12</p>
@@ -3452,6 +3455,8 @@ function eventSelected() {
         "Can I count you in?<br>" +
 
         highlight_This("SIGNATURE") + "<br><br><br><br>"
+
+        */
 
       ]
 
@@ -3755,7 +3760,7 @@ function eventSelected() {
                 new Quill('.editor_rrp17',{theme:'snow',});
                 new Quill('.editor_rrp18',{theme:'snow',});
               }
-            } else if ($selectedMessageType == "LinkedIn Campaigns") {
+            } else if ($selectedMessageType == "LinkedIn Message Templates") {
               if ($selectedMessageName == "LinkedIn Connection Request Campaigns"){
                 $drafts.html($linkedin_drafts[0]);
               } else if ($selectedMessageName == "LinkedIn 1st Degree Connections Message"){
