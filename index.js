@@ -558,12 +558,12 @@ function eventSelected() {
           start = new Date( new Date(eventDate).setHours( $event_time_display[0].split("-")[0].split(":")[0] ) ); // Calculate start time. Event Time Display field is required.
           return (
             `
-              <li style="list-style: none;">${ moment(start.addMinutes(-15)).format('h:mm A') }  Panelists & Moderator join</li>
-              <li style="list-style: none;">${ moment(start.addMinutes(15)).format('h:mm A') } Attendees Enter Virtual Event & Welcome Remarks</li>
-              <li style="list-style: none;">${ moment(start.addMinutes(5)).format('h:mm A') } Video Networking in Breakout Rooms</li>
-              <li style="list-style: none;">${ moment(start.addMinutes(10)).format('h:mm A') } Panel Discussion</li>
-              <li style="list-style: none;">${ moment(start.addMinutes(40)).format('h:mm A') } Audience Q&A</li>
-              <li style="list-style: none;">${ moment(start.addMinutes(15)).format('h:mm A') } Breakout Networking Sessions</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(-15)).format('h:mm A') } The moderator and panel will join 15 minutes early to chat through any last questions and get ready for the event to start.</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(15)).format('h:mm A') } The event starts, attendees are let in, welcome remarks.</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(5)).format('h:mm A') } Panel discussion begins. The moderator will introduce themselves, and ask the panel to do the same.</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(10)).format('h:mm A') } We will open it up for audience Q&A</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(40)).format('h:mm A') } Break out into smaller groups for very interactive discussions on the same or adjacent topics to the ones we covered on the panel—attendees will be able to share their experiences as well.</li>
+              <li style="list-style: none;">${ moment(start.addMinutes(15)).format('h:mm A') } We’ll head back to the main room to say a quick goodbye and the event ends.</li>
             `
           )
         } else if (!$event_time_EST.includes("yellow")) { // if Event time Display field is not filled but Event time EST field is
@@ -571,23 +571,23 @@ function eventSelected() {
           return (
             `
               <p style="background-color:yellow;">Agenda is not dynamic: [Event Time Display] field is require in Airtable</p>
-              <li style="list-style: none;">11:45AM Panelists & Moderator join</li>
-              <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
-              <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
-              <li style="list-style: none;">12:15PM Panel Discussion</li>
-              <li style="list-style: none;">12:55PM Audience Q&A</li>
-              <li style="list-style: none;">1:10PM Breakout Networking Sessions</li>
+              <li style="list-style: none;">12:45AM The moderator and panel will join 15 minutes early to chat through any last questions and get ready for the event to start.</li>
+              <li style="list-style: none;">1:00PM The event starts, attendees are let in, welcome remarks.</li>
+              <li style="list-style: none;">1:05PM Panel discussion begins. The moderator will introduce themselves, and ask the panel to do the same.</li>
+              <li style="list-style: none;">1:40PM We will open it up for audience Q&A</li>
+              <li style="list-style: none;">1:50PM Break out into smaller groups for very interactive discussions on the same or adjacent topics to the ones we covered on the panel—attendees will be able to share their experiences as well.</li>
+              <li style="list-style: none;">2:13 - 2:15PM We’ll head back to the main room to say a quick goodbye and the event ends.</li>
             `
           )
         } else return (
             `
               <p style="background-color:yellow;">Agenda is not dynamic: [Event Time Display] field is require in Airtable</p>
-              <li style="list-style: none;">11:45AM Panelists & Moderator join</li>
-              <li style="list-style: none;">12:00PM Attendees Enter Virtual Event & Welcome Remarks</li>
-              <li style="list-style: none;">12:05PM Video Networking in Breakout Rooms</li>
-              <li style="list-style: none;">12:15PM Panel Discussion</li>
-              <li style="list-style: none;">12:55PM Audience Q&A</li>
-              <li style="list-style: none;">1:10PM Breakout Networking Sessions</li>
+              <li style="list-style: none;">12:45AM The moderator and panel will join 15 minutes early to chat through any last questions and get ready for the event to start.</li>
+              <li style="list-style: none;">1:00PM The event starts, attendees are let in, welcome remarks.</li>
+              <li style="list-style: none;">1:05PM Panel discussion begins. The moderator will introduce themselves, and ask the panel to do the same.</li>
+              <li style="list-style: none;">1:40PM We will open it up for audience Q&A</li>
+              <li style="list-style: none;">1:50PM Break out into smaller groups for very interactive discussions on the same or adjacent topics to the ones we covered on the panel—attendees will be able to share their experiences as well.</li>
+              <li style="list-style: none;">2:13 - 2:15PM We’ll head back to the main room to say a quick goodbye and the event ends.</li>
             `
         )
       };
@@ -2308,9 +2308,9 @@ function eventSelected() {
 
         "Thank you so much for participating in the " + $event_short_title + " virtual meeting on " + highlight_This("DAY/yesterday") + "! We hope you found the discussion valuable.<br><br>" +
 
-        "Please use this link to access your Hoppier gift card so that you can enjoy lunch courtesy of " + $event_client + "! To redeem your card, please make sure you sign in with THIS email address!<br><br>" +
+        "Please use this link to access your Hoppier gift card so that you can donate to the charity of your choice, courtesy of " + $event_client + "! <b>To redeem your card, please make sure you sign in with THIS email address.</b><br><br>" +
 
-        "Once you log into Hoppier, you’ll have the option of using your $30 code to order lunch from your choice of food delivery app or local restaurant, or to donate the money to Food Bank for New York City or Give India for COVID relief. Please note that the gift card balance is redeemable through 30 DAYS FROM NOW.<br><br>" +
+        "Once you log into Hoppier, you’ll have the option of using your $30 code to donate to charities including Habitat for Humanity and Fisher House Foundation, or you can opt to order lunch instead. Please note that the gift card balance is redeemable through 30 DAYS FROM NOW.<br><br>" +
 
         "Special thanks to " + $event_client + " for making the event possible, and to our moderator, " + $event_moderator_first_name + ", and to " + $event_panelists_first_name + " for leading the exceptional discussion.<br><br>"+
 
@@ -2384,7 +2384,7 @@ function eventSelected() {
 
         "Tomorrow’s event will feature networking in small breakout rooms, Q&A following the panel discussion, and live attendee polling to kick off the event. Our goal is to give every attendee the opportunity to have their voice heard. If you’re comfortable, please be prepared to have your video and microphone on.<br><br>" +
 
-        "All final attendees will receive an email the day following the event allowing you to redeem your ‘lunch on us’ code via a food delivery app, or choose to donate the money to Food Bank for New York City or Give India for COVID relief.<br><br>" + 
+        "All final attendees will receive an email the day following the event allowing you to redeem your charity donation code via Hoppier, or you can choose to order lunch if you prefer.<br><br>" + 
 
         `Here is the agenda for the session:<br>
         <ul>
@@ -2496,9 +2496,9 @@ function eventSelected() {
         "Thank you!<br>"+
         isBlank($event_account_manager),
 
-        // PANEL PREP AGENDA
+        // PANEL PREP AGENDA (Calendar Invite for Panel Prep Call)
 
-        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Calendar Invite for Panel Prep Call</p>" +
+        "<p class='messagetypename'><i class='fa fa-paper-plane'></i> Calendar Invite for Panel Prep Call (75 min)</p>" +
         "<p class='messagesubject'><i class='fa fa-envelope'></i>" + $event_short_title + " | Panel Prep</p><br><br>" +
  
         "Hi all,<br><br>"+
@@ -2553,16 +2553,13 @@ function eventSelected() {
 
         "This email serves as a reminder and an invite for you to share with a colleague who may also find this event valuable.<br><br>"+
 
-        "After the event we'll send your meal delivery code in our follow up email. To ensure you're able to receive your code, please make sure to add our etzler.steven@bdionline.com email to your safe senders list so the message doesn't end up in your spam folder!<br><br>" +
+        "After the event we'll send your charity donation code in our follow-up email. To ensure you're able to receive your code, please make sure to add our etzler.steven@bdionline.com email to your safe senders list so the message doesn't end up in your spam folder!<br><br>" +
 
         "Thank you. We look forward to seeing you online from " + $event_time_display + " on " + $event_long_date + ".<br><br>" + 
 
         "Best regards,<br>" +
         "<b>Steve Etzler</b><br>"+
-        "<br>Business Development Institute</br><br>"+
-        
-        "REGISTRATION LIST<br>"+
-        highlight_This("{{{COPY AND PASTE REG LIST HERE}}}"),
+        "<br>Business Development Institute</br><br>",
 
         // RSVP NO - Virtual
 
@@ -2625,6 +2622,30 @@ function eventSelected() {
         "Are you open to keeping in touch?<br><br>" +
 
         "Thank you,<br>Steve<br>",
+
+         // ONE WEEK REMNINDER (w/out registration list)
+
+         "<p class='messagetypename'><i class='fa fa-paper-plane'></i> One Week Reminder (w/out Registration List)</p>" +
+         "<p class='messagesubject'><i class='fa fa-envelope'></i> " + $event_weekday + " is going to be your favorite day next week</p><br><br>" +
+ 
+         "Hi NAME,<br><br>"+
+ 
+         "We hope you’re excited about next week’s "+ $event_full_title +" virtual lunch & learn!<br><br>"+
+ 
+         "We’ve got a panel of experts that have agreed to be grilled on their thoughts and best practices around " + $event_theme + ". You’ll be able to interact with our panel and share your thoughts with our impressive list of registrants from brands including " + highlight_This(createRegistrantCompaniesList()) + ".<br><br>"+
+ 
+         "If you have a colleague who might also find the event valuable, feel free to share this invite with them. We can’t wait to hear different perspectives on " + $event_panel_snippet + ".<br><br>"+
+ 
+         "After the event, we'll send your charity donation code in our follow-up email. To ensure you're able to receive your code, please make sure to add our etzler.steven@bdionline.com email to your safe senders list so the message doesn't end up in your spam folder!<br><br>" +
+ 
+         "Thank you. We look forward to seeing you online from " + $event_time_display + " on " + $event_long_date + ".<br><br>" + 
+ 
+         "Best regards,<br>" +
+         "<b>Steve Etzler</b><br>"+
+         "<br>Business Development Institute</br><br>"+
+         
+         "REGISTRATION LIST<br>"+
+         highlight_This("{{{COPY AND PASTE REG LIST HERE}}}"),
 
 
       ];
@@ -3622,7 +3643,7 @@ function eventSelected() {
               return $drafts.html($rc_drafts[8]);
             } if ($selectedMessageName == "Scheduling Panel Prep (90 min)") {
               return $drafts.html($rc_drafts[9]);
-            }if ($selectedMessageName == "Panel Prep Agenda") {
+            }if ($selectedMessageName == "Calendar Invite for Panel Prep Call (75 min)") {
               return $drafts.html($rc_drafts[10]);
             } if ($selectedMessageName == "One Week Reminder") {
               return $drafts.html($rc_drafts[11]);
@@ -3634,7 +3655,9 @@ function eventSelected() {
               return $drafts.html($rc_drafts[14]);
             } if ($selectedMessageName == "Event Live Now Follow Up") {
               return $drafts.html($rc_drafts[15]);
-            } if ($selectedMessageName == "Engaged Follow Up") {
+            } if ($selectedMessageName == "One Week Reminder (w/out Registration List)") {
+              return $drafts.html($rc_drafts[16]);
+             } if ($selectedMessageName == "Engaged Follow Up") {
               $drafts.html($rc_calendar_invite_panelists[0]);
               new Quill('.editor_rrp15',{theme:'snow',});
             }
@@ -3818,6 +3841,8 @@ function eventSelected() {
               return predraftedHTML.html($rc_drafts[10]);
             } if ($selectedMessageName == "Event Live Now Follow Up") {
               return $drafts.html($rc_drafts[13]);
+            } if ($selectedMessageName == "One Week Reminder (w/out Registration List") {
+              return $drafts.html($rc_drafts[15]);
             }
             else if ($selectedMessageType == "Past Attendee Panel Recruitment") {
               if ($selectedMessageName == "1.1"){
