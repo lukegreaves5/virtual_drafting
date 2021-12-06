@@ -410,8 +410,10 @@ function eventSelected() {
       $event_customization_2 = objectCheck(['Customization 2']),
       $event_subject = objectCheck(['Subject']),
       $event_discussion_topics = objectCheck(['Discussion Topics']),
-      $event_local_time = objectCheck(['Event Time Display']),
-      $event_time_display = objectCheck(['Event Time Display']),
+      $event_local_time = objectCheck(['Event Start Time']),
+      $event_time_display = objectCheck(['Event Start Time']) + " - " + objectCheck(['Event End Time']),
+      $event_start_time = objectCheck(['Event Start Time']),
+      $event_end_time = objectCheck(['Event End Time']),
       $event_time_EST = objectCheck(['Event Time (EST)']),
       $event_panel_highlight = objectCheck(['Panel Highlight']),
       $event_registrant_JSON = objectCheck(['Registrant List JSON']);
@@ -2376,7 +2378,7 @@ function eventSelected() {
 
         "Hi FIRSTNAME,<br><br>" +
 
-        "We’re looking forward to our interactive virtual roundtable tomorrow at " + $event_short_title + " from " + $event_local_time + " " + $event_timezone + "!<br><br>" + 
+        "We’re looking forward to our interactive virtual roundtable tomorrow at " + $event_short_title + " from " + $event_start_time + " " + $event_timezone + "!<br><br>" + 
 
         "We have a great panel lined up to talk about " + $event_snippet + ". I hope you’re as excited as we are to learn from them and to share your own thoughts on the future of " + $event_theme + ".<br><br>" +
 
@@ -2587,7 +2589,7 @@ function eventSelected() {
 
         "This is <span style='color:red;'>{VA}</span> calling from BDI.<br><br>"+
 
-        "We have you registered to join us at "+ $event_full_title +" tomorrow, "+ $event_long_date + " from " + $event_local_time + " " + $event_timezone + ".<br><br>" +
+        "We have you registered to join us at "+ $event_full_title +" tomorrow, "+ $event_long_date + " from " + $event_start_time + " " + $event_timezone + ".<br><br>" +
 
         "Please be prepared to participate via video on your computer or mobile device. We'll be providing a code for food delivery!<br><br>" +
 
@@ -2829,7 +2831,7 @@ function eventSelected() {
         
         "Hi all,<br><br>" +  
         
-        "Looking forward to connecting at " +  $event_local_time + " " + $event_timezone + ".<br><br>" +
+        "Looking forward to connecting at " +  $event_start_time + " " + $event_timezone + ".<br><br>" +
         
         "We’ll meet here: " + highlight_This($event_zoom_link) + " <br><br>" +
 
@@ -3068,7 +3070,7 @@ function eventSelected() {
 
           highlight_This("PERSONALIZATION") + " " + "<br><br>" +
 
-          "Based on your profile, I thought you’d enjoy a virtual thought-leadership event I’m organizing on " + $event_long_date + " from " + $event_local_time + " " + $event_timezone + ".<br><br>" +
+          "Based on your profile, I thought you’d enjoy a virtual thought-leadership event I’m organizing on " + $event_long_date + " from " + $event_start_time + " " + $event_timezone + ".<br><br>" +
           
           $event_full_title + " will be an invite-only discussion between " + $event_audience_and_size_or_so + " over " + $event_panel_snippet + ".<br><br>" +
           
